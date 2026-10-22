@@ -1,0 +1,82 @@
+[
+  {
+    "rank": 1,
+    "title": "Confirm MVP scope and sprint delivery plan",
+    "priority": "Highest",
+    "points": 2,
+    "due": "2026-10-09",
+    "role": "Product Owner",
+    "label": "role-product-owner",
+    "description": "Business need: Give the team one agreed shopping journey and clear delivery boundaries for the first sprint.\n\nScope: Define login and registration, searchable catalog, cart, simulated checkout, order confirmation, product reviews, and phone/desktop usability. Specify INR pricing, sample inventory, required fields, shipping rules, and review eligibility. Exclude real payment charging and deployment.\n\nOwnership: Emad Farooqui is the assigned account, acting in the Product Owner role. Engineering and QA roles review feasibility and acceptance examples.\n\nDelivery plan: Agree scope and interface assumptions on October 8; finish the planning review by October 9, 17:00 IST.\n\nAcceptance criteria: Each backlog item has an estimate, priority, owner role, deadline, and measurable criteria. The complete shopper journey and edge cases are documented. Dependencies and simulated payment behavior are explicit.\n\nDependencies: None.\n\nQA checks: Review empty cart, invalid credentials, duplicate registration, unavailable inventory, checkout failure, and review submission cases.\n\nDefinition of done: Scope and acceptance examples are reviewed, dependencies are linked, and sprint responsibilities are recorded.\n\nWorkflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only.\n\nPlanned company cadence (IST): October 8 sprint planning, 45 minutes; October 9 and 12–15 daily Scrum at 09:30, 15 minutes; October 12 backlog refinement, 30 minutes; October 15 sprint review at 17:00, 30 minutes, followed by retrospective at 17:30, 20 minutes. These meetings are planned, not recorded as held. Emad Farooqui represents Product Owner, Engineering, QA, and Scrum facilitator roles in this exercise. Escalate blockers in the issue with owner, impact, and next action. Actual delivery requires reviewed changes, acceptance checks recorded, blocking defects resolved, and Product Owner acceptance.\n\nSimulation outcome: All eight stories were moved To Do → In Progress → Done on October 8 and the demo sprint was closed early. The Jira report records October 8, 18:00–18:14 IST; the planned end was October 15, 18:00 IST. Status changes do not certify application implementation or executed QA."
+  },
+  {
+    "rank": 2,
+    "title": "Develop API for login",
+    "priority": "High",
+    "points": 5,
+    "due": "2026-10-12",
+    "role": "Backend Engineer",
+    "label": "role-backend-engineer",
+    "description": "Business need: Let registered shoppers access their account and provide a dependable authentication foundation for checkout and reviews.\n\nScope: Define login, registration, session, and logout contracts. Validate input, store password hashes through the selected authentication framework, reject invalid credentials, and return consistent responses. Supply the registration page with an account-creation endpoint.\n\nOwnership: Emad Farooqui is the assigned account, acting in the Backend Engineer role. The frontend role integrates the contract; the QA role verifies success and failure paths.\n\nDelivery plan: Agree the API contract on October 9; complete implementation and integration review by October 12, 17:00 IST.\n\nAcceptance criteria: A valid account can log in and log out. Incorrect credentials and malformed requests receive clear errors. Duplicate email registration is rejected. Protected actions require a valid session. Responses never return passwords or hashes.\n\nDependencies: Confirm MVP scope and sprint delivery plan.\n\nQA checks: Valid/invalid login, malformed fields, duplicate email, session expiry, logout, and unauthenticated protected requests.\n\nDefinition of done: API behavior and integration examples are reviewed, relevant checks pass, and observed results are recorded.\n\nWorkflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only."
+  },
+  {
+    "rank": 3,
+    "title": "Create user registration page",
+    "priority": "High",
+    "points": 3,
+    "due": "2026-10-12",
+    "role": "Frontend Engineer",
+    "label": "role-frontend-engineer",
+    "description": "Business need: Allow a new shopper to create an account without confusing validation or repeated submissions.\n\nScope: Build name, email, password, and password-confirmation fields; connect the agreed registration API; provide inline validation, loading feedback, duplicate-email handling, and a route to login after successful registration.\n\nOwnership: Emad Farooqui is the assigned account, acting in the Frontend Engineer role. The backend role supplies the endpoint; Product Owner and QA roles review the user journey.\n\nDelivery plan: Build the form against the October 9 contract, then complete API integration and review by October 12, 17:00 IST.\n\nAcceptance criteria: Required fields are labeled. Invalid email, missing fields, and mismatched passwords show actionable messages. Duplicate email explains how to sign in. Submission is disabled while pending. A successful request confirms account creation and provides the next action.\n\nDependencies: Confirm MVP scope and sprint delivery plan; Develop API for login.\n\nQA checks: Valid registration, invalid fields, password mismatch, duplicate email, server failure, double submission, and keyboard navigation.\n\nDefinition of done: Reviewed UI meets the criteria, API integration is verified, and QA records outcomes for success and recovery paths.\n\nWorkflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only.\n\nSign-in scope: Build a labeled email/password sign-in form connected to the login API and provide a logout action. Valid sign-in opens the shopper account; invalid credentials show a helpful error, submission shows pending feedback, and logout ends the session. Include valid/invalid sign-in, expired-session, and logout checks in the planned QA review."
+  },
+  {
+    "rank": 4,
+    "title": "Build product catalog and search",
+    "priority": "High",
+    "points": 5,
+    "due": "2026-10-13",
+    "role": "Frontend Engineer",
+    "label": "role-frontend-engineer",
+    "description": "Business need: Help shoppers discover products and understand price and availability before adding them to a cart.\n\nScope: Display product images, names, INR prices, categories, descriptions, and stock state. Add name search, a category filter, product details, and Add to Cart controls. Provide loading, empty-result, missing-product, and service-error states.\n\nOwnership: Emad Farooqui is the assigned account, acting in the Frontend Engineer role. The backend role supplies product data; the Product Owner role approves sample content and filtering behavior.\n\nDelivery plan: Prepare product data and layout on October 12; finish catalog/search review by October 13, 17:00 IST.\n\nAcceptance criteria: Search is case-insensitive. Search and category filtering work together. Clearing filters restores results. Product selection shows the matching details. Unavailable products cannot be added. Empty results offer a useful recovery action.\n\nDependencies: Confirm MVP scope and sprint delivery plan. This item may progress in parallel with authentication after scope is agreed.\n\nQA checks: Combined filters, partial search, no results, missing images, unavailable stock, and product-data failure.\n\nDefinition of done: Product data, filtering, and purchase controls are reviewed; agreed checks pass with recorded evidence.\n\nWorkflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only."
+  },
+  {
+    "rank": 5,
+    "title": "Implement cart and checkout",
+    "priority": "Highest",
+    "points": 8,
+    "due": "2026-10-14",
+    "role": "Full Stack Engineer",
+    "label": "role-full-stack-engineer",
+    "description": "Business need: Convert selected products into a consistent order while giving shoppers control over quantities, totals, and checkout recovery.\n\nScope: Add/update/remove cart items, preserve cart state across refresh, calculate subtotal and agreed shipping, collect shipping/contact fields, revalidate inventory and totals, and submit a simulated payment followed by order creation.\n\nOwnership: Emad Farooqui is the assigned account, acting in the Full Stack Engineer role. The QA role checks calculations and failure recovery; the Product Owner role approves checkout behavior.\n\nDelivery plan: Complete cart integration on October 13; finish checkout integration and review by October 14, 17:00 IST.\n\nAcceptance criteria: Quantities respect available stock. Cart totals update correctly. Empty cart cannot submit checkout. Invalid fields identify corrective action. Duplicate submission is prevented. Simulated payment failure retains the cart; success creates one order identifier and clears the cart. No real payment is charged.\n\nDependencies: Develop API for login; Create user registration page; Build product catalog and search.\n\nQA checks: Quantity boundaries, total calculations, refresh, invalid fields, changed stock, duplicate submission, failure, and retry.\n\nDefinition of done: Reviewed integration meets the criteria and QA records successful and failed journeys.\n\nWorkflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only."
+  },
+  {
+    "rank": 6,
+    "title": "Add order confirmation and product reviews",
+    "priority": "Medium",
+    "points": 3,
+    "due": "2026-10-14",
+    "role": "Full Stack Engineer",
+    "label": "role-full-stack-engineer",
+    "description": "Business need: Reassure shoppers that their order was recorded and allow authenticated purchasers to share useful product feedback.\n\nScope: Display order identifier, products, quantities, INR total, shipping summary, and simulated payment status. Provide a product-review form with a 1-5 rating and text for products purchased by the signed-in shopper.\n\nOwnership: Emad Farooqui is the assigned account, acting in the Full Stack Engineer role. The Product Owner role confirms review eligibility; the QA role verifies order-data consistency and review restrictions.\n\nDelivery plan: Prepare confirmation and review components from the agreed interfaces; finish cart/order integration by October 14, 17:00 IST.\n\nAcceptance criteria: Confirmation matches the created order. Refresh never creates another order. Unknown orders show a recoverable error. Failed checkout never shows success. Eligible shoppers can submit one review per purchased product; invalid rating or empty text is rejected. Ineligible users receive an explanatory message.\n\nDependencies: Develop API for login; Build product catalog and search; Implement cart and checkout.\n\nQA checks: Confirmation totals, refresh, invalid order, review eligibility, rating boundaries, and duplicate review.\n\nDefinition of done: Components and integration are reviewed; QA records the agreed confirmation and review outcomes.\n\nWorkflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only."
+  },
+  {
+    "rank": 7,
+    "title": "Polish responsive layout and accessibility",
+    "priority": "Medium",
+    "points": 2,
+    "due": "2026-10-15",
+    "role": "Frontend Engineer",
+    "label": "role-frontend-engineer",
+    "description": "Business need: Make the complete shopping journey usable on phones, desktops, and with keyboard navigation.\n\nScope: Review registration, login, catalog, cart, checkout, confirmation, and review interfaces. Fix layout overflow, unreadable content, missing input labels, weak focus visibility, inaccessible validation feedback, and unusable controls at agreed screen sizes.\n\nOwnership: Emad Farooqui is the assigned account, acting in the Frontend Engineer role. The Product Owner role reviews presentation; the QA role verifies responsive and accessibility behavior.\n\nDelivery plan: Review completed interfaces on October 14; resolve observed issues and finish the usability check by October 15, 17:00 IST.\n\nAcceptance criteria: Agreed phone and desktop viewports show no unintended horizontal overflow. Text and controls remain readable. Keyboard users can complete registration and checkout. Focus is visible. Input errors identify the relevant field. Product images have meaningful alternative descriptions where needed.\n\nDependencies: Create user registration page; Build product catalog and search; Implement cart and checkout; Add order confirmation and product reviews.\n\nQA checks: Agreed viewport matrix, keyboard journey, field-error announcements, and a screen-reader spot check.\n\nDefinition of done: Presentation review accepts the interfaces and QA records checks with unresolved issues explicitly listed.\n\nWorkflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only."
+  },
+  {
+    "rank": 8,
+    "title": "Run QA and prepare sprint review",
+    "priority": "High",
+    "points": 4,
+    "due": "2026-10-15",
+    "role": "QA Engineer",
+    "label": "role-qa-engineer",
+    "description": "Business need: Give stakeholders evidence of the sprint outcome and identify defects before accepting the shopping journey.\n\nScope: Prepare and execute planned checks for registration/login, catalog/search, cart calculations, checkout success/failure, confirmation, reviews, responsive behavior, and accessibility. Log defects, coordinate fixes/retests, and prepare a sprint-review script and results record.\n\nOwnership: Emad Farooqui is the assigned account, acting in the QA Engineer role. Engineering roles resolve defects; the Product Owner role assesses acceptance; the Scrum Master role facilitates review and retrospective.\n\nDelivery plan: Prepare cases while implementation progresses; perform final integration review and present results by October 15, 17:00 IST.\n\nAcceptance criteria: Every story has a recorded test outcome or explicit unverified state. Blocking defects have an owner and disposition. The review covers the complete shopper journey. Planned tests are clearly distinguished from executed tests. Remaining work and retrospective actions are documented.\n\nDependencies: All seven preceding backlog items.\n\nQA checks: End-to-end success, failure/retry, quantity and stock boundaries, totals, refresh, authentication, review restrictions, phone layout, and keyboard navigation.\n\nDefinition of done: Review evidence is complete, actual blocking defects are resolved/retested, and Product Owner acceptance is recorded.\n\nWorkflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only."
+  }
+]

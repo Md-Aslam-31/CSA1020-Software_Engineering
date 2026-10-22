@@ -1,0 +1,28 @@
+✔ standard attendees retain arrival order when seats are limited (5.456ms)
+✔ unused seats remain available (0.517ms)
+✔ an empty workshop keeps all seats available (0.4387ms)
+✔ the supported capacity boundaries are zero and one hundred (3.4351ms)
+✔ rejects invalid capacity -1 (number) (1.7176ms)
+✔ rejects invalid capacity 101 (number) (0.3789ms)
+✔ rejects invalid capacity 1.5 (number) (0.341ms)
+✔ rejects invalid capacity 3 (string) (0.3086ms)
+✔ rejects invalid capacity null (object) (0.2836ms)
+✔ rejects invalid capacity undefined (undefined) (0.2922ms)
+✔ rejects invalid capacity NaN (number) (0.2675ms)
+✔ rejects invalid capacity Infinity (number) (0.3812ms)
+✔ rejects duplicate attendee IDs (0.8105ms)
+✔ rejects a non-array roster and incomplete records (0.7411ms)
+✔ VIP attendees take the first seats in their original arrival order (3.8314ms)
+✔ capacity below the VIP count queues the later VIP before standard requests (0.3938ms)
+✔ every request is assigned exactly once to confirmed seats or waiting list (0.4424ms)
+✔ zero capacity queues everyone without assigning a seat (0.2838ms)
+✔ sufficient capacity clears the waiting list (0.3273ms)
+✔ priority sorting does not mutate a frozen roster or its attendee objects (0.3511ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 286.9025

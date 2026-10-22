@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SwiftBus — a complete local bus booking experience for testing.">
+  <title>SwiftBus — Book your next journey</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%234f46e5'/%3E%3Cpath d='M18 17h28a6 6 0 016 6v21a5 5 0 01-5 5h-2v4h-6v-4H25v4h-6v-4h-2a5 5 0 01-5-5V23a6 6 0 016-6zm1 7v12h26V24H19zm3 17a3 3 0 100 6 3 3 0 000-6zm20 0a3 3 0 100 6 3 3 0 000-6z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#search"><span class="brand-mark">S<span>↗</span></span><span>SwiftBus<small>A better way to travel.</small></span></a>
+      <p class="nav-heading">YOUR JOURNEY</p>
+      <nav>
+        <a class="nav-item" href="#search" data-nav="search"><span aria-hidden="true">⌕</span>Search trips</a>
+        <a class="nav-item" href="#bookings" data-nav="bookings"><span aria-hidden="true">▤</span>My bookings</a>
+        <a class="nav-item" href="#saved" data-nav="saved"><span aria-hidden="true">♡</span>Saved routes</a>
+        <a class="nav-item" href="#reviews" data-nav="reviews"><span aria-hidden="true">☆</span>Reviews</a>
+        <a class="nav-item" href="#support" data-nav="support"><span aria-hidden="true">?</span>Help & support</a>
+      </nav>
+      <div class="sidebar-note"><span class="note-icon">✦</span><strong>The journey starts here.</strong><p>Find your route, pick your seat, and enjoy the ride.</p><span class="local-pill"><i></i>Local testing</span></div>
+      <a class="profile" href="#account" id="sidebar-profile"><span class="avatar">S</span><span><strong>Welcome to SwiftBus</strong><small>Sign in to your account</small></span><b>›</b></a>
+    </aside>
+    <div class="main">
+      <header class="topbar"><button class="icon-button mobile-menu" id="menu-button" aria-label="Toggle navigation" aria-expanded="false">☰</button><div><p class="eyebrow" id="page-kicker">TRAVEL MADE SIMPLE</p><h1 id="page-title">Find your next journey</h1></div><div class="header-actions"><span class="testing-badge">DEMO · NO REAL PAYMENTS</span><a href="#login" class="button small secondary" id="header-account">Sign in</a></div></header>
+      <main id="app-content" class="content" tabindex="-1"><div class="loading-panel" role="status"><span class="spinner"></span>Loading SwiftBus…</div></main>
+      <footer class="footer"><span>© SwiftBus · Your next journey, simplified.</span><span>Local prototype · Tickets are not valid for travel.</span></footer>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="cancel-dialog"><div class="dialog-icon">↶</div><h2>Cancel this booking?</h2><p id="cancel-description"></p><p class="muted">This is a simulated cancellation. Your seats will become available again.</p><div class="form-error" id="cancel-error" role="alert"></div><div class="dialog-actions"><button class="button secondary" id="cancel-close">Keep booking</button><button class="button danger" id="cancel-confirm">Cancel booking</button></div></dialog>
+  <dialog id="review-dialog"><div class="dialog-icon">☆</div><h2>Delete your review?</h2><p id="review-delete-description"></p><p class="muted">The review will be removed from this local testing app.</p><div class="form-error" role="alert"></div><div class="dialog-actions"><button class="button secondary" id="review-delete-close">Keep review</button><button class="button danger" id="review-delete-confirm">Delete review</button></div></dialog>
+  <noscript><div class="noscript">Enable JavaScript to use the SwiftBus booking website.</div></noscript>
+</body>
+</html>

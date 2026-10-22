@@ -1,0 +1,621 @@
+Browser tab: 191812395, Title: "Jira", URL: "https://emadfar2020.atlassian.net/jira/software/c/projects/CDS/boards/2/timeline?rangeMode=WEEKS".
+1 AXWebArea Jira, URL: emadfar2020.atlassian.net/jira/software/c/projects/CDS/boards/2/timeline?rangeMode=WEEKS
+	2 container jira
+		3 container jira-frontend
+			4 container
+				5 text Skip to:
+				6 content list
+					9 link Description: Main Content, Value: emadfar2020.atlassian.net/jira/software/c/projects/CDS/boards/2/timeline?rangeMode=WEEKS#jira-page-layout-main
+			510 container jira-page-layout-main
+				511 container ak-project-view-navigation
+					512 heading CDS board, Value: 1
+						513 text CDS board
+					514 pop up button Link contributing teams
+					515 pop up button (collapsed) Board actions for CDS board, Secondary Actions: Expand
+					516 button Exit full screen
+				517 container
+					518 text field (settable) Search timeline
+					519 container Filter by assignee
+						520 text Filter by assignee
+						521 checkbox (settable, integer) Description: Filter assignees by Unassigned, Value: 0, ID: assignee-empty
+						522 checkbox (settable, integer) Description: Filter assignees by Emad Farooqui, Value: 0, ID: assignee-712020:6d07c473-1177-4de0-842f-40ee3e2d6bc1
+					523 pop up button (collapsed) Description: Filter, Secondary Actions: Expand
+					524 pop up button (collapsed) Quick filters, Secondary Actions: Expand
+						525 text Quick filters
+					526 container
+						527 pop up button (collapsed) View settings, Secondary Actions: Expand
+					528 pop up button (collapsed) More actions on the view options, Secondary Actions: Expand
+					530 container
+						531 container
+							532 table Work (column headers with buttons are sortable)
+								533 container
+									534 row Collapse parent work items Work More actions for Work Status More actions for Status Assignee More actions for Assignee
+										535 cell
+											536 button Collapse parent work items
+											537 text Work
+											538 pop up button (collapsed) More actions for Work, Secondary Actions: Expand
+										539 cell
+											540 text Status
+											541 pop up button (collapsed) More actions for Status, Secondary Actions: Expand
+										542 cell
+											543 text Assignee
+											544 pop up button (collapsed) More actions for Assignee, Secondary Actions: Expand
+										545 cell
+											546 container
+												547 container
+													548 text Oct '25 6 7 8 9 10 11 12
+												549 container
+													550 text Oct '25 13 14 15 16 17 18 19
+												551 container
+													552 text Oct '25 20 21 22 23 24 25 26
+												553 container
+													554 text Oct / Nov '25 27 28 29 30 31 1 2
+												555 container
+													556 text Nov '25 3 4 5 6 7 8 9
+												557 container
+													558 text Nov '25 10 11 12 13 14 15 16
+												559 container
+													560 text Nov '25 17 18 19 20 21 22 23
+												561 container
+													562 text Nov '25 24 25 26 27 28 29 30
+												563 container
+													564 text Dec '25 1 2 3 4 5 6 7
+												565 container
+													566 text Dec '25 8 9 10 11 12 13 14
+												567 container
+													568 text Dec '25 15 16 17 18 19 20 21
+												569 container
+													570 text Dec '25 22 23 24 25 26 27 28
+												571 container
+													572 text Dec / Jan 29 30 31 1 2 3 4
+												573 container
+													574 text Jan 5 6 7 8 9 10 11
+												575 container
+													576 text Jan 12 13 14 15 16 17 18
+												577 container
+													578 text Jan 19 20 21 22 23 24 25
+												579 container
+													580 text Jan / Feb 26 27 28 29 30 31 1
+												581 container
+													582 text Feb 2 3 4 5 6 7 8
+												583 container
+													584 text Feb 9 10 11 12 13 14 15
+												585 container
+													586 text Feb 16 17 18 19 20 21 22
+												587 container
+													588 text Feb / Mar 23 24 25 26 27 28 1
+												589 container
+													590 text Mar 2 3 4 5 6 7 8
+												591 container
+													592 text Mar 9 10 11 12 13 14 15
+												593 container
+													594 text Mar 16 17 18 19 20 21 22
+												595 container
+													596 text Mar 23 24 25 26 27 28 29
+												597 container
+													598 text Mar / Apr 30 31 1 2 3 4 5
+												599 container
+													600 text Apr 6 7 8 9 10 11 12
+												601 container
+													602 text Apr 13 14 15 16 17 18 19
+												603 container
+													604 text Apr 20 21 22 23 24 25 26
+												605 container
+													606 text Apr / May 27 28 29 30 1 2 3
+												607 container
+													608 text May 4 5 6 7 8 9 10
+												609 container
+													610 text May 11 12 13 14 15 16 17
+												611 container
+													612 text May 18 19 20 21 22 23 24
+												613 container
+													614 text May 25 26 27 28 29 30 31
+												615 container
+													616 text Jun 1 2 3 4 5 6 7
+												617 container
+													618 text Jun 8 9 10 11 12 13 14
+												619 container
+													620 text Jun 15 16 17 18 19 20 21
+												621 container
+													622 text Jun 22 23 24 25 26 27 28
+												623 container
+													624 text Jun / Jul 29 30 1 2 3 4 5
+												625 container
+													626 text Jul 6 7 8 9 10 11 12
+												627 container
+													628 text Jul 13 14 15 16 17 18 19
+												629 container
+													630 text Jul 20 21 22 23 24 25 26
+												631 container
+													632 text Jul / Aug 27 28 29 30 31 1 2
+												633 container
+													634 text Aug 3 4 5 6 7 8 9
+												635 container
+													636 text Aug 10 11 12 13 14 15 16
+												637 container
+													638 text Aug 17 18 19 20 21 22 23
+												639 container
+													640 text Aug 24 25 26 27 28 29 30
+												641 container
+													642 text Aug / Sep 31 1 2 3 4 5 6
+												643 container
+													644 text Sep 7 8 9 10 11 12 13
+												645 container
+													646 text Sep 14 15 16 17 18 19 20
+												647 container
+													648 text Sep 21 22 23 24 25 26 27
+												649 container
+													650 text Sep / Oct 28 29 30 1 2 3 4
+												651 container Today is 10/8/2026
+													652 text Oct 5 6 7 8 9 10 11
+												653 container
+													654 text Oct 12 13 14 15 16 17 18
+												655 container
+													656 text Oct 19 20 21 22 23 24 25
+												657 container
+													658 text Oct / Nov 26 27 28 29 30 31 1
+												659 container
+													660 text Nov 2 3 4 5 6 7 8
+												661 container
+													662 text Nov 9 10 11 12 13 14 15
+												663 container
+													664 text Nov 16 17 18 19 20 21 22
+												665 container
+													666 text Nov 23 24 25 26 27 28 29
+												667 container
+													668 text Nov / Dec 30 1 2 3 4 5 6
+												669 container
+													670 text Dec 7 8 9 10 11 12 13
+												671 container
+													672 text Dec 14 15 16 17 18 19 20
+												673 container
+													674 text Dec 21 22 23 24 25 26 27
+												675 container
+													676 text Dec / Jan 28 29 30 31 1 2 3
+												677 container
+													678 text Jan '27 4 5 6 7 8 9 10
+												679 container
+													680 text Jan '27 11 12 13 14 15 16 17
+												681 container
+													682 text Jan '27 18 19 20 21 22 23 24
+												683 container
+													684 text Jan '27 25 26 27 28 29 30 31
+												685 container
+													686 text Feb '27 1 2 3 4 5 6 7
+												687 container
+													688 text Feb '27 8 9 10 11 12 13 14
+												689 container
+													690 text Feb '27 15 16 17 18 19 20 21
+												691 container
+													692 text Feb '27 22 23 24 25 26 27 28
+												693 container
+													694 text Mar '27 1 2 3 4 5 6 7
+												695 container
+													696 text Mar '27 8 9 10 11 12 13 14
+												697 container
+													698 text Mar '27 15 16 17 18 19 20 21
+												699 container
+													700 text Mar '27 22 23 24 25 26 27 28
+												701 container
+													702 text Mar / Apr '27 29 30 31 1 2 3 4
+												703 container
+													704 text Apr '27 5 6 7 8 9 10 11
+												705 container
+													706 text Apr '27 12 13 14 15 16 17 18
+												707 container
+													708 text Apr '27 19 20 21 22 23 24 25
+												709 container
+													710 text Apr / May '27 26 27 28 29 30 1 2
+												711 container
+													712 text May '27 3 4 5 6 7 8 9
+												713 container
+													714 text May '27 10 11 12 13 14 15 16
+												715 container
+													716 text May '27 17 18 19 20 21 22 23
+												717 container
+													718 text May '27 24 25 26 27 28 29 30
+												719 container
+													720 text May / Jun '27 31 1 2 3 4 5 6
+												721 container
+													722 text Jun '27 7 8 9 10 11 12 13
+												723 container
+													724 text Jun '27 14 15 16 17 18 19 20
+												725 container
+													726 text Jun '27 21 22 23 24 25 26 27
+												727 container
+													728 text Jun / Jul '27 28 29 30 1 2 3 4
+												729 container
+													730 text Jul '27 5 6 7 8 9 10 11
+												731 container
+													732 text Jul '27 12 13 14 15 16 17 18
+												733 container
+													734 text Jul '27 19 20 21 22 23 24 25
+												735 container
+													736 text Jul / Aug '27 26 27 28 29 30 31 1
+												737 container
+													738 text Aug '27 2 3 4 5 6 7 8
+												739 container
+													740 text Aug '27 9 10 11 12 13 14 15
+												741 container
+													742 text Aug '27 16 17 18 19 20 21 22
+												743 container
+													744 text Aug '27 23 24 25 26 27 28 29
+												745 container
+													746 text Aug / Sep '27 30 31 1 2 3 4 5
+												747 container
+													748 text Sep '27 6 7 8 9 10 11 12
+												749 container
+													750 text Sep '27 13 14 15 16 17 18 19
+												751 container
+													752 text Sep '27 20 21 22 23 24 25 26
+												753 container
+													754 text Sep / Oct '27 27 28 29 30 1 2 3
+												755 container
+													756 text Oct '27 4 5 6 7 8 9 10
+												757 container
+													758 text Oct '27 11 12 13 14 15 16 17
+												759 container
+													760 text Oct '27 18 19 20 21 22 23 24
+												761 container
+													762 text Oct '27 25 26 27 28 29 30 31
+												763 container
+													764 text Nov '27 1 2 3 4 5 6 7
+												765 container
+													766 text Nov '27 8 9 10 11 12 13 14
+												767 container
+													768 text Nov '27 15 16 17 18 19 20 21
+												769 container
+													770 text Nov '27 22 23 24 25 26 27 28
+												771 container
+													772 text Nov / Dec '27 29 30 1 2 3 4 5
+												773 container
+													774 text Dec '27 6 7 8 9 10 11 12
+												775 container
+													776 text Dec '27 13 14 15 16 17 18 19
+												777 container
+													778 text Dec '27 20 21 22 23 24 25 26
+												779 container
+													780 text Dec / Jan '27 27 28 29 30 31 1 2
+												781 container
+													782 text Jan '28 3 4 5 6 7 8 9
+												783 container
+													784 text Jan '28 10 11 12 13 14 15 16
+												785 container
+													786 text Jan '28 17 18 19 20 21 22 23
+												787 container
+													788 text Jan '28 24 25 26 27 28 29 30
+												789 container
+													790 text Jan / Feb '28 31 1 2 3 4 5 6
+												791 container
+													792 text Feb '28 7 8 9 10 11 12 13
+												793 container
+													794 text Feb '28 14 15 16 17 18 19 20
+												795 container
+													796 text Feb '28 21 22 23 24 25 26 27
+												797 container
+													798 text Feb / Mar '28 28 29 1 2 3 4 5
+												799 container
+													800 text Mar '28 6 7 8 9 10 11 12
+												801 container
+													802 text Mar '28 13 14 15 16 17 18 19
+												803 container
+													804 text Mar '28 20 21 22 23 24 25 26
+												805 container
+													806 text Mar / Apr '28 27 28 29 30 31 1 2
+												807 container
+													808 text Apr '28 3 4 5 6 7 8 9
+												809 container
+													810 text Apr '28 10 11 12 13 14 15 16
+												811 container
+													812 text Apr '28 17 18 19 20 21 22 23
+												813 container
+													814 text Apr '28 24 25 26 27 28 29 30
+												815 container
+													816 text May '28 1 2 3 4 5 6 7
+												817 container
+													818 text May '28 8 9 10 11 12 13 14
+												819 container
+													820 text May '28 15 16 17 18 19 20 21
+												821 container
+													822 text May '28 22 23 24 25 26 27 28
+												823 container
+													824 text May / Jun '28 29 30 31 1 2 3 4
+												825 container
+													826 text Jun '28 5 6 7 8 9 10 11
+												827 container
+													828 text Jun '28 12 13 14 15 16 17 18
+												829 container
+													830 text Jun '28 19 20 21 22 23 24 25
+												831 container
+													832 text Jun / Jul '28 26 27 28 29 30 1 2
+												833 container
+													834 text Jul '28 3 4 5 6 7 8 9
+												835 container
+													836 text Jul '28 10 11 12 13 14 15 16
+												837 container
+													838 text Jul '28 17 18 19 20 21 22 23
+												839 container
+													840 text Jul '28 24 25 26 27 28 29 30
+												841 container
+													842 text Jul / Aug '28 31 1 2 3 4 5 6
+												843 container
+													844 text Aug '28 7 8 9 10 11 12 13
+												845 container
+													846 text Aug '28 14 15 16 17 18 19 20
+												847 container
+													848 text Aug '28 21 22 23 24 25 26 27
+												849 container
+													850 text Aug / Sep '28 28 29 30 31 1 2 3
+												851 container
+													852 text Sep '28 4 5 6 7 8 9 10
+												853 container
+													854 text Sep '28 11 12 13 14 15 16 17
+												855 container
+													856 text Sep '28 18 19 20 21 22 23 24
+												857 container
+													858 text Sep / Oct '28 25 26 27 28 29 30 1
+												859 container
+													860 text Oct '28 2 3 4 5 6 7 8
+									861 row Sprints 1 sprint. Commerce MVP - Sprint 1 Demo (from 2026/10/08 to 2026/10/15) 1 sprint. Commerce MVP - Sprint 1 Demo 2 (from 2026/10/15 to 2026/10/22)
+										862 cell
+											863 text Sprints
+										864 cell
+										865 cell
+										866 cell
+											867 container
+												868 pop up button (collapsed) Description: 1 sprint. Commerce MVP - Sprint 1 Demo (from 2026/10/08 to 2026/10/15), Secondary Actions: Expand
+													869 text Commerce MVP - Sprint 1 Demo
+												870 pop up button (collapsed) Description: 1 sprint. Commerce MVP - Sprint 1 Demo 2 (from 2026/10/15 to 2026/10/22), Secondary Actions: Expand
+									871 row Releases
+										872 cell
+											873 text Releases
+										874 cell
+										875 cell
+										876 cell
+								877 row (selectable) Collapse hierarchy Epic CDS-9 is not resolved Copy link Done - Scope and Sprint Planning 1 Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/08 until due date 2026/10/09 with color DARK_GREEN View dependency details
+									878 cell
+										879 container
+											880 button (expanded) Collapse hierarchy, Secondary Actions: Collapse
+											881 image Epic
+											882 link Description: CDS-9 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-9
+											883 button Copy link
+											884 button Done - Scope and Sprint Planning
+									885 cell
+										886 progress indicator Description: Progress Bar, Value: 1
+									887 cell
+										888 button Emad Farooqui- edit Assignee
+										889 container
+											890 image Emad Farooqui
+											891 text Emad Farooqui
+									892 cell
+										893 container
+											894 button Start date 2026/10/08 until due date 2026/10/09 with color DARK_GREEN
+											895 container
+												896 button View dependency details
+								981 row (selectable) Story CDS-1 is not resolved Copy link Confirm MVP scope and sprint delivery plan Done - Change status Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/08 until due date 2026/10/09 with color DARK_GREEN View dependency details
+									982 cell
+										983 container
+											984 image Story
+											985 link Description: CDS-1 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-1
+											986 button Copy link
+											987 button Confirm MVP scope and sprint delivery plan
+									988 cell
+										989 button (collapsed) Description: Done - Change status, Secondary Actions: Expand
+									990 cell
+										991 button Emad Farooqui- edit Assignee
+										992 container
+											993 image Emad Farooqui
+											994 text Emad Farooqui
+									995 cell
+										996 container
+											997 button Start date 2026/10/08 until due date 2026/10/09 with color DARK_GREEN
+											998 container
+												999 button View dependency details
+								897 row (selectable) Collapse hierarchy Epic CDS-10 is not resolved Copy link In Progress - Login, Registration and Catalog 3 Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/09 until due date 2026/10/13 with color DARK_BLUE View dependency details
+									898 cell
+										899 container
+											900 button (expanded) Collapse hierarchy, Secondary Actions: Collapse
+											901 image Epic
+											902 link Description: CDS-10 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-10
+											903 button Copy link
+											904 button In Progress - Login, Registration and Catalog
+									905 cell
+										906 progress indicator Description: Progress Bar, Value: 3
+									907 cell
+										908 button Emad Farooqui- edit Assignee
+										909 container
+											910 image Emad Farooqui
+											911 text Emad Farooqui
+									912 cell
+										913 container
+											914 button Start date 2026/10/09 until due date 2026/10/13 with color DARK_BLUE
+											915 container
+												916 button View dependency details
+								1000 row (selectable) Story CDS-2 is not resolved Copy link Develop API for login In Progress - Change status Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/09 until due date 2026/10/12 with color DARK_BLUE View dependency details
+									1001 cell
+										1002 container
+											1003 image Story
+											1004 link Description: CDS-2 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-2
+											1005 button Copy link
+											1006 button Develop API for login
+									1007 cell
+										1008 button (collapsed) Description: In Progress - Change status, Secondary Actions: Expand
+									1009 cell
+										1010 button Emad Farooqui- edit Assignee
+										1011 container
+											1012 image Emad Farooqui
+											1013 text Emad Farooqui
+									1014 cell
+										1015 container
+											1016 button Start date 2026/10/09 until due date 2026/10/12 with color DARK_BLUE
+											1017 container
+												1018 button View dependency details
+								1019 row (selectable) Story CDS-3 is not resolved Copy link Create user registration page In Progress - Change status Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/09 until due date 2026/10/12 with color DARK_BLUE View dependency details
+									1020 cell
+										1021 container
+											1022 image Story
+											1023 link Description: CDS-3 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-3
+											1024 button Copy link
+											1025 button Create user registration page
+									1026 cell
+										1027 button (collapsed) Description: In Progress - Change status, Secondary Actions: Expand
+									1028 cell
+										1029 button Emad Farooqui- edit Assignee
+										1030 container
+											1031 image Emad Farooqui
+											1032 text Emad Farooqui
+									1033 cell
+										1034 container
+											1035 button Start date 2026/10/09 until due date 2026/10/12 with color DARK_BLUE
+											1036 container
+												1037 button View dependency details
+								1038 row (selectable) Story CDS-4 is not resolved Copy link Build product catalog and search In Progress - Change status Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/12 until due date 2026/10/13 with color DARK_BLUE View dependency details
+									1039 cell
+										1040 container
+											1041 image Story
+											1042 link Description: CDS-4 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-4
+											1043 button Copy link
+											1044 button Build product catalog and search
+									1045 cell
+										1046 button (collapsed) Description: In Progress - Change status, Secondary Actions: Expand
+									1047 cell
+										1048 button Emad Farooqui- edit Assignee
+										1049 container
+											1050 image Emad Farooqui
+											1051 text Emad Farooqui
+									1052 cell
+										1053 container
+											1054 button Start date 2026/10/12 until due date 2026/10/13 with color DARK_BLUE
+											1055 container
+												1056 button View dependency details
+								917 row (selectable) Collapse hierarchy Epic CDS-11 is not resolved Copy link To Do - Checkout, Reviews and Quality Assurance 4 Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/13 until due date 2026/10/15 with color DARK_GREY View dependency details
+									918 cell
+										919 container
+											920 button (expanded) Collapse hierarchy, Secondary Actions: Collapse
+											921 image Epic
+											922 link Description: CDS-11 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-11
+											923 button Copy link
+											924 button To Do - Checkout, Reviews and Quality Assurance
+									925 cell
+										926 progress indicator Description: Progress Bar, Value: 4
+									927 cell
+										928 button Emad Farooqui- edit Assignee
+										929 container
+											930 image Emad Farooqui
+											931 text Emad Farooqui
+									932 cell
+										933 container
+											934 button Start date 2026/10/13 until due date 2026/10/15 with color DARK_GREY
+											935 container
+												936 button View dependency details
+								1057 row (selectable) Story CDS-5 is not resolved Copy link Implement cart and checkout To Do - Change status Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/13 until due date 2026/10/14 with color DARK_GREY View dependency details
+									1058 cell
+										1059 container
+											1060 image Story
+											1061 link Description: CDS-5 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-5
+											1062 button Copy link
+											1063 button Implement cart and checkout
+									1064 cell
+										1065 button (collapsed) Description: To Do - Change status, Secondary Actions: Expand
+									1066 cell
+										1067 button Emad Farooqui- edit Assignee
+										1068 container
+											1069 image Emad Farooqui
+											1070 text Emad Farooqui
+									1071 cell
+										1072 container
+											1073 button Start date 2026/10/13 until due date 2026/10/14 with color DARK_GREY
+											1074 container
+												1075 button View dependency details
+								1076 row (selectable) Story CDS-6 is not resolved Copy link Add order confirmation and product reviews To Do - Change status Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/13 until due date 2026/10/14 with color DARK_GREY View dependency details
+									1077 cell
+										1078 container
+											1079 image Story
+											1080 link Description: CDS-6 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-6
+											1081 button Copy link
+											1082 button Add order confirmation and product reviews
+									1083 cell
+										1084 button (collapsed) Description: To Do - Change status, Secondary Actions: Expand
+									1085 cell
+										1086 button Emad Farooqui- edit Assignee
+										1087 container
+											1088 image Emad Farooqui
+											1089 text Emad Farooqui
+									1090 cell
+										1091 container
+											1092 button Start date 2026/10/13 until due date 2026/10/14 with color DARK_GREY
+											1093 container
+												1094 button View dependency details
+								1095 row (selectable) Story CDS-7 is not resolved Copy link Polish responsive layout and accessibility To Do - Change status Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/14 until due date 2026/10/15 with color DARK_GREY View dependency details
+									1096 cell
+										1097 container
+											1098 image Story
+											1099 link Description: CDS-7 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-7
+											1100 button Copy link
+											1101 button Polish responsive layout and accessibility
+									1102 cell
+										1103 button (collapsed) Description: To Do - Change status, Secondary Actions: Expand
+									1104 cell
+										1105 button Emad Farooqui- edit Assignee
+										1106 container
+											1107 image Emad Farooqui
+											1108 text Emad Farooqui
+									1109 cell
+										1110 container
+											1111 button Start date 2026/10/14 until due date 2026/10/15 with color DARK_GREY
+											1112 container
+												1113 button View dependency details
+								1114 row (selectable) Story CDS-8 is not resolved Copy link Run QA and prepare sprint review To Do - Change status Emad Farooqui- edit Assignee Emad Farooqui Emad Farooqui Start date 2026/10/14 until due date 2026/10/15 with color DARK_GREY View dependency details
+									1115 cell
+										1116 container
+											1117 image Story
+											1118 link Description: CDS-8 is not resolved, Value: emadfar2020.atlassian.net/browse/CDS-8
+											1119 button Copy link
+											1120 button Run QA and prepare sprint review
+									1121 cell
+										1122 button (collapsed) Description: To Do - Change status, Secondary Actions: Expand
+									1123 cell
+										1124 button Emad Farooqui- edit Assignee
+										1125 container
+											1126 image Emad Farooqui
+											1127 text Emad Farooqui
+									1128 cell
+										1129 container
+											1130 button Start date 2026/10/14 until due date 2026/10/15 with color DARK_GREY
+											1131 container
+												1132 button View dependency details
+							937 image
+								1133 image
+								1134 image
+								1135 image
+								1136 image
+								1137 image
+								1138 image
+								1139 image
+								1140 image
+								1141 image
+								1142 image
+								1143 image
+								1144 image
+								1145 image
+								1146 image
+								1147 image
+								1148 image
+								1149 image
+								1150 image
+								1151 image
+								1152 image
+								1153 image
+							978 container
+								979 button Create
+								980 text 3 of 3
+			502 container
+				503 button Today
+				504 Timeline view to show as
+					505 radio button Weeks, Value: 1, ID: test-WEEKS
+					506 radio button Months, Value: 0, ID: test-MONTHS
+					507 radio button Quarters, Value: 0, ID: test-QUARTERS
+				508 pop up button (collapsed) Legend, Secondary Actions: Expand
+				509 button (expanded) Timeline time period, Secondary Actions: Collapse
+
+The focused UI element is 536 button Collapse parent work items

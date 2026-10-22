@@ -1,0 +1,213 @@
+{
+  "checks": [
+    {
+      "check": "initial combined policy",
+      "capacity": "3",
+      "capacityError": "",
+      "confirmed": "3",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Amira Santos"
+      ],
+      "message": "Sample plan ready. Try changing the capacity.",
+      "nameError": "",
+      "remaining": "0",
+      "total": "6",
+      "waiting": "3",
+      "waitingNames": [
+        "Theo Park",
+        "Luca Moretti",
+        "Owen Clarke"
+      ]
+    },
+    {
+      "check": "edit capacity to four seats",
+      "capacity": "4",
+      "capacityError": "",
+      "confirmed": "4",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Amira Santos",
+        "Theo Park"
+      ],
+      "message": "Seat plan refreshed.",
+      "nameError": "",
+      "remaining": "0",
+      "total": "6",
+      "waiting": "2",
+      "waitingNames": [
+        "Luca Moretti",
+        "Owen Clarke"
+      ]
+    },
+    {
+      "check": "reject 101 seats and retain prior plan",
+      "capacity": "101",
+      "capacityError": "Enter a whole number of seats between 0 and 100. Your last valid capacity is kept.",
+      "confirmed": "4",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Amira Santos",
+        "Theo Park"
+      ],
+      "message": "Seat plan refreshed.",
+      "nameError": "",
+      "remaining": "0",
+      "total": "6",
+      "waiting": "2",
+      "waitingNames": [
+        "Luca Moretti",
+        "Owen Clarke"
+      ]
+    },
+    {
+      "check": "add VIP while invalid capacity uses last valid four seats",
+      "capacity": "101",
+      "capacityError": "Enter a whole number of seats between 0 and 100. Your last valid capacity is kept.",
+      "confirmed": "4",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Iris Cole",
+        "Amira Santos"
+      ],
+      "message": "Iris Cole added. Seat plan updated. Using the last valid capacity of 4 seats.",
+      "nameError": "",
+      "remaining": "0",
+      "total": "7",
+      "waiting": "3",
+      "waitingNames": [
+        "Theo Park",
+        "Luca Moretti",
+        "Owen Clarke"
+      ]
+    },
+    {
+      "check": "three seats now prioritize all three VIP attendees",
+      "capacity": "3",
+      "capacityError": "",
+      "confirmed": "3",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Iris Cole"
+      ],
+      "message": "Seat plan refreshed.",
+      "nameError": "",
+      "remaining": "0",
+      "total": "7",
+      "waiting": "4",
+      "waitingNames": [
+        "Amira Santos",
+        "Theo Park",
+        "Luca Moretti",
+        "Owen Clarke"
+      ]
+    },
+    {
+      "check": "remove attendee updates allocation",
+      "capacity": "3",
+      "capacityError": "",
+      "confirmed": "3",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Amira Santos"
+      ],
+      "message": "Iris Cole removed. Seat plan updated.",
+      "nameError": "",
+      "remaining": "0",
+      "total": "6",
+      "waiting": "3",
+      "waitingNames": [
+        "Theo Park",
+        "Luca Moretti",
+        "Owen Clarke"
+      ]
+    },
+    {
+      "check": "zero seats queues every request",
+      "capacity": "0",
+      "capacityError": "",
+      "confirmed": "0",
+      "confirmedNames": [],
+      "message": "Seat plan refreshed.",
+      "nameError": "",
+      "remaining": "0",
+      "total": "6",
+      "waiting": "6",
+      "waitingNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Amira Santos",
+        "Theo Park",
+        "Luca Moretti",
+        "Owen Clarke"
+      ]
+    },
+    {
+      "check": "maximum capacity accepted with ninety-four remaining",
+      "capacity": "100",
+      "capacityError": "",
+      "confirmed": "6",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Amira Santos",
+        "Theo Park",
+        "Luca Moretti",
+        "Owen Clarke"
+      ],
+      "message": "Seat plan refreshed.",
+      "nameError": "",
+      "remaining": "94",
+      "total": "6",
+      "waiting": "0",
+      "waitingNames": []
+    },
+    {
+      "check": "blank attendee name rejected",
+      "capacity": "100",
+      "capacityError": "",
+      "confirmed": "6",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Amira Santos",
+        "Theo Park",
+        "Luca Moretti",
+        "Owen Clarke"
+      ],
+      "message": "Seat plan refreshed.",
+      "nameError": "Enter an attendee name between 1 and 60 characters.",
+      "remaining": "94",
+      "total": "6",
+      "waiting": "0",
+      "waitingNames": []
+    },
+    {
+      "check": "reset restores six fictional requests and three seats",
+      "capacity": "3",
+      "capacityError": "",
+      "confirmed": "3",
+      "confirmedNames": [
+        "Nia Reed",
+        "Maya Chen",
+        "Amira Santos"
+      ],
+      "message": "Sample roster and 3-seat capacity restored.",
+      "nameError": "",
+      "remaining": "0",
+      "total": "6",
+      "waiting": "3",
+      "waitingNames": [
+        "Theo Park",
+        "Luca Moretti",
+        "Owen Clarke"
+      ]
+    }
+  ]
+}

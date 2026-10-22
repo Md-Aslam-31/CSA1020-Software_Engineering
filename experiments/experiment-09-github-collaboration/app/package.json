@@ -1,0 +1,12 @@
+{
+  "name": "learnloop-collaboration-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A local course-progress dashboard for practicing the GitHub fork and pull request workflow.",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test",
+    "start": "node scripts/serve.js"
+  }
+}

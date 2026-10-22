@@ -1,0 +1,300 @@
+- generic: "Skip to:"
+- list:
+  - link "Top Bar":
+    - /url: "#jira-page-layout-top-nav"
+  - link "Sidebar":
+    - /url: "#jira-page-layout-side-nav"
+  - link "Main Content":
+    - /url: "#jira-page-layout-main"
+  - link "Space navigation":
+    - /url: "#_R6l8sqlcn99cnal6p_"
+- banner:
+  - button "Collapse sidebar":
+    - generic: Collapse sidebar
+  - button "Switch sites or apps":
+    - generic: Switch sites or apps
+  - link "Go to your Jira homepage":
+    - /url: /jira
+    - generic: Jira
+  - search:
+    - textbox "Search, press enter to navigate to advanced search with your text query":
+      - /placeholder: Search
+  - button "Create":
+    - generic: Create
+  - navigation "Actions":
+    - list:
+      - button "See plans": See plans
+      - button "1 Notification":
+        - generic: 1 Notification
+      - generic: "1"
+      - button "Help":
+        - generic: Help
+      - generic: 3+
+      - button "Settings":
+        - generic: Settings
+      - button "emadfar2020@gmail.com":
+        - generic: emadfar2020@gmail.com
+- navigation "Sidebar":
+  - list:
+    - link "For you":
+      - /url: /jira/for-you
+      - generic: For you
+    - button "Recent":
+      - generic: Recent
+    - button "Starred":
+      - generic: Starred
+    - button "Apps":
+      - generic: Apps
+    - button "More actions for Apps":
+      - generic: More actions for Apps
+    - button "Plans":
+      - generic: Plans
+    - button "Create plan":
+      - generic: Create plan
+    - button "More actions for Plans":
+      - generic: More actions for Plans
+    - button "Spaces" [expanded]:
+      - generic: Spaces
+    - button "Create space":
+      - generic: Create space
+    - button "More actions for spaces":
+      - generic: More actions for spaces
+    - list:
+      - group "Recent":
+        - paragraph: Recent
+        - list:
+          - link "Commerce Delivery - Scrum":
+            - /url: /browse/CDS
+            - generic: Commerce Delivery - Scrum
+          - button "Commerce Delivery - Scrum" [expanded]
+          - button "Create board":
+            - generic: Create board
+          - button "More actions for Commerce Delivery - Scrum":
+            - generic: More actions for Commerce Delivery - Scrum
+          - list:
+            - group "Recent":
+              - paragraph: Recent
+              - list:
+                - link "CDS board":
+                  - /url: /jira/software/c/projects/CDS/boards/2/backlog
+                  - generic: CDS board
+                - button "Board actions for CDS board":
+                  - generic: Board actions for CDS board
+          - link "My Team":
+            - /url: /jira/software/projects/SCRUM/boards/1
+            - generic: My Team
+          - button "More actions for My Team":
+            - generic: More actions for My Team
+      - list:
+        - button "More spaces":
+          - generic: More spaces
+        - list:
+          - heading "Recommended" [level=2]
+          - button "Prioritize ideas":
+            - generic: Prioritize ideas
+          - generic: Try
+    - button "Filters":
+      - generic: Filters
+    - button "Dashboards":
+      - generic: Dashboards
+    - button "Create dashboard":
+      - generic: Create dashboard
+  - list:
+    - link "Assets , (opens new window)":
+      - /url: /jira/assets
+      - generic: Assets
+      - generic: ", (opens new window)"
+    - img "Assets":
+    - link "Teams , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/people/?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Teams
+      - generic: ", (opens new window)"
+    - img "Teams":
+    - button "Teams":
+      - generic: Teams
+    - link "Goals , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/goals?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Goals
+      - generic: ", (opens new window)"
+    - link "Projects , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/projects?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Projects
+      - generic: ", (opens new window)"
+  - button "Customize sidebar":
+    - generic: Customize sidebar
+  - slider "Resize panel": "320"
+  - text: Resize panel
+- main:
+  - navigation "Breadcrumbs":
+    - list:
+      - link "Spaces":
+        - /url: /jira/projects
+        - generic: Spaces
+      - text: /
+      - link "Commerce Delivery - Scrum":
+        - /url: /browse/CDS
+        - generic: Commerce Delivery - Scrum
+  - heading "CDS board" [level=1]
+  - button "Link contributing teams"
+  - status
+  - button "Board actions for CDS board":
+    - generic: Board actions for CDS board
+  - button "Share":
+    - img "Share"
+  - status
+  - button "Automation":
+    - img "Automation"
+  - button "Give feedback":
+    - generic: Give feedback
+  - button "Enter full screen":
+    - generic: Enter full screen
+  - navigation "Space navigation":
+    - list:
+      - link "Summary":
+        - /url: /jira/software/c/projects/CDS/summary
+        - generic: Summary
+      - button "More actions":
+        - generic: More actions
+      - link "Timeline":
+        - /url: /jira/software/c/projects/CDS/boards/2/timeline
+        - generic: Timeline
+      - button "More actions":
+        - generic: More actions
+      - link "Active sprints":
+        - /url: /jira/software/c/projects/CDS/boards/2
+        - generic: Active sprints
+      - button "More actions":
+        - generic: More actions
+      - heading "Backlog" [level=2]:
+        - generic: Backlog
+      - button "More actions":
+        - generic: More actions
+      - link "Calendar":
+        - /url: /jira/software/c/projects/CDS/boards/2/calendar
+        - generic: Calendar
+      - button "More actions":
+        - generic: More actions
+      - link "List":
+        - /url: /jira/software/c/projects/CDS/list
+        - generic: List
+      - button "More actions":
+        - generic: More actions
+      - link "Forms":
+        - /url: /jira/software/c/projects/CDS/form
+        - generic: Forms
+      - button "More actions":
+        - generic: More actions
+      - link "Development":
+        - /url: /jira/software/c/projects/CDS/development
+        - generic: Development
+      - button "More actions":
+        - generic: More actions
+      - link "Docs":
+        - /url: /jira/software/c/projects/CDS/pages
+        - generic: Docs
+      - button "More actions":
+        - generic: More actions
+    - button "Add to navigation":
+      - img "Add to navigation"
+  - generic: Results will be filtered below as you type to search or apply filters.
+  - status
+  - textbox "Search backlog"
+  - group "Filter by assignee":
+    - generic: Filter by assignee
+    - checkbox "Filter assignees by Emad Farooqui"
+    - checkbox "Filter assignees by Unassigned"
+  - list:
+    - button "Version":
+      - generic: Version
+    - button "Epic":
+      - generic: Epic
+    - button "Label":
+      - generic: Label
+    - button "Quick filters":
+      - generic: Quick filters
+  - button "Backlog insights":
+    - generic: Backlog insights
+  - button "View settings":
+    - generic: View settings
+  - button "More actions":
+    - generic: More actions
+  - list:
+    - checkbox "Select all work items in sprint Commerce MVP - Sprint 1 (Workflow Demo)"
+    - button "Commerce MVP - Sprint 1 (Workflow Demo) 8 Oct – 15 Oct (8 work items)"
+    - button "Expand":
+      - generic: Expand
+    - heading "Commerce MVP - Sprint 1 (Workflow Demo)" [level=2]
+    - generic: 8 Oct – 15 Oct (8 work items)
+    - status: Commerce MVP - Sprint 1 (Workflow Demo) 8 work items
+    - 'status "Not started (leftmost column): 32 of 32 (story points)"':
+      - generic: "32"
+    - generic: "Not started (leftmost column): 32 of 32 (story points)"
+    - 'status "In progress: 0 of 32 (story points)"':
+      - generic: "0"
+    - generic: "In progress: 0 of 32 (story points)"
+    - 'status "Completed (rightmost column): 0 of 32 (story points)"':
+      - generic: "0"
+    - generic: "Completed (rightmost column): 0 of 32 (story points)"
+    - button "Start sprint":
+      - generic: Start sprint
+    - button "Commerce MVP - Sprint 1 (Workflow Demo) actions":
+      - generic: Commerce MVP - Sprint 1 (Workflow Demo) actions
+    - checkbox "Select all work items in Backlog" [disabled]
+    - button "Backlog (0 work items)" [expanded]
+    - button "Collapse" [expanded]:
+      - generic: Collapse
+    - heading "Backlog" [level=2]
+    - generic: (0 work items)
+    - status: Backlog 0 work items
+    - 'status "Not started (leftmost column): 0 of 0 (story points)"':
+      - generic: "0"
+    - generic: "Not started (leftmost column): 0 of 0 (story points)"
+    - 'status "In progress: 0 of 0 (story points)"':
+      - generic: "0"
+    - generic: "In progress: 0 of 0 (story points)"
+    - 'status "Completed (rightmost column): 0 of 0 (story points)"':
+      - generic: "0"
+    - generic: "Completed (rightmost column): 0 of 0 (story points)"
+    - link "Plan on whiteboard":
+      - generic: Plan on whiteboard
+    - button "Create sprint":
+      - generic: Create sprint
+    - generic: Your backlog is empty.
+    - button "Create work items for Backlog": Create
+    - paragraph: Create work items for Backlog
+- dialog "Start Sprint":
+  - button "Close Modal":
+    - generic: Close Modal
+  - heading "Start Sprint" [level=1]:
+    - generic: Start Sprint
+  - text: 8 work items will be included in this sprint.
+  - paragraph: Required fields are marked with an asterisk *
+  - generic: Sprint name*
+  - textbox "Sprint name": Commerce MVP - Sprint 1 (Workflow Demo)
+  - generic: Duration*
+  - status
+  - generic: 1 week
+  - combobox "Duration"
+  - generic: Start date*
+  - status
+  - generic: 10/8/2026
+  - combobox "Start date"
+  - button "Start date, Open calendar":
+    - generic: Start date, Open calendar
+  - status
+  - generic: 6:02 PM
+  - combobox "Start time"
+  - button "clear":
+    - generic: clear
+  - generic: "Date format: MM/DD/YYYY. Time format: e.g. 1:00 PM."
+  - generic: End date*
+  - status
+  - generic: 10/15/2026
+  - status
+  - generic: 6:02 PM
+  - generic: Sprint goal
+  - textbox "Sprint goal" [active]: "Planned goal: Enable shoppers to register or sign in, discover products, manage a cart, complete simulated checkout, view order confirmation, and review purchases on phone and desktop. Owner: Emad Farooqui acting as Product Owner, Frontend, Backend, Full Stack, QA, and Scrum facilitator. 8 stories / 32 points. Delivery deadlines: 17:00 IST on each task due date. Planned cadence (IST): Oct 8 planning 45 min; Oct 9 and 12–15 daily Scrum 09:30 (15 min); Oct 12 refinement (30 min); Oct 15 review 17:00 (30 min), then retrospective (20 min). Escalate blockers in the issue with owner, impact, and next action. Definition of Done for actual delivery: reviewed changes, acceptance checks recorded, blocking defects resolved, and Product Owner acceptance. This sprint is a workflow simulation and will be closed early on Oct 8. Status transitions do not certify implementation or executed QA. No real payments or deployment."
+  - button "Cancel":
+    - generic: Cancel
+  - button "Start":
+    - generic: Start

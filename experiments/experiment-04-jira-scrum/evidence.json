@@ -1,0 +1,99 @@
+{
+  "experiment": 4,
+  "projectName": "Commerce Delivery - Scrum",
+  "projectKey": "CDS",
+  "boardId": 2,
+  "sprintId": 3,
+  "sprintName": "Commerce MVP - Sprint 1 Demo",
+  "projectUrl": "https://emadfar2020.atlassian.net/browse/CDS",
+  "sprintReportUrl": "https://emadfar2020.atlassian.net/jira/software/c/projects/CDS/boards/2/reports/sprint-retrospective?sprint=3",
+  "assignee": "Emad Farooqui",
+  "plannedStart": "2026-10-08T18:00:00+05:30",
+  "plannedEnd": "2026-10-15T18:00:00+05:30",
+  "reportedCompletion": "2026-10-08T18:14:00+05:30",
+  "sprintState": "closed",
+  "storyCount": 8,
+  "totalStoryPoints": 32,
+  "boardCounts": {
+    "start": {
+      "toDo": 8,
+      "inProgress": 0,
+      "done": 0
+    },
+    "during": {
+      "toDo": 0,
+      "inProgress": 8,
+      "done": 0
+    },
+    "end": {
+      "toDo": 0,
+      "inProgress": 0,
+      "done": 8
+    }
+  },
+  "nativeDependencies": [
+    {
+      "issue": "CDS-1",
+      "blockedBy": []
+    },
+    {
+      "issue": "CDS-2",
+      "blockedBy": [
+        "CDS-1"
+      ]
+    },
+    {
+      "issue": "CDS-3",
+      "blockedBy": [
+        "CDS-1",
+        "CDS-2"
+      ]
+    },
+    {
+      "issue": "CDS-4",
+      "blockedBy": [
+        "CDS-1"
+      ]
+    },
+    {
+      "issue": "CDS-5",
+      "blockedBy": [
+        "CDS-2",
+        "CDS-3",
+        "CDS-4"
+      ]
+    },
+    {
+      "issue": "CDS-6",
+      "blockedBy": [
+        "CDS-2",
+        "CDS-4",
+        "CDS-5"
+      ]
+    },
+    {
+      "issue": "CDS-7",
+      "blockedBy": [
+        "CDS-3",
+        "CDS-4",
+        "CDS-5",
+        "CDS-6"
+      ]
+    },
+    {
+      "issue": "CDS-8",
+      "blockedBy": [
+        "CDS-1",
+        "CDS-2",
+        "CDS-3",
+        "CDS-4",
+        "CDS-5",
+        "CDS-6",
+        "CDS-7"
+      ]
+    }
+  ],
+  "simulation": true,
+  "implementationAndExecutedQaVerified": false,
+  "reportMetadataNote": "Jira marks issues with an asterisk because their assignment time is after the configured 18:00 start time; all eight were on the board before the Start action and the start screenshot."
+}

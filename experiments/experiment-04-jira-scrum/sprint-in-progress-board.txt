@@ -1,0 +1,336 @@
+- generic: "Skip to:"
+- list:
+  - link "Top Bar":
+    - /url: "#jira-page-layout-top-nav"
+  - link "Sidebar":
+    - /url: "#jira-page-layout-side-nav"
+  - link "Main Content":
+    - /url: "#jira-page-layout-main"
+  - link "Space navigation":
+    - /url: "#_R6l8sqlcn99cnal6p_"
+- banner:
+  - button "Collapse sidebar":
+    - generic: Collapse sidebar
+  - button "Switch sites or apps":
+    - generic: Switch sites or apps
+  - link "Go to your Jira homepage":
+    - /url: /jira
+    - generic: Jira
+  - search:
+    - textbox "Search, press enter to navigate to advanced search with your text query":
+      - /placeholder: Search
+  - button "Create":
+    - generic: Create
+  - navigation "Actions":
+    - list:
+      - button "See plans": See plans
+      - button "1 Notification":
+        - generic: 1 Notification
+      - generic: "1"
+      - button "Help":
+        - generic: Help
+      - generic: 3+
+      - button "Settings":
+        - generic: Settings
+      - button "emadfar2020@gmail.com":
+        - generic: emadfar2020@gmail.com
+- navigation "Sidebar":
+  - list:
+    - link "For you":
+      - /url: /jira/for-you
+      - generic: For you
+    - button "Recent":
+      - generic: Recent
+    - button "Starred":
+      - generic: Starred
+    - button "Apps":
+      - generic: Apps
+    - button "More actions for Apps":
+      - generic: More actions for Apps
+    - button "Plans":
+      - generic: Plans
+    - button "Create plan":
+      - generic: Create plan
+    - button "More actions for Plans":
+      - generic: More actions for Plans
+    - button "Spaces" [expanded]:
+      - generic: Spaces
+    - button "Create space":
+      - generic: Create space
+    - button "More actions for spaces":
+      - generic: More actions for spaces
+    - list:
+      - group "Recent":
+        - paragraph: Recent
+        - list:
+          - link "Commerce Delivery - Scrum":
+            - /url: /browse/CDS
+            - generic: Commerce Delivery - Scrum
+          - button "Commerce Delivery - Scrum" [expanded]
+          - button "Create board":
+            - generic: Create board
+          - button "More actions for Commerce Delivery - Scrum":
+            - generic: More actions for Commerce Delivery - Scrum
+          - list:
+            - group "Recent":
+              - paragraph: Recent
+              - list:
+                - link "CDS board":
+                  - /url: /jira/software/c/projects/CDS/boards/2/backlog
+                  - generic: CDS board
+                - button "Board actions for CDS board":
+                  - generic: Board actions for CDS board
+          - link "My Team":
+            - /url: /jira/software/projects/SCRUM/boards/1
+            - generic: My Team
+          - button "More actions for My Team":
+            - generic: More actions for My Team
+      - list:
+        - button "More spaces":
+          - generic: More spaces
+        - list:
+          - heading "Recommended" [level=2]
+          - button "Prioritize ideas":
+            - generic: Prioritize ideas
+          - generic: Try
+    - button "Filters":
+      - generic: Filters
+    - button "Dashboards":
+      - generic: Dashboards
+    - button "Create dashboard":
+      - generic: Create dashboard
+  - list:
+    - link "Assets , (opens new window)":
+      - /url: /jira/assets
+      - generic: Assets
+      - generic: ", (opens new window)"
+    - img "Assets":
+    - link "Teams , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/people/?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Teams
+      - generic: ", (opens new window)"
+    - img "Teams":
+    - button "Teams":
+      - generic: Teams
+    - link "Goals , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/goals?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Goals
+      - generic: ", (opens new window)"
+    - link "Projects , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/projects?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Projects
+      - generic: ", (opens new window)"
+  - button "Customize sidebar":
+    - generic: Customize sidebar
+  - slider "Resize panel": "320"
+  - text: Resize panel
+- main:
+  - navigation "Breadcrumbs":
+    - list:
+      - link "Spaces":
+        - /url: /jira/projects
+        - generic: Spaces
+      - text: /
+      - link "Commerce Delivery - Scrum":
+        - /url: /browse/CDS
+        - generic: Commerce Delivery - Scrum
+  - heading "CDS board" [level=1]
+  - button "Link contributing teams"
+  - status
+  - button "Board actions for CDS board":
+    - generic: Board actions for CDS board
+  - button "Share":
+    - img "Share"
+  - status
+  - button "Automation":
+    - img "Automation"
+  - button "Give feedback":
+    - generic: Give feedback
+  - button "Enter full screen":
+    - generic: Enter full screen
+  - navigation "Space navigation":
+    - list:
+      - link "Summary":
+        - /url: /jira/software/c/projects/CDS/summary
+        - generic: Summary
+      - button "More actions":
+        - generic: More actions
+      - link "Timeline":
+        - /url: /jira/software/c/projects/CDS/boards/2/timeline
+        - generic: Timeline
+      - button "More actions":
+        - generic: More actions
+      - heading "Active sprints" [level=2]:
+        - generic: Active sprints
+      - button "More actions":
+        - generic: More actions
+      - link "Backlog":
+        - /url: /jira/software/c/projects/CDS/boards/2/backlog
+        - generic: Backlog
+      - button "More actions":
+        - generic: More actions
+      - link "Calendar":
+        - /url: /jira/software/c/projects/CDS/boards/2/calendar
+        - generic: Calendar
+      - button "More actions":
+        - generic: More actions
+      - link "List":
+        - /url: /jira/software/c/projects/CDS/list
+        - generic: List
+      - button "More actions":
+        - generic: More actions
+      - link "Forms":
+        - /url: /jira/software/c/projects/CDS/form
+        - generic: Forms
+      - button "More actions":
+        - generic: More actions
+      - link "Development":
+        - /url: /jira/software/c/projects/CDS/development
+        - generic: Development
+      - button "More actions":
+        - generic: More actions
+      - link "Docs":
+        - /url: /jira/software/c/projects/CDS/pages
+        - generic: Docs
+      - button "More actions":
+        - generic: More actions
+    - button "Add to navigation":
+      - img "Add to navigation"
+  - generic: As you type to search or apply filters, the board updates with work items to match.
+  - status
+  - textbox "Search board"
+  - group "Filter by assignee":
+    - generic: Filter by assignee
+    - checkbox "Filter assignees by Emad Farooqui"
+    - checkbox "Filter assignees by Unassigned"
+  - list:
+    - button "Version":
+      - generic: Version
+    - button "Label":
+      - generic: Label
+    - button "Quick filters":
+      - generic: Quick filters
+  - button "Complete sprint":
+    - generic: Complete sprint
+  - button "Sprint details":
+    - generic: Sprint details
+  - button "Group by Story":
+    - generic: "Group: Story"
+  - button "Sprint insights":
+    - generic: Sprint insights
+  - button "View settings":
+    - generic: View settings
+  - button "More actions":
+    - generic: More actions
+  - region "Board":
+    - 'heading "To Do, total issue count: 0" [level=2]':
+      - generic "To Do"
+    - button "To Do column more actions":
+      - generic: To Do column more actions
+    - list:
+      - button "Create": Create
+    - 'heading "In Progress, total issue count: 8" [level=2]':
+      - generic "In Progress"
+      - generic: "8"
+    - button "In Progress column more actions":
+      - generic: In Progress column more actions
+    - list:
+      - button "CDS-1 Confirm MVP scope and sprint delivery plan. Use the enter key to load the work item."
+      - generic: Confirm MVP scope and sprint delivery plan
+      - generic: Due on Oct 9, 2026
+      - generic: Oct 9, 2026
+      - img "Story"
+      - link "CDS-1":
+        - /url: /browse/CDS-1
+        - generic: CDS-1
+      - generic: "2"
+      - img "Highest priority"
+      - 'img "Assignee: Emad Farooqui"':
+      - button "CDS-2 Develop API for login. Use the enter key to load the work item."
+      - generic: Develop API for login
+      - generic: Due on Oct 12, 2026
+      - generic: Oct 12, 2026
+      - img "Story"
+      - link "CDS-2":
+        - /url: /browse/CDS-2
+        - generic: CDS-2
+      - generic: "5"
+      - img "High priority"
+      - 'img "Assignee: Emad Farooqui"':
+      - button "CDS-3 Create user registration page. Use the enter key to load the work item."
+      - generic: Create user registration page
+      - generic: Due on Oct 12, 2026
+      - generic: Oct 12, 2026
+      - img "Story"
+      - link "CDS-3":
+        - /url: /browse/CDS-3
+        - generic: CDS-3
+      - generic: "3"
+      - img "High priority"
+      - 'img "Assignee: Emad Farooqui"':
+      - button "CDS-4 Build product catalog and search. Use the enter key to load the work item."
+      - generic: Build product catalog and search
+      - generic: Due on Oct 13, 2026
+      - generic: Oct 13, 2026
+      - img "Story"
+      - link "CDS-4":
+        - /url: /browse/CDS-4
+        - generic: CDS-4
+      - generic: "5"
+      - img "High priority"
+      - 'img "Assignee: Emad Farooqui"':
+      - button "CDS-5 Implement cart and checkout. Use the enter key to load the work item."
+      - generic: Implement cart and checkout
+      - generic: Due on Oct 14, 2026
+      - generic: Oct 14, 2026
+      - img "Story"
+      - link "CDS-5":
+        - /url: /browse/CDS-5
+        - generic: CDS-5
+      - generic: "8"
+      - img "Highest priority"
+      - 'img "Assignee: Emad Farooqui"':
+      - button "CDS-6 Add order confirmation and product reviews. Use the enter key to load the work item."
+      - generic: Add order confirmation and product reviews
+      - generic: Due on Oct 14, 2026
+      - generic: Oct 14, 2026
+      - img "Story"
+      - link "CDS-6":
+        - /url: /browse/CDS-6
+        - generic: CDS-6
+      - generic: "3"
+      - img "Medium priority"
+      - 'img "Assignee: Emad Farooqui"':
+      - button "CDS-7 Polish responsive layout and accessibility. Use the enter key to load the work item."
+      - generic: Polish responsive layout and accessibility
+      - generic: Due on Oct 15, 2026
+      - generic: Oct 15, 2026
+      - img "Story"
+      - link "CDS-7":
+        - /url: /browse/CDS-7
+        - generic: CDS-7
+      - generic: "2"
+      - img "Medium priority"
+      - 'img "Assignee: Emad Farooqui"':
+      - button "CDS-8 Run QA and prepare sprint review. Use the enter key to load the work item."
+      - generic: Run QA and prepare sprint review
+      - generic: Due on Oct 15, 2026
+      - generic: Oct 15, 2026
+      - img "Story"
+      - link "CDS-8":
+        - /url: /browse/CDS-8
+        - generic: CDS-8
+      - generic: "4"
+      - img "High priority"
+      - 'img "Assignee: Emad Farooqui"':
+      - button "Create": Create
+    - 'heading "Done, total issue count: 0" [level=2]':
+      - generic "Done"
+    - img "Checklist icon"
+    - button "Done column more actions":
+      - generic: Done column more actions
+    - list:
+      - button "Create": Create
+    - status
+    - status
+    - button "Create column"

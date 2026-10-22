@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17223b">
+  <title>FairSeat — Workshop seat planner</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232f46d6'/%3E%3Cpath d='M18 44V20h29M18 31h21' stroke='%23fff' stroke-width='7' fill='none'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#planner">Skip to seat planner</a>
+  <header class="site-header">
+    <div class="brand"><span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M9 25V7h17M9 16h13"/></svg></span><span>FairSeat<span class="brand-period">.</span></span></div>
+    <span class="header-divider" aria-hidden="true"></span><span class="header-label">Workshop operations</span>
+    <span class="test-badge"><span aria-hidden="true"></span>Local testing workspace</span>
+  </header>
+
+  <main id="planner">
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">THE RIGHT PEOPLE. THE RIGHT PLAN.</p><h1 id="page-title">Make room for a great workshop.</h1><p class="intro-copy">A clear seat plan, a fair waiting list, and every attendee accounted for.</p></div>
+      <div class="session-chip"><span class="session-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16v13H4zM4 11h16M8 4v6M16 4v6"/></svg></span><span><strong>Design Systems Studio</strong><small>Sample session · fictional attendees</small></span></div>
+    </section>
+
+    <section class="metrics" aria-label="Seat plan summary">
+      <article class="metric"><div><p>Total requests</p><strong id="total-requests">6</strong></div><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="3"/><path d="M3 20v-3a6 6 0 0 1 12 0v3M17 5a3 3 0 0 1 0 6M18 14c2 0 3 2 3 4v2"/></svg></span></article>
+      <article class="metric confirmed-metric"><div><p>Confirmed seats</p><strong id="confirmed-count">3</strong></div><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6M4 21h16"/></svg></span></article>
+      <article class="metric"><div><p>On the waiting list</p><strong id="waitlist-count">3</strong></div><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 3"/></svg></span></article>
+      <article class="metric"><div><p>Seats remaining</p><strong id="seats-remaining">0</strong></div><span class="metric-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 13V5h12v8M4 13h16v5H4zM6 18v3M18 18v3M3 9v4M21 9v4"/></svg></span></article>
+    </section>
+
+    <section class="workspace" aria-label="Workshop seat planner">
+      <div class="roster-panel panel">
+        <div class="panel-heading"><div><p class="section-kicker">01 / THE PEOPLE</p><h2>Attendee requests</h2></div><span class="count-pill" id="roster-count">6 requests</span></div>
+        <form id="attendee-form" class="attendee-form" novalidate>
+          <div class="field name-field"><label for="attendee-name">Attendee name</label><input id="attendee-name" name="name" type="text" maxlength="60" placeholder="e.g. Alex Morgan" autocomplete="off" required></div>
+          <div class="field"><label for="attendee-priority">Priority</label><select id="attendee-priority" name="priority"><option value="standard">Standard</option><option value="vip">VIP</option></select></div>
+          <button class="button button-add" type="submit"><span aria-hidden="true">+</span> Add attendee</button>
+        </form>
+        <p id="attendee-error" class="field-error" role="alert" hidden></p>
+        <div class="roster-labels" aria-hidden="true"><span>ARRIVAL / ATTENDEE</span><span>PRIORITY</span></div>
+        <ol class="roster-list" id="attendee-list" aria-label="Attendees in request order"></ol>
+        <div class="roster-footer"><span>Request order is preserved within each priority.</span><button id="reset-sample" type="button" class="text-button">Reset sample</button></div>
+      </div>
+
+      <div class="allocation-panel panel">
+        <div class="allocation-header"><div><p class="section-kicker">02 / THE PLAN</p><h2>Your room, ready.</h2></div><span class="live-pill"><span aria-hidden="true"></span>Live plan</span></div>
+        <form id="capacity-form" class="capacity-form" novalidate><div class="field"><label for="seat-capacity">Available seats</label><div class="capacity-input-wrap"><input id="seat-capacity" name="capacity" type="number" min="0" max="100" step="1" value="3" aria-describedby="capacity-help" required><span>seats</span></div></div><button type="submit" class="button button-primary">Plan seats <span aria-hidden="true">↗</span></button></form>
+        <p id="capacity-help" class="capacity-help">Choose a whole number from 0 to 100.</p><p id="capacity-error" class="field-error" role="alert" hidden></p>
+        <div class="allocation-group"><div class="list-heading"><h3><span class="status-dot confirmed-dot" aria-hidden="true"></span>Confirmed</h3><span id="confirmed-label">3 seats</span></div><ol class="allocation-list" id="confirmed-list" aria-label="Confirmed attendees"></ol></div>
+        <div class="allocation-group waitlist-group"><div class="list-heading"><h3><span class="status-dot waitlist-dot" aria-hidden="true"></span>Waiting list</h3><span id="waitlist-label">3 attendees</span></div><ol class="allocation-list" id="waitlist-list" aria-label="Waiting list in priority order"></ol></div>
+        <p id="plan-notification" class="plan-notification" role="status" aria-live="polite">Sample plan ready. Try changing the capacity.</p>
+      </div>
+    </section>
+    <aside class="policy-note" aria-label="Allocation policy"><span class="policy-icon" aria-hidden="true">↗</span><p><strong>Priority with a fair order.</strong> VIP requests come first, followed by standard requests. Within each group, earlier arrivals keep their place. Overflow stays on the waiting list.</p><span class="policy-cap">100-seat maximum</span></aside>
+  </main>
+  <footer class="site-footer"><span>FairSeat · A small team, thoughtfully organized.</span><a href="/evidence/">Explore the captured Git conflict journal ↗</a><span>Local demo · No data is saved · No external services</span></footer>
+</body>
+</html>

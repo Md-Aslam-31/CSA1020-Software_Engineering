@@ -1,0 +1,9 @@
+{
+  "name": "fairseat-merge-conflict-lab",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A local workshop seat planner demonstrating a real Git merge conflict.",
+  "engines": { "node": ">=22" },
+  "scripts": { "test": "node --test", "start": "node scripts/serve.js" }
+}

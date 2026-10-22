@@ -1,0 +1,237 @@
+{
+  "experiment": "Experiment 04: Jira Scrum",
+  "project": {
+    "name": "Commerce Delivery - Scrum",
+    "key": "CDS",
+    "boardId": 2
+  },
+  "sprint": {
+    "id": 3,
+    "name": "Commerce MVP - Sprint 1 Demo",
+    "state": "active",
+    "startDate": "2026-10-08",
+    "endDate": "2026-10-15",
+    "timezone": "Asia/Kolkata",
+    "reopenedAfterOriginalWorkflowDemonstration": true,
+    "goalCaveat": "Existing sprint goal retains historical closure wording. The current sample state is identified in the category epic descriptions."
+  },
+  "snapshot": {
+    "simulatedAsOfDate": "2026-10-12",
+    "setupDate": "2026-10-08",
+    "description": "Sample future progress state for teaching; statuses do not certify code implementation, executed QA, or actual delivery.",
+    "assignee": "Emad Farooqui",
+    "storyCounts": {
+      "To Do": 4,
+      "In Progress": 3,
+      "Done": 1
+    },
+    "storyCount": 8,
+    "storyPoints": 32,
+    "nativePrerequisiteLinks": 21,
+    "dueTime": "17:00 IST"
+  },
+  "epics": [
+    {
+      "key": "CDS-9",
+      "summary": "Done - Scope and Sprint Planning",
+      "status": "Done",
+      "startDate": "2026-10-08",
+      "dueDate": "2026-10-09",
+      "assignee": "Emad Farooqui",
+      "children": [
+        "CDS-1"
+      ],
+      "work": [
+        "Agree MVP scope",
+        "Record acceptance examples and dependencies",
+        "Assign responsibilities and sprint delivery plan"
+      ]
+    },
+    {
+      "key": "CDS-10",
+      "summary": "In Progress - Login, Registration and Catalog",
+      "status": "In Progress",
+      "startDate": "2026-10-09",
+      "dueDate": "2026-10-13",
+      "assignee": "Emad Farooqui",
+      "children": [
+        "CDS-2",
+        "CDS-3",
+        "CDS-4"
+      ],
+      "work": [
+        "Develop login/session API",
+        "Build registration and sign-in forms",
+        "Integrate account flows",
+        "Build catalog, search, and filtering"
+      ]
+    },
+    {
+      "key": "CDS-11",
+      "summary": "To Do - Checkout, Reviews and Quality Assurance",
+      "status": "To Do",
+      "startDate": "2026-10-13",
+      "dueDate": "2026-10-15",
+      "assignee": "Emad Farooqui",
+      "children": [
+        "CDS-5",
+        "CDS-6",
+        "CDS-7",
+        "CDS-8"
+      ],
+      "work": [
+        "Implement cart and simulated checkout",
+        "Show confirmation and purchaser reviews",
+        "Polish responsiveness and accessibility",
+        "Run final QA and prepare review evidence"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "key": "CDS-1",
+      "summary": "Confirm MVP scope and sprint delivery plan",
+      "status": "Done",
+      "startDate": "2026-10-08",
+      "dueDate": "2026-10-09",
+      "parent": "CDS-9",
+      "assignee": "Emad Farooqui",
+      "role": "Product Owner",
+      "priority": "Highest",
+      "points": 2,
+      "blockedBy": []
+    },
+    {
+      "key": "CDS-2",
+      "summary": "Develop API for login",
+      "status": "In Progress",
+      "startDate": "2026-10-09",
+      "dueDate": "2026-10-12",
+      "parent": "CDS-10",
+      "assignee": "Emad Farooqui",
+      "role": "Backend Engineer",
+      "priority": "High",
+      "points": 5,
+      "blockedBy": [
+        "CDS-1"
+      ]
+    },
+    {
+      "key": "CDS-3",
+      "summary": "Create user registration page",
+      "status": "In Progress",
+      "startDate": "2026-10-09",
+      "dueDate": "2026-10-12",
+      "parent": "CDS-10",
+      "assignee": "Emad Farooqui",
+      "role": "Frontend Engineer",
+      "priority": "High",
+      "points": 3,
+      "blockedBy": [
+        "CDS-1",
+        "CDS-2"
+      ]
+    },
+    {
+      "key": "CDS-4",
+      "summary": "Build product catalog and search",
+      "status": "In Progress",
+      "startDate": "2026-10-12",
+      "dueDate": "2026-10-13",
+      "parent": "CDS-10",
+      "assignee": "Emad Farooqui",
+      "role": "Frontend Engineer",
+      "priority": "High",
+      "points": 5,
+      "blockedBy": [
+        "CDS-1"
+      ]
+    },
+    {
+      "key": "CDS-5",
+      "summary": "Implement cart and checkout",
+      "status": "To Do",
+      "startDate": "2026-10-13",
+      "dueDate": "2026-10-14",
+      "parent": "CDS-11",
+      "assignee": "Emad Farooqui",
+      "role": "Full Stack Engineer",
+      "priority": "Highest",
+      "points": 8,
+      "blockedBy": [
+        "CDS-2",
+        "CDS-3",
+        "CDS-4"
+      ]
+    },
+    {
+      "key": "CDS-6",
+      "summary": "Add order confirmation and product reviews",
+      "status": "To Do",
+      "startDate": "2026-10-13",
+      "dueDate": "2026-10-14",
+      "parent": "CDS-11",
+      "assignee": "Emad Farooqui",
+      "role": "Full Stack Engineer",
+      "priority": "Medium",
+      "points": 3,
+      "blockedBy": [
+        "CDS-2",
+        "CDS-4",
+        "CDS-5"
+      ]
+    },
+    {
+      "key": "CDS-7",
+      "summary": "Polish responsive layout and accessibility",
+      "status": "To Do",
+      "startDate": "2026-10-14",
+      "dueDate": "2026-10-15",
+      "parent": "CDS-11",
+      "assignee": "Emad Farooqui",
+      "role": "Frontend Engineer",
+      "priority": "Medium",
+      "points": 2,
+      "blockedBy": [
+        "CDS-3",
+        "CDS-4",
+        "CDS-5",
+        "CDS-6"
+      ]
+    },
+    {
+      "key": "CDS-8",
+      "summary": "Run QA and prepare sprint review",
+      "status": "To Do",
+      "startDate": "2026-10-14",
+      "dueDate": "2026-10-15",
+      "parent": "CDS-11",
+      "assignee": "Emad Farooqui",
+      "role": "QA Engineer",
+      "priority": "High",
+      "points": 4,
+      "blockedBy": [
+        "CDS-1",
+        "CDS-2",
+        "CDS-3",
+        "CDS-4",
+        "CDS-5",
+        "CDS-6",
+        "CDS-7"
+      ]
+    }
+  ],
+  "currentScreenshots": [
+    "screenshots/07-sample-progress-board.jpg",
+    "screenshots/08-timeline-categories.jpg",
+    "screenshots/09-timeline-details-top.jpg",
+    "screenshots/10-timeline-details-bottom.jpg"
+  ],
+  "history": {
+    "originalSprintName": "Commerce MVP - Sprint 1 Demo",
+    "originalClosedDate": "2026-10-08",
+    "originalWorkflow": "8 To Do → 8 In Progress → 8 Done, then closed early",
+    "preservation": "Original screenshots, evidence.json, UI records, and backlog-plan.json remain historical artifacts. The current sprint has been reopened."
+  }
+}
+

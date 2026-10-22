@@ -1,0 +1,38 @@
+name: FairSeat conflict resolution checks
+
+on:
+  push:
+    branches: [main, 'feature/fairseat-priority-waitlist']
+    paths:
+      - 'experiments/experiment-10-merge-conflicts/**'
+      - '.github/workflows/experiment-10-checks.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'experiments/experiment-10-merge-conflicts/**'
+      - '.github/workflows/experiment-10-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  policy:
+    name: FairSeat policy regression
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: experiments/experiment-10-merge-conflicts/app
+    steps:
+      - name: Check out the project
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - name: Use Node.js 24
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Test both allocation and capacity rules
+        run: node --test
+      - name: Check allocation syntax
+        run: node --check src/seat-planner.js

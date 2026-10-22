@@ -1,0 +1,364 @@
+- generic: "Skip to:"
+- list:
+  - link "Top Bar":
+    - /url: "#jira-page-layout-top-nav"
+  - link "Sidebar":
+    - /url: "#jira-page-layout-side-nav"
+  - link "Main Content":
+    - /url: "#jira-page-layout-main"
+- banner:
+  - button "Collapse sidebar":
+    - generic: Collapse sidebar
+  - button "Switch sites or apps":
+    - generic: Switch sites or apps
+  - link "Go to your Jira homepage":
+    - /url: /jira
+    - generic: Jira
+  - search:
+    - textbox "Search"
+  - button "Create":
+    - generic: Create
+  - navigation "Actions":
+    - list:
+      - button "See plans": See plans
+      - button "1 Notification":
+        - generic: 1 Notification
+      - generic: "1"
+      - button "Help":
+        - generic: Help
+      - generic: 3+
+      - button "Settings":
+        - generic: Settings
+      - button "emadfar2020@gmail.com":
+        - generic: emadfar2020@gmail.com
+- navigation "Sidebar":
+  - list:
+    - link "For you":
+      - /url: /jira/for-you
+      - generic: For you
+    - button "Recent":
+      - generic: Recent
+    - button "Starred":
+      - generic: Starred
+    - button "Apps":
+      - generic: Apps
+    - button "More actions for Apps":
+      - generic: More actions for Apps
+    - button "Plans":
+      - generic: Plans
+    - button "Create plan":
+      - generic: Create plan
+    - button "More actions for Plans":
+      - generic: More actions for Plans
+    - button "Spaces" [expanded]:
+      - generic: Spaces
+    - button "Create space":
+      - generic: Create space
+    - button "More actions for spaces":
+      - generic: More actions for spaces
+    - list:
+      - group "Recent":
+        - paragraph: Recent
+        - list:
+          - link "Commerce Delivery - Scrum":
+            - /url: /browse/CDS
+            - generic: Commerce Delivery - Scrum
+          - button "Commerce Delivery - Scrum" [expanded]
+          - button "Create board":
+            - generic: Create board
+          - button "More actions for Commerce Delivery - Scrum":
+            - generic: More actions for Commerce Delivery - Scrum
+          - list:
+            - group "Recent":
+              - paragraph: Recent
+              - list:
+                - link "CDS board":
+                  - /url: /jira/software/c/projects/CDS/boards/2/backlog
+                  - generic: CDS board
+                - button "Board actions for CDS board":
+                  - generic: Board actions for CDS board
+          - link "My Team":
+            - /url: /jira/software/projects/SCRUM/boards/1
+            - generic: My Team
+          - button "More actions for My Team":
+            - generic: More actions for My Team
+      - list:
+        - button "More spaces":
+          - generic: More spaces
+        - list:
+          - heading "Recommended" [level=2]
+          - button "Prioritize ideas":
+            - generic: Prioritize ideas
+          - generic: Try
+    - button "Filters":
+      - generic: Filters
+    - button "Dashboards":
+      - generic: Dashboards
+    - button "Create dashboard":
+      - generic: Create dashboard
+  - list:
+    - link "Assets , (opens new window)":
+      - /url: /jira/assets
+      - generic: Assets
+      - generic: ", (opens new window)"
+    - img "Assets":
+    - link "Teams , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/people/?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Teams
+      - generic: ", (opens new window)"
+    - img "Teams":
+    - button "Teams":
+      - generic: Teams
+    - link "Goals , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/goals?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Goals
+      - generic: ", (opens new window)"
+    - link "Projects , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/projects?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Projects
+      - generic: ", (opens new window)"
+  - button "Customize sidebar":
+    - generic: Customize sidebar
+  - slider "Resize panel": "320"
+  - text: Resize panel
+- main:
+  - navigation "Work item breadcrumbs":
+    - list:
+      - link "Spaces":
+        - /url: /jira/projects
+        - generic: Spaces
+      - text: /
+      - img "Commerce Delivery - Scrum"
+      - link "Commerce Delivery - Scrum":
+        - /url: https://emadfar2020.atlassian.net/browse/CDS
+        - generic: Commerce Delivery - ...
+      - text: /
+      - button "Epic - Add parent":
+        - generic: Add parent
+      - text: /
+      - button "Story - Change work type":
+        - img "Story"
+      - link "CDS-5":
+        - /url: /browse/CDS-5
+        - generic: CDS-5
+      - textbox
+      - button "Copy link":
+        - img "Copy link"
+  - button "Implement cart and checkout- Summary, edit"
+  - heading "Implement cart and checkout" [level=1]
+  - button "Add or create work related to this Story":
+    - generic: Add or create work related to this Story
+  - button "Add apps":
+    - generic: Add apps
+  - button "Summarize work item":
+    - generic: Summarize work item
+  - heading "Collapse Description Description" [level=2]:
+    - button "Collapse Description":
+      - generic: Collapse Description
+    - generic: Description
+  - region "Description section":
+    - button "Edit Description, edit"
+    - paragraph:
+      - text: "Backlog rank: 5 | Estimate: 8 story points | Priority: Highest"
+      - text: "Sprint: 8–15 October 2026 | Role: Full Stack Engineer"
+    - paragraph: "Business need: Convert selected products into a consistent order while giving shoppers control over quantities, totals, and checkout recovery."
+    - paragraph: "Scope: Add/update/remove cart items, preserve cart state across refresh, calculate subtotal and agreed shipping, collect shipping/contact fields, revalidate inventory and totals, and submit a simulated payment followed by order creation."
+    - paragraph: "Ownership: Emad Farooqui is the assigned account, acting in the Full Stack Engineer role. The QA role checks calculations and failure recovery; the Product Owner role approves checkout behavior."
+    - paragraph: "Delivery plan: Complete cart integration on October 13; finish checkout integration and review by October 14, 17:00 IST."
+    - paragraph: "Acceptance criteria: Quantities respect available stock. Cart totals update correctly. Empty cart cannot submit checkout. Invalid fields identify corrective action. Duplicate submission is prevented. Simulated payment failure retains the cart; success creates one order identifier and clears the cart. No real payment is charged."
+    - paragraph: "Dependencies: Develop API for login; Create user registration page; Build product catalog and search."
+    - paragraph: "QA checks: Quantity boundaries, total calculations, refresh, invalid fields, changed stock, duplicate submission, failure, and retry."
+    - paragraph: "Definition of done: Reviewed integration meets the criteria and QA records successful and failed journeys."
+    - paragraph: "Workflow demo: Jira status changes are simulated. Code implementation, executed tests, and production acceptance are not verified; Done in this exercise records workflow completion only."
+  - heading "Collapse Attachments Attachments" [level=2]:
+    - button "Collapse Attachments":
+      - generic: Collapse Attachments
+    - generic: Attachments
+  - region "Attachments section":
+    - button "Add attachment":
+      - generic: Add attachment
+    - button "Create product requirements Try":
+      - text: Create product requirements
+      - generic: Try
+  - heading "Subtasks" [level=2]
+  - button "Add subtask":
+    - generic: Add subtask
+  - heading "Collapse Linked work items Linked work items Link a work item" [level=2]:
+    - button "Collapse Linked work items":
+      - generic: Collapse Linked work items
+    - generic: Linked work items
+    - button "Link a work item":
+      - generic: Link a work item
+  - region "Linked work items section":
+    - generic: Link similar work items
+    - button "Show 2 results":
+      - generic: Show 2 results
+    - heading "is blocked by" [level=3]
+    - list:
+      - 'img "Work type: Story"'
+      - link "CDS-2 is not done":
+        - /url: /browse/CDS-2
+        - text: CDS-2
+      - link "Develop API for login":
+        - /url: /browse/CDS-2
+        - generic: Develop API for login
+      - button "Done - Change status":
+        - generic: Done
+      - img "Emad Farooqui":
+      - 'img "Priority: High"'
+      - button "Unlink work item"
+      - 'img "Work type: Story"'
+      - link "CDS-3 is not done":
+        - /url: /browse/CDS-3
+        - text: CDS-3
+      - link "Create user registration page":
+        - /url: /browse/CDS-3
+        - generic: Create user registration page
+      - button "Done - Change status":
+        - generic: Done
+      - img "Emad Farooqui":
+      - 'img "Priority: High"'
+      - button "Unlink work item"
+      - 'img "Work type: Story"'
+      - link "CDS-4 is not done":
+        - /url: /browse/CDS-4
+        - text: CDS-4
+      - link "Build product catalog and search":
+        - /url: /browse/CDS-4
+        - generic: Build product catalog and search
+      - button "Done - Change status":
+        - generic: Done
+      - img "Emad Farooqui":
+      - 'img "Priority: High"'
+      - button "Unlink work item"
+  - heading "Activity" [level=2]
+  - tablist "Show":
+    - tab "All":
+      - generic: All
+    - tab "Comments" [selected]:
+      - generic: Comments
+    - tab "History":
+      - generic: History
+    - tab "Work log":
+      - generic: Work log
+    - tab "Approvals":
+      - generic: Approvals
+  - button "Newest first" [disabled]:
+    - generic: Newest first
+  - tabpanel "Comments":
+    - img "Profile image of Emad Farooqui":
+    - button "Add a comment…"
+    - group "Quick comments":
+      - button "Status update...":
+        - generic: Status update...
+      - button "Thanks...":
+        - generic: Thanks...
+      - button "Agree...":
+        - generic: Agree...
+    - strong: "Pro tip:"
+    - text: press
+    - generic: M
+    - text: to comment
+  - slider "Resize work item view side panel": "0.65"
+  - text: Resize work item view side panel
+  - group "Action items":
+    - 'button "Watch options: You are watching this issue, 1 person watching"':
+      - generic: "1"
+    - button "Share":
+      - generic: Share
+    - status
+    - button "Actions":
+      - generic: Actions
+    - status
+  - button "Done - Change status":
+    - generic: Done
+  - button "Automation":
+    - generic: Automation
+  - button "Improve Story":
+    - generic: Improve Story
+  - button "Details" [expanded]:
+    - heading "Details" [level=2]
+  - generic: Assignee
+  - button "Assignee Pin to top. Only you can see pinned fields."
+  - button "Emad Farooqui- edit Assignee"
+  - img "Emad Farooqui":
+  - generic: Emad Farooqui
+  - generic: Reporter
+  - button "Reporter Pin to top. Only you can see pinned fields."
+  - button [disabled]
+  - img "Emad Farooqui":
+  - generic: Emad Farooqui
+  - generic: Labels
+  - button "Labels Pin to top. Only you can see pinned fields."
+  - button "Edit Labels"
+  - list:
+    - link "role-full-stack-engineer":
+      - /url: /issues/?jql=labels%20%3D%20%22role-full-stack-engineer%22
+      - generic: role-full-stack-engineer
+    - link "workflow-demo":
+      - /url: /issues/?jql=labels%20%3D%20%22workflow-demo%22
+      - generic: workflow-demo
+  - generic: Due date
+  - button "Due date Pin to top. Only you can see pinned fields."
+  - button "Edit Due date, 10/14/2026"
+  - generic: Oct 14, 2026
+  - generic: Start date
+  - button "More information about Start date"
+  - button "Start date Pin to top. Only you can see pinned fields."
+  - button "Edit Start date"
+  - generic: Add date
+  - generic: Story Points
+  - button "More information about Story Points"
+  - button "Story Points Pin to top. Only you can see pinned fields."
+  - button "Edit Story Points, 8"
+  - generic: "8"
+  - generic: Sprint
+  - button "More information about Sprint"
+  - button "Sprint Pin to top. Only you can see pinned fields."
+  - button "Edit Sprint"
+  - generic: Add sprint
+  - button "+1":
+    - generic: "+1"
+  - generic: Priority
+  - button "Priority Pin to top. Only you can see pinned fields."
+  - button "Edit Priority"
+  - generic: Highest
+  - button "Development":
+    - heading "Development" [level=2]
+  - button "More fields" [expanded]:
+    - heading "More fields" [level=2]
+  - generic: Original estimate
+  - button "Original estimate Pin to top. Only you can see pinned fields."
+  - button "Edit Time tracking"
+  - generic: Add estimate
+  - generic: Time tracking
+  - button "Time tracking Pin to top. Only you can see pinned fields."
+  - button "No time logged- edit Time tracking, edit"
+  - generic: No time logged
+  - generic: Components
+  - button "Components Pin to top. Only you can see pinned fields."
+  - button "Components, Add components selected, edit"
+  - generic: Add components
+  - generic: Team
+  - button "Team Pin to top. Only you can see pinned fields."
+  - button "Edit, edit"
+  - generic: Add team
+  - generic: Fix versions
+  - button "Fix versions Pin to top. Only you can see pinned fields."
+  - button "Fix versions, None selected, edit"
+  - generic: None
+  - generic: Parent
+  - button "More information about"
+  - button "Parent Pin to top. Only you can see pinned fields."
+  - button "Edit Parent"
+  - generic: Add parent
+  - button "Automation":
+    - heading "Automation" [level=2]
+    - generic: Rule executions
+  - text: Created
+  - button "29 minutes ago"
+  - text: Updated
+  - button "4 minutes ago"
+  - link "Configure":
+    - /url: https://emadfar2020.atlassian.net/plugins/servlet/project-config/CDS/issuelayout?screenId=10004#backLinkUrl=%2Fbrowse%2FCDS-5&backLinkTitle=Back%20to%20CDS-5
+    - generic: Configure

@@ -1,0 +1,285 @@
+- generic: "Skip to:"
+- list:
+  - link "Top Bar":
+    - /url: "#jira-page-layout-top-nav"
+  - link "Sidebar":
+    - /url: "#jira-page-layout-side-nav"
+  - link "Main Content":
+    - /url: "#jira-page-layout-main"
+- banner:
+  - button "Collapse sidebar":
+    - generic: Collapse sidebar
+  - button "Switch sites or apps":
+    - generic: Switch sites or apps
+  - link "Go to your Jira homepage":
+    - /url: /jira
+    - generic: Jira
+  - search:
+    - textbox "Search"
+  - button "Create":
+    - generic: Create
+  - navigation "Actions":
+    - list:
+      - button "1 Notification":
+        - generic: 1 Notification
+      - generic: "1"
+      - button "Help":
+        - generic: Help
+      - generic: 3+
+      - button "Settings":
+        - generic: Settings
+      - button "emadfar2020@gmail.com":
+        - generic: emadfar2020@gmail.com
+- navigation "Sidebar":
+  - list:
+    - link "For you":
+      - /url: /jira/for-you
+      - generic: For you
+    - button "Recent":
+      - generic: Recent
+    - button "Starred":
+      - generic: Starred
+    - button "Apps":
+      - generic: Apps
+    - button "More actions for Apps":
+      - generic: More actions for Apps
+    - button "Plans":
+      - generic: Plans
+    - button "Create plan":
+      - generic: Create plan
+    - button "More actions for Plans":
+      - generic: More actions for Plans
+    - button "Spaces" [expanded]:
+      - generic: Spaces
+    - button "Create space":
+      - generic: Create space
+    - button "More actions for spaces":
+      - generic: More actions for spaces
+    - list:
+      - group "Recent":
+        - paragraph: Recent
+        - list:
+          - link "Commerce Delivery - Scrum":
+            - /url: /browse/CDS
+            - generic: Commerce Delivery - Scrum
+          - button "Commerce Delivery - Scrum" [expanded]
+          - button "Create board":
+            - generic: Create board
+          - button "More actions for Commerce Delivery - Scrum":
+            - generic: More actions for Commerce Delivery - Scrum
+          - list:
+            - group "Recent":
+              - paragraph: Recent
+              - list:
+                - link "CDS board":
+                  - /url: /jira/software/c/projects/CDS/boards/2/backlog
+                  - generic: CDS board
+                - button "Board actions for CDS board":
+                  - generic: Board actions for CDS board
+          - link "My Team":
+            - /url: /jira/software/projects/SCRUM/boards/1
+            - generic: My Team
+          - button "More actions for My Team":
+            - generic: More actions for My Team
+      - list:
+        - button "More spaces":
+          - generic: More spaces
+        - list:
+          - heading "Recommended" [level=2]
+          - button "Prioritize ideas":
+            - generic: Prioritize ideas
+          - generic: Try
+    - button "Filters":
+      - generic: Filters
+    - button "Dashboards":
+      - generic: Dashboards
+    - button "Create dashboard":
+      - generic: Create dashboard
+  - list:
+    - link "Assets , (opens new window)":
+      - /url: /jira/assets
+      - generic: Assets
+      - generic: ", (opens new window)"
+    - img "Assets":
+    - link "Teams , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/people/?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Teams
+      - generic: ", (opens new window)"
+    - img "Teams":
+    - button "Teams":
+      - generic: Teams
+    - link "Goals , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/goals?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Goals
+      - generic: ", (opens new window)"
+    - link "Projects , (opens new window)":
+      - /url: https://home.atlassian.com/o/458f6309-a603-45ae-8925-c8fce00ce91b/projects?cloudId=c52e3960-bf2b-4f97-b17a-cb4b97610c6d
+      - generic: Projects
+      - generic: ", (opens new window)"
+  - button "Customize sidebar":
+    - generic: Customize sidebar
+  - slider "Resize panel": "320"
+  - text: Resize panel
+- main:
+  - navigation "Breadcrumbs":
+    - list:
+      - link "Spaces":
+        - /url: /jira/projects
+        - generic: Spaces
+      - text: /
+      - link "Commerce Delivery - Scrum":
+        - /url: /browse/CDS
+        - generic: Commerce Delivery - Scrum
+      - text: /
+      - link "CDS board":
+        - /url: /jira/software/c/projects/CDS/boards/2
+        - generic: CDS board
+      - text: /
+      - link "Reports":
+        - /url: /jira/software/c/projects/CDS/boards/2/reports
+        - generic: Reports
+  - button "How to read this chart": How to read this chart
+  - button "Share"
+  - status
+  - button " More actions for Sprint Report":
+    - generic:  More actions for Sprint Report
+  - heading "Sprint Report" [level=1]:
+    - generic: Sprint Report
+  - generic: Commerce MVP - Sprint 1 Demo
+  - link " Sprint actions":
+    - /url: "#ghx-sprint-actions-content"
+    - generic:  Sprint actions
+  - text: Closed sprint, ended by
+  - link "Emad Farooqui":
+    - /url: /secure/ViewProfile.jspa?accountId=712020%3A6d07c473-1177-4de0-842f-40ee3e2d6bc1
+  - text: 08/Oct/26 6:00 PM - 08/Oct/26 6:14 PM
+  - button "View linked pages"
+  - generic: "Demonstrate a shopper MVP workflow with 8 stories and 32 points. Owner: Emad Farooqui. Planned Oct 8-15. Early closure for simulation; code and QA unverified."
+  - generic: Oct 8 18:00
+  - generic: Oct 8 18:14
+  - generic: Oct 15 18:00
+  - generic: "0"
+  - generic: "5"
+  - generic: "10"
+  - generic: "15"
+  - generic: "20"
+  - generic: "25"
+  - generic: "30"
+  - generic: "35"
+  - table:
+    - rowgroup:
+      - row "Guideline":
+        - cell
+        - cell "Guideline"
+      - row "Remaining Values":
+        - cell
+        - cell "Remaining Values"
+      - row "Non-Working Days":
+        - cell:
+        - cell "Non-Working Days"
+  - generic: Time
+  - generic: Story Points
+  - heading "Status Report" [level=2]
+  - generic: "* Issue added to sprint after start time"
+  - heading "Completed Issues" [level=4]
+  - link "View in Issue Navigator":
+    - /url: /issues/?jql=issueKey%20in%20(CDS-1%2CCDS-2%2CCDS-3%2CCDS-4%2CCDS-5%2CCDS-6%2CCDS-7%2CCDS-8)
+  - table "Completed Issues":
+    - rowgroup:
+      - row "Key Summary Issue Type Priority Status Story Points (32)":
+        - columnheader "Key"
+        - columnheader "Summary"
+        - columnheader "Issue Type"
+        - columnheader "Priority"
+        - columnheader "Status"
+        - columnheader "Story Points (32)":
+          - text: Story Points
+          - generic: (32)
+      - row "CDS-1 * Confirm MVP scope and sprint delivery plan Story Highest Done 2":
+        - cell "CDS-1 *":
+          - link "CDS-1":
+            - /url: /browse/CDS-1
+          - text: "*"
+        - cell "Confirm MVP scope and sprint delivery plan"
+        - cell "Story"
+        - cell "Highest"
+        - cell "Done":
+          - generic: Done
+        - cell "2"
+      - row "CDS-2 * Develop API for login Story High Done 5":
+        - cell "CDS-2 *":
+          - link "CDS-2":
+            - /url: /browse/CDS-2
+          - text: "*"
+        - cell "Develop API for login"
+        - cell "Story"
+        - cell "High"
+        - cell "Done":
+          - generic: Done
+        - cell "5"
+      - row "CDS-3 * Create user registration page Story High Done 3":
+        - cell "CDS-3 *":
+          - link "CDS-3":
+            - /url: /browse/CDS-3
+          - text: "*"
+        - cell "Create user registration page"
+        - cell "Story"
+        - cell "High"
+        - cell "Done":
+          - generic: Done
+        - cell "3"
+      - row "CDS-4 * Build product catalog and search Story High Done 5":
+        - cell "CDS-4 *":
+          - link "CDS-4":
+            - /url: /browse/CDS-4
+          - text: "*"
+        - cell "Build product catalog and search"
+        - cell "Story"
+        - cell "High"
+        - cell "Done":
+          - generic: Done
+        - cell "5"
+      - row "CDS-5 * Implement cart and checkout Story Highest Done 8":
+        - cell "CDS-5 *":
+          - link "CDS-5":
+            - /url: /browse/CDS-5
+          - text: "*"
+        - cell "Implement cart and checkout"
+        - cell "Story"
+        - cell "Highest"
+        - cell "Done":
+          - generic: Done
+        - cell "8"
+      - row "CDS-6 * Add order confirmation and product reviews Story Medium Done 3":
+        - cell "CDS-6 *":
+          - link "CDS-6":
+            - /url: /browse/CDS-6
+          - text: "*"
+        - cell "Add order confirmation and product reviews"
+        - cell "Story"
+        - cell "Medium"
+        - cell "Done":
+          - generic: Done
+        - cell "3"
+      - row "CDS-7 * Polish responsive layout and accessibility Story Medium Done 2":
+        - cell "CDS-7 *":
+          - link "CDS-7":
+            - /url: /browse/CDS-7
+          - text: "*"
+        - cell "Polish responsive layout and accessibility"
+        - cell "Story"
+        - cell "Medium"
+        - cell "Done":
+          - generic: Done
+        - cell "2"
+      - row "CDS-8 * Run QA and prepare sprint review Story High Done 4":
+        - cell "CDS-8 *":
+          - link "CDS-8":
+            - /url: /browse/CDS-8
+          - text: "*"
+        - cell "Run QA and prepare sprint review"
+        - cell "Story"
+        - cell "High"
+        - cell "Done":
+          - generic: Done
+        - cell "4"
