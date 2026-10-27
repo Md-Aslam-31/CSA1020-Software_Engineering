@@ -1,6 +1,6 @@
 # CSA1020-Software_Engineering
 
-A shared software engineering laboratory repository for **Md-Aslam-31** and **Emadfar007**.
+A shared software engineering laboratory repository for **Md-Aslam-31**
 
 This contribution includes Experiments 01-15, 128 screenshots, the Excel workbook, and the available application source. Experiments 11-15 were added on 27 October 2026 with their reports, screenshots, source, and quick-access links. The experiments were prepared using Emadfar007. Historical screenshots and pull-request links retain their original project context in the [source repository](https://github.com/Emadfar007/CSA1020---Software-Engineering).
 
