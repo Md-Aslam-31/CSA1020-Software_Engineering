@@ -1,0 +1,19 @@
+{
+  "experiment": 15,
+  "sourceRepository": "https://github.com/Emadfar007/kitcrew-team-project",
+  "sourceVisibility": "private",
+  "sourceSnapshot": "88be5539c512fa5e2df7f0eefaccaa361f97ac78",
+  "archiveRepository": "https://github.com/Emadfar007/CSA1020---Software-Engineering",
+  "archiveVisibility": "public",
+  "archivePath": "experiments/experiment-15-team-version-control",
+  "originalFiles": 48,
+  "screenshots": 10,
+  "scope": "Public copy requested by the owner; original private repository and its workflow history remain unchanged.",
+  "adaptations": [
+    "README labels the public archive and private original",
+    "Quickstart uses the public monorepo and experiment directory",
+    "Nested .github files described as archived originals",
+    "Archive checksums regenerated"
+  ],
+  "applicationAndScreenshotsUnchanged": true
+}

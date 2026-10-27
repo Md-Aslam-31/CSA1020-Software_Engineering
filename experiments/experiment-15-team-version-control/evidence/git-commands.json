@@ -1,0 +1,362 @@
+[
+  {
+    "timeUtc": "2026-10-26T16:27:34.432972+00:00",
+    "command": "git switch feature/catalog",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "Switched to branch 'feature/catalog'\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:35.077111+00:00",
+    "command": "node --test --test-reporter=spec",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "\u00e2\u0153\u201d catalog contains six unique, immutable equipment items (6.3918ms)\n\u00e2\u0153\u201d catalog search is trimmed and case insensitive (5.7656ms)\n\u00e2\u0153\u201d category and search constraints apply together (0.8004ms)\n\u00e2\u0153\u201d all and empty filters return separate full result arrays (0.5877ms)\n\u00e2\u0153\u201d search with no matches returns an empty array (0.9557ms)\n\u00e2\u0153\u201d search rejects nontext filter values (1.2859ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate IDs before searching (0.5902ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate equipment identities (5.5905ms)\n\u00e2\u0153\u201d time validation rejects invalid dates and preserves the supplied instant (16.0385ms)\n\u00e2\u201e\u00b9 tests 9\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 9\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 323.9932\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:35.573088+00:00",
+    "command": "git add app/modules app/tests",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:36.236429+00:00",
+    "command": "git commit -m Implement catalog module with focused regression checks",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "[feature/catalog 077156c] Implement catalog module with focused regression checks\n 3 files changed, 70 insertions(+), 1 deletion(-)\n create mode 100644 app/modules/catalog.mjs\n create mode 100644 app/tests/catalog.test.mjs\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:40.340328+00:00",
+    "command": "git -c credential.username=Emadfar007 push -u origin feature/catalog",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "branch 'feature/catalog' set up to track 'origin/feature/catalog'.\n",
+    "stderr": "remote: \nremote: Create a pull request for 'feature/catalog' on GitHub by visiting:        \nremote:      https://github.com/Emadfar007/kitcrew-team-project/pull/new/feature/catalog        \nremote: \nTo https://github.com/Emadfar007/kitcrew-team-project.git\n * [new branch]      feature/catalog -> feature/catalog\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:40.515839+00:00",
+    "command": "git rev-parse HEAD",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "077156cf9fe1bcdbdab89e78ee3d3096ae974f68\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:40.710561+00:00",
+    "command": "git switch feature/loans",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "Switched to branch 'feature/loans'\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:41.226199+00:00",
+    "command": "node --test --test-reporter=spec",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "\u00e2\u0153\u201d new loan trims team details and calculates due date exactly (23.8201ms)\n\u00e2\u0153\u201d merged loan limits permit three units for fourteen days (0.4597ms)\n\u00e2\u0153\u201d loan rejects unavailable quantities without changing history (4.31ms)\n\u00e2\u0153\u201d quantity validation rejects fractions, zero, excessive and nonnumeric values (0.6614ms)\n\u00e2\u0153\u201d duration validation rejects out of bounds and nonnumeric values (0.592ms)\n\u00e2\u0153\u201d loan requires known equipment and meaningful team details (2.0676ms)\n\u00e2\u0153\u201d date injection accepts Date objects and rejects invalid dates (0.6205ms)\n\u00e2\u0153\u201d return creates a new history without mutating the original loan (0.5793ms)\n\u00e2\u0153\u201d duplicate return and unknown loans produce clear errors (0.7906ms)\n\u00e2\u0153\u201d return cannot precede the borrowing time (0.9679ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate equipment identities (2.2213ms)\n\u00e2\u0153\u201d time validation rejects invalid dates and preserves the supplied instant (3.975ms)\n\u00e2\u201e\u00b9 tests 12\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 12\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 256.848\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:41.401940+00:00",
+    "command": "git add app/modules app/tests",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:41.675317+00:00",
+    "command": "git commit -m Implement loans module with focused regression checks",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "[feature/loans 2fcd09a] Implement loans module with focused regression checks\n 3 files changed, 135 insertions(+), 1 deletion(-)\n create mode 100644 app/modules/loans.mjs\n create mode 100644 app/tests/loans.test.mjs\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:45.318550+00:00",
+    "command": "git -c credential.username=Emadfar007 push -u origin feature/loans",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "branch 'feature/loans' set up to track 'origin/feature/loans'.\n",
+    "stderr": "remote: \nremote: Create a pull request for 'feature/loans' on GitHub by visiting:        \nremote:      https://github.com/Emadfar007/kitcrew-team-project/pull/new/feature/loans        \nremote: \nTo https://github.com/Emadfar007/kitcrew-team-project.git\n * [new branch]      feature/loans -> feature/loans\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:45.536826+00:00",
+    "command": "git rev-parse HEAD",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "2fcd09afdaf250fd495fe12c9317083f3c432f01\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:45.736317+00:00",
+    "command": "git switch feature/insights",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "Switched to branch 'feature/insights'\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:46.166795+00:00",
+    "command": "node --test --test-reporter=spec",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "\u00e2\u0153\u201d summary conserves stock and groups category utilization (5.8657ms)\n\u00e2\u0153\u201d overdue metrics exclude returned loans and the exact due boundary (1.8227ms)\n\u00e2\u0153\u201d empty inventory summary has zero utilization without NaN (0.3821ms)\n\u00e2\u0153\u201d malformed, duplicate and overbooked saved state is rejected (1.157ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate equipment identities (2.0582ms)\n\u00e2\u0153\u201d time validation rejects invalid dates and preserves the supplied instant (2.3538ms)\n\u00e2\u201e\u00b9 tests 6\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 6\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 210.1922\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:46.322235+00:00",
+    "command": "git add app/modules app/tests",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:46.588041+00:00",
+    "command": "git commit -m Implement insights module with focused regression checks",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "[feature/insights 41d1b5e] Implement insights module with focused regression checks\n 2 files changed, 74 insertions(+)\n create mode 100644 app/modules/insights.mjs\n create mode 100644 app/tests/insights.test.mjs\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:50.170605+00:00",
+    "command": "git -c credential.username=Emadfar007 push -u origin feature/insights",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "branch 'feature/insights' set up to track 'origin/feature/insights'.\n",
+    "stderr": "remote: \nremote: Create a pull request for 'feature/insights' on GitHub by visiting:        \nremote:      https://github.com/Emadfar007/kitcrew-team-project/pull/new/feature/insights        \nremote: \nTo https://github.com/Emadfar007/kitcrew-team-project.git\n * [new branch]      feature/insights -> feature/insights\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:27:50.310050+00:00",
+    "command": "git rev-parse HEAD",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "41d1b5e2b2a74cfb7ccbe39e157d9c73cf87b488\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:30:24.146315+00:00",
+    "command": "git switch feature/catalog",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "Your branch is up to date with 'origin/feature/catalog'.\n",
+    "stderr": "Switched to branch 'feature/catalog'\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:30:24.777844+00:00",
+    "command": "node --test --test-reporter=spec",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "\u00e2\u0153\u201d catalog contains six unique, immutable equipment items (6.8965ms)\n\u00e2\u0153\u201d catalog search is trimmed and case insensitive (6.891ms)\n\u00e2\u0153\u201d description-only search survives the shared policy merge (0.5461ms)\n\u00e2\u0153\u201d category and search constraints apply together (0.6596ms)\n\u00e2\u0153\u201d all and empty filters return separate full result arrays (1.2632ms)\n\u00e2\u0153\u201d search with no matches returns an empty array (0.4334ms)\n\u00e2\u0153\u201d search rejects nontext filter values (2.1981ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate IDs before searching (0.9903ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate equipment identities (3.8762ms)\n\u00e2\u0153\u201d time validation rejects invalid dates and preserves the supplied instant (5.5735ms)\n\u00e2\u201e\u00b9 tests 10\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 10\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 390.2706\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:30:25.027602+00:00",
+    "command": "git add app/tests/catalog.test.mjs",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:30:25.417334+00:00",
+    "command": "git commit -m Address catalog review with explicit description-search regression",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "[feature/catalog 1b7f367] Address catalog review with explicit description-search regression\n 1 file changed, 5 insertions(+)\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:30:29.278162+00:00",
+    "command": "git -c credential.username=Emadfar007 push origin feature/catalog",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "To https://github.com/Emadfar007/kitcrew-team-project.git\n   077156c..1b7f367  feature/catalog -> feature/catalog\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:30:29.456306+00:00",
+    "command": "git rev-parse HEAD",
+    "branch": "feature/catalog",
+    "exitCode": 0,
+    "stdout": "1b7f367f13ecdc10df88db327f7a6b767c79e5b4\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:31:43.978965+00:00",
+    "command": "git switch feature/loans",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "Your branch is up to date with 'origin/feature/loans'.\n",
+    "stderr": "Switched to branch 'feature/loans'\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:31:47.480710+00:00",
+    "command": "git fetch origin",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "From https://github.com/Emadfar007/kitcrew-team-project\n   a0798c6..1b71bd9  main       -> origin/main\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:31:47.811401+00:00",
+    "command": "git merge --no-edit origin/main",
+    "branch": "feature/loans",
+    "exitCode": 1,
+    "stdout": "Auto-merging app/modules/policy.mjs\nCONFLICT (content): Merge conflict in app/modules/policy.mjs\nAutomatic merge failed; fix conflicts and then commit the result.\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:31:47.994244+00:00",
+    "command": "git status --short",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "A  app/modules/catalog.mjs\nUU app/modules/policy.mjs\nA  app/tests/catalog.test.mjs\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:31:48.180696+00:00",
+    "command": "git ls-files -u",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "100644 ba9a3ac507d545d0aed3b1793051566e9353fc0e 1\tapp/modules/policy.mjs\n100644 1573caf90d130fd2bdb97fa0a94b2a9a8047f880 2\tapp/modules/policy.mjs\n100644 39f7ad0ce5fd68f3d955e388b00a2426e5ac7761 3\tapp/modules/policy.mjs\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:33:17.280255+00:00",
+    "command": "node --test --test-reporter=spec",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "\u00e2\u0153\u201d catalog contains six unique, immutable equipment items (5.3457ms)\n\u00e2\u0153\u201d catalog search is trimmed and case insensitive (4.4477ms)\n\u00e2\u0153\u201d description-only search survives the shared policy merge (0.6913ms)\n\u00e2\u0153\u201d category and search constraints apply together (0.4006ms)\n\u00e2\u0153\u201d all and empty filters return separate full result arrays (0.9075ms)\n\u00e2\u0153\u201d search with no matches returns an empty array (0.4445ms)\n\u00e2\u0153\u201d search rejects nontext filter values (1.5485ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate IDs before searching (0.3621ms)\n\u00e2\u0153\u201d new loan trims team details and calculates due date exactly (28.3485ms)\n\u00e2\u0153\u201d merged loan limits permit three units for fourteen days (0.5205ms)\n\u00e2\u0153\u201d loan rejects unavailable quantities without changing history (4.8658ms)\n\u00e2\u0153\u201d quantity validation rejects fractions, zero, excessive and nonnumeric values (1.1152ms)\n\u00e2\u0153\u201d duration validation rejects out of bounds and nonnumeric values (2.5506ms)\n\u00e2\u0153\u201d loan requires known equipment and meaningful team details (0.7222ms)\n\u00e2\u0153\u201d date injection accepts Date objects and rejects invalid dates (0.4969ms)\n\u00e2\u0153\u201d return creates a new history without mutating the original loan (0.7056ms)\n\u00e2\u0153\u201d duplicate return and unknown loans produce clear errors (0.8465ms)\n\u00e2\u0153\u201d return cannot precede the borrowing time (0.9579ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate equipment identities (2.7122ms)\n\u00e2\u0153\u201d time validation rejects invalid dates and preserves the supplied instant (7.3593ms)\n\u00e2\u201e\u00b9 tests 20\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 20\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 351.8011\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:33:18.659467+00:00",
+    "command": "git add app/modules/policy.mjs",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:33:18.867071+00:00",
+    "command": "git diff --name-only --diff-filter=U",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:33:19.140778+00:00",
+    "command": "git diff --cached --check",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:33:19.723287+00:00",
+    "command": "git commit -m Resolve shared policy conflict preserving search and team loan limits",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "[feature/loans c9619a4] Resolve shared policy conflict preserving search and team loan limits\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:33:19.999216+00:00",
+    "command": "git rev-parse HEAD",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "c9619a423d6af2ff44f6248eb730afb6dfc2ce6a\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:33:20.296761+00:00",
+    "command": "git show -s --format=%P HEAD",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "2fcd09afdaf250fd495fe12c9317083f3c432f01 1b71bd9138e2d40661490abb2f6d02f2e91ebe94\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:33:25.122395+00:00",
+    "command": "git -c credential.username=Emadfar007 push origin feature/loans",
+    "branch": "feature/loans",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "To https://github.com/Emadfar007/kitcrew-team-project.git\n   2fcd09a..c9619a4  feature/loans -> feature/loans\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:34:06.078429+00:00",
+    "command": "git switch feature/insights",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "Your branch is up to date with 'origin/feature/insights'.\n",
+    "stderr": "Switched to branch 'feature/insights'\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:34:09.313364+00:00",
+    "command": "git fetch origin",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "From https://github.com/Emadfar007/kitcrew-team-project\n   1b71bd9..4300dae  main       -> origin/main\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:34:09.718330+00:00",
+    "command": "git merge --no-edit origin/main",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "Merge made by the 'ort' strategy.\n app/modules/catalog.mjs    | 32 +++++++++++++++++++\n app/modules/loans.mjs      | 58 +++++++++++++++++++++++++++++++++++\n app/modules/policy.mjs     |  6 +++-\n app/tests/catalog.test.mjs | 42 +++++++++++++++++++++++++\n app/tests/loans.test.mjs   | 76 ++++++++++++++++++++++++++++++++++++++++++++++\n 5 files changed, 213 insertions(+), 1 deletion(-)\n create mode 100644 app/modules/catalog.mjs\n create mode 100644 app/modules/loans.mjs\n create mode 100644 app/tests/catalog.test.mjs\n create mode 100644 app/tests/loans.test.mjs\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:34:10.598534+00:00",
+    "command": "node --test --test-reporter=spec",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "\u00e2\u0153\u201d catalog contains six unique, immutable equipment items (5.7397ms)\n\u00e2\u0153\u201d catalog search is trimmed and case insensitive (6.0156ms)\n\u00e2\u0153\u201d description-only search survives the shared policy merge (0.8457ms)\n\u00e2\u0153\u201d category and search constraints apply together (0.5517ms)\n\u00e2\u0153\u201d all and empty filters return separate full result arrays (1.1958ms)\n\u00e2\u0153\u201d search with no matches returns an empty array (0.4514ms)\n\u00e2\u0153\u201d search rejects nontext filter values (1.5235ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate IDs before searching (0.4184ms)\n\u00e2\u0153\u201d summary conserves stock and groups category utilization (22.4523ms)\n\u00e2\u0153\u201d overdue metrics exclude returned loans and the exact due boundary (2.8115ms)\n\u00e2\u0153\u201d empty inventory summary has zero utilization without NaN (0.6178ms)\n\u00e2\u0153\u201d malformed, duplicate and overbooked saved state is rejected (2.9884ms)\n\u00e2\u0153\u201d returned units become available for another checkout (34.9583ms)\n\u00e2\u0153\u201d search, checkout, reporting and return preserve both merged policy requirements (2.1522ms)\n\u00e2\u0153\u201d new loan trims team details and calculates due date exactly (19.2049ms)\n\u00e2\u0153\u201d merged loan limits permit three units for fourteen days (0.8471ms)\n\u00e2\u0153\u201d loan rejects unavailable quantities without changing history (6.7702ms)\n\u00e2\u0153\u201d quantity validation rejects fractions, zero, excessive and nonnumeric values (1.1237ms)\n\u00e2\u0153\u201d duration validation rejects out of bounds and nonnumeric values (1.0334ms)\n\u00e2\u0153\u201d loan requires known equipment and meaningful team details (4.1161ms)\n\u00e2\u0153\u201d date injection accepts Date objects and rejects invalid dates (1.5704ms)\n\u00e2\u0153\u201d return creates a new history without mutating the original loan (1.4346ms)\n\u00e2\u0153\u201d duplicate return and unknown loans produce clear errors (1.0229ms)\n\u00e2\u0153\u201d return cannot precede the borrowing time (1.0441ms)\n\u00e2\u0153\u201d catalog validation rejects duplicate equipment identities (3.998ms)\n\u00e2\u0153\u201d time validation rejects invalid dates and preserves the supplied instant (6.2647ms)\n\u00e2\u201e\u00b9 tests 26\n\u00e2\u201e\u00b9 suites 0\n\u00e2\u201e\u00b9 pass 26\n\u00e2\u201e\u00b9 fail 0\n\u00e2\u201e\u00b9 cancelled 0\n\u00e2\u201e\u00b9 skipped 0\n\u00e2\u201e\u00b9 todo 0\n\u00e2\u201e\u00b9 duration_ms 532.932\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:34:11.053865+00:00",
+    "command": "git add app/public app/tests",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:34:11.613107+00:00",
+    "command": "git commit -m Integrate equipment workspace and cross-module regression checks",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "[feature/insights 53e1da6] Integrate equipment workspace and cross-module regression checks\n 5 files changed, 482 insertions(+)\n create mode 100644 app/public/app.js\n create mode 100644 app/public/favicon.svg\n create mode 100644 app/public/index.html\n create mode 100644 app/public/styles.css\n create mode 100644 app/tests/integration.test.mjs\n",
+    "stderr": ""
+  },
+  {
+    "timeUtc": "2026-10-26T16:34:16.221717+00:00",
+    "command": "git -c credential.username=Emadfar007 push origin feature/insights",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "To https://github.com/Emadfar007/kitcrew-team-project.git\n   41d1b5e..53e1da6  feature/insights -> feature/insights\n"
+  },
+  {
+    "timeUtc": "2026-10-26T16:34:16.416931+00:00",
+    "command": "git rev-parse HEAD",
+    "branch": "feature/insights",
+    "exitCode": 0,
+    "stdout": "53e1da6973e64aed1ce4fcb0dd0e6c47a26e80db\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "name": "focuslane",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "description": "An educational study-sprint planner for a Docker continuous-deployment experiment.",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "test:ci": "node --test --test-reporter=junit"
+  }
+}

@@ -1,0 +1,22 @@
+test_boundaries (test_api.ParcelPilotTests.test_boundaries) ... ok
+test_city_and_service_validation (test_api.ParcelPilotTests.test_city_and_service_validation) ... ok
+test_home_and_local_assets (test_api.ParcelPilotTests.test_home_and_local_assets) ... ok
+test_json_transport_errors (test_api.ParcelPilotTests.test_json_transport_errors) ... ok
+test_list_services_and_filter (test_api.ParcelPilotTests.test_list_services_and_filter) ... ok
+test_liveness_and_readiness (test_api.ParcelPilotTests.test_liveness_and_readiness) ... ok
+test_non_finite_numbers (test_api.ParcelPilotTests.test_non_finite_numbers) ... ok
+test_numeric_validation_including_large_integers (test_api.ParcelPilotTests.test_numeric_validation_including_large_integers) ... ok
+test_openapi_and_examples (test_api.ParcelPilotTests.test_openapi_and_examples) ... ok
+test_quote_price_and_breakdown (test_api.ParcelPilotTests.test_quote_price_and_breakdown) ... ok
+test_requests_do_not_depend_on_process_storage (test_api.ParcelPilotTests.test_requests_do_not_depend_on_process_storage) ... ok
+test_required_unknown_and_non_object_fields (test_api.ParcelPilotTests.test_required_unknown_and_non_object_fields) ... ok
+test_service_detail_and_missing_service (test_api.ParcelPilotTests.test_service_detail_and_missing_service) ... ok
+test_service_sort_and_invalid_filters (test_api.ParcelPilotTests.test_service_sort_and_invalid_filters) ... ok
+test_status_and_trace_headers (test_api.ParcelPilotTests.test_status_and_trace_headers) ... ok
+test_three_services_compare_consistently (test_api.ParcelPilotTests.test_three_services_compare_consistently) ... ok
+test_unknown_route_and_wrong_method (test_api.ParcelPilotTests.test_unknown_route_and_wrong_method) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.348s
+
+OK

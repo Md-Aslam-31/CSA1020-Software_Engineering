@@ -1,0 +1,3 @@
+configmap/parcelpilot-config created
+deployment.apps/parcelpilot-api created
+service/parcelpilot-nodeport unchanged

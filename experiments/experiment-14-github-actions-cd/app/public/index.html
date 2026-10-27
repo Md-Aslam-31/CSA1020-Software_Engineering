@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#32295e">
+  <meta name="description" content="Turn your study goals into a realistic daily plan with FocusLane.">
+  <title>FocusLane — A little progress, every day.</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#planner">Skip to planner</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="FocusLane home"><svg viewBox="0 0 38 38" aria-hidden="true"><rect x="1" y="1" width="36" height="36" rx="11"/><path d="M11 13h16M11 19h11M11 25h6"/><path class="brand-tick" d="m23 25 3 3 5-7"/></svg><span>focuslane<span class="brand-dot">.</span></span></a>
+    <nav aria-label="Main navigation"><a class="nav-link active" href="#planner">My plan</a><a class="nav-link" href="#schedule">My schedule</a><a class="nav-link" href="#delivery">Delivery details <span aria-hidden="true">↗</span></a></nav>
+    <div class="connection"><span id="connectionDot" class="status-dot" aria-hidden="true"></span><span id="connectionText">Connecting to the API</span></div>
+  </header>
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy"><p class="eyebrow"><span aria-hidden="true">✦</span> A CLEARER WAY THROUGH YOUR WEEK</p><h1 id="heroTitle">Less overwhelm.<br><em>More forward.</em></h1><p class="hero-description">Big goals feel better in smaller pieces. Give your subjects a place, protect your time, and find a rhythm that fits.</p><div class="hero-note"><span class="note-circle" aria-hidden="true">✓</span> Your priorities. Your pace. A realistic plan.</div></div>
+      <div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-spark">✧</div><div class="art-sticky"><span>ONE STEP</span><strong>closer.</strong><span class="sticky-arrow">↗</span></div><div class="art-calendar"><div class="calendar-rings"><i></i><i></i></div><div class="calendar-top"><span>A LITTLE EVERY DAY</span><b>5 / 5</b></div><div class="calendar-grid"><i>✓</i><i>✓</i><i>✓</i><i>✓</i><i class="calendar-today">→</i></div><div class="calendar-rule"></div><p>Make room for<br><em>what matters.</em></p></div><div class="art-caption"><span>✦</span> SMALL STEPS. GOOD MOMENTUM.</div></div>
+    </section>
+    <section class="overview" aria-label="Plan summary">
+      <div><span class="metric-label">YOUR STUDY GOAL</span><strong id="targetMetric">—</strong><small>Across your chosen subjects</small></div><div><span class="metric-label">TIME IN YOUR PLAN</span><strong id="plannedMetric">—</strong><small id="plannedMetricHint">Calculated by the API</small></div><div><span class="metric-label">ROOM TO FOCUS</span><strong id="capacityMetric">—</strong><small>Available across your plan</small></div><div class="overview-last"><span class="metric-label">THE RUNNING APP</span><strong id="environmentMetric">Connecting</strong><small id="buildMetric">Reading build details</small></div>
+    </section>
+    <section class="planner-section" id="planner" aria-labelledby="plannerTitle">
+      <div class="section-heading"><div><p class="eyebrow">01 / MAKE IT YOURS</p><h2 id="plannerTitle">A plan with room for you.</h2></div><div class="section-actions"><button class="button subtle" type="button" id="resetSample">Reset sample <span aria-hidden="true">↻</span></button><button class="button outline" type="button" id="saveDraft">Save draft <span aria-hidden="true">↗</span></button></div></div>
+      <div class="planner-layout">
+        <form class="editor-card" id="planForm" novalidate>
+          <div class="card-heading"><h3>Start with the essentials.</h3><span class="small-label">YOUR STUDY SPRINT</span></div>
+          <label class="full-label" for="planName">Give your plan a name<input id="planName" name="planName" maxlength="80" autocomplete="off" placeholder="A little progress, every day"></label>
+          <div class="field-grid"><label for="startDate">Start date<input id="startDate" name="startDate" type="date" min="1900-01-01" max="2100-12-31"></label><label for="dailyMinutes">Daily focus time <span>minutes</span><input id="dailyMinutes" name="dailyMinutes" type="number" min="30" max="480" step="1" inputmode="numeric"></label><label for="horizonDays">Plan length <span>days</span><input id="horizonDays" name="horizonDays" type="number" min="1" max="14" step="1" inputmode="numeric"></label></div>
+          <div class="subjects-heading"><div><h3>A place for each subject.</h3><p>Higher priorities get the first available time. You can add up to six subjects.</p></div><span class="count-pill" id="subjectCount">0 / 6</span></div>
+          <div class="subject-column-headings" aria-hidden="true"><span>SUBJECT</span><span>TARGET / MIN</span><span>PRIORITY</span><span></span></div>
+          <div id="subjectRows" class="subject-rows"></div>
+          <button class="add-subject" type="button" id="addSubject"><span aria-hidden="true">＋</span> Add a subject</button>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+          <div class="form-footer"><button class="button primary" type="submit" id="generatePlan">Find my focus <span aria-hidden="true">↗</span></button><span>Planned by the API.<br>Shaped around your time.</span></div>
+        </form>
+        <aside class="summary-card" aria-labelledby="summaryTitle">
+          <div class="summary-topline"><p class="eyebrow">YOUR NEXT GOOD STEP</p><span class="result-badge" id="assessmentBadge">READY WHEN YOU ARE</span></div>
+          <h3 id="summaryTitle">A little structure.<br><em>A lot more clarity.</em></h3>
+          <div id="summaryEmpty" class="summary-empty"><span aria-hidden="true">✦</span><p>Your goals and available time come together here.</p></div>
+          <div id="summaryResult" hidden><div class="large-number"><strong id="utilizationValue">0</strong><span>%<small>OF YOUR AVAILABLE TIME</small></span></div><progress id="utilizationProgress" max="100" value="0" aria-label="Planned capacity utilization"></progress><p class="summary-outcome" id="summaryOutcome"></p><dl class="summary-breakdown"><div><dt>Planned study time</dt><dd id="summaryPlanned">—</dd></div><div><dt>Still to find a place</dt><dd id="summaryRemaining">—</dd></div><div><dt>Daily time limit</dt><dd id="summaryDaily">—</dd></div></dl><div class="warnings" id="warnings" role="status" aria-live="polite"></div></div>
+          <div class="summary-footer"><p id="summaryFootnote">Your plan is a starting point. Make space for breaks and adjust as you go.</p><button class="button export" type="button" id="exportPlan">Export my plan <span aria-hidden="true">↓</span></button></div>
+        </aside>
+      </div>
+    </section>
+    <section class="schedule-section" id="schedule" aria-labelledby="scheduleTitle">
+      <div class="section-heading"><div><p class="eyebrow">02 / ONE DAY AT A TIME</p><h2 id="scheduleTitle">Give your goals a little direction.</h2></div><p class="section-description" id="scheduleDescription">Your daily schedule appears after you generate a plan.</p></div>
+      <div id="scheduleNotice" class="schedule-notice" hidden>Plan changed. Generate again to update this schedule.</div>
+      <div id="scheduleGrid" class="schedule-grid"><div class="schedule-placeholder"><span aria-hidden="true">▦</span><h3>A good week starts here.</h3><p>Choose your subjects and time above. We’ll help you put the pieces in place.</p></div></div>
+      <p class="schedule-note"><span aria-hidden="true">✦</span> A study-planning aid. Time estimates and priorities are your choices; this app does not guarantee learning outcomes.</p>
+    </section>
+    <section class="delivery-section" id="delivery" aria-labelledby="deliveryTitle"><div class="section-heading"><div><p class="eyebrow">03 / FROM COMMIT TO CLOUD</p><h2 id="deliveryTitle">Small app. Real delivery journey.</h2></div><button class="button outline" type="button" id="refreshBuild">Refresh build details <span aria-hidden="true">↻</span></button></div><div class="delivery-grid"><div class="delivery-story"><span class="delivery-icon" aria-hidden="true">↗</span><h3>Built to move forward.</h3><p>GitHub Actions builds and tests the Docker image before it reaches the cloud. These details come from the application you’re using.</p><div class="delivery-path"><span>COMMIT</span><i>→</i><span>TEST</span><i>→</i><span>IMAGE</span><i>→</i><span>CLOUD</span></div></div><div class="delivery-live"><p class="small-label"><span class="status-dot" aria-hidden="true"></span> RUNNING APPLICATION</p><dl><div><dt>Application</dt><dd id="runtimeApplication">—</dd></div><div><dt>Environment</dt><dd id="runtimeMode">—</dd></div><div><dt>App version</dt><dd id="runtimeVersion">—</dd></div><div><dt>Actions run</dt><dd id="runtimeBuild">—</dd></div><div><dt>Source commit</dt><dd><code id="runtimeCommit">—</code></dd></div></dl><p class="runtime-message" id="runtimeMessage" role="status" aria-live="polite">Reading /api/version…</p></div></div></section>
+  </main>
+  <footer><a class="footer-brand" href="#top">focuslane.</a><p>A little progress, every day.</p><span>EXPERIMENT 14 · DOCKER + GITHUB ACTIONS</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

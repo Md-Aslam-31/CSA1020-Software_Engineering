@@ -1,0 +1,6 @@
+# Module ownership roles are demonstrated by one authorized GitHub account.
+/app/modules/catalog.mjs @Emadfar007
+/app/modules/loans.mjs @Emadfar007
+/app/modules/insights.mjs @Emadfar007
+/app/modules/policy.mjs @Emadfar007
+/app/public/ @Emadfar007

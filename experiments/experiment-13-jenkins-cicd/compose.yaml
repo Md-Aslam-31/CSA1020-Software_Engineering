@@ -1,0 +1,55 @@
+name: releaseharbor-exp13
+services:
+  docker:
+    image: docker:29-dind@sha256:9e79b879b177fbd72c34376a3dd3d91747da5db49e1f560f76aea59561471977
+    privileged: true
+    restart: unless-stopped
+    environment:
+      DOCKER_TLS_CERTDIR: /certs
+    volumes:
+      - docker-certificates:/certs/client
+      - docker-data:/var/lib/docker
+    networks:
+      - build-lab
+    healthcheck:
+      test: ["CMD", "docker", "info"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    mem_limit: 2g
+  jenkins:
+    build: ./ci/jenkins
+    image: releaseharbor-jenkins:1.0
+    restart: unless-stopped
+    depends_on:
+      docker:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8090:8080"
+    environment:
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false -Xms256m -Xmx768m
+      ADMIN_USER: emad
+      DOCKER_HOST: tcp://docker:2376
+      DOCKER_CERT_PATH: /certs/client
+      DOCKER_TLS_VERIFY: "1"
+      JENKINS_URL: http://127.0.0.1:8090/
+    volumes:
+      - jenkins-home:/var/jenkins_home
+      - docker-certificates:/certs/client:ro
+    secrets:
+      - jenkins_admin_password
+      - seed_credentials
+    networks:
+      - build-lab
+    mem_limit: 1536m
+networks:
+  build-lab:
+volumes:
+  jenkins-home:
+  docker-data:
+  docker-certificates:
+secrets:
+  jenkins_admin_password:
+    file: ${JENKINS_SECRETS_DIR:?Set JENKINS_SECRETS_DIR to a private directory}/jenkins_admin_password
+  seed_credentials:
+    file: ${JENKINS_SECRETS_DIR:?Set JENKINS_SECRETS_DIR to a private directory}/seed_credentials.json

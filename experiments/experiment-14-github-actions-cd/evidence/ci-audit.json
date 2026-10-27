@@ -1,0 +1,18 @@
+{
+  "workflow": "experiment-14-cd.yml",
+  "auditedAt": "2026-10-26T16:01:53.363Z",
+  "actionlint": "passed",
+  "guardRegressionTests": 4,
+  "guardTestsPassed": 4,
+  "applicationContract": "255 planned minutes; [90,90,75] per day; high priority first; freeMinutes [0,0,15] compatible",
+  "checks": [
+    "Pinned action commits; read-only contents permissions; checkout credentials not persisted",
+    "Pull request registry login, publication and cloud deployment skipped (verified in PR job record)",
+    "Same runtime image smoke-tested before push; service receives the immutable published digest",
+    "Service hook and registry digest validated against the expected destination",
+    "Cloud exact source SHA and run.attempt verified independently of returned app identity",
+    "Artifact and build identity include retry attempt to avoid rerun collisions"
+  ],
+  "findings": [],
+  "note": "Read-only audit; actual hosted run, browser observations and machine-readable receipts provide execution evidence."
+}

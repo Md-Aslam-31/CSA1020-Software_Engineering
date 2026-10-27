@@ -1,0 +1,9 @@
+{
+  "health": "healthy",
+  "readiness": "ready",
+  "quote_http": 201,
+  "quote_total": 760.0,
+  "compared_services": 3,
+  "runtime": "docker",
+  "instance": "e060c67b5786"
+}

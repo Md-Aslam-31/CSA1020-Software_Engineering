@@ -1,0 +1,38 @@
+{
+  "application": "FocusLane",
+  "sourceSha": "91e798ee1fa33fe43a6342d17438fe2541026020",
+  "buildNumber": "2.1",
+  "githubRunId": "40352441673",
+  "githubRunAttempt": "1",
+  "event": "pull_request",
+  "ref": "refs/pull/2/merge",
+  "jobStatus": "success",
+  "tests": {
+    "tests": 23,
+    "executed": 23,
+    "failures": 0,
+    "skipped": 0
+  },
+  "containerVerification": {
+    "healthHttpStatus": 200,
+    "version": {
+      "application": "FocusLane",
+      "version": "1.1.0",
+      "gitSha": "91e798ee1fa33fe43a6342d17438fe2541026020",
+      "buildNumber": "2.1",
+      "mode": "ci"
+    },
+    "planHttpStatus": 200,
+    "plannedMinutes": 255,
+    "dailyMinutes": [
+      90,
+      90,
+      75
+    ],
+    "highPriorityFirst": true,
+    "invalidInputHttpStatus": 400
+  },
+  "publishedDigests": null,
+  "cloudDeployment": null,
+  "deploymentVerified": false
+}

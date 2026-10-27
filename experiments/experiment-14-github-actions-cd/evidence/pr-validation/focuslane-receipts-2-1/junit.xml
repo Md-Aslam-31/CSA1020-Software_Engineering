@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testsuite name="FocusLane application" time="0.159291" disabled="0" errors="0" tests="23" failures="0" skipped="0" timestamp="2026-10-26T15:45:50.421Z" hostname="1dcece95ff40">
+		<testcase name="priority scheduling fills daily capacity and returns honest totals" time="0.004367" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="same-priority subjects preserve the user input order" time="0.000843" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="insufficient capacity produces remaining targets and an explicit warning" time="0.001735" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="unused days remain empty instead of inventing study sessions" time="0.000427" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="server free time represents partial and empty days and conserves daily capacity" time="0.000666" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="the algorithm preserves inputs and agrees across repeated calculations" time="0.000798" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="calendar dates advance correctly across leap-day and month boundaries" time="0.000395" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="minimum and maximum supported plans remain capacity-bounded" time="0.000568" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="invalid dates and unsupported date representations are rejected" time="0.001195" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="numeric fields reject strings, booleans, fractions and out-of-range values" time="0.000851" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="subject IDs must be valid and unique and priority must be recognized" time="0.000761" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="required keys and exact object/array shapes are enforced" time="0.000755" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="text is trimmed, Unicode is supported, and control characters are rejected" time="0.000387" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="metadata is limited to public build identity" time="0.000154" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="health and version expose the expected running build identity" time="0.060280" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="HTTP planning completes the browser-to-API data flow" time="0.011477" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="tracing, cache and browser protection headers accompany API responses" time="0.003131" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="malformed JSON, wrong media and invalid input return useful error envelopes" time="0.008786" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="declared oversized requests are rejected without accepting a partial payload" time="0.003839" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="chunked oversized JSON is bounded as well" time="0.012573" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="unknown routes, methods and unsupported queries are rejected" time="0.005615" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="local interface assets are served with correct media types and HEAD semantics" time="0.014285" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+		<testcase name="independent instances produce identical plans without server-side stored state" time="0.010897" classname="FocusLane application" file="/app/tests/focuslane.test.js"/>
+	</testsuite>
+	<!-- tests 23 -->
+	<!-- suites 1 -->
+	<!-- pass 23 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 303.992566 -->
+</testsuites>

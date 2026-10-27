@@ -1,0 +1,13 @@
+{
+  "recordedAtUtc": "2026-10-26T11:54:20.6691096Z",
+  "dockerDesktopVersion": "4.96.3",
+  "dockerCliVersion": "29.9.2",
+  "nginxVersion": "1.30.6",
+  "wslVersion": "2.7.10.0",
+  "hypervisorPresent": true,
+  "hypervisorLaunchType": "Auto",
+  "restartPending": false,
+  "imageBuild": "completed",
+  "containerRun": "running and healthy",
+  "url": "http://127.0.0.1:8087/"
+}

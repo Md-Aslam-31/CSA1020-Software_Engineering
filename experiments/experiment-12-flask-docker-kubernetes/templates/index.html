@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#163c38">
+  <meta name="description" content="ParcelPilot, an interactive Flask API lab for delivery estimates and Kubernetes deployment.">
+  <title>ParcelPilot — Dispatch, thoughtfully.</title>
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to workspace</a>
+  <aside class="sidebar">
+    <a class="brand" href="#main" aria-label="ParcelPilot home">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="m20 3 15 8v18l-15 8-15-8V11Z"/><path d="m5 11 15 9 15-9M20 20v17M13 7l15 9v7"/></svg>
+      <span>ParcelPilot<span class="brand-sub">DISPATCH, THOUGHTFULLY.</span></span>
+    </a>
+    <p class="nav-label">YOUR WORKSPACE</p>
+    <nav aria-label="Workspace navigation">
+      <a class="nav-link active" href="#workbench"><span aria-hidden="true">◫</span> Quote studio <span class="nav-arrow">↗</span></a>
+      <a class="nav-link" href="#explorer"><span aria-hidden="true">⌘</span> API explorer</a>
+      <a class="nav-link" href="#runtime"><span aria-hidden="true">▥</span> Runtime</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="lab-icon" aria-hidden="true">↗</div>
+      <p>One API.<br>Room to scale.</p>
+      <span>FLASK · DOCKER · KUBERNETES</span>
+      <div class="sidebar-version">EXPERIMENT 12 <span>v{{ version }}</span></div>
+    </div>
+  </aside>
+  <main id="main">
+    <header class="topbar">
+      <div>Workspace <span>/</span> <strong>Quote studio</strong></div>
+      <div class="topbar-status"><span id="connectionDot" class="connection-dot"></span><span id="connectionLabel">Connecting to API</span><span class="avatar" aria-label="ParcelPilot lab">PP</span></div>
+    </header>
+    <div class="page">
+      <section class="intro" aria-labelledby="page-title">
+        <div><p class="eyebrow">A LITTLE CLARITY, BEFORE THE JOURNEY</p><h1 id="page-title">Every parcel has<br><em>a possibility.</em></h1><p class="intro-text">Plan a delivery, compare your options, and explore the API that makes it happen.</p></div>
+        <div class="intro-card"><span class="intro-card-mark" aria-hidden="true">↗</span><span class="intro-card-rule"></span><p>Built to move<br><strong>with you.</strong></p><span class="intro-card-small">STATELESS BY DESIGN</span></div>
+      </section>
+      <section class="metrics" aria-label="Live API information">
+        <div><span class="metric-label">API STATUS <span class="metric-icon">↗</span></span><strong id="apiStatus">Connecting</strong><span class="metric-foot">Readiness from the API</span></div>
+        <div><span class="metric-label">DELIVERY OPTIONS <span class="metric-icon">◈</span></span><strong id="serviceCount">—</strong><span class="metric-foot">One plan, a few good choices</span></div>
+        <div><span class="metric-label">ENVIRONMENT <span class="metric-icon">▧</span></span><strong id="environment">—</strong><span id="endpointLabel" class="metric-foot">Checking runtime</span></div>
+        <div><span class="metric-label">LAST RESPONSE <span class="metric-icon">⌁</span></span><strong id="lastLatency">—</strong><span class="metric-foot">Measured in this browser</span></div>
+      </section>
+      <section id="workbench" class="studio" aria-labelledby="studio-title">
+        <div class="section-heading"><div><p class="eyebrow">THE QUOTE STUDIO</p><h2 id="studio-title">Make a little room for better plans.</h2></div><button type="button" id="loadSample" class="button button-light">Use example <span aria-hidden="true">↺</span></button></div>
+        <div class="studio-grid">
+          <form id="quoteForm" class="panel quote-form" novalidate>
+            <div class="panel-heading"><h3>Your parcel, your plan.</h3><span class="step-label">01 / DETAILS</span></div>
+            <div class="form-row"><label>Origin<input id="origin" name="origin" value="Chennai" maxlength="60" required autocomplete="off"></label><label>Destination<input id="destination" name="destination" value="Bengaluru" maxlength="60" required autocomplete="off"></label></div>
+            <div class="form-row"><label>Distance <span class="unit">km</span><input id="distance" name="distance_km" type="number" min="1" max="20000" step="0.1" value="350" required></label><label>Parcel weight <span class="unit">kg</span><input id="weight" name="weight_kg" type="number" min="0.1" max="500" step="0.1" value="2.5" required></label></div>
+            <fieldset><legend>How would you like it to travel?</legend><div id="serviceChoices" class="service-choices">
+              <button type="button" class="service-choice" data-service="economy" aria-pressed="false"><span class="service-symbol" aria-hidden="true">↝</span><strong>Economy</strong><small>Flexible &amp; simple</small></button>
+              <button type="button" class="service-choice selected" data-service="express" aria-pressed="true"><span class="service-symbol" aria-hidden="true">↗</span><strong>Express</strong><small>The balanced route</small></button>
+              <button type="button" class="service-choice" data-service="priority" aria-pressed="false"><span class="service-symbol" aria-hidden="true">✦</span><strong>Priority</strong><small>For a quicker arrival</small></button>
+            </div></fieldset>
+            <input type="hidden" id="service" value="express">
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+            <div class="form-actions"><button id="quoteButton" class="button button-primary" type="submit">Get my estimate <span aria-hidden="true">↗</span></button><button id="compareButton" class="button button-outline" type="button">Compare all three</button></div>
+            <p class="small-print">Illustrative lab rates and timings. No booking or payment is made.</p>
+          </form>
+          <div class="quote-output">
+            <section class="estimate-panel" aria-labelledby="estimate-title">
+              <div class="estimate-heading"><span class="eyebrow" id="estimate-title">YOUR DELIVERY ESTIMATE</span><span id="estimateBadge" class="pill">Ready when you are</span></div>
+              <div id="emptyEstimate" class="empty-estimate"><div class="parcel-art" aria-hidden="true"><div class="parcel-top"></div><div class="parcel-front"><span>PP</span></div><div class="parcel-side"></div><span class="art-orbit"></span><span class="art-star">✦</span></div><h3>A good journey starts<br>with a little clarity.</h3><p>Enter your details to see the numbers,<br>the timing, and the way forward.</p></div>
+              <div id="estimateContent" hidden aria-live="polite">
+                <p class="estimate-route" id="estimateRoute"></p><div class="estimate-price" id="estimatePrice"></div><p class="estimate-time" id="estimateTime"></p>
+                <dl class="breakdown"><div><dt>Service base</dt><dd id="baseCost"></dd></div><div><dt>Distance component</dt><dd id="distanceCost"></dd></div><div><dt>Weight component</dt><dd id="weightCost"></dd></div></dl>
+                <div class="quote-identity"><span id="quoteId"></span><span>CALCULATED BY THE API</span></div>
+              </div>
+            </section>
+            <div class="request-strip"><span class="method post">POST</span><code id="lastQuotePath">/api/v1/quotes</code><span id="quoteHttpStatus">Not sent yet</span></div>
+          </div>
+        </div>
+        <section id="comparisonPanel" class="panel comparison-panel" hidden aria-labelledby="comparisonTitle">
+          <div class="panel-heading"><div><p class="eyebrow">A FEW WAYS FORWARD</p><h3 id="comparisonTitle">The same parcel. Three possibilities.</h3></div><span class="pill">API comparison</span></div>
+          <div id="comparisonCards" class="comparison-cards"></div>
+        </section>
+      </section>
+      <section id="explorer" class="explorer-section" aria-labelledby="explorer-title">
+        <div class="section-heading"><div><p class="eyebrow">UNDER THE HOOD</p><h2 id="explorer-title">A conversation with the API.</h2><p class="section-subtitle">Send a real request. Explore the response.</p></div><a class="text-link" href="/openapi.json" download="parcelpilot-openapi.json">OpenAPI specification <span aria-hidden="true">↗</span></a></div>
+        <div class="explorer-grid">
+          <div class="panel request-panel"><div class="panel-heading"><h3>Request</h3><span class="step-label">02 / EXPLORE</span></div>
+            <label>Choose an endpoint<select id="endpoint">
+              <option value="GET /api/v1/services">GET /api/v1/services</option>
+              <option value="GET /api/v1/services/express">GET /api/v1/services/express</option>
+              <option value="GET /api/v1/services?max_base_fee=100&amp;sort=base_fee">GET /api/v1/services?max_base_fee=100&amp;sort=base_fee</option>
+              <option value="POST /api/v1/quotes">POST /api/v1/quotes</option>
+              <option value="POST /api/v1/compare">POST /api/v1/compare</option>
+              <option value="GET /api/v1/status">GET /api/v1/status</option>
+              <option value="GET /api/v1/examples">GET /api/v1/examples</option>
+              <option value="GET /healthz">GET /healthz</option>
+              <option value="GET /readyz">GET /readyz</option>
+              <option value="GET /openapi.json">GET /openapi.json</option>
+            </select></label>
+            <div id="requestBodyWrap" hidden><label>JSON request body<textarea id="requestBody" spellcheck="false" rows="10"></textarea></label></div>
+            <p id="getHint" class="request-hint">This endpoint reads data. A request body is not needed.</p>
+            <button id="sendRequest" type="button" class="button button-primary">Send request <span aria-hidden="true">↗</span></button>
+            <p id="explorerMessage" class="form-message" aria-live="polite"></p>
+          </div>
+          <div class="response-panel"><div class="response-top"><div><span class="response-label">RESPONSE</span><span id="responseStatus" class="response-status">Waiting for a request</span></div><button type="button" id="copyResponse" disabled aria-label="Copy JSON response">Copy JSON</button></div><pre id="responseJson" tabindex="0" aria-label="JSON API response">{
+  "message": "Your next request starts here."
+}</pre><div class="response-bottom"><span id="responseInstance">Instance: —</span><span id="responseRequestId">Request ID: —</span></div></div>
+        </div>
+      </section>
+      <section id="runtime" class="runtime-section" aria-labelledby="runtime-title">
+        <div class="section-heading"><div><p class="eyebrow">A REAL PLACE TO RUN</p><h2 id="runtime-title">Small service. Thoughtful foundations.</h2></div><button id="refreshRuntime" class="button button-light" type="button">Refresh runtime <span aria-hidden="true">↻</span></button></div>
+        <div class="runtime-grid">
+          <div class="runtime-card"><span class="runtime-symbol">◈</span><h3>Packaged with Docker</h3><p>Flask and Gunicorn travel together in one reproducible application image.</p><span class="runtime-tag">NON-ROOT CONTAINER</span></div>
+          <div class="runtime-card"><span class="runtime-symbol">▧</span><h3>Ready for Kubernetes</h3><p>Stateless calculations work across replicas, with readiness and liveness endpoints.</p><span class="runtime-tag">HEALTH PROBES</span></div>
+          <div class="runtime-card runtime-live"><span class="runtime-live-label"><span class="connection-dot"></span> CURRENT RESPONSE</span><dl><div><dt>Environment</dt><dd id="runtimeMode">—</dd></div><div><dt>Namespace</dt><dd id="runtimeNamespace">—</dd></div><div><dt>API version</dt><dd id="runtimeVersion">—</dd></div><div><dt>Serving instance</dt><dd id="runtimeInstance">—</dd></div></dl></div>
+        </div>
+        <p id="runtimeMessage" class="form-message" aria-live="polite"></p>
+      </section>
+      <footer class="footer"><span>ParcelPilot<span class="footer-dot">.</span></span><p>Thoughtful plans. A little more possibility.</p><span>EXPERIMENT 12 · v{{ version }}</span></footer>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>

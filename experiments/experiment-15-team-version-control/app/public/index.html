@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#123de4">
+  <meta name="description" content="KitCrew helps small creative teams share equipment, track handoffs and see what is available.">
+  <title>KitCrew — Good gear. Great teamwork.</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to workspace</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="KitCrew home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>kitcrew<span class="brand-dot">.</span></a>
+    <nav class="main-nav" aria-label="Workspace navigation">
+      <button class="nav-button active" data-view="catalog" aria-current="page">The kit room <span>01</span></button>
+      <button class="nav-button" data-view="loans">Team loans <span id="navLoanCount">0</span></button>
+      <button class="nav-button" data-view="insights">The big picture <span>↗</span></button>
+    </nav>
+    <div class="workspace-tag"><span class="status-dot"></span> CREATIVE CREW <span class="avatar">KC</span></div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="mini-star">✳</span> A SHARED SPACE FOR YOUR NEXT BIG THING</div>
+        <h1 id="heroTitle">Good gear.<br><span>Great teamwork.</span></h1>
+        <p>Find the right kit, make a clear handoff, and keep your crew moving. Less chasing equipment. More making things happen.</p>
+        <a class="primary-link" href="#workspace">Explore the kit room <span aria-hidden="true">↘</span></a>
+        <div class="hero-footnote"><span class="stacked-avatars" aria-hidden="true"><i>✦</i><i>↗</i><i>+</i></span> One team. One place. All the good stuff.</div>
+      </div>
+      <div class="hero-art" role="img" aria-label="An illustrated equipment shelf with a camera, headphones and a shared kit case">
+        <div class="art-topline"><span>THE CREW'S KIT ROOM</span><span>EST. 2026</span></div>
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-badge"><span>READY<br>TO MAKE<br>IT HAPPEN</span><b>↗</b></div>
+        <div class="floating-label label-one"><span class="status-dot"></span> CHECKED IN. READY TO GO.</div>
+        <div class="gear-case"><div class="case-handle"></div><span class="case-label">KIT / CREW</span><span class="case-lock one"></span><span class="case-lock two"></span><div class="case-sticker">SHARE<br>THE GOOD<br>STUFF ✳</div></div>
+        <div class="art-camera"><span class="camera-top"></span><span class="camera-flash"></span><span class="camera-lens"></span><span class="camera-dot"></span></div>
+        <div class="art-headphones"><span></span><i></i><b></b></div>
+        <div class="shelf-line"></div>
+        <div class="floating-label label-two"><span>01</span> YOUR NEXT IDEA STARTS HERE</div>
+        <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">+</span>
+      </div>
+    </section>
+
+    <section class="overview-strip" aria-label="Equipment overview">
+      <div class="overview-cell"><span class="metric-label">THE WHOLE COLLECTION</span><div><strong id="totalUnits">—</strong><span>pieces of possibility</span></div></div>
+      <div class="overview-cell"><span class="metric-label">READY FOR YOUR NEXT IDEA</span><div><strong id="availableUnits">—</strong><span>available right now</span></div></div>
+      <div class="overview-cell"><span class="metric-label">OUT MAKING THINGS</span><div><strong id="activeLoans">—</strong><span>active team loans</span></div></div>
+      <div class="overview-cell overview-note"><span class="circle-arrow" aria-hidden="true">↗</span><p>Better together.<br><strong>Built to be shared.</strong></p></div>
+    </section>
+
+    <section class="workspace" id="workspace" aria-label="KitCrew workspace">
+      <div id="catalogView" class="view-panel">
+        <div class="section-header"><div><div class="eyebrow">01 / FIND YOUR NEXT SIDEKICK</div><h2>The kit room<span class="heading-dot">.</span></h2></div><p>Pick your gear. Tell us who's taking it.<br>Keep the handoff simple.</p></div>
+        <div class="catalog-toolbar">
+          <label class="search-field"><span aria-hidden="true">⌕</span><input id="catalogSearch" type="search" maxlength="100" placeholder="Search cameras, lights, microphones…" aria-label="Search equipment"><kbd>/</kbd></label>
+          <label class="category-field"><span>Category</span><select id="categoryFilter" aria-label="Filter by category"><option value="all">All equipment</option></select></label>
+          <span class="result-count" id="resultCount" aria-live="polite">Loading the collection…</span>
+        </div>
+        <div class="catalog-grid" id="catalogGrid" aria-live="polite"></div>
+        <div class="empty-state" id="catalogEmpty" hidden><span aria-hidden="true">⌕</span><h3>No gear found this time.</h3><p>Try a different name or choose another category.</p><button class="text-button" id="clearFilters">Clear filters ↗</button></div>
+        <div class="room-note"><span aria-hidden="true">✳</span><p>A little care goes a long way. Borrow up to <strong>3 units</strong> for <strong>1–14 days</strong>, and return them when you're done so the next idea can begin.</p></div>
+      </div>
+
+      <div id="loansView" class="view-panel" hidden>
+        <div class="section-header"><div><div class="eyebrow">02 / EVERY HANDOFF, IN ONE PLACE</div><h2>Out with the crew<span class="heading-dot">.</span></h2></div><p>Know who has what.<br>Make the next handoff a good one.</p></div>
+        <div class="loan-toolbar"><div class="segmented-control" aria-label="Loan filters"><button class="active" data-loan-filter="active" aria-pressed="true">Active <span id="activeFilterCount">0</span></button><button data-loan-filter="returned" aria-pressed="false">Returned <span id="returnedFilterCount">0</span></button></div><p><span class="status-dot"></span> Saved in this browser</p></div>
+        <div id="loanList" class="loan-list" aria-live="polite"></div>
+        <div class="empty-state" id="loansEmpty" hidden><span aria-hidden="true">↗</span><h3>Ready when you are.</h3><p id="loansEmptyText">Your crew's borrowed equipment will appear here.</p><button class="primary-button" id="browseFromLoans">Find some gear <span>↗</span></button></div>
+      </div>
+
+      <div id="insightsView" class="view-panel" hidden>
+        <div class="section-header"><div><div class="eyebrow">03 / A CLEARER VIEW OF THE CREW</div><h2>The big picture<span class="heading-dot">.</span></h2></div><p>A little visibility.<br>A lot less “where did that go?”</p></div>
+        <div class="insight-grid">
+          <article class="utilization-card"><div class="eyebrow">GEAR IN GOOD USE</div><div class="utilization-number"><strong id="utilizationValue">0</strong><span>%</span></div><progress id="utilizationBar" max="100" value="0" aria-label="Equipment utilization"></progress><p id="utilizationText">Your equipment utilization will appear here.</p><div class="utilization-spark" aria-hidden="true">✳</div></article>
+          <article class="category-card"><h3>Across the collection</h3><p>Borrowed units by equipment category.</p><div id="categoryBars" class="category-bars"></div></article>
+          <article class="return-card"><span class="return-icon" aria-hidden="true">↶</span><div class="eyebrow">KEEP GOOD IDEAS CIRCULATING</div><h3 id="overdueHeadline">All in good time.</h3><p id="overdueText">No overdue loans. Thanks for keeping the kit moving.</p><button class="text-button" id="reviewLoans">Review team loans ↗</button></article>
+        </div>
+        <div class="insight-footer"><span>YOUR BROWSER, YOUR WORKSPACE</span><p>This is a local team-project demo. Records stay in this browser; equipment availability isn't connected to a real inventory service.</p></div>
+      </div>
+    </section>
+
+    <section class="team-workflow" id="workflow" aria-labelledby="workflowTitle">
+      <div class="workflow-intro"><div class="eyebrow">ONE CONNECTED TEAM PROJECT</div><h2 id="workflowTitle">Three modules.<br>One smooth handoff.</h2><p>Browse the collection, track a loan, and see the bigger picture. Each part works together.</p></div>
+      <div class="workflow-steps"><article><span class="step-number">01</span><div><h3>Discover the gear</h3><p>Search and filter a shared catalog.</p><span class="module-label">CATALOG MODULE</span></div><span class="step-arrow">↗</span></article><article><span class="step-number">02</span><div><h3>Make the handoff</h3><p>Check availability and record the details.</p><span class="module-label">LOANS MODULE</span></div><span class="step-arrow">↗</span></article><article><span class="step-number">03</span><div><h3>Keep the crew in sync</h3><p>See use, availability and overdue returns.</p><span class="module-label">INSIGHTS MODULE</span></div><span class="step-arrow">↗</span></article></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#top" aria-label="KitCrew footer home">kitcrew<span class="brand-dot">.</span></a><p>Good gear. Great teamwork.</p><div class="footer-actions"><button id="exportWorkspace">Export workspace ↗</button><button id="resetWorkspace">Reset demo ↶</button></div><span class="footer-caption">EXPERIMENT 15 / GIT + GITHUB</span></footer>
+
+  <dialog id="borrowDialog" aria-labelledby="borrowTitle">
+    <form id="borrowForm" novalidate>
+      <div class="dialog-heading"><span class="eyebrow">MAKE IT YOURS, FOR A LITTLE WHILE</span><button class="close-dialog" type="button" aria-label="Close checkout">×</button></div>
+      <h2 id="borrowTitle">A good handoff<br>starts here<span class="heading-dot">.</span></h2>
+      <div class="selected-equipment" id="selectedEquipment"></div>
+      <input id="borrowItemId" name="itemId" type="hidden">
+      <div class="form-grid"><label>Your name<input id="borrowerName" name="borrower" type="text" maxlength="60" autocomplete="off" placeholder="e.g. Aisha Khan"></label><label>Team / project<input id="teamName" name="team" type="text" maxlength="60" autocomplete="off" placeholder="e.g. Design collective"></label><label>How many units?<input id="loanQuantity" name="quantity" type="number" min="1" max="3" step="1" value="1" inputmode="numeric"></label><label>For how many days?<input id="loanDays" name="days" type="number" min="1" max="14" step="1" value="3" inputmode="numeric"></label></div>
+      <p class="form-help">Up to 3 units per loan. Choose 1–14 days. Availability is checked again when you confirm.</p>
+      <p id="borrowError" class="form-error" role="alert" hidden></p>
+      <button class="primary-button confirm-borrow" type="submit">Confirm the handoff <span>↗</span></button>
+      <p class="dialog-note">Demo records are saved in this browser. No real equipment reservation is made.</p>
+    </form>
+  </dialog>
+  <dialog id="resetDialog" aria-labelledby="resetTitle"><div class="reset-content"><span class="eyebrow">A FRESH START</span><h2 id="resetTitle">Clear this demo?</h2><p>This removes KitCrew's loan records from this browser and restores all equipment availability. Your other browser data stays as it is.</p><div class="reset-actions"><button class="secondary-button" id="cancelReset">Keep my records</button><button class="primary-button" id="confirmReset">Reset KitCrew ↶</button></div></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <div id="appError" class="app-error" role="alert" hidden></div>
+</body>
+</html>

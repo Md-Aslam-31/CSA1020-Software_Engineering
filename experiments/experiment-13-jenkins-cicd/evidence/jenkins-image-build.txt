@@ -1,0 +1,486 @@
+--progress is a global compose flag, better use `docker compose --progress xx build ...
+ Image releaseharbor-jenkins:1.0 Building 
+#1 [internal] load local bake definitions
+#1 reading from stdin 743B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile:
+#2 transferring dockerfile: 1.05kB 0.1s done
+#2 DONE 0.2s
+
+#3 [internal] load metadata for docker.io/library/docker:29-cli@sha256:5e6baf67325a79f64ed3bed6863954d5e05d0f3d4e57cbdb14809346814bbfdb
+#3 ...
+
+#4 [auth] library/docker:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [auth] jenkins/jenkins:pull token for registry-1.docker.io
+#5 DONE 0.0s
+
+#6 [internal] load metadata for docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#6 ...
+
+#3 [internal] load metadata for docker.io/library/docker:29-cli@sha256:5e6baf67325a79f64ed3bed6863954d5e05d0f3d4e57cbdb14809346814bbfdb
+#3 DONE 3.0s
+
+#6 [internal] load metadata for docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#6 DONE 3.1s
+
+#7 [internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.1s
+
+#8 [internal] load build context
+#8 transferring context: 7.27kB 0.0s done
+#8 DONE 0.1s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 resolve docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1 0.1s done
+#9 ...
+
+#10 [dockercli 1/1] FROM docker.io/library/docker:29-cli@sha256:5e6baf67325a79f64ed3bed6863954d5e05d0f3d4e57cbdb14809346814bbfdb
+#10 resolve docker.io/library/docker:29-cli@sha256:5e6baf67325a79f64ed3bed6863954d5e05d0f3d4e57cbdb14809346814bbfdb 0.1s done
+#10 DONE 0.7s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 DONE 0.8s
+
+#10 [dockercli 1/1] FROM docker.io/library/docker:29-cli@sha256:5e6baf67325a79f64ed3bed6863954d5e05d0f3d4e57cbdb14809346814bbfdb
+#10 sha256:ee498a1860a58ca22c70842c8452e40a4a17054dca5632cf144c188f39bf42cf 0B / 1.01kB 0.2s
+#10 sha256:bd4566122f6780524803d9c99f3972356f9f4376af28b34ed139882644e0bd52 0B / 116B 0.2s
+#10 sha256:8b815a471d8d9c1447a7b722f089fb5637da5551fac7f77ff6d77fade03f9c68 0B / 540B 0.2s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 0B / 11.31MB 0.2s
+#10 sha256:ee498a1860a58ca22c70842c8452e40a4a17054dca5632cf144c188f39bf42cf 1.01kB / 1.01kB 0.3s done
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 0B / 23.82MB 0.2s
+#10 sha256:bd4566122f6780524803d9c99f3972356f9f4376af28b34ed139882644e0bd52 116B / 116B 0.5s done
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 0B / 20.29MB 0.2s
+#10 sha256:8b815a471d8d9c1447a7b722f089fb5637da5551fac7f77ff6d77fade03f9c68 540B / 540B 0.7s done
+#10 sha256:cffe68be57c630fbaa214ba63287e4d95925608af1f8135029c889faba1fd4f9 0B / 456B 0.2s
+#10 sha256:cffe68be57c630fbaa214ba63287e4d95925608af1f8135029c889faba1fd4f9 456B / 456B 0.4s done
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 1.05MB / 11.31MB 1.2s
+#10 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0B / 32B 0.2s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 2.10MB / 11.31MB 1.5s
+#10 sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 32B / 32B 0.3s done
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 1.05MB / 20.29MB 1.2s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 3.15MB / 11.31MB 1.8s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 0B / 8.20MB 0.2s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 2.10MB / 23.82MB 2.0s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 2.10MB / 20.29MB 1.7s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 4.19MB / 11.31MB 2.3s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 1.05MB / 8.20MB 0.8s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 3.15MB / 20.29MB 2.1s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 5.24MB / 11.31MB 2.7s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 4.19MB / 23.82MB 3.0s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 4.19MB / 20.29MB 2.7s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 2.10MB / 8.20MB 1.7s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 6.29MB / 11.31MB 3.6s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 3.15MB / 8.20MB 2.1s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 5.24MB / 20.29MB 3.3s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 3.67MB / 8.20MB 2.9s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 6.29MB / 23.82MB 4.5s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 4.19MB / 8.20MB 3.2s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 7.34MB / 11.31MB 5.1s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 6.29MB / 20.29MB 4.7s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 5.24MB / 8.20MB 3.7s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 8.39MB / 23.82MB 5.4s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 8.39MB / 11.31MB 5.7s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 7.34MB / 20.29MB 5.3s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 6.29MB / 8.20MB 4.2s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 10.49MB / 23.82MB 6.0s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 8.39MB / 20.29MB 5.9s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 9.44MB / 11.31MB 6.5s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 7.34MB / 8.20MB 5.0s
+#10 sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 10.49MB / 11.31MB 6.8s
+#10 sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 8.20MB / 8.20MB 5.1s done
+#10 extracting sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 9.44MB / 20.29MB 6.3s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 12.58MB / 23.82MB 6.9s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 10.49MB / 20.29MB 6.6s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 11.53MB / 20.29MB 6.9s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 14.68MB / 23.82MB 7.4s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 12.58MB / 20.29MB 7.2s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 13.63MB / 20.29MB 7.5s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 16.78MB / 23.82MB 8.0s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 14.68MB / 20.29MB 7.8s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 15.73MB / 20.29MB 8.3s
+#10 extracting sha256:a71b0c095ee8f31ff0a9447309e85f808367b1122c75e0356ff231a722d87655 2.1s done
+#10 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0.1s done
+#10 extracting sha256:cffe68be57c630fbaa214ba63287e4d95925608af1f8135029c889faba1fd4f9
+#10 extracting sha256:cffe68be57c630fbaa214ba63287e4d95925608af1f8135029c889faba1fd4f9 0.1s done
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 18.87MB / 23.82MB 8.9s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 16.78MB / 20.29MB 8.7s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 17.83MB / 20.29MB 9.2s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 20.97MB / 23.82MB 9.8s
+#10 ...
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 sha256:a91427fe0e3ff2cba4d0f29ec048684ac04f00320c1563a726d9a5d677bf24bc 391B / 391B 0.6s done
+#9 sha256:95bc7464aaea79c8148fadd51b963995cd9e67d50db71f4138953d43a4aa4ea7 1.29kB / 1.29kB 0.6s done
+#9 sha256:f9e31fab50e854aad573dd832349945a2270c153a23abb72f3e2a947b16a8e51 2.65kB / 2.65kB 0.4s done
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 5.24MB / 53.88MB 2.3s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 4.19MB / 72.20MB 2.1s
+#9 ...
+
+#10 [dockercli 1/1] FROM docker.io/library/docker:29-cli@sha256:5e6baf67325a79f64ed3bed6863954d5e05d0f3d4e57cbdb14809346814bbfdb
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 18.87MB / 20.29MB 9.6s
+#10 sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 20.29MB / 20.29MB 10.0s done
+#10 extracting sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 23.07MB / 23.82MB 10.5s
+#10 sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 23.82MB / 23.82MB 10.7s done
+#10 extracting sha256:335f14bb4f7daee1feb8e7e8cfe9df0f5a40f77513d6d250f91b1c2e14ad495f 1.5s done
+#10 extracting sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88
+#10 extracting sha256:552fcdedd26330070ccaa40f0323894f649d8243ac86ced87ccbb5740be54c88 2.8s done
+#10 extracting sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06
+#10 ...
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 25.17MB / 53.88MB 7.9s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 25.17MB / 72.20MB 7.9s
+#9 sha256:3dd4a99993ab093b6d8cf6bfa4d885f395bff3a02e291caefd852a0dc4a2b6a3 6.45MB / 6.45MB 1.9s done
+#9 sha256:968c36a3b2c58b9de7da06a9457f73bd1ff5f8baf6584937f2013167a791617b 187B / 187B 0.6s done
+#9 sha256:701ded2f9b337f28c79dd3dd4573df3ecd2cf32b0fa132f24a1a1655ae219684 183B / 183B 0.3s done
+#9 sha256:d89089c8a5a353820d6c418420a4130b815236a3f2207c214f9bbadab6b2a626 1.23kB / 1.23kB 0.3s done
+#9 sha256:810008851f3a99a556a3add6aaf28655612e9b5700fc9f67652eb052aff22b1b 5.62MB / 5.62MB 1.9s done
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 6.29MB / 58.61MB 3.2s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 3.15MB / 49.38MB 1.5s
+#9 ...
+
+#10 [dockercli 1/1] FROM docker.io/library/docker:29-cli@sha256:5e6baf67325a79f64ed3bed6863954d5e05d0f3d4e57cbdb14809346814bbfdb
+#10 extracting sha256:d07dfa8df4d19a6df163cb82622dcd15c33380a9453936fed2450ebbd1234d06 1.4s done
+#10 extracting sha256:8b815a471d8d9c1447a7b722f089fb5637da5551fac7f77ff6d77fade03f9c68 0.1s done
+#10 extracting sha256:ee498a1860a58ca22c70842c8452e40a4a17054dca5632cf144c188f39bf42cf
+#10 extracting sha256:ee498a1860a58ca22c70842c8452e40a4a17054dca5632cf144c188f39bf42cf 0.1s done
+#10 extracting sha256:bd4566122f6780524803d9c99f3972356f9f4376af28b34ed139882644e0bd52 0.1s done
+#10 DONE 17.2s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 9.44MB / 58.61MB 3.9s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 6.29MB / 49.38MB 2.3s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 29.36MB / 72.20MB 8.8s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 28.31MB / 53.88MB 9.0s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 9.44MB / 49.38MB 3.0s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 33.55MB / 72.20MB 9.9s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 12.58MB / 58.61MB 5.3s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 31.46MB / 53.88MB 10.2s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 12.58MB / 49.38MB 3.8s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 37.75MB / 72.20MB 10.6s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 15.73MB / 58.61MB 6.2s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 15.73MB / 49.38MB 4.5s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 34.60MB / 53.88MB 11.5s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 41.94MB / 72.20MB 11.5s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 18.87MB / 49.38MB 5.3s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 18.87MB / 58.61MB 7.2s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 22.02MB / 49.38MB 6.0s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 46.14MB / 72.20MB 12.6s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 37.75MB / 53.88MB 12.7s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 22.02MB / 58.61MB 8.4s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 25.17MB / 49.38MB 7.1s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 50.33MB / 72.20MB 14.1s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 40.89MB / 53.88MB 14.2s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 28.31MB / 49.38MB 7.8s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 25.17MB / 58.61MB 9.9s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 31.46MB / 49.38MB 8.7s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 54.53MB / 72.20MB 15.4s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 44.04MB / 53.88MB 15.6s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 28.31MB / 58.61MB 11.1s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 34.60MB / 49.38MB 9.6s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 58.72MB / 72.20MB 16.5s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 37.75MB / 49.38MB 10.2s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 47.19MB / 53.88MB 16.6s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 31.46MB / 58.61MB 12.3s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 62.91MB / 72.20MB 17.5s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 40.89MB / 49.38MB 11.1s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 50.33MB / 53.88MB 17.8s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 34.60MB / 58.61MB 13.4s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 44.04MB / 49.38MB 12.0s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 67.11MB / 72.20MB 18.6s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 53.48MB / 53.88MB 19.3s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 47.19MB / 49.38MB 12.9s
+#9 sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 53.88MB / 53.88MB 19.4s done
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 37.75MB / 58.61MB 14.9s
+#9 sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 49.38MB / 49.38MB 13.4s done
+#9 extracting sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 72.20MB / 72.20MB 20.1s
+#9 sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 72.20MB / 72.20MB 20.1s done
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 40.89MB / 58.61MB 15.6s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 44.04MB / 58.61MB 16.1s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 47.19MB / 58.61MB 16.7s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 50.33MB / 58.61MB 17.3s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 54.53MB / 58.61MB 17.7s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 57.67MB / 58.61MB 18.6s
+#9 sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 58.61MB / 58.61MB 18.7s done
+#9 extracting sha256:6eefb2f5d3e91a6cfc577476bbec26bb63f0d0fc31f904493f400833783aa2c2 9.6s done
+#9 DONE 38.0s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 extracting sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d
+#9 extracting sha256:408777b27aa931e1b620b49cc2b18c0e1009edd4b79251e1a83457a51e7c526d 7.9s done
+#9 DONE 46.0s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 extracting sha256:810008851f3a99a556a3add6aaf28655612e9b5700fc9f67652eb052aff22b1b
+#9 extracting sha256:810008851f3a99a556a3add6aaf28655612e9b5700fc9f67652eb052aff22b1b 0.4s done
+#9 DONE 46.4s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 extracting sha256:d89089c8a5a353820d6c418420a4130b815236a3f2207c214f9bbadab6b2a626 0.1s done
+#9 extracting sha256:701ded2f9b337f28c79dd3dd4573df3ecd2cf32b0fa132f24a1a1655ae219684 0.0s done
+#9 DONE 46.5s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 extracting sha256:968c36a3b2c58b9de7da06a9457f73bd1ff5f8baf6584937f2013167a791617b 0.0s done
+#9 extracting sha256:3dd4a99993ab093b6d8cf6bfa4d885f395bff3a02e291caefd852a0dc4a2b6a3
+#9 extracting sha256:3dd4a99993ab093b6d8cf6bfa4d885f395bff3a02e291caefd852a0dc4a2b6a3 0.2s done
+#9 DONE 46.7s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 extracting sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585
+#9 extracting sha256:a20a14499a3ea28b383fd4f33455d726780b20905a0d717222a72abf9f34e585 3.0s done
+#9 DONE 49.7s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 extracting sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1
+#9 extracting sha256:463a574793f8bf3ab6f97a705e99e0e8a6565ef73d610f0358970f51de9fc8a1 1.4s done
+#9 DONE 51.1s
+
+#9 [stage-1 1/7] FROM docker.io/jenkins/jenkins:lts-jdk21@sha256:a660310e39ade10631f774bacd5219de767dfd08947ea5c32a739b5e5bb382c1
+#9 extracting sha256:f9e31fab50e854aad573dd832349945a2270c153a23abb72f3e2a947b16a8e51 0.0s done
+#9 extracting sha256:95bc7464aaea79c8148fadd51b963995cd9e67d50db71f4138953d43a4aa4ea7 0.0s done
+#9 extracting sha256:a91427fe0e3ff2cba4d0f29ec048684ac04f00320c1563a726d9a5d677bf24bc 0.0s done
+#9 DONE 51.2s
+
+#11 [stage-1 2/7] RUN apt-get update     && apt-get install --yes --no-install-recommends ca-certificates curl python3     && rm -rf /var/lib/apt/lists/*
+#11 1.956 Get:1 http://deb.debian.org/debian trixie InRelease [140 kB]
+#11 2.045 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#11 2.046 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#11 2.139 Get:4 http://deb.debian.org/debian trixie/main amd64 Packages [9678 kB]
+#11 3.251 Get:5 http://deb.debian.org/debian trixie-updates/main amd64 Packages [720 B]
+#11 3.252 Get:6 http://deb.debian.org/debian-security trixie-security/main amd64 Packages [270 kB]
+#11 4.839 Fetched 10.2 MB in 3s (3351 kB/s)
+#11 4.839 Reading package lists...
+#11 6.789 Reading package lists...
+#11 7.993 Building dependency tree...
+#11 8.256 Reading state information...
+#11 8.732 The following additional packages will be installed:
+#11 8.733   libcurl3t64-gnutls libcurl4t64 libpython3-stdlib libpython3.13-minimal
+#11 8.735   libpython3.13-stdlib libreadline8t64 media-types netbase python3-minimal
+#11 8.735   python3.13 python3.13-minimal readline-common
+#11 8.739 Suggested packages:
+#11 8.739   python3-doc python3-tk python3-venv python3.13-venv python3.13-doc binutils
+#11 8.739   binfmt-support readline-doc
+#11 8.959 The following NEW packages will be installed:
+#11 8.959   libpython3-stdlib libpython3.13-minimal libpython3.13-stdlib libreadline8t64
+#11 8.960   media-types netbase python3 python3-minimal python3.13 python3.13-minimal
+#11 8.960   readline-common
+#11 8.962 The following packages will be upgraded:
+#11 8.964   ca-certificates curl libcurl3t64-gnutls libcurl4t64
+#11 9.101 4 upgraded, 11 newly installed, 0 to remove and 6 not upgraded.
+#11 9.101 Need to get 7357 kB of archives.
+#11 9.101 After this operation, 23.4 MB of additional disk space will be used.
+#11 9.101 Get:1 http://deb.debian.org/debian trixie/main amd64 libpython3.13-minimal amd64 3.13.5-2+deb13u5 [863 kB]
+#11 9.220 Get:2 http://deb.debian.org/debian trixie/main amd64 python3.13-minimal amd64 3.13.5-2+deb13u5 [2225 kB]
+#11 9.361 Get:3 http://deb.debian.org/debian trixie/main amd64 python3-minimal amd64 3.13.5-1 [27.2 kB]
+#11 9.362 Get:4 http://deb.debian.org/debian trixie/main amd64 media-types all 13.0.0 [29.3 kB]
+#11 9.364 Get:5 http://deb.debian.org/debian trixie/main amd64 netbase all 6.5 [12.4 kB]
+#11 9.365 Get:6 http://deb.debian.org/debian trixie/main amd64 readline-common all 8.2-6 [69.4 kB]
+#11 9.372 Get:7 http://deb.debian.org/debian trixie/main amd64 libreadline8t64 amd64 8.2-6 [169 kB]
+#11 9.384 Get:8 http://deb.debian.org/debian trixie/main amd64 libpython3.13-stdlib amd64 3.13.5-2+deb13u5 [1959 kB]
+#11 9.510 Get:9 http://deb.debian.org/debian trixie/main amd64 python3.13 amd64 3.13.5-2+deb13u5 [757 kB]
+#11 9.555 Get:10 http://deb.debian.org/debian trixie/main amd64 libpython3-stdlib amd64 3.13.5-1 [10.2 kB]
+#11 9.559 Get:11 http://deb.debian.org/debian trixie/main amd64 python3 amd64 3.13.5-1 [28.2 kB]
+#11 9.561 Get:12 http://deb.debian.org/debian-security trixie-security/main amd64 ca-certificates all 20250419+deb13u1 [161 kB]
+#11 9.569 Get:13 http://deb.debian.org/debian-security trixie-security/main amd64 curl amd64 8.14.1-2+deb13u7 [270 kB]
+#11 9.583 Get:14 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl4t64 amd64 8.14.1-2+deb13u7 [392 kB]
+#11 9.603 Get:15 http://deb.debian.org/debian-security trixie-security/main amd64 libcurl3t64-gnutls amd64 8.14.1-2+deb13u7 [385 kB]
+#11 10.05 debconf: unable to initialize frontend: Dialog
+#11 10.05 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 10.05 debconf: falling back to frontend: Readline
+#11 10.07 debconf: unable to initialize frontend: Readline
+#11 10.07 debconf: (This frontend requires a controlling tty.)
+#11 10.07 debconf: falling back to frontend: Teletype
+#11 10.09 debconf: unable to initialize frontend: Teletype
+#11 10.09 debconf: (This frontend requires a controlling tty.)
+#11 10.09 debconf: falling back to frontend: Noninteractive
+#11 12.25 Preconfiguring packages ...
+#11 13.74 Fetched 7357 kB in 1s (11.6 MB/s)
+#11 13.80 Selecting previously unselected package libpython3.13-minimal:amd64.
+#11 13.80 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 9624 files and directories currently installed.)
+#11 13.84 Preparing to unpack .../libpython3.13-minimal_3.13.5-2+deb13u5_amd64.deb ...
+#11 13.85 Unpacking libpython3.13-minimal:amd64 (3.13.5-2+deb13u5) ...
+#11 14.12 Selecting previously unselected package python3.13-minimal.
+#11 14.13 Preparing to unpack .../python3.13-minimal_3.13.5-2+deb13u5_amd64.deb ...
+#11 14.15 Unpacking python3.13-minimal (3.13.5-2+deb13u5) ...
+#11 14.42 Setting up libpython3.13-minimal:amd64 (3.13.5-2+deb13u5) ...
+#11 14.44 Setting up python3.13-minimal (3.13.5-2+deb13u5) ...
+#11 15.88 Selecting previously unselected package python3-minimal.
+#11 15.88 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 9949 files and directories currently installed.)
+#11 15.90 Preparing to unpack .../0-python3-minimal_3.13.5-1_amd64.deb ...
+#11 15.90 Unpacking python3-minimal (3.13.5-1) ...
+#11 15.97 Selecting previously unselected package media-types.
+#11 15.97 Preparing to unpack .../1-media-types_13.0.0_all.deb ...
+#11 15.98 Unpacking media-types (13.0.0) ...
+#11 16.05 Selecting previously unselected package netbase.
+#11 16.05 Preparing to unpack .../2-netbase_6.5_all.deb ...
+#11 16.06 Unpacking netbase (6.5) ...
+#11 16.12 Selecting previously unselected package readline-common.
+#11 16.12 Preparing to unpack .../3-readline-common_8.2-6_all.deb ...
+#11 16.13 Unpacking readline-common (8.2-6) ...
+#11 16.21 Selecting previously unselected package libreadline8t64:amd64.
+#11 16.22 Preparing to unpack .../4-libreadline8t64_8.2-6_amd64.deb ...
+#11 16.25 Adding 'diversion of /lib/x86_64-linux-gnu/libhistory.so.8 to /lib/x86_64-linux-gnu/libhistory.so.8.usr-is-merged by libreadline8t64'
+#11 16.26 Adding 'diversion of /lib/x86_64-linux-gnu/libhistory.so.8.2 to /lib/x86_64-linux-gnu/libhistory.so.8.2.usr-is-merged by libreadline8t64'
+#11 16.28 Adding 'diversion of /lib/x86_64-linux-gnu/libreadline.so.8 to /lib/x86_64-linux-gnu/libreadline.so.8.usr-is-merged by libreadline8t64'
+#11 16.30 Adding 'diversion of /lib/x86_64-linux-gnu/libreadline.so.8.2 to /lib/x86_64-linux-gnu/libreadline.so.8.2.usr-is-merged by libreadline8t64'
+#11 16.31 Unpacking libreadline8t64:amd64 (8.2-6) ...
+#11 16.40 Selecting previously unselected package libpython3.13-stdlib:amd64.
+#11 16.40 Preparing to unpack .../5-libpython3.13-stdlib_3.13.5-2+deb13u5_amd64.deb ...
+#11 16.41 Unpacking libpython3.13-stdlib:amd64 (3.13.5-2+deb13u5) ...
+#11 16.73 Selecting previously unselected package python3.13.
+#11 16.73 Preparing to unpack .../6-python3.13_3.13.5-2+deb13u5_amd64.deb ...
+#11 16.74 Unpacking python3.13 (3.13.5-2+deb13u5) ...
+#11 16.82 Selecting previously unselected package libpython3-stdlib:amd64.
+#11 16.82 Preparing to unpack .../7-libpython3-stdlib_3.13.5-1_amd64.deb ...
+#11 16.83 Unpacking libpython3-stdlib:amd64 (3.13.5-1) ...
+#11 16.89 Setting up python3-minimal (3.13.5-1) ...
+#11 17.18 Selecting previously unselected package python3.
+#11 17.18 (Reading database ... 
+(Reading database ... 5%
+(Reading database ... 10%
+(Reading database ... 15%
+(Reading database ... 20%
+(Reading database ... 25%
+(Reading database ... 30%
+(Reading database ... 35%
+(Reading database ... 40%
+(Reading database ... 45%
+(Reading database ... 50%
+(Reading database ... 55%
+(Reading database ... 60%
+(Reading database ... 65%
+(Reading database ... 70%
+(Reading database ... 75%
+(Reading database ... 80%
+(Reading database ... 85%
+(Reading database ... 90%
+(Reading database ... 95%
+(Reading database ... 100%
+(Reading database ... 10442 files and directories currently installed.)
+#11 17.20 Preparing to unpack .../python3_3.13.5-1_amd64.deb ...
+#11 17.21 Unpacking python3 (3.13.5-1) ...
+#11 17.29 Preparing to unpack .../ca-certificates_20250419+deb13u1_all.deb ...
+#11 17.31 Unpacking ca-certificates (20250419+deb13u1) over (20250419) ...
+#11 17.96 Preparing to unpack .../curl_8.14.1-2+deb13u7_amd64.deb ...
+#11 17.98 Unpacking curl (8.14.1-2+deb13u7) over (8.14.1-2+deb13u5) ...
+#11 18.11 Preparing to unpack .../libcurl4t64_8.14.1-2+deb13u7_amd64.deb ...
+#11 18.13 Unpacking libcurl4t64:amd64 (8.14.1-2+deb13u7) over (8.14.1-2+deb13u5) ...
+#11 18.26 Preparing to unpack .../libcurl3t64-gnutls_8.14.1-2+deb13u7_amd64.deb ...
+#11 18.27 Unpacking libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u7) over (8.14.1-2+deb13u5) ...
+#11 18.40 Setting up media-types (13.0.0) ...
+#11 18.42 Setting up libcurl4t64:amd64 (8.14.1-2+deb13u7) ...
+#11 18.44 Setting up libcurl3t64-gnutls:amd64 (8.14.1-2+deb13u7) ...
+#11 18.46 Setting up ca-certificates (20250419+deb13u1) ...
+#11 18.63 debconf: unable to initialize frontend: Dialog
+#11 18.63 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#11 18.63 debconf: falling back to frontend: Readline
+#11 18.66 debconf: unable to initialize frontend: Readline
+#11 18.66 debconf: (This frontend requires a controlling tty.)
+#11 18.66 debconf: falling back to frontend: Teletype
+#11 18.67 debconf: unable to initialize frontend: Teletype
+#11 18.67 debconf: (This frontend requires a controlling tty.)
+#11 18.67 debconf: falling back to frontend: Noninteractive
+#11 22.68 Updating certificates in /etc/ssl/certs...
+#11 25.53 rehash: warning: skipping ca-certificates.crt, it does not contain exactly one certificate or CRL
+#11 25.55 0 added, 2 removed; done.
+#11 25.60 Setting up netbase (6.5) ...
+#11 25.65 Setting up curl (8.14.1-2+deb13u7) ...
+#11 25.67 Setting up readline-common (8.2-6) ...
+#11 25.70 Setting up libreadline8t64:amd64 (8.2-6) ...
+#11 25.72 Setting up libpython3.13-stdlib:amd64 (3.13.5-2+deb13u5) ...
+#11 25.73 Setting up libpython3-stdlib:amd64 (3.13.5-1) ...
+#11 25.75 Setting up python3.13 (3.13.5-2+deb13u5) ...
+#11 27.51 Setting up python3 (3.13.5-1) ...
+#11 27.53 running python rtupdate hooks for python3.13...
+#11 27.53 running python post-rtupdate hooks for python3.13...
+#11 27.69 Processing triggers for libc-bin (2.41-12+deb13u4) ...
+#11 27.78 Processing triggers for ca-certificates (20250419+deb13u1) ...
+#11 27.79 Updating certificates in /etc/ssl/certs...
+#11 29.37 0 added, 0 removed; done.
+#11 29.37 Running hooks in /etc/ca-certificates/update.d...
+#11 29.37 done.
+#11 DONE 29.8s
+
+#12 [stage-1 3/7] COPY --from=dockercli /usr/local/bin/docker /usr/local/bin/docker
+#12 DONE 0.7s
+
+#13 [stage-1 4/7] COPY --from=dockercli /usr/local/libexec/docker/cli-plugins/docker-buildx /usr/local/libexec/docker/cli-plugins/docker-buildx
+#13 DONE 2.2s
+
+#14 [stage-1 5/7] COPY --chown=jenkins:jenkins plugins.txt /usr/share/jenkins/ref/plugins.txt
+#14 DONE 0.1s
+
+#15 [stage-1 6/7] RUN jenkins-plugin-cli --plugin-file /usr/share/jenkins/ref/plugins.txt
+#15 30.82 Done
+#15 DONE 31.3s
+
+#16 [stage-1 7/7] COPY --chown=jenkins:jenkins init.groovy.d/ /usr/share/jenkins/ref/init.groovy.d/
+#16 DONE 0.2s
+
+#17 exporting to image
+#17 exporting layers
+#17 exporting layers 10.4s done
+#17 exporting manifest sha256:91eb6a583bf2b6e4fa0fbe98cf1073a0e3e1498f48160cd29466ffc2dab77360 0.0s done
+#17 exporting config sha256:4233f7ce2596cc818a8a0ddc85e08dba1750eda0f59079625f6dc65627497dd0 0.0s done
+#17 exporting attestation manifest sha256:719f9ba8c3a3af467b24de04b806cb0b6898dcd7a208b0eedd661166cc4f1952
+#17 exporting attestation manifest sha256:719f9ba8c3a3af467b24de04b806cb0b6898dcd7a208b0eedd661166cc4f1952 0.0s done
+#17 exporting manifest list sha256:d17234ba82bd43a1212686b4d48db8ea2bd783621180cdd90420e89b3a2e3d9c 0.1s done
+#17 naming to docker.io/library/releaseharbor-jenkins:1.0 0.0s done
+#17 unpacking to docker.io/library/releaseharbor-jenkins:1.0
+#17 unpacking to docker.io/library/releaseharbor-jenkins:1.0 38.1s done
+#17 DONE 48.9s
+
+#18 resolving provenance for metadata file
+#18 DONE 0.1s
+ Image releaseharbor-jenkins:1.0 Built 

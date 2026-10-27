@@ -1,0 +1,34 @@
+âœ” catalog contains six unique, immutable equipment items (5.7397ms)
+âœ” catalog search is trimmed and case insensitive (6.0156ms)
+âœ” description-only search survives the shared policy merge (0.8457ms)
+âœ” category and search constraints apply together (0.5517ms)
+âœ” all and empty filters return separate full result arrays (1.1958ms)
+âœ” search with no matches returns an empty array (0.4514ms)
+âœ” search rejects nontext filter values (1.5235ms)
+âœ” catalog validation rejects duplicate IDs before searching (0.4184ms)
+âœ” summary conserves stock and groups category utilization (22.4523ms)
+âœ” overdue metrics exclude returned loans and the exact due boundary (2.8115ms)
+âœ” empty inventory summary has zero utilization without NaN (0.6178ms)
+âœ” malformed, duplicate and overbooked saved state is rejected (2.9884ms)
+âœ” returned units become available for another checkout (34.9583ms)
+âœ” search, checkout, reporting and return preserve both merged policy requirements (2.1522ms)
+âœ” new loan trims team details and calculates due date exactly (19.2049ms)
+âœ” merged loan limits permit three units for fourteen days (0.8471ms)
+âœ” loan rejects unavailable quantities without changing history (6.7702ms)
+âœ” quantity validation rejects fractions, zero, excessive and nonnumeric values (1.1237ms)
+âœ” duration validation rejects out of bounds and nonnumeric values (1.0334ms)
+âœ” loan requires known equipment and meaningful team details (4.1161ms)
+âœ” date injection accepts Date objects and rejects invalid dates (1.5704ms)
+âœ” return creates a new history without mutating the original loan (1.4346ms)
+âœ” duplicate return and unknown loans produce clear errors (1.0229ms)
+âœ” return cannot precede the borrowing time (1.0441ms)
+âœ” catalog validation rejects duplicate equipment identities (3.998ms)
+âœ” time validation rejects invalid dates and preserves the supplied instant (6.2647ms)
+â„¹ tests 26
+â„¹ suites 0
+â„¹ pass 26
+â„¹ fail 0
+â„¹ cancelled 0
+â„¹ skipped 0
+â„¹ todo 0
+â„¹ duration_ms 532.932

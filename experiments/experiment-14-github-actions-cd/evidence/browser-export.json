@@ -1,0 +1,152 @@
+{
+  "application": "FocusLane",
+  "exportedAt": "2026-10-26T15:55:55.458Z",
+  "note": "Study-planning data. Adjust your estimates, priorities and breaks as needed.",
+  "plan": {
+    "planName": "Exam week · my focus plan",
+    "startDate": "2026-11-02",
+    "dailyMinutes": 90,
+    "horizonDays": 5,
+    "subjects": [
+      {
+        "id": "software",
+        "name": "Software engineering",
+        "minutes": 120,
+        "priority": "high"
+      },
+      {
+        "id": "mathematics",
+        "name": "Mathematics",
+        "minutes": 90,
+        "priority": "medium"
+      },
+      {
+        "id": "design",
+        "name": "Design systems",
+        "minutes": 45,
+        "priority": "low"
+      }
+    ]
+  },
+  "schedule": {
+    "planName": "Exam week · my focus plan",
+    "startDate": "2026-11-02",
+    "dailyMinutes": 90,
+    "horizonDays": 5,
+    "totalTargetMinutes": 255,
+    "plannedMinutes": 255,
+    "remainingMinutes": 0,
+    "totalCapacityMinutes": 450,
+    "utilizationPercent": 57,
+    "days": [
+      {
+        "date": "2026-11-02",
+        "dayNumber": 1,
+        "capacityMinutes": 90,
+        "plannedMinutes": 90,
+        "freeMinutes": 0,
+        "sessions": [
+          {
+            "subjectId": "software",
+            "name": "Software engineering",
+            "priority": "high",
+            "minutes": 90
+          }
+        ]
+      },
+      {
+        "date": "2026-11-03",
+        "dayNumber": 2,
+        "capacityMinutes": 90,
+        "plannedMinutes": 90,
+        "freeMinutes": 0,
+        "sessions": [
+          {
+            "subjectId": "software",
+            "name": "Software engineering",
+            "priority": "high",
+            "minutes": 30
+          },
+          {
+            "subjectId": "mathematics",
+            "name": "Mathematics",
+            "priority": "medium",
+            "minutes": 60
+          }
+        ]
+      },
+      {
+        "date": "2026-11-04",
+        "dayNumber": 3,
+        "capacityMinutes": 90,
+        "plannedMinutes": 75,
+        "freeMinutes": 15,
+        "sessions": [
+          {
+            "subjectId": "mathematics",
+            "name": "Mathematics",
+            "priority": "medium",
+            "minutes": 30
+          },
+          {
+            "subjectId": "design",
+            "name": "Design systems",
+            "priority": "low",
+            "minutes": 45
+          }
+        ]
+      },
+      {
+        "date": "2026-11-05",
+        "dayNumber": 4,
+        "capacityMinutes": 90,
+        "plannedMinutes": 0,
+        "freeMinutes": 90,
+        "sessions": []
+      },
+      {
+        "date": "2026-11-06",
+        "dayNumber": 5,
+        "capacityMinutes": 90,
+        "plannedMinutes": 0,
+        "freeMinutes": 90,
+        "sessions": []
+      }
+    ],
+    "subjects": [
+      {
+        "id": "software",
+        "name": "Software engineering",
+        "priority": "high",
+        "targetMinutes": 120,
+        "plannedMinutes": 120,
+        "remainingMinutes": 0
+      },
+      {
+        "id": "mathematics",
+        "name": "Mathematics",
+        "priority": "medium",
+        "targetMinutes": 90,
+        "plannedMinutes": 90,
+        "remainingMinutes": 0
+      },
+      {
+        "id": "design",
+        "name": "Design systems",
+        "priority": "low",
+        "targetMinutes": 45,
+        "plannedMinutes": 45,
+        "remainingMinutes": 0
+      }
+    ],
+    "warnings": []
+  },
+  "scheduleStatus": "Matches the current plan",
+  "runningApplication": {
+    "application": "FocusLane",
+    "version": "1.1.0",
+    "gitSha": "940b7c84efef6e4a8b3e0dd6c1de77bba08705b8",
+    "buildNumber": "3.1",
+    "mode": "cloud"
+  }
+}

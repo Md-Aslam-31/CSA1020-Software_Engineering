@@ -1,0 +1,382 @@
+Started by user emad
+Checking out git https://github.com/Emadfar007/CSA1020---Software-Engineering.git into /var/jenkins_home/workspace/ReleaseHarbor-CICD@script/8cd64452c65bf9ac95c8cd1b37338568cbcd4e3e69b651239b77627614a97d73 to read experiments/experiment-13-jenkins-cicd/Jenkinsfile
+The recommended git tool is: NONE
+No credentials specified
+DEPRECATED: The extension that requires a workspace for polling is deprecated for Pipeline jobs. Use Pipeline-native SCM polling instead.
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/ReleaseHarbor-CICD@script/8cd64452c65bf9ac95c8cd1b37338568cbcd4e3e69b651239b77627614a97d73/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Emadfar007/CSA1020---Software-Engineering.git # timeout=10
+Fetching upstream changes from https://github.com/Emadfar007/CSA1020---Software-Engineering.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/Emadfar007/CSA1020---Software-Engineering.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 0c8f84e67242e95ff92a933f1631f8fc0639cb7c (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0c8f84e67242e95ff92a933f1631f8fc0639cb7c # timeout=10
+Commit message: "Use checkout branch metadata for main-only publication gate"
+ > git rev-list --no-walk 0c8f84e67242e95ff92a933f1631f8fc0639cb7c # timeout=10
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/ReleaseHarbor-CICD
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 25 min
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] checkout
+[2026-10-26T13:52:43.969Z] The recommended git tool is: NONE
+[2026-10-26T13:52:43.971Z] No credentials specified
+[2026-10-26T13:52:43.971Z] DEPRECATED: The extension that requires a workspace for polling is deprecated for Pipeline jobs. Use Pipeline-native SCM polling instead.
+[2026-10-26T13:52:43.972Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/ReleaseHarbor-CICD/.git # timeout=10
+[2026-10-26T13:52:43.983Z] Fetching changes from the remote Git repository
+[2026-10-26T13:52:43.985Z]  > git config remote.origin.url https://github.com/Emadfar007/CSA1020---Software-Engineering.git # timeout=10
+[2026-10-26T13:52:44.002Z] Fetching upstream changes from https://github.com/Emadfar007/CSA1020---Software-Engineering.git
+[2026-10-26T13:52:44.002Z]  > git --version # timeout=10
+[2026-10-26T13:52:44.014Z]  > git --version # 'git version 2.47.3'
+[2026-10-26T13:52:44.014Z]  > git fetch --tags --force --progress -- https://github.com/Emadfar007/CSA1020---Software-Engineering.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-26T13:52:44.877Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-10-26T13:52:44.889Z] Checking out Revision 0c8f84e67242e95ff92a933f1631f8fc0639cb7c (refs/remotes/origin/main)
+[2026-10-26T13:52:44.889Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-26T13:52:44.903Z]  > git checkout -f 0c8f84e67242e95ff92a933f1631f8fc0639cb7c # timeout=10
+[2026-10-26T13:52:44.935Z] Commit message: "Use checkout branch metadata for main-only publication gate"
+[Pipeline] echo
+[2026-10-26T13:52:45.048Z] Source branch: origin/main
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] dir
+[2026-10-26T13:52:45.151Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd/reports
+[Pipeline] {
+[Pipeline] deleteDir
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T13:52:45.686Z] + git rev-parse HEAD
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build test image)
+[Pipeline] dir
+[2026-10-26T13:52:46.161Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T13:52:46.500Z] + docker build --pull --target test -t releaseharbor-tests:4 .
+[2026-10-26T13:52:49.728Z] #0 building with "default" instance using docker driver
+[2026-10-26T13:52:49.732Z] 
+[2026-10-26T13:52:49.732Z] #1 [internal] load build definition from Dockerfile
+[2026-10-26T13:52:49.732Z] #1 transferring dockerfile: 1.01kB 0.0s done
+[2026-10-26T13:52:49.732Z] #1 DONE 0.1s
+[2026-10-26T13:52:49.732Z] 
+[2026-10-26T13:52:49.732Z] #2 [internal] load metadata for docker.io/library/node:24-alpine
+[2026-10-26T13:52:50.292Z] #2 DONE 1.0s
+[2026-10-26T13:52:50.292Z] 
+[2026-10-26T13:52:50.292Z] #3 [internal] load .dockerignore
+[2026-10-26T13:52:50.293Z] #3 transferring context: 155B done
+[2026-10-26T13:52:50.293Z] #3 DONE 0.0s
+[2026-10-26T13:52:50.293Z] 
+[2026-10-26T13:52:50.293Z] #4 [internal] load build context
+[2026-10-26T13:52:50.546Z] #4 transferring context: 11.55kB 0.0s done
+[2026-10-26T13:52:50.546Z] #4 DONE 0.0s
+[2026-10-26T13:52:50.546Z] 
+[2026-10-26T13:52:50.546Z] #5 [base 1/5] FROM docker.io/library/node:24-alpine@sha256:06d7adf3e0ef61a13f1d28682726366f97a15aa1888c934d3ecec86c33918b53
+[2026-10-26T13:52:50.546Z] #5 resolve docker.io/library/node:24-alpine@sha256:06d7adf3e0ef61a13f1d28682726366f97a15aa1888c934d3ecec86c33918b53 0.1s done
+[2026-10-26T13:52:50.546Z] #5 DONE 0.1s
+[2026-10-26T13:52:50.546Z] 
+[2026-10-26T13:52:50.546Z] #6 [base 2/5] WORKDIR /app
+[2026-10-26T13:52:50.546Z] #6 CACHED
+[2026-10-26T13:52:50.546Z] 
+[2026-10-26T13:52:50.546Z] #7 [base 3/5] COPY --chown=node:node app/package.json ./package.json
+[2026-10-26T13:52:50.546Z] #7 CACHED
+[2026-10-26T13:52:50.546Z] 
+[2026-10-26T13:52:50.546Z] #8 [base 4/5] COPY --chown=node:node app/src/ ./src/
+[2026-10-26T13:52:50.546Z] #8 CACHED
+[2026-10-26T13:52:50.546Z] 
+[2026-10-26T13:52:50.546Z] #9 [base 5/5] COPY --chown=node:node app/public/ ./public/
+[2026-10-26T13:52:50.546Z] #9 CACHED
+[2026-10-26T13:52:50.546Z] 
+[2026-10-26T13:52:50.546Z] #10 [test 1/1] COPY --chown=node:node app/tests/ ./tests/
+[2026-10-26T13:52:50.798Z] #10 CACHED
+[2026-10-26T13:52:50.800Z] 
+[2026-10-26T13:52:50.800Z] #11 exporting to image
+[2026-10-26T13:52:50.800Z] #11 exporting layers 0.0s done
+[2026-10-26T13:52:50.800Z] #11 exporting manifest sha256:05b7b9ffa7e3bc01914033d18b2f0628d9949cb31d082cd23c7cf678aee1b494 0.0s done
+[2026-10-26T13:52:50.800Z] #11 exporting config sha256:7c327c33042fa83645e7b0a11278261549b99076fb091f6ae41e97a356312e7c 0.0s done
+[2026-10-26T13:52:50.800Z] #11 exporting attestation manifest sha256:068908f6b3c0c06d4aea76aac0f69e6aeba449c0dc276d1d40dc3eaa35c9964f
+[2026-10-26T13:52:50.800Z] #11 exporting attestation manifest sha256:068908f6b3c0c06d4aea76aac0f69e6aeba449c0dc276d1d40dc3eaa35c9964f 0.0s done
+[2026-10-26T13:52:50.800Z] #11 exporting manifest list sha256:32c8052bd1664d42014116a6816676965a7ee00b885dc5281967178ec0603523 0.0s done
+[2026-10-26T13:52:50.800Z] #11 naming to docker.io/library/releaseharbor-tests:4 done
+[2026-10-26T13:52:50.800Z] #11 unpacking to docker.io/library/releaseharbor-tests:4 0.1s done
+[2026-10-26T13:52:51.052Z] #11 DONE 0.6s
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Automated tests)
+[Pipeline] dir
+[2026-10-26T13:52:52.637Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T13:52:53.375Z] + mkdir -p reports
+[2026-10-26T13:52:53.375Z] + docker run --rm --network none --read-only --tmpfs /tmp:rw,noexec,nosuid,size=16m --cap-drop ALL --security-opt no-new-privileges:true releaseharbor-tests:4 node --test --test-reporter=junit
+[Pipeline] script
+[Pipeline] {
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build release image)
+[Pipeline] dir
+[2026-10-26T13:52:59.742Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T13:53:00.176Z] + docker build --target runtime --build-arg GIT_SHA=0c8f84e67242e95ff92a933f1631f8fc0639cb7c --build-arg BUILD_NUMBER=4 --label org.opencontainers.image.revision=0c8f84e67242e95ff92a933f1631f8fc0639cb7c -t coastrider7/csa1020-exp13-releaseharbor:build-4-0c8f84e67242 .
+[2026-10-26T13:53:02.042Z] #0 building with "default" instance using docker driver
+[2026-10-26T13:53:02.042Z] 
+[2026-10-26T13:53:02.042Z] #1 [internal] load build definition from Dockerfile
+[2026-10-26T13:53:02.042Z] #1 transferring dockerfile: 1.01kB 0.0s done
+[2026-10-26T13:53:02.042Z] #1 DONE 0.1s
+[2026-10-26T13:53:02.042Z] 
+[2026-10-26T13:53:02.042Z] #2 [internal] load metadata for docker.io/library/node:24-alpine
+[2026-10-26T13:53:02.042Z] #2 DONE 0.4s
+[2026-10-26T13:53:02.042Z] 
+[2026-10-26T13:53:02.042Z] #3 [internal] load .dockerignore
+[2026-10-26T13:53:02.042Z] #3 transferring context: 155B done
+[2026-10-26T13:53:02.042Z] #3 DONE 0.0s
+[2026-10-26T13:53:02.042Z] 
+[2026-10-26T13:53:02.042Z] #4 [internal] load build context
+[2026-10-26T13:53:02.042Z] #4 transferring context: 358B done
+[2026-10-26T13:53:02.042Z] #4 DONE 0.0s
+[2026-10-26T13:53:02.042Z] 
+[2026-10-26T13:53:02.042Z] #5 [base 1/5] FROM docker.io/library/node:24-alpine@sha256:06d7adf3e0ef61a13f1d28682726366f97a15aa1888c934d3ecec86c33918b53
+[2026-10-26T13:53:02.043Z] #5 resolve docker.io/library/node:24-alpine@sha256:06d7adf3e0ef61a13f1d28682726366f97a15aa1888c934d3ecec86c33918b53 0.1s done
+[2026-10-26T13:53:02.294Z] #5 DONE 0.1s
+[2026-10-26T13:53:02.294Z] 
+[2026-10-26T13:53:02.294Z] #6 [base 3/5] COPY --chown=node:node app/package.json ./package.json
+[2026-10-26T13:53:02.294Z] #6 CACHED
+[2026-10-26T13:53:02.294Z] 
+[2026-10-26T13:53:02.294Z] #7 [base 4/5] COPY --chown=node:node app/src/ ./src/
+[2026-10-26T13:53:02.294Z] #7 CACHED
+[2026-10-26T13:53:02.294Z] 
+[2026-10-26T13:53:02.294Z] #8 [base 2/5] WORKDIR /app
+[2026-10-26T13:53:02.294Z] #8 CACHED
+[2026-10-26T13:53:02.294Z] 
+[2026-10-26T13:53:02.294Z] #9 [base 5/5] COPY --chown=node:node app/public/ ./public/
+[2026-10-26T13:53:02.294Z] #9 CACHED
+[2026-10-26T13:53:02.294Z] 
+[2026-10-26T13:53:02.294Z] #10 exporting to image
+[2026-10-26T13:53:02.294Z] #10 exporting layers 0.0s done
+[2026-10-26T13:53:02.294Z] #10 exporting manifest sha256:649a121a462f44df0ce982db842ff17fddaa03e973aa5ed6159b4bb8ee308208 0.1s done
+[2026-10-26T13:53:02.294Z] #10 exporting config sha256:489a754759cb8d307019766bfc2b06a5c4fe8789660b45dbc5b8c89e18c8eb0b 0.0s done
+[2026-10-26T13:53:02.295Z] #10 exporting attestation manifest sha256:37e7f71a9b18c90dd8bb29f03e4096e5d1ced5726213382dc1604bece3860e94 0.1s done
+[2026-10-26T13:53:02.295Z] #10 exporting manifest list sha256:c249e0af2fc15c78cfe2ad2781099d5a622005c090807348c05f63f0eb7541f5 0.1s done
+[2026-10-26T13:53:02.295Z] #10 naming to docker.io/coastrider7/csa1020-exp13-releaseharbor:build-4-0c8f84e67242
+[2026-10-26T13:53:02.547Z] #10 naming to docker.io/coastrider7/csa1020-exp13-releaseharbor:build-4-0c8f84e67242 done
+[2026-10-26T13:53:02.547Z] #10 unpacking to docker.io/coastrider7/csa1020-exp13-releaseharbor:build-4-0c8f84e67242 0.0s done
+[2026-10-26T13:53:02.547Z] #10 DONE 0.3s
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Container smoke test)
+[Pipeline] dir
+[2026-10-26T13:53:04.826Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T13:53:05.193Z] + python3 ci/smoke.py
+[2026-10-26T13:53:07.682Z] Container HTTP smoke test passed: health, build identity, readiness assessment, blockers and validation.
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Publish image)
+[Pipeline] dir
+[2026-10-26T13:53:08.533Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd
+[Pipeline] {
+[Pipeline] withCredentials
+[2026-10-26T13:53:08.943Z] Masking supported pattern matches of $REGISTRY_TOKEN
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T13:53:09.370Z] + sh ci/publish.sh
+[2026-10-26T13:53:11.859Z] The push refers to repository [docker.io/coastrider7/csa1020-exp13-releaseharbor]
+[2026-10-26T13:53:11.859Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:11.860Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:11.860Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:11.860Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:11.860Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:11.860Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:11.860Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:11.860Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:11.860Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:11.860Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:11.860Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:11.860Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.111Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.111Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.111Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.111Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.111Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.111Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.111Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.111Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.111Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.112Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.112Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.112Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.363Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.363Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.363Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.363Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.363Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.363Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.364Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.364Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.615Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.615Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.615Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.615Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.615Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.615Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.615Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.615Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.615Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.615Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.615Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.615Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.866Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.866Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.866Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.866Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:12.866Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:12.866Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:12.867Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:12.867Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.118Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:13.118Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:13.118Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:13.118Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.118Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:13.118Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:13.118Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:13.118Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.118Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.118Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:13.118Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:13.118Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:13.369Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:13.369Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:13.369Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:13.369Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.370Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:13.370Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:13.370Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:13.370Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.621Z] d7d7059c357d: Waiting
+[2026-10-26T13:53:13.621Z] 15577f11e05a: Waiting
+[2026-10-26T13:53:13.621Z] 7b229517ed22: Waiting
+[2026-10-26T13:53:13.621Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.621Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.621Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:13.873Z] 44136fa355b3: Waiting
+[2026-10-26T13:53:14.425Z] d7d7059c357d: Pushed
+[2026-10-26T13:53:14.425Z] f0a5c9e3ce7d: Waiting
+[2026-10-26T13:53:14.425Z] 109c2f814f46: Waiting
+[2026-10-26T13:53:14.677Z] 42d81151e752: Waiting
+[2026-10-26T13:53:14.677Z] 44136fa355b3: Pushed
+[2026-10-26T13:53:14.677Z] f0a5c9e3ce7d: Waiting
+[2026-10-26T13:53:14.677Z] 109c2f814f46: Waiting
+[2026-10-26T13:53:14.677Z] f0a5c9e3ce7d: Waiting
+[2026-10-26T13:53:14.677Z] 109c2f814f46: Waiting
+[2026-10-26T13:53:14.677Z] 42d81151e752: Waiting
+[2026-10-26T13:53:14.929Z] 42d81151e752: Waiting
+[2026-10-26T13:53:14.929Z] f0a5c9e3ce7d: Waiting
+[2026-10-26T13:53:14.929Z] 109c2f814f46: Waiting
+[2026-10-26T13:53:14.929Z] 42d81151e752: Waiting
+[2026-10-26T13:53:14.929Z] f0a5c9e3ce7d: Waiting
+[2026-10-26T13:53:14.929Z] 109c2f814f46: Waiting
+[2026-10-26T13:53:14.929Z] 42d81151e752: Waiting
+[2026-10-26T13:53:14.929Z] 109c2f814f46: Waiting
+[2026-10-26T13:53:15.181Z] 42d81151e752: Waiting
+[2026-10-26T13:53:15.181Z] 109c2f814f46: Waiting
+[2026-10-26T13:53:16.094Z] 48a8a11d6e24: Waiting
+[2026-10-26T13:53:16.094Z] 42d81151e752: Pushed
+[2026-10-26T13:53:16.095Z] 9a497e13b557: Waiting
+[2026-10-26T13:53:16.095Z] 109c2f814f46: Pushed
+[2026-10-26T13:53:16.095Z] 9a497e13b557: Waiting
+[2026-10-26T13:53:16.095Z] 48a8a11d6e24: Waiting
+[2026-10-26T13:53:16.095Z] 48a8a11d6e24: Waiting
+[2026-10-26T13:53:16.095Z] 9a497e13b557: Waiting
+[2026-10-26T13:53:16.346Z] 9a497e13b557: Waiting
+[2026-10-26T13:53:16.346Z] 48a8a11d6e24: Waiting
+[2026-10-26T13:53:16.346Z] 9a497e13b557: Waiting
+[2026-10-26T13:53:16.346Z] 48a8a11d6e24: Waiting
+[2026-10-26T13:53:16.346Z] 48a8a11d6e24: Waiting
+[2026-10-26T13:53:17.259Z] b43091b78872: Waiting
+[2026-10-26T13:53:17.259Z] 9a497e13b557: Pushed
+[2026-10-26T13:53:17.259Z] f0a5c9e3ce7d: Pushed
+[2026-10-26T13:53:17.259Z] 48a8a11d6e24: Pushed
+[2026-10-26T13:53:17.511Z] b43091b78872: Waiting
+[2026-10-26T13:53:17.511Z] b43091b78872: Waiting
+[2026-10-26T13:53:17.511Z] b43091b78872: Waiting
+[2026-10-26T13:53:17.755Z] b43091b78872: Waiting
+[2026-10-26T13:53:17.755Z] b43091b78872: Waiting
+[2026-10-26T13:53:18.668Z] b43091b78872: Pushed
+[2026-10-26T13:53:19.582Z] 7b229517ed22: Pushed
+[2026-10-26T13:55:25.829Z] 15577f11e05a: Pushed
+[2026-10-26T13:55:25.832Z] build-4-0c8f84e67242: digest: sha256:c249e0af2fc15c78cfe2ad2781099d5a622005c090807348c05f63f0eb7541f5 size: 856
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Render)
+Stage "Deploy to Render" skipped due to when conditional
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] junit
+[2026-10-26T13:55:27.163Z] Recording test results
+[2026-10-26T13:55:27.349Z] [Checks API] No suitable checks publisher found.
+[Pipeline] archiveArtifacts
+[2026-10-26T13:55:27.449Z] Archiving artifacts
+[2026-10-26T13:55:27.478Z] Recording fingerprints
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T13:55:28.166Z] + docker image rm releaseharbor-tests:4
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] echo
+[2026-10-26T13:55:28.398Z] All selected stages passed. See archived verification reports for the stages executed.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS

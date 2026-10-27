@@ -1,0 +1,194 @@
+Started by user emad
+Checking out git https://github.com/Emadfar007/CSA1020---Software-Engineering.git into /var/jenkins_home/workspace/ReleaseHarbor-CICD@script/8cd64452c65bf9ac95c8cd1b37338568cbcd4e3e69b651239b77627614a97d73 to read experiments/experiment-13-jenkins-cicd/Jenkinsfile
+The recommended git tool is: NONE
+No credentials specified
+DEPRECATED: The extension that requires a workspace for polling is deprecated for Pipeline jobs. Use Pipeline-native SCM polling instead.
+ > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/ReleaseHarbor-CICD@script/8cd64452c65bf9ac95c8cd1b37338568cbcd4e3e69b651239b77627614a97d73/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/Emadfar007/CSA1020---Software-Engineering.git # timeout=10
+Fetching upstream changes from https://github.com/Emadfar007/CSA1020---Software-Engineering.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+ > git fetch --tags --force --progress -- https://github.com/Emadfar007/CSA1020---Software-Engineering.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 0c8f84e67242e95ff92a933f1631f8fc0639cb7c (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 0c8f84e67242e95ff92a933f1631f8fc0639cb7c # timeout=10
+Commit message: "Use checkout branch metadata for main-only publication gate"
+ > git rev-list --no-walk 0c8f84e67242e95ff92a933f1631f8fc0639cb7c # timeout=10
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/jenkins_home/workspace/ReleaseHarbor-CICD
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] timeout
+Timeout set to expire in 25 min
+[Pipeline] {
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Checkout)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] checkout
+[2026-10-26T14:00:15.320Z] The recommended git tool is: NONE
+[2026-10-26T14:00:15.322Z] No credentials specified
+[2026-10-26T14:00:15.322Z] DEPRECATED: The extension that requires a workspace for polling is deprecated for Pipeline jobs. Use Pipeline-native SCM polling instead.
+[2026-10-26T14:00:15.323Z]  > git rev-parse --resolve-git-dir /var/jenkins_home/workspace/ReleaseHarbor-CICD/.git # timeout=10
+[2026-10-26T14:00:15.335Z] Fetching changes from the remote Git repository
+[2026-10-26T14:00:15.338Z]  > git config remote.origin.url https://github.com/Emadfar007/CSA1020---Software-Engineering.git # timeout=10
+[2026-10-26T14:00:15.353Z] Fetching upstream changes from https://github.com/Emadfar007/CSA1020---Software-Engineering.git
+[2026-10-26T14:00:15.353Z]  > git --version # timeout=10
+[2026-10-26T14:00:15.367Z]  > git --version # 'git version 2.47.3'
+[2026-10-26T14:00:15.368Z]  > git fetch --tags --force --progress -- https://github.com/Emadfar007/CSA1020---Software-Engineering.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+[2026-10-26T14:00:16.715Z]  > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+[2026-10-26T14:00:16.732Z] Checking out Revision 0c8f84e67242e95ff92a933f1631f8fc0639cb7c (refs/remotes/origin/main)
+[2026-10-26T14:00:16.732Z]  > git config core.sparsecheckout # timeout=10
+[2026-10-26T14:00:16.750Z]  > git checkout -f 0c8f84e67242e95ff92a933f1631f8fc0639cb7c # timeout=10
+[2026-10-26T14:00:16.797Z] Commit message: "Use checkout branch metadata for main-only publication gate"
+[Pipeline] echo
+[2026-10-26T14:00:16.879Z] Source branch: origin/main
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] dir
+[2026-10-26T14:00:17.001Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd/reports
+[Pipeline] {
+[Pipeline] deleteDir
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T14:00:17.605Z] + git rev-parse HEAD
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build test image)
+[Pipeline] dir
+[2026-10-26T14:00:18.022Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T14:00:18.361Z] + docker build --pull --target test -t releaseharbor-tests:5 .
+[2026-10-26T14:00:20.848Z] #0 building with "default" instance using docker driver
+[2026-10-26T14:00:20.848Z] 
+[2026-10-26T14:00:20.848Z] #1 [internal] load build definition from Dockerfile
+[2026-10-26T14:00:20.848Z] #1 transferring dockerfile: 1.01kB 0.0s done
+[2026-10-26T14:00:20.848Z] #1 DONE 0.1s
+[2026-10-26T14:00:20.848Z] 
+[2026-10-26T14:00:20.848Z] #2 [internal] load metadata for docker.io/library/node:24-alpine
+[2026-10-26T14:00:22.193Z] #2 DONE 1.5s
+[2026-10-26T14:00:22.193Z] 
+[2026-10-26T14:00:22.193Z] #3 [internal] load .dockerignore
+[2026-10-26T14:00:22.193Z] #3 transferring context: 155B done
+[2026-10-26T14:00:22.193Z] #3 DONE 0.0s
+[2026-10-26T14:00:22.193Z] 
+[2026-10-26T14:00:22.193Z] #4 [internal] load build context
+[2026-10-26T14:00:22.199Z] #4 transferring context: 11.55kB 0.0s done
+[2026-10-26T14:00:22.199Z] #4 DONE 0.0s
+[2026-10-26T14:00:22.199Z] 
+[2026-10-26T14:00:22.199Z] #5 [base 1/5] FROM docker.io/library/node:24-alpine@sha256:06d7adf3e0ef61a13f1d28682726366f97a15aa1888c934d3ecec86c33918b53
+[2026-10-26T14:00:22.199Z] #5 resolve docker.io/library/node:24-alpine@sha256:06d7adf3e0ef61a13f1d28682726366f97a15aa1888c934d3ecec86c33918b53 0.0s done
+[2026-10-26T14:00:22.199Z] #5 DONE 0.1s
+[2026-10-26T14:00:22.199Z] 
+[2026-10-26T14:00:22.199Z] #6 [base 3/5] COPY --chown=node:node app/package.json ./package.json
+[2026-10-26T14:00:22.199Z] #6 CACHED
+[2026-10-26T14:00:22.199Z] 
+[2026-10-26T14:00:22.199Z] #7 [base 4/5] COPY --chown=node:node app/src/ ./src/
+[2026-10-26T14:00:22.199Z] #7 CACHED
+[2026-10-26T14:00:22.199Z] 
+[2026-10-26T14:00:22.199Z] #8 [base 5/5] COPY --chown=node:node app/public/ ./public/
+[2026-10-26T14:00:22.199Z] #8 CACHED
+[2026-10-26T14:00:22.199Z] 
+[2026-10-26T14:00:22.199Z] #9 [base 2/5] WORKDIR /app
+[2026-10-26T14:00:22.199Z] #9 CACHED
+[2026-10-26T14:00:22.199Z] 
+[2026-10-26T14:00:22.199Z] #10 [test 1/1] COPY --chown=node:node app/tests/ ./tests/
+[2026-10-26T14:00:22.199Z] #10 CACHED
+[2026-10-26T14:00:22.199Z] 
+[2026-10-26T14:00:22.199Z] #11 exporting to image
+[2026-10-26T14:00:22.199Z] #11 exporting layers done
+[2026-10-26T14:00:22.199Z] #11 exporting manifest sha256:05b7b9ffa7e3bc01914033d18b2f0628d9949cb31d082cd23c7cf678aee1b494 0.0s done
+[2026-10-26T14:00:22.199Z] #11 exporting config sha256:7c327c33042fa83645e7b0a11278261549b99076fb091f6ae41e97a356312e7c 0.0s done
+[2026-10-26T14:00:22.199Z] #11 exporting attestation manifest sha256:608da49aa6c6e5ceef85dc1f712ec6a512cc7233b2841216694f7fb39c57dcb1
+[2026-10-26T14:00:22.199Z] #11 exporting attestation manifest sha256:608da49aa6c6e5ceef85dc1f712ec6a512cc7233b2841216694f7fb39c57dcb1 0.0s done
+[2026-10-26T14:00:22.199Z] #11 exporting manifest list sha256:bfc017b36b66c7fe6e113fdee8736b88b30c19f7bbd1150c944197cc7361b3bb 0.0s done
+[2026-10-26T14:00:22.199Z] #11 naming to docker.io/library/releaseharbor-tests:5 done
+[2026-10-26T14:00:22.199Z] #11 unpacking to docker.io/library/releaseharbor-tests:5 0.1s done
+[2026-10-26T14:00:22.451Z] #11 DONE 0.3s
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Automated tests)
+[Pipeline] dir
+[2026-10-26T14:00:22.725Z] Running in /var/jenkins_home/workspace/ReleaseHarbor-CICD/experiments/experiment-13-jenkins-cicd
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T14:00:23.050Z] + mkdir -p reports
+[2026-10-26T14:00:23.050Z] + docker run --rm --network none --read-only --tmpfs /tmp:rw,noexec,nosuid,size=16m --cap-drop ALL --security-opt no-new-privileges:true releaseharbor-tests:5 node --test --test-reporter=junit
+[Pipeline] script
+[Pipeline] {
+[Pipeline] writeFile
+[Pipeline] error
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build release image)
+Stage "Build release image" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Container smoke test)
+Stage "Container smoke test" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Publish image)
+Stage "Publish image" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy to Render)
+Stage "Deploy to Render" skipped due to earlier failure(s)
+[Pipeline] getContext
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] junit
+[2026-10-26T14:00:29.038Z] Recording test results
+[2026-10-26T14:00:29.148Z] [Checks API] No suitable checks publisher found.
+[Pipeline] archiveArtifacts
+[2026-10-26T14:00:29.258Z] Archiving artifacts
+[Pipeline] script
+[Pipeline] {
+[Pipeline] sh
+[2026-10-26T14:00:29.960Z] + docker image rm releaseharbor-tests:5
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] echo
+[2026-10-26T14:00:30.132Z] Pipeline failed. Inspect the failing stage; subsequent stages are skipped.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+ERROR: Intentional test-gate demonstration: deployment is blocked.
+Finished: FAILURE

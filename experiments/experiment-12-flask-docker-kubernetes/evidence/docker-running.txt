@@ -1,0 +1,3 @@
+parcelpilot-api-exp12 | Up 7 minutes (healthy) | 127.0.0.1:8088->8000/tcp
+parcelpilot-lab-control-plane | Up 17 minutes | 127.0.0.1:30088->30088/tcp, 127.0.0.1:63359->6443/tcp
+orbital-fieldnotes-exp11 | Up About an hour (healthy) | 127.0.0.1:8087->80/tcp

@@ -1,0 +1,6 @@
+# Keep reports, screenshots, local tools, and Git history out of the image.
+**
+!Dockerfile
+!nginx.conf
+!site/
+!site/**

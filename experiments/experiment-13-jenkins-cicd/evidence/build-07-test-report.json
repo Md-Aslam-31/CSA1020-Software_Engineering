@@ -1,0 +1,96 @@
+{
+  "_class": "hudson.tasks.junit.TestResult",
+  "failCount": 0,
+  "skipCount": 0,
+  "suites": [
+    {
+      "cases": [
+        {
+          "name": "fully checked release scores 100 and is ready to rehearse",
+          "status": "PASSED"
+        },
+        {
+          "name": "unchecked critical gates hold the release even when most items are done",
+          "status": "PASSED"
+        },
+        {
+          "name": "missing noncritical work needs attention without inventing blockers",
+          "status": "PASSED"
+        },
+        {
+          "name": "all-unchecked plan has zero score and exactly four critical blockers",
+          "status": "PASSED"
+        },
+        {
+          "name": "timeline computes UTC dates across year and leap-day boundaries",
+          "status": "PASSED"
+        },
+        {
+          "name": "validated plans trim user text and retain Unicode without mutating input",
+          "status": "PASSED"
+        },
+        {
+          "name": "unknown fields, missing fields and non-object bodies are rejected",
+          "status": "PASSED"
+        },
+        {
+          "name": "checklist requires exact IDs and genuine JSON booleans",
+          "status": "PASSED"
+        },
+        {
+          "name": "semantic-version validation accepts prerelease/build IDs and rejects malformed versions",
+          "status": "PASSED"
+        },
+        {
+          "name": "invalid dates and ambiguous date formats do not roll into another day",
+          "status": "PASSED"
+        },
+        {
+          "name": "text fields reject blank, long and control-character values",
+          "status": "PASSED"
+        },
+        {
+          "name": "health and version endpoints expose the actual supplied build metadata",
+          "status": "PASSED"
+        },
+        {
+          "name": "browser shell and local assets are served with appropriate media types",
+          "status": "PASSED"
+        },
+        {
+          "name": "HEAD returns metadata and no body for supported read routes",
+          "status": "PASSED"
+        },
+        {
+          "name": "HTTP assessment completes the browser-to-API calculation path",
+          "status": "PASSED"
+        },
+        {
+          "name": "request tracing and browser protection headers are present",
+          "status": "PASSED"
+        },
+        {
+          "name": "malformed JSON, wrong media type and failed validation return helpful JSON errors",
+          "status": "PASSED"
+        },
+        {
+          "name": "oversized request is rejected without accepting a partial payload",
+          "status": "PASSED"
+        },
+        {
+          "name": "chunked oversized JSON is capped without retaining its unbounded body",
+          "status": "PASSED"
+        },
+        {
+          "name": "unknown routes, methods, traversal and unsupported queries are rejected",
+          "status": "PASSED"
+        },
+        {
+          "name": "independent server instances calculate identical plans without stored server state",
+          "status": "PASSED"
+        }
+      ],
+      "name": "ReleaseHarbor_application"
+    }
+  ]
+}

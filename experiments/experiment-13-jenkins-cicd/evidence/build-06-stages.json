@@ -1,0 +1,135 @@
+{
+  "_links": {
+    "self": {
+      "href": "/job/ReleaseHarbor-CICD/6/wfapi/describe"
+    },
+    "changesets": {
+      "href": "/job/ReleaseHarbor-CICD/6/wfapi/changesets"
+    },
+    "artifacts": {
+      "href": "/job/ReleaseHarbor-CICD/6/wfapi/artifacts"
+    }
+  },
+  "id": "6",
+  "name": "#6",
+  "status": "SUCCESS",
+  "startTimeMillis": 1793023502486,
+  "endTimeMillis": 1793023536458,
+  "durationMillis": 33972,
+  "queueDurationMillis": 38,
+  "pauseDurationMillis": 0,
+  "stages": [
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/6/execution/node/12/wfapi/describe"
+        }
+      },
+      "id": "12",
+      "name": "Checkout",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023512930,
+      "durationMillis": 2163,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/6/execution/node/32/wfapi/describe"
+        }
+      },
+      "id": "32",
+      "name": "Build test image",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023515133,
+      "durationMillis": 4255,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/6/execution/node/41/wfapi/describe"
+        }
+      },
+      "id": "41",
+      "name": "Automated tests",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023519429,
+      "durationMillis": 3097,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/6/execution/node/54/wfapi/describe"
+        }
+      },
+      "id": "54",
+      "name": "Build release image",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023522579,
+      "durationMillis": 1675,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/6/execution/node/63/wfapi/describe"
+        }
+      },
+      "id": "63",
+      "name": "Container smoke test",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023524296,
+      "durationMillis": 1862,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/6/execution/node/72/wfapi/describe"
+        }
+      },
+      "id": "72",
+      "name": "Publish image",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023526200,
+      "durationMillis": 9007,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/6/execution/node/85/wfapi/describe"
+        }
+      },
+      "id": "85",
+      "name": "Deploy to Render",
+      "execNode": "",
+      "status": "NOT_EXECUTED",
+      "startTimeMillis": 1793023535242,
+      "durationMillis": 103,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/6/execution/node/90/wfapi/describe"
+        }
+      },
+      "id": "90",
+      "name": "Declarative: Post Actions",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023535382,
+      "durationMillis": 679,
+      "pauseDurationMillis": 0
+    }
+  ]
+}

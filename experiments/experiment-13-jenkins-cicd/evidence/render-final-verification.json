@@ -1,0 +1,24 @@
+{
+  "service": {
+    "id": "srv-dbflq8vb9u1s73de444g",
+    "name": "releaseharbor-exp13",
+    "plan": "free",
+    "runtime": "image",
+    "region": "singapore",
+    "url": "https://releaseharbor-exp13.onrender.com",
+    "healthCheckPath": "/healthz"
+  },
+  "deployment": {
+    "createdAt": "2026-10-26T14:07:31.869484Z",
+    "finishedAt": "2026-10-26T14:07:46.760335Z",
+    "id": "dep-dbflt8qjnfac73cs2evg",
+    "image": {
+      "ref": "docker.io/coastrider7/csa1020-exp13-releaseharbor@sha256:e8d0ca8279fcc546c168ea414d93a6278777c8ce980f8bbd289001ef840c1766",
+      "sha": "sha256:9dbd7e08c89fe6d06205252af6dea98edbdd4ab192638020cfd3b8a27229455f"
+    },
+    "startedAt": "2026-10-26T14:07:35.356081Z",
+    "status": "live",
+    "trigger": "deploy_hook",
+    "updatedAt": "2026-10-26T14:08:21.708789Z"
+  }
+}

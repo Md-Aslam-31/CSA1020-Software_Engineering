@@ -1,0 +1,8 @@
+workflow-aggregator:608.v67378e9d3db_1
+git:5.11.0
+junit:1442.vb_b_a_467df2767
+credentials-binding:728.v902a_273b_8947
+pipeline-stage-view:2.41
+matrix-auth:3.3
+timestamper:1.30
+

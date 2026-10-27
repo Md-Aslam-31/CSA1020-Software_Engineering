@@ -1,0 +1,2 @@
+{"data":{"application":"ParcelPilot","status":"ready","version":"1.0.0","instance":"parcelpilot-api-bf75dbcb-cf76t","namespace":"parcelpilot-lab","mode":"kubernetes","worker_pid":12,"timestamp_utc":"2026-10-26T13:06:16.876230+00:00","storage":"stateless","currency":"INR"},"meta":{"request_id":"17fea181d89643bdab80a0f2893f8575","served_by":"parcelpilot-api-bf75dbcb-cf76t","namespace":"parcelpilot-lab","mode":"kubernetes","version":"1.0.0"}}
+

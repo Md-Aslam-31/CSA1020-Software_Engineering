@@ -1,0 +1,10 @@
+{
+  "removed_pod": "parcelpilot-api-bf75dbcb-cf76t",
+  "before_health": "healthy",
+  "after_health": "healthy",
+  "replacement_pods": [
+    "parcelpilot-api-bf75dbcb-jzfwx",
+    "parcelpilot-api-bf75dbcb-prct9"
+  ],
+  "recorded_at": "2026-10-26T13:07:48.8750604Z"
+}

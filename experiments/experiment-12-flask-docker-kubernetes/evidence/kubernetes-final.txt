@@ -1,0 +1,12 @@
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                                                                                                    SELECTOR
+deployment.apps/parcelpilot-api   2/2     2            2           2m41s   api          coastrider7/csa1020-exp12-parcelpilot-api:1.0.0@sha256:b8446abac9502577a9cb146729ce8df7c90866a1b3fd3cdccde7d80b48126a81   app.kubernetes.io/name=parcelpilot-api
+
+NAME                                 READY   STATUS    RESTARTS   AGE     IP           NODE                            NOMINATED NODE   READINESS GATES
+pod/parcelpilot-api-bf75dbcb-jzfwx   1/1     Running   0          2m41s   10.244.0.5   parcelpilot-lab-control-plane   <none>           <none>
+pod/parcelpilot-api-bf75dbcb-prct9   1/1     Running   0          31s     10.244.0.8   parcelpilot-lab-control-plane   <none>           <none>
+
+NAME                           TYPE       CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE     SELECTOR
+service/parcelpilot-nodeport   NodePort   10.96.164.143   <none>        80:30088/TCP   2m51s   app.kubernetes.io/name=parcelpilot-api
+
+NAME                                                        ADDRESSTYPE   PORTS   ENDPOINTS               AGE
+endpointslice.discovery.k8s.io/parcelpilot-nodeport-6bsml   IPv4          8000    10.244.0.5,10.244.0.8   2m51s

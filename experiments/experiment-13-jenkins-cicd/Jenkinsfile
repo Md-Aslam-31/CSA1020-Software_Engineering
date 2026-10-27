@@ -1,0 +1,104 @@
+pipeline {
+    agent { label 'docker-lab' }
+    options {
+        disableConcurrentBuilds()
+        skipDefaultCheckout(true)
+        timeout(time: 25, unit: 'MINUTES')
+        buildDiscarder(logRotator(numToKeepStr: '12', artifactNumToKeepStr: '6'))
+        timestamps()
+    }
+    triggers { pollSCM('* * * * *') }
+    parameters {
+        booleanParam(name: 'PUBLISH_IMAGE', defaultValue: true, description: 'Publish the tested image to Docker Hub on main.')
+        booleanParam(name: 'DEPLOY_CLOUD', defaultValue: true, description: 'Deploy the tested image digest to the configured free Render service.')
+        booleanParam(name: 'DEMONSTRATE_TEST_GATE', defaultValue: false, description: 'Deliberately fail a gate test to prove publish/deploy are skipped.')
+    }
+    environment {
+        APP_DIR = 'experiments/experiment-13-jenkins-cicd'
+        IMAGE_REPOSITORY = 'coastrider7/csa1020-exp13-releaseharbor'
+        CLOUD_URL = 'https://releaseharbor-exp13.onrender.com'
+    }
+    stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    def checkedOut = checkout scm
+                    env.SOURCE_BRANCH = checkedOut.GIT_BRANCH ?: ''
+                    echo "Source branch: ${env.SOURCE_BRANCH}"
+                }
+                dir("${APP_DIR}/reports") { deleteDir() }
+                script {
+                    env.SOURCE_SHA = sh(script: 'git rev-parse HEAD', returnStdout: true).trim()
+                    env.IMAGE_TAG = "build-${env.BUILD_NUMBER}-${env.SOURCE_SHA.take(12)}"
+                    env.TEST_IMAGE = "releaseharbor-tests:${env.BUILD_NUMBER}"
+                    env.RELEASE_IMAGE = "${env.IMAGE_REPOSITORY}:${env.IMAGE_TAG}"
+                    currentBuild.description = "${env.SOURCE_SHA.take(12)} · ${env.IMAGE_TAG}"
+                }
+            }
+        }
+        stage('Build test image') {
+            steps { dir("${APP_DIR}") { sh 'docker build --pull --target test -t "$TEST_IMAGE" .' } }
+        }
+        stage('Automated tests') {
+            steps {
+                dir("${APP_DIR}") {
+                    sh '''
+                        mkdir -p reports
+                        docker run --rm --network none --read-only --tmpfs /tmp:rw,noexec,nosuid,size=16m \
+                          --cap-drop ALL --security-opt no-new-privileges:true "$TEST_IMAGE" \
+                          node --test --test-reporter=junit \
+                          > reports/junit.xml
+                        python3 ci/validate_tests.py
+                    '''
+                    script {
+                        if (params.DEMONSTRATE_TEST_GATE) {
+                            writeFile file: 'reports/gate.xml', text: '<testsuite name="Deployment safety gate" tests="1" failures="1"><testcase name="Intentional demonstration"><failure message="Requested gate demonstration">Publishing and deployment must be skipped.</failure></testcase></testsuite>'
+                            error('Intentional test-gate demonstration: deployment is blocked.')
+                        }
+                    }
+                }
+            }
+        }
+        stage('Build release image') {
+            steps {
+                dir("${APP_DIR}") {
+                    sh 'docker build --target runtime --build-arg GIT_SHA="$SOURCE_SHA" --build-arg BUILD_NUMBER="$BUILD_NUMBER" --label org.opencontainers.image.revision="$SOURCE_SHA" -t "$RELEASE_IMAGE" .'
+                }
+            }
+        }
+        stage('Container smoke test') {
+            steps { dir("${APP_DIR}") { sh 'python3 ci/smoke.py' } }
+        }
+        stage('Publish image') {
+            when { expression { params.PUBLISH_IMAGE && env.SOURCE_BRANCH == 'origin/main' } }
+            steps {
+                dir("${APP_DIR}") {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'REGISTRY_USER', passwordVariable: 'REGISTRY_TOKEN')]) {
+                        sh 'sh ci/publish.sh'
+                    }
+                }
+            }
+        }
+        stage('Deploy to Render') {
+            when { expression { params.PUBLISH_IMAGE && params.DEPLOY_CLOUD && env.SOURCE_BRANCH == 'origin/main' } }
+            steps {
+                dir("${APP_DIR}") {
+                    withCredentials([string(credentialsId: 'render-deploy-hook', variable: 'RENDER_DEPLOY_HOOK')]) {
+                        sh 'python3 ci/deploy.py'
+                    }
+                }
+            }
+        }
+    }
+    post {
+        always {
+            junit testResults: "${APP_DIR}/reports/*.xml", allowEmptyResults: true
+            archiveArtifacts artifacts: "${APP_DIR}/reports/*.json,${APP_DIR}/reports/*.txt", allowEmptyArchive: true, fingerprint: true
+            script {
+                if (env.TEST_IMAGE) { sh 'docker image rm "$TEST_IMAGE" >/dev/null 2>&1 || true' }
+            }
+        }
+        success { echo 'All selected stages passed. See archived verification reports for the stages executed.' }
+        failure { echo 'Pipeline failed. Inspect the failing stage; subsequent stages are skipped.' }
+    }
+}

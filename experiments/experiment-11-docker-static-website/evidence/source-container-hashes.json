@@ -1,0 +1,22 @@
+[
+  {
+    "source": "site/index.html",
+    "sha256": "bad8b0ee01d9b07de27a0e37755eab32e0dcf6d97430cf2890f203a7793c1818",
+    "matchesContainer": true
+  },
+  {
+    "source": "site/styles.css",
+    "sha256": "2a49259198338644bd48420ebaf5a1a14de887007beb33c4632e4de311457098",
+    "matchesContainer": true
+  },
+  {
+    "source": "site/favicon.svg",
+    "sha256": "09fa8dee968021c216512e61aecb53c30bcd90451d7faec80a3502d5d2c3eb3c",
+    "matchesContainer": true
+  },
+  {
+    "source": "nginx.conf",
+    "sha256": "1c247016b4588e3123301432fbf3eb7fb49681f0095c75a538356d6661f9ff7d",
+    "matchesContainer": true
+  }
+]

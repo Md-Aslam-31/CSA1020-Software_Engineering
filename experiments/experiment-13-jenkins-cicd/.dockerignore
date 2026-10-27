@@ -1,0 +1,10 @@
+**
+!Dockerfile
+!app/
+!app/package.json
+!app/src/
+!app/src/**
+!app/public/
+!app/public/**
+!app/tests/
+!app/tests/**

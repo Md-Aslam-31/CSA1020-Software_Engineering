@@ -1,0 +1,12 @@
+{
+  "name": "kitcrew-team-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A shared equipment workspace and a real Git team-workflow demonstration.",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test --test-reporter=spec"
+  },
+  "engines": {"node": ">=22"}
+}

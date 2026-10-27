@@ -1,0 +1,28 @@
+{
+  "capturedAt": "2026-10-26T16:00:42.030Z",
+  "id": "srv-dbfnbggm7kps739nrok0",
+  "name": "focuslane-exp14",
+  "type": "web_service",
+  "plan": "free",
+  "runtime": "image",
+  "region": "singapore",
+  "url": "https://focuslane-exp14.onrender.com",
+  "healthCheckPath": "/healthz",
+  "suspended": "not_suspended",
+  "registryAutoDeploy": "no",
+  "notes": "Registry auto-deploy is disabled after deploying a specific digest. GitHub Actions explicitly deploys each verified immutable image through the service hook.",
+  "bootstrapImage": "docker.io/coastrider7/csa1020-exp14-focuslane:run-1-attempt-1-94a2d5c6cb9d007235861bdab1c5a2e1ea4a2908",
+  "latestDeploy": {
+    "createdAt": "2026-10-26T15:52:35.142768Z",
+    "finishedAt": "2026-10-26T15:52:49.34941Z",
+    "id": "dep-dbfnegvavr4c73fel0gg",
+    "image": {
+      "ref": "docker.io/coastrider7/csa1020-exp14-focuslane@sha256:971284d9f9d5dd9503d70181e739c8aad5c2eec1b15fa3d89c177825e2f84e19",
+      "sha": "sha256:971284d9f9d5dd9503d70181e739c8aad5c2eec1b15fa3d89c177825e2f84e19"
+    },
+    "startedAt": "2026-10-26T15:52:38.612019Z",
+    "status": "live",
+    "trigger": "deploy_hook",
+    "updatedAt": "2026-10-26T15:53:24.250004Z"
+  }
+}

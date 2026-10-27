@@ -1,0 +1,30 @@
+{
+  "application": "FocusLane",
+  "version": "1.1.0",
+  "buildNumber": "3.1",
+  "sourceSha": "940b7c84efef6e4a8b3e0dd6c1de77bba08705b8",
+  "applicationTests": {
+    "passed": 23,
+    "failed": 0,
+    "skipped": 0
+  },
+  "ciGuardTestsPassed": 4,
+  "browserChecksPassed": 10,
+  "screenshotCount": 10,
+  "requiredReportSections": 5,
+  "workflowCopyMatchesCanonical": true,
+  "cloudDeploymentVerified": true,
+  "immutableDigestMatchesRender": true,
+  "applicationAndCiMatchDeployedCommit": true,
+  "publicationCredentialScan": "passed",
+  "excluded": [
+    "__pycache__",
+    "*.pyc",
+    "*.log",
+    ".env",
+    "secrets",
+    "reports",
+    "node_modules"
+  ],
+  "archiveVerification": "Every ZIP entry checked against its source bytes; SHA256SUMS records the submitted files."
+}

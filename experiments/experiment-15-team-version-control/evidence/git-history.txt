@@ -1,0 +1,23 @@
+*   0d80c08 (HEAD -> docs/workflow-evidence, origin/main, origin/HEAD, main) Merge reviewed Insights module and complete KitCrew workspace
+|\
+| * 53e1da6 (origin/feature/insights, feature/insights) Integrate equipment workspace and cross-module regression checks
+| *   1cf058d Merge remote-tracking branch 'origin/main' into feature/insights
+| |\
+| |/
+|/|
+* |   4300dae Merge reviewed Loans module after manual shared-policy resolution
+|\ \
+| * \   c9619a4 (origin/feature/loans, feature/loans) Resolve shared policy conflict preserving search and team loan limits
+| |\ \
+| |/ /
+|/| |
+* | |   1b71bd9 Merge reviewed Catalog module and description-search regression
+|\ \ \
+| * | | 1b7f367 (origin/feature/catalog, feature/catalog) Address catalog review with explicit description-search regression
+| * | | 077156c Implement catalog module with focused regression checks
+|/ / /
+| * / 2fcd09a Implement loans module with focused regression checks
+|/ /
+| * 41d1b5e Implement insights module with focused regression checks
+|/
+* a0798c6 Initialize private KitCrew team project and review conventions

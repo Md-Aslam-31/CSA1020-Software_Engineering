@@ -1,0 +1,74 @@
+{
+  "_class": "org.jenkinsci.plugins.workflow.job.WorkflowRun",
+  "actions": [
+    {
+      "_class": "hudson.model.CauseAction",
+      "causes": [
+        {
+          "_class": "hudson.triggers.SCMTrigger$SCMTriggerCause",
+          "shortDescription": "Started by an SCM change"
+        }
+      ]
+    },
+    {},
+    {
+      "_class": "hudson.model.ParametersAction",
+      "parameters": [
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "PUBLISH_IMAGE",
+          "value": true
+        },
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "DEPLOY_CLOUD",
+          "value": true
+        },
+        {
+          "_class": "hudson.model.BooleanParameterValue",
+          "name": "DEMONSTRATE_TEST_GATE",
+          "value": false
+        }
+      ]
+    },
+    {
+      "_class": "hudson.plugins.git.util.BuildData",
+      "lastBuiltRevision": {
+        "SHA1": "0772e7b013680b7ec975f5a6fb155a36eaae49d5"
+      }
+    },
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.workflow.libs.LibrariesAction"
+    },
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.workflow.cps.EnvActionImpl"
+    },
+    {},
+    {
+      "_class": "hudson.tasks.junit.TestResultAction"
+    },
+    {},
+    {},
+    {},
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.displayurlapi.actions.RunDisplayAction"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.pipeline.modeldefinition.actions.RestartDeclarativePipelineAction"
+    },
+    {},
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.views.FlowGraphAction"
+    },
+    {},
+    {}
+  ],
+  "building": false,
+  "duration": 52290,
+  "number": 7,
+  "result": "SUCCESS",
+  "timestamp": 1793023621971
+}

@@ -1,0 +1,15 @@
+{
+  "data": {
+    "application": "FocusLane",
+    "version": "1.0.0",
+    "gitSha": "94a2d5c6cb9d007235861bdab1c5a2e1ea4a2908",
+    "buildNumber": "1.1",
+    "mode": "cloud"
+  },
+  "meta": {
+    "version": "1.0.0",
+    "gitSha": "94a2d5c6cb9d007235861bdab1c5a2e1ea4a2908",
+    "buildNumber": "1.1",
+    "mode": "cloud"
+  }
+}

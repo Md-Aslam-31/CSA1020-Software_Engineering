@@ -1,0 +1,19 @@
+{
+  "healthHttpStatus": 200,
+  "version": {
+    "application": "FocusLane",
+    "version": "1.1.0",
+    "gitSha": "940b7c84efef6e4a8b3e0dd6c1de77bba08705b8",
+    "buildNumber": "3.1",
+    "mode": "ci"
+  },
+  "planHttpStatus": 200,
+  "plannedMinutes": 255,
+  "dailyMinutes": [
+    90,
+    90,
+    75
+  ],
+  "highPriorityFirst": true,
+  "invalidInputHttpStatus": 400
+}

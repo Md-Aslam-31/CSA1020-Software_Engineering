@@ -1,0 +1,65 @@
+{
+  "application": "FocusLane",
+  "url": "https://focuslane-exp14.onrender.com",
+  "version": "1.1.0",
+  "sourceSha": "940b7c84efef6e4a8b3e0dd6c1de77bba08705b8",
+  "buildNumber": "3.1",
+  "verifiedAt": "2026-10-26T16:01:53.363Z",
+  "method": "Real Chrome interactions with the deployed application; downloaded exports independently parsed from disk.",
+  "checks": [
+    {
+      "name": "Release identity and refresh",
+      "result": "pass",
+      "observed": "Live API and Delivery details show version 1.1.0, source SHA and run 3.1."
+    },
+    {
+      "name": "Navigation",
+      "result": "pass",
+      "observed": "My plan, My schedule, Delivery details and home links navigate to their matching sections."
+    },
+    {
+      "name": "Subject editing and boundaries",
+      "result": "pass",
+      "observed": "Add reaches six and disables Add; removal reaches one and disables the last Remove; reset restores three subjects."
+    },
+    {
+      "name": "Custom name, date and target",
+      "result": "pass",
+      "observed": "Exam week / 2026-11-02 / Design systems 45 minutes / daily 90 / five days generated 255 planned minutes, 57% utilization and freeMinutes [0,0,15,90,90]."
+    },
+    {
+      "name": "Draft save and reload",
+      "result": "pass",
+      "observed": "Saved custom name/date/target restored on reload and recomputed by the live API."
+    },
+    {
+      "name": "JSON export",
+      "result": "pass",
+      "evidence": "browser-export.json",
+      "observed": "Downloaded JSON contains the current plan, 255-minute API schedule and live 1.1.0/run 3.1 metadata."
+    },
+    {
+      "name": "Priority change and overflow",
+      "result": "pass",
+      "observed": "Added Operating systems 60 minutes at High, changed Software engineering to Low, daily 30 for one day. Operating systems received the first 30 minutes; 285 minutes unallocated with a clear capacity warning."
+    },
+    {
+      "name": "Invalid capacity",
+      "result": "pass",
+      "observed": "29 daily minutes produced the explicit 30-to-480 whole-number error, preserved stale labels and re-enabled submission."
+    },
+    {
+      "name": "Stale export",
+      "result": "pass",
+      "evidence": "browser-stale-export.json",
+      "observed": "Editing without successful generation exports schedule:null with an instruction to generate the current plan."
+    },
+    {
+      "name": "Reset and persistence clearing",
+      "result": "pass",
+      "observed": "Reset followed by reload restored the sample, three subjects, 90 daily minutes and five days; the saved custom draft was cleared."
+    }
+  ],
+  "passed": 10,
+  "failed": 0
+}

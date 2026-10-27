@@ -1,0 +1,28 @@
+{
+  "recordedAtUtc": "2026-10-26T11:46:17.4366505Z",
+  "url": "http://127.0.0.1:8087/",
+  "imageTag": "orbital-fieldnotes:1.0",
+  "imageId": "sha256:59206925bcf8458813c0880ccaace310ee42725adc7cd974242a3afd3618a431",
+  "containerId": "9d4b7962ff9ff3598fc06847cd30a13d935e91ff244794c2ad3b3352f44dcff7",
+  "containerName": "orbital-fieldnotes-exp11",
+  "health": "healthy",
+  "mounts": [],
+  "ports": {
+    "80/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "8087"
+      }
+    ]
+  },
+  "http": {
+    "home": 200,
+    "stylesheet": 200,
+    "favicon": 200,
+    "health": 200,
+    "missingPage": 404,
+    "server": [
+      "nginx"
+    ]
+  }
+}

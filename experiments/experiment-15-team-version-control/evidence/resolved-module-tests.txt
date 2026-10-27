@@ -1,0 +1,28 @@
+âœ” catalog contains six unique, immutable equipment items (5.3457ms)
+âœ” catalog search is trimmed and case insensitive (4.4477ms)
+âœ” description-only search survives the shared policy merge (0.6913ms)
+âœ” category and search constraints apply together (0.4006ms)
+âœ” all and empty filters return separate full result arrays (0.9075ms)
+âœ” search with no matches returns an empty array (0.4445ms)
+âœ” search rejects nontext filter values (1.5485ms)
+âœ” catalog validation rejects duplicate IDs before searching (0.3621ms)
+âœ” new loan trims team details and calculates due date exactly (28.3485ms)
+âœ” merged loan limits permit three units for fourteen days (0.5205ms)
+âœ” loan rejects unavailable quantities without changing history (4.8658ms)
+âœ” quantity validation rejects fractions, zero, excessive and nonnumeric values (1.1152ms)
+âœ” duration validation rejects out of bounds and nonnumeric values (2.5506ms)
+âœ” loan requires known equipment and meaningful team details (0.7222ms)
+âœ” date injection accepts Date objects and rejects invalid dates (0.4969ms)
+âœ” return creates a new history without mutating the original loan (0.7056ms)
+âœ” duplicate return and unknown loans produce clear errors (0.8465ms)
+âœ” return cannot precede the borrowing time (0.9579ms)
+âœ” catalog validation rejects duplicate equipment identities (2.7122ms)
+âœ” time validation rejects invalid dates and preserves the supplied instant (7.3593ms)
+â„¹ tests 20
+â„¹ suites 0
+â„¹ pass 20
+â„¹ fail 0
+â„¹ cancelled 0
+â„¹ skipped 0
+â„¹ todo 0
+â„¹ duration_ms 351.8011

@@ -1,0 +1,585 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-26T13:05:28Z",
+                "generateName": "parcelpilot-api-bf75dbcb-",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/name": "parcelpilot-api",
+                    "app.kubernetes.io/part-of": "parcelpilot",
+                    "pod-template-hash": "bf75dbcb"
+                },
+                "name": "parcelpilot-api-bf75dbcb-jzfwx",
+                "namespace": "parcelpilot-lab",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "ReplicaSet",
+                        "name": "parcelpilot-api-bf75dbcb",
+                        "uid": "913c7244-6ec6-4578-ab8d-de6ac695ff40"
+                    }
+                ],
+                "resourceVersion": "1595",
+                "uid": "87d336b5-68ba-4efe-a92c-d3cab328580b"
+            },
+            "spec": {
+                "automountServiceAccountToken": false,
+                "containers": [
+                    {
+                        "env": [
+                            {
+                                "name": "POD_NAME",
+                                "valueFrom": {
+                                    "fieldRef": {
+                                        "apiVersion": "v1",
+                                        "fieldPath": "metadata.name"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "POD_NAMESPACE",
+                                "valueFrom": {
+                                    "fieldRef": {
+                                        "apiVersion": "v1",
+                                        "fieldPath": "metadata.namespace"
+                                    }
+                                }
+                            }
+                        ],
+                        "envFrom": [
+                            {
+                                "configMapRef": {
+                                    "name": "parcelpilot-config"
+                                }
+                            }
+                        ],
+                        "image": "coastrider7/csa1020-exp12-parcelpilot-api:1.0.0@sha256:b8446abac9502577a9cb146729ce8df7c90866a1b3fd3cdccde7d80b48126a81",
+                        "imagePullPolicy": "Always",
+                        "livenessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/healthz",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 10,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 2
+                        },
+                        "name": "api",
+                        "ports": [
+                            {
+                                "containerPort": 8000,
+                                "name": "http",
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "readinessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/readyz",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 3,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 2
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "250m",
+                                "memory": "128Mi"
+                            },
+                            "requests": {
+                                "cpu": "50m",
+                                "memory": "64Mi"
+                            }
+                        },
+                        "securityContext": {
+                            "allowPrivilegeEscalation": false,
+                            "capabilities": {
+                                "drop": [
+                                    "ALL"
+                                ]
+                            },
+                            "readOnlyRootFilesystem": true
+                        },
+                        "startupProbe": {
+                            "failureThreshold": 30,
+                            "httpGet": {
+                                "path": "/healthz",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 2,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/tmp",
+                                "name": "temporary-files"
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "enableServiceLinks": true,
+                "nodeName": "parcelpilot-lab-control-plane",
+                "preemptionPolicy": "PreemptLowerPriority",
+                "priority": 0,
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {
+                    "fsGroup": 10001,
+                    "runAsGroup": 10001,
+                    "runAsNonRoot": true,
+                    "runAsUser": 10001,
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "serviceAccount": "default",
+                "serviceAccountName": "default",
+                "terminationGracePeriodSeconds": 30,
+                "tolerations": [
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "volumes": [
+                    {
+                        "emptyDir": {
+                            "sizeLimit": "16Mi"
+                        },
+                        "name": "temporary-files"
+                    }
+                ]
+            },
+            "status": {
+                "allocatedResources": {
+                    "cpu": "50m",
+                    "memory": "64Mi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:05:31Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodReadyToStartContainers"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:05:29Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:06:02Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Ready"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:06:02Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "ContainersReady"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:05:29Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodScheduled"
+                    }
+                ],
+                "containerStatuses": [
+                    {
+                        "allocatedResources": {
+                            "cpu": "50m",
+                            "memory": "64Mi"
+                        },
+                        "containerID": "containerd://57f98155ca3fc98b649375e84e926b5d74f53afe7327bbd904233f7a7a0633c1",
+                        "image": "sha256:9d2bdf6bafa588430813e69a90078e888ec5aa1aba12b1628429611ef3fa65df",
+                        "imageID": "docker.io/coastrider7/csa1020-exp12-parcelpilot-api@sha256:b8446abac9502577a9cb146729ce8df7c90866a1b3fd3cdccde7d80b48126a81",
+                        "lastState": {},
+                        "name": "api",
+                        "ready": true,
+                        "resources": {
+                            "limits": {
+                                "cpu": "250m",
+                                "memory": "128Mi"
+                            },
+                            "requests": {
+                                "cpu": "50m",
+                                "memory": "64Mi"
+                            }
+                        },
+                        "restartCount": 0,
+                        "started": true,
+                        "state": {
+                            "running": {
+                                "startedAt": "2026-10-26T13:05:51Z"
+                            }
+                        },
+                        "user": {
+                            "linux": {
+                                "gid": 10001,
+                                "supplementalGroups": [
+                                    10001
+                                ],
+                                "uid": 10001
+                            }
+                        },
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/tmp",
+                                "name": "temporary-files"
+                            }
+                        ]
+                    }
+                ],
+                "hostIP": "172.18.0.2",
+                "hostIPs": [
+                    {
+                        "ip": "172.18.0.2"
+                    }
+                ],
+                "observedGeneration": 1,
+                "phase": "Running",
+                "podIP": "10.244.0.5",
+                "podIPs": [
+                    {
+                        "ip": "10.244.0.5"
+                    }
+                ],
+                "qosClass": "Burstable",
+                "resources": {
+                    "limits": {
+                        "cpu": "250m",
+                        "memory": "128Mi"
+                    },
+                    "requests": {
+                        "cpu": "28m",
+                        "memory": "64Mi"
+                    }
+                },
+                "startTime": "2026-10-26T13:05:29Z"
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Pod",
+            "metadata": {
+                "creationTimestamp": "2026-10-26T13:07:38Z",
+                "generateName": "parcelpilot-api-bf75dbcb-",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/name": "parcelpilot-api",
+                    "app.kubernetes.io/part-of": "parcelpilot",
+                    "pod-template-hash": "bf75dbcb"
+                },
+                "name": "parcelpilot-api-bf75dbcb-prct9",
+                "namespace": "parcelpilot-lab",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "apps/v1",
+                        "blockOwnerDeletion": true,
+                        "controller": true,
+                        "kind": "ReplicaSet",
+                        "name": "parcelpilot-api-bf75dbcb",
+                        "uid": "913c7244-6ec6-4578-ab8d-de6ac695ff40"
+                    }
+                ],
+                "resourceVersion": "1837",
+                "uid": "228e041a-4af0-4acc-9ebe-2daf4e3d1e3f"
+            },
+            "spec": {
+                "automountServiceAccountToken": false,
+                "containers": [
+                    {
+                        "env": [
+                            {
+                                "name": "POD_NAME",
+                                "valueFrom": {
+                                    "fieldRef": {
+                                        "apiVersion": "v1",
+                                        "fieldPath": "metadata.name"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "POD_NAMESPACE",
+                                "valueFrom": {
+                                    "fieldRef": {
+                                        "apiVersion": "v1",
+                                        "fieldPath": "metadata.namespace"
+                                    }
+                                }
+                            }
+                        ],
+                        "envFrom": [
+                            {
+                                "configMapRef": {
+                                    "name": "parcelpilot-config"
+                                }
+                            }
+                        ],
+                        "image": "coastrider7/csa1020-exp12-parcelpilot-api:1.0.0@sha256:b8446abac9502577a9cb146729ce8df7c90866a1b3fd3cdccde7d80b48126a81",
+                        "imagePullPolicy": "Always",
+                        "livenessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/healthz",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 10,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 2
+                        },
+                        "name": "api",
+                        "ports": [
+                            {
+                                "containerPort": 8000,
+                                "name": "http",
+                                "protocol": "TCP"
+                            }
+                        ],
+                        "readinessProbe": {
+                            "failureThreshold": 3,
+                            "httpGet": {
+                                "path": "/readyz",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 3,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 2
+                        },
+                        "resources": {
+                            "limits": {
+                                "cpu": "250m",
+                                "memory": "128Mi"
+                            },
+                            "requests": {
+                                "cpu": "50m",
+                                "memory": "64Mi"
+                            }
+                        },
+                        "securityContext": {
+                            "allowPrivilegeEscalation": false,
+                            "capabilities": {
+                                "drop": [
+                                    "ALL"
+                                ]
+                            },
+                            "readOnlyRootFilesystem": true
+                        },
+                        "startupProbe": {
+                            "failureThreshold": 30,
+                            "httpGet": {
+                                "path": "/healthz",
+                                "port": "http",
+                                "scheme": "HTTP"
+                            },
+                            "periodSeconds": 2,
+                            "successThreshold": 1,
+                            "timeoutSeconds": 1
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/tmp",
+                                "name": "temporary-files"
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "enableServiceLinks": true,
+                "nodeName": "parcelpilot-lab-control-plane",
+                "preemptionPolicy": "PreemptLowerPriority",
+                "priority": 0,
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {
+                    "fsGroup": 10001,
+                    "runAsGroup": 10001,
+                    "runAsNonRoot": true,
+                    "runAsUser": 10001,
+                    "seccompProfile": {
+                        "type": "RuntimeDefault"
+                    }
+                },
+                "serviceAccount": "default",
+                "serviceAccountName": "default",
+                "terminationGracePeriodSeconds": 30,
+                "tolerations": [
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/not-ready",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    },
+                    {
+                        "effect": "NoExecute",
+                        "key": "node.kubernetes.io/unreachable",
+                        "operator": "Exists",
+                        "tolerationSeconds": 300
+                    }
+                ],
+                "volumes": [
+                    {
+                        "emptyDir": {
+                            "sizeLimit": "16Mi"
+                        },
+                        "name": "temporary-files"
+                    }
+                ]
+            },
+            "status": {
+                "allocatedResources": {
+                    "cpu": "50m",
+                    "memory": "64Mi"
+                },
+                "conditions": [
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:07:38Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodReadyToStartContainers"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:07:38Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Initialized"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:07:48Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "Ready"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:07:48Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "ContainersReady"
+                    },
+                    {
+                        "lastProbeTime": null,
+                        "lastTransitionTime": "2026-10-26T13:07:38Z",
+                        "observedGeneration": 1,
+                        "status": "True",
+                        "type": "PodScheduled"
+                    }
+                ],
+                "containerStatuses": [
+                    {
+                        "allocatedResources": {
+                            "cpu": "50m",
+                            "memory": "64Mi"
+                        },
+                        "containerID": "containerd://a0deb18884300c8a9fede54202d253e0df5f1eacfa7cf5d1e3731ffa56b6ea37",
+                        "image": "sha256:9d2bdf6bafa588430813e69a90078e888ec5aa1aba12b1628429611ef3fa65df",
+                        "imageID": "docker.io/coastrider7/csa1020-exp12-parcelpilot-api@sha256:b8446abac9502577a9cb146729ce8df7c90866a1b3fd3cdccde7d80b48126a81",
+                        "lastState": {},
+                        "name": "api",
+                        "ready": true,
+                        "resources": {
+                            "limits": {
+                                "cpu": "250m",
+                                "memory": "128Mi"
+                            },
+                            "requests": {
+                                "cpu": "50m",
+                                "memory": "64Mi"
+                            }
+                        },
+                        "restartCount": 0,
+                        "started": true,
+                        "state": {
+                            "running": {
+                                "startedAt": "2026-10-26T13:07:40Z"
+                            }
+                        },
+                        "user": {
+                            "linux": {
+                                "gid": 10001,
+                                "supplementalGroups": [
+                                    10001
+                                ],
+                                "uid": 10001
+                            }
+                        },
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/tmp",
+                                "name": "temporary-files"
+                            }
+                        ]
+                    }
+                ],
+                "hostIP": "172.18.0.2",
+                "hostIPs": [
+                    {
+                        "ip": "172.18.0.2"
+                    }
+                ],
+                "observedGeneration": 1,
+                "phase": "Running",
+                "podIP": "10.244.0.8",
+                "podIPs": [
+                    {
+                        "ip": "10.244.0.8"
+                    }
+                ],
+                "qosClass": "Burstable",
+                "resources": {
+                    "limits": {
+                        "cpu": "250m",
+                        "memory": "128Mi"
+                    },
+                    "requests": {
+                        "cpu": "28m",
+                        "memory": "64Mi"
+                    }
+                },
+                "startTime": "2026-10-26T13:07:38Z"
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

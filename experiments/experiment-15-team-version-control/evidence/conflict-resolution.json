@@ -1,0 +1,15 @@
+{
+  "mergeCommit": "c9619a423d6af2ff44f6248eb730afb6dfc2ce6a",
+  "parents": [
+    "2fcd09afdaf250fd495fe12c9317083f3c432f01",
+    "1b71bd9138e2d40661490abb2f6d02f2e91ebe94"
+  ],
+  "resolvedFile": "app/modules/policy.mjs",
+  "requirementsPreserved": {
+    "searchDescription": true,
+    "maxLoanDays": 14,
+    "maxUnitsPerLoan": 3
+  },
+  "unmergedFilesRemaining": 0,
+  "moduleTestsPassed": 20
+}

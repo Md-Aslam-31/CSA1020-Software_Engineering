@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#183b3a">
+  <meta name="description" content="ReleaseHarbor, a thoughtful release-readiness workspace and containerized CI/CD learning application.">
+  <title>ReleaseHarbor — Make room for a good release.</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#workspace">Skip to workspace</a>
+  <aside class="sidebar">
+    <a class="brand" href="#workspace" aria-label="ReleaseHarbor home"><svg viewBox="0 0 42 42" aria-hidden="true"><path d="M21 4v25m-7-18h14M8 23v5c0 6 7 10 13 10s13-4 13-10v-5M3 26l5-4 5 4m16 0 5-4 5 4"/><circle cx="21" cy="6" r="3"/></svg><span>ReleaseHarbor<span class="brand-note">A LITTLE MORE READY.</span></span></a>
+    <p class="nav-caption">YOUR WORKSPACE</p>
+    <nav aria-label="Workspace navigation">
+      <a class="nav-link active" href="#workspace"><span aria-hidden="true">◫</span> Release workspace <span class="nav-arrow">↗</span></a>
+      <a class="nav-link" href="#timeline"><span aria-hidden="true">⌁</span> Release timeline</a>
+      <a class="nav-link" href="#build"><span aria-hidden="true">▤</span> Build details</a>
+    </nav>
+    <div class="sidebar-foot"><span class="harbor-mark" aria-hidden="true">↗</span><p>Good plans.<br>Calmer launches.</p><span>JENKINS · DOCKER · CI/CD</span><div class="sidebar-version"><span>EXPERIMENT 13</span><span>v1.0.0</span></div></div>
+  </aside>
+
+  <main id="main">
+    <header class="topbar"><div>Workspace <span>/</span><strong>Release readiness</strong></div><div class="connection"><i id="connectionDot"></i><span id="connectionText">Connecting to API…</span><span class="avatar" aria-label="ReleaseHarbor lab">RH</span></div></header>
+    <div class="page">
+      <section class="hero" aria-labelledby="pageTitle"><div><p class="eyebrow">THE MOMENT BEFORE YOU SHIP</p><h1 id="pageTitle">A little preparation.<br><em>A better launch.</em></h1><p class="hero-copy">Bring your release into focus. Check the essentials, find the gaps, and make a plan your team can follow.</p></div><div class="hero-note"><span class="note-symbol" aria-hidden="true">↗</span><span class="note-line"></span><p>Make good things<br><em>ready to go.</em></p><span class="note-small">FROM FIRST COMMIT TO WHAT'S NEXT</span></div></section>
+
+      <section class="metrics" aria-label="Readiness summary">
+        <div><span class="metric-label">READINESS SCORE <span aria-hidden="true">◈</span></span><strong id="metricScore">—</strong><small id="metricScoreHint">Awaiting an API assessment</small></div>
+        <div><span class="metric-label">RELEASE GATE <span aria-hidden="true">↗</span></span><strong class="gate-metric" id="metricGate">Not assessed</strong><small id="metricGateHint">Your plan, checked honestly</small></div>
+        <div><span class="metric-label">CHECKS COMPLETE <span aria-hidden="true">✓</span></span><strong id="metricChecks">—</strong><small>Twelve small steps toward ready</small></div>
+        <div><span class="metric-label">ENVIRONMENT <span aria-hidden="true">▧</span></span><strong id="metricEnvironment">Connecting</strong><small id="metricBuild">Reading the running application</small></div>
+      </section>
+
+      <section class="workspace-section" id="workspace" aria-labelledby="workspaceTitle">
+        <div class="section-heading"><div><p class="eyebrow">YOUR NEXT CHAPTER</p><h2 id="workspaceTitle">Every great release starts here.</h2></div><div class="section-actions"><button class="button button-quiet" id="resetPlan" type="button">Reset sample <span aria-hidden="true">↺</span></button><button class="button button-outline" id="saveDraft" type="button">Save draft <span aria-hidden="true">↗</span></button></div></div>
+        <div class="workbench-grid">
+          <form id="releaseForm" novalidate>
+            <div class="panel release-details"><div class="panel-heading"><h3>First, the essentials.</h3><span class="step">01 / YOUR RELEASE</span></div>
+              <div class="form-grid"><div class="field field-wide"><label for="releaseName">Release name</label><input id="releaseName" name="releaseName" type="text" maxlength="80" autocomplete="off" placeholder="A name for what comes next"></div><div class="field"><label for="releaseVersion">Version</label><input id="releaseVersion" name="version" type="text" maxlength="40" autocomplete="off" placeholder="1.0.0" aria-describedby="versionHint"><small id="versionHint">Semantic version, such as 1.0.0</small></div><div class="field"><label for="releaseDate">Target release date</label><input id="releaseDate" name="releaseDate" type="date"></div><div class="field field-wide"><label for="releaseOwner">Release owner</label><input id="releaseOwner" name="owner" type="text" maxlength="60" autocomplete="off" placeholder="The person keeping things moving"></div></div>
+            </div>
+            <div class="panel checklist-panel"><div class="panel-heading"><h3>The details make the difference.</h3><span class="step">02 / READINESS CHECKS</span></div><p class="panel-copy">Mark what your team has completed. Items with a dot are essential release gates.</p>
+              <div class="checklist-groups">
+                <fieldset><legend><span class="category-icon" aria-hidden="true">⌘</span> Engineering <span class="category-count" id="engineeringCount">0 / 3</span></legend><label class="check-row"><input type="checkbox" name="tests"><span>Automated tests pass<small>Unit and integration checks are green.</small></span><i class="essential" aria-label="Essential release gate"></i></label><label class="check-row"><input type="checkbox" name="codeReview"><span>Code review complete<small>Changes have a second pair of eyes.</small></span></label><label class="check-row"><input type="checkbox" name="build"><span>Container build verified<small>The release image builds successfully.</small></span><i class="essential" aria-label="Essential release gate"></i></label></fieldset>
+                <fieldset><legend><span class="category-icon" aria-hidden="true">◇</span> Security <span class="category-count" id="securityCount">0 / 3</span></legend><label class="check-row"><input type="checkbox" name="dependencies"><span>Dependencies reviewed<small>Known package risks are understood.</small></span></label><label class="check-row"><input type="checkbox" name="secrets"><span>Secrets kept out of source<small>Credentials use the secret store.</small></span><i class="essential" aria-label="Essential release gate"></i></label><label class="check-row"><input type="checkbox" name="access"><span>Access permissions checked<small>Only the required people have access.</small></span></label></fieldset>
+                <fieldset><legend><span class="category-icon" aria-hidden="true">⌁</span> Operations <span class="category-count" id="operationsCount">0 / 4</span></legend><label class="check-row"><input type="checkbox" name="backup"><span>Recovery plan rehearsed<small>Restore steps are clear and tested.</small></span></label><label class="check-row"><input type="checkbox" name="monitoring"><span>Monitoring is ready<small>Health checks and useful logs are in place.</small></span></label><label class="check-row"><input type="checkbox" name="rollback"><span>Rollback path prepared<small>A previous good release can be restored.</small></span><i class="essential" aria-label="Essential release gate"></i></label><label class="check-row"><input type="checkbox" name="runbook"><span>Runbook updated<small>The team knows what to do next.</small></span></label></fieldset>
+                <fieldset><legend><span class="category-icon" aria-hidden="true">◌</span> Customer <span class="category-count" id="customerCount">0 / 2</span></legend><label class="check-row"><input type="checkbox" name="notes"><span>Release notes written<small>Explain what changed in plain language.</small></span></label><label class="check-row"><input type="checkbox" name="support"><span>Support team briefed<small>Questions have a person and a place to go.</small></span></label></fieldset>
+              </div>
+              <div class="form-bottom"><p class="form-message" id="formMessage" role="status" aria-live="polite">Check your plan to see what is ready and what needs attention.</p><div class="form-actions"><button class="button button-primary" id="assessButton" type="submit">Assess my release <span aria-hidden="true">↗</span></button><span>Calculated by the running API</span></div></div>
+            </div>
+          </form>
+
+          <aside class="assessment-panel" aria-labelledby="assessmentTitle"><div class="assessment-heading"><span class="eyebrow">A CLEARER PICTURE</span><span class="live-pill" id="assessmentState">NOT ASSESSED</span></div><h3 id="assessmentTitle">Room for a<br><em>confident next step.</em></h3><div class="score-wrap"><svg class="score-ring" viewBox="0 0 160 160" aria-hidden="true"><circle class="ring-track" cx="80" cy="80" r="67"/><circle class="ring-value" id="scoreArc" cx="80" cy="80" r="67" stroke-dasharray="420.973" stroke-dashoffset="420.973"/></svg><div class="score-value"><strong id="readinessScore">—</strong><span>READINESS SCORE</span></div></div><p class="result-status" id="assessmentStatus">Your plan has possibility.</p><p class="result-copy" id="assessmentRecommendation">Run an assessment to see the release gate, missing essentials and next steps.</p><div class="assessment-rule"></div><div class="result-heading"><span>ESSENTIAL BLOCKERS</span><span id="blockerCount">—</span></div><ul id="blockerList" class="blocker-list"><li>Your checklist will tell the story.</li></ul><div class="assessment-footer"><span class="api-indicator" aria-hidden="true">↗</span><p id="assessmentFootnote">An educational readiness plan.<br>This does not approve or deploy a release.</p></div><button class="button button-export" id="exportPlan" type="button">Export release plan <span aria-hidden="true">↓</span></button></aside>
+        </div>
+        <p class="workspace-note"><i aria-hidden="true"></i> Your checklist is a planning aid. CI results and real stakeholder approvals must be verified separately.</p>
+      </section>
+
+      <section id="timeline" class="timeline-section" aria-labelledby="timelineTitle"><div class="section-heading"><div><p class="eyebrow">ONE STEP AT A TIME</p><h2 id="timelineTitle">Give the good work a little direction.</h2></div><span class="section-subtext" id="timelineHint">Assess your release to build a suggested timeline.</span></div><div id="timelineCards" class="timeline-cards"><div class="timeline-empty">Your suggested milestones will appear here after an assessment.</div></div></section>
+
+      <section id="build" class="build-section" aria-labelledby="buildTitle"><div class="section-heading"><div><p class="eyebrow">FROM CODE TO CONTAINER</p><h2 id="buildTitle">A small app. A real delivery journey.</h2></div><button class="button button-quiet" id="refreshBuild" type="button">Refresh build details <span aria-hidden="true">↻</span></button></div><div class="build-grid"><div class="build-story"><span class="build-story-icon" aria-hidden="true">▧</span><h3>Made to travel well.</h3><p>This application is packaged as a Docker image. Jenkins can build, test and deliver the same application through its pipeline.</p><div class="journey"><span>COMMIT</span><i>→</i><span>TEST</span><i>→</i><span>BUILD</span><i>→</i><span>DEPLOY</span></div></div><div class="build-live"><span class="live-label"><i></i> RUNNING APPLICATION</span><dl><div><dt>Application</dt><dd id="buildApplication">Connecting…</dd></div><div><dt>App version</dt><dd id="buildVersion">—</dd></div><div><dt>Environment</dt><dd id="buildMode">—</dd></div><div><dt>Build number</dt><dd id="buildNumber">—</dd></div><div><dt>Source commit</dt><dd><code id="buildCommit">—</code></dd></div></dl><p id="buildMessage" role="status">Reading metadata from /api/version.</p></div></div></section>
+      <footer><span class="footer-brand">ReleaseHarbor<span>·</span></span><p>Make room for a good release.</p><small>EXPERIMENT 13 / A CI/CD LEARNING WORKSPACE</small></footer>
+    </div>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

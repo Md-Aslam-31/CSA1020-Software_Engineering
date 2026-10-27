@@ -1,0 +1,46 @@
+{
+  "application": "FocusLane",
+  "exportedAt": "2026-10-26T15:57:01.991Z",
+  "note": "Study-planning data. Adjust your estimates, priorities and breaks as needed.",
+  "plan": {
+    "planName": "Stale draft test",
+    "startDate": "2026-11-02",
+    "dailyMinutes": 29,
+    "horizonDays": 1,
+    "subjects": [
+      {
+        "id": "software",
+        "name": "Software engineering",
+        "minutes": 120,
+        "priority": "low"
+      },
+      {
+        "id": "mathematics",
+        "name": "Mathematics",
+        "minutes": 90,
+        "priority": "medium"
+      },
+      {
+        "id": "design",
+        "name": "Design systems",
+        "minutes": 45,
+        "priority": "low"
+      },
+      {
+        "id": "subject-mvpfvaqf1x3",
+        "name": "Operating systems",
+        "minutes": 60,
+        "priority": "high"
+      }
+    ]
+  },
+  "schedule": null,
+  "scheduleStatus": "Generate the current plan to include its schedule",
+  "runningApplication": {
+    "application": "FocusLane",
+    "version": "1.1.0",
+    "gitSha": "940b7c84efef6e4a8b3e0dd6c1de77bba08705b8",
+    "buildNumber": "3.1",
+    "mode": "cloud"
+  }
+}

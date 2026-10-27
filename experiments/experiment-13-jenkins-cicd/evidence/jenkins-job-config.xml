@@ -1,0 +1,113 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<flow-definition plugin="workflow-job@1609.v8926e7962024">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2293.v6e7193cec599"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2293.v6e7193cec599">
+      <jobProperties>
+        <string>org.jenkinsci.plugins.workflow.job.properties.DisableConcurrentBuildsJobProperty</string>
+        <string>jenkins.model.BuildDiscarderProperty</string>
+      </jobProperties>
+      <triggers>
+        <string>hudson.triggers.SCMTrigger</string>
+      </triggers>
+      <parameters>
+        <string>PUBLISH_IMAGE</string>
+        <string>DEMONSTRATE_TEST_GATE</string>
+        <string>DEPLOY_CLOUD</string>
+      </parameters>
+      <options>
+        <string>skipDefaultCheckout</string>
+      </options>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description>ReleaseHarbor — a real pipeline loaded from Git. Tests must pass before the Docker image is published and deployed to the separate free Render demo service. Commits are detected by SCM polling after the first run. Jenkins remains local to this computer.</description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers>
+        <hudson.triggers.SCMTrigger>
+          <spec>* * * * *</spec>
+          <ignorePostCommitHooks>false</ignorePostCommitHooks>
+        </hudson.triggers.SCMTrigger>
+      </triggers>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>12</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>6</artifactNumToKeep>
+        <removeLastBuild>false</removeLastBuild>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <org.jenkinsci.plugins.workflow.job.properties.DisableConcurrentBuildsJobProperty>
+      <abortPrevious>false</abortPrevious>
+    </org.jenkinsci.plugins.workflow.job.properties.DisableConcurrentBuildsJobProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.BooleanParameterDefinition>
+          <name>PUBLISH_IMAGE</name>
+          <description>Publish the tested image to Docker Hub on main.</description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>DEPLOY_CLOUD</name>
+          <description>Deploy the tested image digest to the configured free Render service.</description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>DEMONSTRATE_TEST_GATE</name>
+          <description>Deliberately fail a gate test to prove publish/deploy are skipped.</description>
+          <defaultValue>false</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.BooleanParameterDefinition>
+          <name>PUBLISH_IMAGE</name>
+          <description>Publish the tested image to Docker Hub on main.</description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>DEPLOY_CLOUD</name>
+          <description>Deploy the tested image digest to the configured free Render service.</description>
+          <defaultValue>true</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>DEMONSTRATE_TEST_GATE</name>
+          <description>Deliberately fail a gate test to prove publish/deploy are skipped.</description>
+          <defaultValue>false</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsScmFlowDefinition" plugin="workflow-cps@4395.v738456a_5da_6b_">
+    <scm class="hudson.plugins.git.GitSCM" plugin="git@5.11.0">
+      <configVersion>2</configVersion>
+      <userRemoteConfigs>
+        <hudson.plugins.git.UserRemoteConfig>
+          <url>https://github.com/Emadfar007/CSA1020---Software-Engineering.git</url>
+        </hudson.plugins.git.UserRemoteConfig>
+      </userRemoteConfigs>
+      <branches>
+        <hudson.plugins.git.BranchSpec>
+          <name>*/main</name>
+        </hudson.plugins.git.BranchSpec>
+      </branches>
+      <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+      <submoduleCfg class="empty-list"/>
+      <extensions>
+        <hudson.plugins.git.extensions.impl.PathRestriction>
+          <includedRegions>^experiments/experiment-13-jenkins-cicd/(app/.*|ci/.*|Dockerfile|\.dockerignore|Jenkinsfile|compose\.yaml)$</includedRegions>
+          <excludedRegions></excludedRegions>
+        </hudson.plugins.git.extensions.impl.PathRestriction>
+      </extensions>
+    </scm>
+    <scriptPath>experiments/experiment-13-jenkins-cicd/Jenkinsfile</scriptPath>
+    <lightweight>false</lightweight>
+  </definition>
+  <triggers/>
+  <quietPeriod>0</quietPeriod>
+  <disabled>false</disabled>
+</flow-definition>

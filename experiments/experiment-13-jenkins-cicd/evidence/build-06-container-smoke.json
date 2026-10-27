@@ -1,0 +1,13 @@
+{
+  "healthHttpStatus": 200,
+  "version": {
+    "application": "ReleaseHarbor",
+    "version": "1.0.0",
+    "gitSha": "f1def3dec766e0f0294d72a9819108192cbf6c79",
+    "buildNumber": "6",
+    "mode": "ci"
+  },
+  "readyScore": 100,
+  "criticalBlockersAfterToggle": 1,
+  "invalidInputHttpStatus": 400
+}

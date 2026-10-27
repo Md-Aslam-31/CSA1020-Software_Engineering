@@ -1,0 +1,24 @@
+{
+  "application": "KitCrew",
+  "repository": "https://github.com/Emadfar007/kitcrew-team-project",
+  "private": true,
+  "integrationCommit": "0d80c08e2439e265962aaeedecfd3fa6f34eb965",
+  "reportSections": 5,
+  "screenshots": 10,
+  "moduleTestsPassed": 26,
+  "browserChecksPassed": 17,
+  "modulePullRequestsMerged": [
+    4,
+    5,
+    6
+  ],
+  "moduleIssuesClosed": [
+    1,
+    2,
+    3
+  ],
+  "realConflictResolution": "c9619a423d6af2ff44f6248eb730afb6dfc2ce6a",
+  "reviewMode": "Explicit single-account COMMENT reviews, replies and follow-up commits; no independent approval claimed.",
+  "moduleSourceMatchesVerifiedIntegration": true,
+  "credentialPatternScan": "passed"
+}

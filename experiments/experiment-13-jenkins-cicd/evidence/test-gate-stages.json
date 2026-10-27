@@ -1,0 +1,149 @@
+{
+  "_links": {
+    "self": {
+      "href": "/job/ReleaseHarbor-CICD/5/wfapi/describe"
+    }
+  },
+  "id": "5",
+  "name": "#5",
+  "status": "FAILED",
+  "startTimeMillis": 1793023208021,
+  "endTimeMillis": 1793023231120,
+  "durationMillis": 23099,
+  "queueDurationMillis": 60,
+  "pauseDurationMillis": 0,
+  "stages": [
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/5/execution/node/12/wfapi/describe"
+        }
+      },
+      "id": "12",
+      "name": "Checkout",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023215006,
+      "durationMillis": 2873,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/5/execution/node/32/wfapi/describe"
+        }
+      },
+      "id": "32",
+      "name": "Build test image",
+      "execNode": "",
+      "status": "SUCCESS",
+      "startTimeMillis": 1793023217935,
+      "durationMillis": 4643,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/5/execution/node/41/wfapi/describe"
+        }
+      },
+      "id": "41",
+      "name": "Automated tests",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "Intentional test-gate demonstration: deployment is blocked.",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1793023222639,
+      "durationMillis": 5009,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/5/execution/node/56/wfapi/describe"
+        }
+      },
+      "id": "56",
+      "name": "Build release image",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "Intentional test-gate demonstration: deployment is blocked.",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1793023227720,
+      "durationMillis": 183,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/5/execution/node/61/wfapi/describe"
+        }
+      },
+      "id": "61",
+      "name": "Container smoke test",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "Intentional test-gate demonstration: deployment is blocked.",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1793023227982,
+      "durationMillis": 370,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/5/execution/node/66/wfapi/describe"
+        }
+      },
+      "id": "66",
+      "name": "Publish image",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "Intentional test-gate demonstration: deployment is blocked.",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1793023228535,
+      "durationMillis": 136,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/5/execution/node/71/wfapi/describe"
+        }
+      },
+      "id": "71",
+      "name": "Deploy to Render",
+      "execNode": "",
+      "status": "FAILED",
+      "error": {
+        "message": "Intentional test-gate demonstration: deployment is blocked.",
+        "type": "hudson.AbortException"
+      },
+      "startTimeMillis": 1793023228736,
+      "durationMillis": 139,
+      "pauseDurationMillis": 0
+    },
+    {
+      "_links": {
+        "self": {
+          "href": "/job/ReleaseHarbor-CICD/5/execution/node/76/wfapi/describe"
+        }
+      },
+      "id": "76",
+      "name": "Declarative: Post Actions",
+      "execNode": "",
+      "status": "UNSTABLE",
+      "startTimeMillis": 1793023228945,
+      "durationMillis": 1275,
+      "pauseDurationMillis": 0
+    }
+  ]
+}

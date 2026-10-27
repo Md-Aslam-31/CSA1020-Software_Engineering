@@ -1,0 +1,13 @@
+{
+  "name": "releaseharbor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An educational release-readiness workbench for the Jenkins CI/CD experiment.",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "test:ci": "node --test --test-reporter=junit --test-reporter-destination=/tmp/test-results.xml"
+  }
+}

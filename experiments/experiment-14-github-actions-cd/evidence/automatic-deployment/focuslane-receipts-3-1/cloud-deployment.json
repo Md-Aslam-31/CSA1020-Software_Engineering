@@ -1,0 +1,40 @@
+{
+  "cloud": "Render",
+  "url": "https://focuslane-exp14.onrender.com",
+  "serviceId": "srv-dbfnbggm7kps739nrok0",
+  "deployId": "dep-dbfnegvavr4c73fel0gg",
+  "acceptedHttpStatus": 200,
+  "image": "coastrider7/csa1020-exp14-focuslane@sha256:971284d9f9d5dd9503d70181e739c8aad5c2eec1b15fa3d89c177825e2f84e19",
+  "sourceSha": "940b7c84efef6e4a8b3e0dd6c1de77bba08705b8",
+  "buildNumber": "3.1",
+  "githubRunId": "40353497794",
+  "verifiedVersion": {
+    "data": {
+      "application": "FocusLane",
+      "version": "1.1.0",
+      "gitSha": "940b7c84efef6e4a8b3e0dd6c1de77bba08705b8",
+      "buildNumber": "3.1",
+      "mode": "cloud"
+    },
+    "meta": {
+      "version": "1.1.0",
+      "gitSha": "940b7c84efef6e4a8b3e0dd6c1de77bba08705b8",
+      "buildNumber": "3.1",
+      "mode": "cloud"
+    }
+  },
+  "healthHttpStatus": 200,
+  "planHttpStatus": 200,
+  "invalidInputHttpStatus": 400,
+  "planVerification": {
+    "targetMinutes": 255,
+    "plannedMinutes": 255,
+    "remainingMinutes": 0,
+    "dailyMinutes": [
+      90,
+      90,
+      75
+    ],
+    "highPriorityFirst": true
+  }
+}

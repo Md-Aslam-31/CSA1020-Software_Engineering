@@ -1,0 +1,101 @@
+{
+  "application": "KitCrew",
+  "url": "http://127.0.0.1:4845/",
+  "verifiedAt": "2026-10-26T16:33:53.192Z",
+  "method": "Actual Chrome UI interactions, downloaded export independently parsed from disk, and visual inspection of the screenshots.",
+  "passed": 17,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "Description search",
+      "observed": "Searching quick-release finds Field tripod by its description.",
+      "result": "pass"
+    },
+    {
+      "check": "Empty state and clear filters",
+      "observed": "An unknown search shows a friendly empty state; Clear filters restores the collection.",
+      "result": "pass"
+    },
+    {
+      "check": "Category filter",
+      "observed": "Audio shows only the wireless microphone set and handheld recorder.",
+      "result": "pass"
+    },
+    {
+      "check": "Quantity validation",
+      "observed": "A quantity of 4 is rejected with the explicit 1-to-3 limit.",
+      "result": "pass"
+    },
+    {
+      "check": "Duration validation",
+      "observed": "15 days is rejected with the explicit 1-to-14-day limit.",
+      "result": "pass"
+    },
+    {
+      "check": "Valid maximum loan",
+      "observed": "Three camera units for 14 days are recorded for the demo team; due date is 9 November 2026.",
+      "result": "pass"
+    },
+    {
+      "check": "Exhausted stock state",
+      "observed": "After borrowing all three cameras, the catalog shows 0/3 and disables its Borrow button.",
+      "result": "pass"
+    },
+    {
+      "check": "Overbooking protection",
+      "observed": "Three recorder units are rejected because only two exist; no invalid loan is added.",
+      "result": "pass"
+    },
+    {
+      "check": "Persistence after reload",
+      "observed": "Two valid loans restore after reload, with 15 available units and two active loans.",
+      "result": "pass"
+    },
+    {
+      "check": "Insights calculation",
+      "observed": "Five of 20 units borrowed produces 25% utilization; Camera is 3/3 and Audio is 2/6.",
+      "result": "pass"
+    },
+    {
+      "check": "Return workflow",
+      "observed": "Returning the three cameras restores 18 available units, one active loan and 10% utilization.",
+      "result": "pass"
+    },
+    {
+      "check": "Returned history",
+      "observed": "The camera record remains in Returned with its hand-back date and returned label.",
+      "result": "pass"
+    },
+    {
+      "check": "Actual JSON download",
+      "observed": "Downloaded kitcrew-workspace.json was parsed from disk: two records, one active, one returned, 18 available units and 10% utilization. Copy: browser-export.json.",
+      "result": "pass"
+    },
+    {
+      "check": "Reset cancellation",
+      "observed": "Keep my records closes the confirmation and preserves both records.",
+      "result": "pass"
+    },
+    {
+      "check": "Reset confirmation and reload",
+      "observed": "Confirmed reset followed by reload gives all 20 available units and zero loans.",
+      "result": "pass"
+    },
+    {
+      "check": "Navigation and checkout close",
+      "observed": "Catalog, Team loans, The big picture, Review team loans, Find some gear and home work; closing checkout adds no loan.",
+      "result": "pass"
+    },
+    {
+      "check": "Desktop visual layout",
+      "observed": "Rendered desktop has no horizontal overflow; all three screenshots were visually inspected.",
+      "result": "pass"
+    }
+  ],
+  "finalWorkspace": "Reset to an empty demo: 20 available units, zero loans.",
+  "screenshots": [
+    "01-kitcrew-catalog.jpg",
+    "02-kitcrew-loans.jpg",
+    "03-kitcrew-insights.jpg"
+  ]
+}

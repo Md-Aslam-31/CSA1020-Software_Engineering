@@ -2,7 +2,7 @@
 
 A shared software engineering laboratory repository for **Md-Aslam-31** and **Emadfar007**.
 
-This contribution includes all ten experiments, 84 screenshots, the Excel workbook, and the available application source. The experiments were prepared using Emadfar007. Historical screenshots and pull-request links retain their original project context in the [source repository](https://github.com/Emadfar007/CSA1020---Software-Engineering).
+This contribution includes Experiments 01-15, 128 screenshots, the Excel workbook, and the available application source. Experiments 11-15 were added on 27 October 2026 with their reports, screenshots, source, and quick-access links. The experiments were prepared using Emadfar007. Historical screenshots and pull-request links retain their original project context in the [source repository](https://github.com/Emadfar007/CSA1020---Software-Engineering).
 
 | Experiment | Description | Files |
 | --- | --- | --- |
@@ -16,8 +16,26 @@ This contribution includes all ten experiments, 84 screenshots, the Excel workbo
 | 08 | Online Learning Platform requirements prioritized using MoSCoW and Kano in Jira, with a sample sprint, timeline, and progress reporting | [Online Learning Prioritization](experiments/experiment-08-online-learning-prioritization/README.md) |
 | 09 | Git/GitHub fork, clone, feature branch, pull request, disclosed self-review, follow-up fixes, and merge | [GitHub Collaboration](experiments/experiment-09-github-collaboration/README.md) |
 | 10 | Real Git branch divergence, two-file merge conflict, manual combined resolution, and a FairSeat feature pull request | [Branching and Merge Conflicts](experiments/experiment-10-merge-conflicts/README.md) |
+| 11 | Original static website packaged in a Docker image and served locally by Nginx, with a healthy container and verified browser workflow | [Docker Static Website](experiments/experiment-11-docker-static-website/README.md) |
+| 12 | Flask delivery-estimate API built and pushed with Docker, then deployed to Kubernetes through NodePort, with scaling and pod-recovery verification | [Flask, Docker and Kubernetes](experiments/experiment-12-flask-docker-kubernetes/README.md) |
+| 13 | Local Jenkins CI/CD pipeline with Docker builds, automated tests, commit polling, image publication and verified deployment to Render Free | [Jenkins CI/CD with Docker](experiments/experiment-13-jenkins-cicd/README.md) |
+| 14 | GitHub Actions continuous deployment with tested Docker images, immutable Docker Hub publication, PR validation and automatic Render Free deployment | [GitHub Actions Continuous Deployment](experiments/experiment-14-github-actions-cd/README.md) |
+| 15 | Team project with module branches, reviewed pull requests, follow-up commits, genuine conflict resolution and a verified KitCrew application | [Team Version Control](experiments/experiment-15-team-version-control/README.md) |
 
 Each experiment includes only Aim, Tools Required, Algorithm, Output Screenshots, and Result.
+
+## Quick access - Experiments 11 to 15
+
+| Experiment | Open the application | Open tools and progress | Full report and screenshots |
+| --- | --- | --- | --- |
+| 11 - Orbital Fieldnotes | [Local website](http://127.0.0.1:8087/) | [Health check](http://127.0.0.1:8087/healthz) | [Experiment 11](https://github.com/Md-Aslam-31/CSA1020-Software_Engineering/tree/main/experiments/experiment-11-docker-static-website#quick-access-links) |
+| 12 - ParcelPilot | [Kubernetes app](http://127.0.0.1:30088/) · [Docker app](http://127.0.0.1:8088/) | [API specification](http://127.0.0.1:30088/openapi.json) · [Docker Hub](https://hub.docker.com/r/coastrider7/csa1020-exp12-parcelpilot-api/tags) | [Experiment 12](https://github.com/Md-Aslam-31/CSA1020-Software_Engineering/tree/main/experiments/experiment-12-flask-docker-kubernetes#quick-access-links) |
+| 13 - ReleaseHarbor | [Cloud application](https://releaseharbor-exp13.onrender.com/) | [Jenkins job](http://127.0.0.1:8090/job/ReleaseHarbor-CICD/) · [Latest successful build](http://127.0.0.1:8090/job/ReleaseHarbor-CICD/lastSuccessfulBuild/) · [Render](https://dashboard.render.com/web/srv-dbflq8vb9u1s73de444g) | [Experiment 13](https://github.com/Md-Aslam-31/CSA1020-Software_Engineering/tree/main/experiments/experiment-13-jenkins-cicd#quick-access-links) |
+| 14 - FocusLane | [Cloud application](https://focuslane-exp14.onrender.com/) | [GitHub Actions](https://github.com/Emadfar007/CSA1020---Software-Engineering/actions/workflows/experiment-14-cd.yml) · [Docker Hub](https://hub.docker.com/r/coastrider7/csa1020-exp14-focuslane/tags) · [Render](https://dashboard.render.com/web/srv-dbfnbggm7kps739nrok0) | [Experiment 14](https://github.com/Md-Aslam-31/CSA1020-Software_Engineering/tree/main/experiments/experiment-14-github-actions-cd#quick-access-links) |
+| 15 - KitCrew | [Local application](http://127.0.0.1:4845/) | [Private team repository](https://github.com/Emadfar007/kitcrew-team-project) · [Module reviews](https://github.com/Emadfar007/kitcrew-team-project/pulls?q=is%3Apr) · [Passing checks](https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40360742707) | [Experiment 15](https://github.com/Md-Aslam-31/CSA1020-Software_Engineering/tree/main/experiments/experiment-15-team-version-control#quick-access-links) |
+
+Each report's **Tools Required → Quick access links** table contains its app, source, screenshots, checks, and relevant platform links. Addresses beginning with `127.0.0.1` open on the computer running the corresponding demo; they are not public hosting links. Start Docker Desktop for Experiments 11-13. For KitCrew, run `npm start --prefix experiments/experiment-15-team-version-control/app` from this repository's root. Jenkins and private GitHub/Render management pages may require your existing login. Render Free apps may take time to wake after inactivity.
+
 
 ## Experiment previews
 
@@ -75,7 +93,56 @@ Experiment 09 includes ten screenshots documenting a fork of octocat/Spoon-Knife
 
 Experiment 10 demonstrates genuine conflicts in the seat allocator and release policy, generated through two local clones using Emadfar007. The manual resolution preserves VIP-first ordering, overflow waiting lists, capacity validation, and valid attendee records. The experiment includes captured Git output, nine screenshots, a local evidence journal, 20 passing tests, and ten planner browser checks. [Pull request #1](https://github.com/Emadfar007/CSA1020---Software-Engineering/pull/1) is merged into main, preserving the actual two-parent conflict-resolution commit and publishing the completed report and app.
 
+### Static website with Docker and Nginx
+
+![Orbital Fieldnotes running through Docker and Nginx](experiments/experiment-11-docker-static-website/screenshots/01-website-docker.jpg)
+
+Experiment 11 includes the Orbital Fieldnotes website, Dockerfile, Nginx configuration, a restricted build context, six screenshots, and recorded build/runtime evidence. The image was built successfully, the container became healthy, and all eleven browser checks passed. The website runs locally at port 8087, with no host directory mounts or public deployment.
+
+### Flask API with Docker and Kubernetes
+
+![ParcelPilot quote studio running through Kubernetes NodePort](experiments/experiment-12-flask-docker-kubernetes/screenshots/02-delivery-estimate.jpg)
+
+Experiment 12 includes the ParcelPilot Flask API, interactive quote studio and JSON explorer, Dockerfile, Kubernetes manifests, deployment scripts, nine screenshots, and recorded verification evidence. The image was pushed to [Docker Hub](https://hub.docker.com/r/coastrider7/csa1020-exp12-parcelpilot-api/tags) and deployed by a local kind cluster with two Ready replicas through NodePort 30088. All 17 API tests passed; replica routing, scaling to three replicas and automatic replacement of a removed test pod were verified. The final replica count is two. Rates are illustrative and quotes are stateless.
+
+### Jenkins CI/CD with Docker
+
+![ReleaseHarbor running from the image deployed by Jenkins](experiments/experiment-13-jenkins-cicd/screenshots/01-cloud-workspace.jpg)
+
+Experiment 13 includes the ReleaseHarbor app, a multi-stage Dockerfile, Jenkinsfile, local Jenkins setup, deployment helpers, nine screenshots and actual build evidence. A Git commit triggered Jenkins build #7, which passed 21 tests, verified the runtime container, published a build-specific Docker Hub image and deployed its exact digest to [Render](https://releaseharbor-exp13.onrender.com/). The running app's source SHA and build number matched Jenkins. An intentional failed gate also blocked publication and deployment. Jenkins runs locally; the cloud app uses Render Free with idle sleep and monthly limits, without a fixed trial-expiry date.
+
+### GitHub Actions continuous deployment
+
+![FocusLane study planner automatically deployed through GitHub Actions](experiments/experiment-14-github-actions-cd/screenshots/02-cloud-app.jpg)
+
+Experiment 14 includes FocusLane, an editable study-sprint planner, a multi-stage Dockerfile, a hosted GitHub Actions workflow, ten screenshots and actual delivery receipts. Merging [pull request #2](https://github.com/Emadfar007/CSA1020---Software-Engineering/pull/2) automatically triggered [run #3](https://github.com/Emadfar007/CSA1020---Software-Engineering/actions/runs/40353497794), which passed 23 application tests and four CI guard checks, pushed the tested image to Docker Hub, and deployed its exact digest to [Render](https://focuslane-exp14.onrender.com). The cloud app's version 1.1.0, source commit and run 3.1 matched the pipeline. Pull requests validate without publishing or deploying. The hosted pipeline works while the local computer is off; Render Free has idle sleep and shared monthly limits.
+
+### Team project version control
+
+![KitCrew equipment-sharing workspace](experiments/experiment-15-team-version-control/screenshots/01-kitcrew-catalog.jpg)
+
+Experiment 15 archives KitCrew's team version-control workflow, application source, ten screenshots and recorded evidence. Three module branches were merged after documented COMMENT reviews, including a follow-up regression test and a genuine manually resolved policy conflict. All 26 module tests and 17 browser checks passed. The original workflow repository remains private; the report and captured evidence are available in this public experiment archive.
+
+
 ## Local testing
+
+For Experiment 15, run `npm start --prefix experiments/experiment-15-team-version-control/app` from the repository root and open `http://127.0.0.1:4845/`. Its [report](experiments/experiment-15-team-version-control/README.md) includes test commands and the branch/review/conflict workflow.
+
+For Experiment 14, open [FocusLane in the cloud](https://focuslane-exp14.onrender.com) or follow its [Docker commands and report](experiments/experiment-14-github-actions-cd/README.md) for local testing. Application changes pushed to `main` trigger the hosted pipeline. A sleeping Free cloud instance may take time to start.
+
+For Experiment 13, follow the [Jenkins CI/CD report](experiments/experiment-13-jenkins-cicd/README.md). On a fresh machine, run `./scripts/start-lab.ps1` from that experiment directory. When restarting an existing lab, supply its original private secret directory as documented. Open the local Jenkins job at `http://127.0.0.1:8090/job/ReleaseHarbor-CICD/`; commit polling operates while this computer, Docker and Jenkins are running.
+
+For Experiment 12, follow its [report and commands](experiments/experiment-12-flask-docker-kubernetes/README.md). With Docker running, create the supplied kind cluster once, then run `./scripts/deploy.ps1` from the experiment directory. Access the application at `http://127.0.0.1:30088/` on the computer running the cluster. The API runs locally for testing; its container image is published to Docker Hub.
+
+For Experiment 11, open a terminal in `experiments/experiment-11-docker-static-website/` with Docker running, then run:
+
+```powershell
+docker build --pull -t orbital-fieldnotes:1.0 .
+docker run -d --name orbital-fieldnotes-exp11 -p 127.0.0.1:8087:80 orbital-fieldnotes:1.0
+```
+
+Open `http://127.0.0.1:8087/`. If the experiment's container already exists, use `docker start orbital-fieldnotes-exp11` instead of creating another container. See the Experiment 11 report for verification and stop commands.
+
 
 Run `node experiments/experiment-10-merge-conflicts/app/scripts/serve.js` from the repository root and open `http://127.0.0.1:4831/`. The captured conflict journal is available at `/evidence/` on the same local server.
 

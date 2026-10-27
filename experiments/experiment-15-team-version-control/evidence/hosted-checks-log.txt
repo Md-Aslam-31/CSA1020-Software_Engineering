@@ -1,0 +1,215 @@
+Node module tests	Set up job	﻿2026-10-26T16:36:35.0071306Z Current runner version: '2.338.0'
+Node module tests	Set up job	2026-10-26T16:36:35.0145783Z ##[group]Runner Image Provisioner
+Node module tests	Set up job	2026-10-26T16:36:35.0146767Z Hosted Compute Agent
+Node module tests	Set up job	2026-10-26T16:36:35.0147413Z Version: 20261021.618
+Node module tests	Set up job	2026-10-26T16:36:35.0148195Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+Node module tests	Set up job	2026-10-26T16:36:35.0148960Z Build Date: 2026-10-21T00:45:21Z
+Node module tests	Set up job	2026-10-26T16:36:35.0149723Z Worker ID: {4da6c0d0-1684-4697-81d7-e77b3739f6d1}
+Node module tests	Set up job	2026-10-26T16:36:35.0150533Z Region: westus3
+Node module tests	Set up job	2026-10-26T16:36:35.0151134Z Cloud: Azure
+Node module tests	Set up job	2026-10-26T16:36:35.0151769Z ##[endgroup]
+Node module tests	Set up job	2026-10-26T16:36:35.0153243Z ##[group]Operating System
+Node module tests	Set up job	2026-10-26T16:36:35.0174325Z Ubuntu
+Node module tests	Set up job	2026-10-26T16:36:35.0174955Z 24.04.5
+Node module tests	Set up job	2026-10-26T16:36:35.0175458Z LTS
+Node module tests	Set up job	2026-10-26T16:36:35.0176077Z ##[endgroup]
+Node module tests	Set up job	2026-10-26T16:36:35.0176640Z ##[group]Runner Image
+Node module tests	Set up job	2026-10-26T16:36:35.0177769Z Image: ubuntu-24.04
+Node module tests	Set up job	2026-10-26T16:36:35.0178372Z Version: 20261012.334.1
+Node module tests	Set up job	2026-10-26T16:36:35.0179428Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261012.334/images/ubuntu/Ubuntu2404-Readme.md
+Node module tests	Set up job	2026-10-26T16:36:35.0181252Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261012.334
+Node module tests	Set up job	2026-10-26T16:36:35.0182290Z ##[endgroup]
+Node module tests	Set up job	2026-10-26T16:36:35.0183353Z ##[group]GITHUB_TOKEN Permissions
+Node module tests	Set up job	2026-10-26T16:36:35.0186110Z Contents: read
+Node module tests	Set up job	2026-10-26T16:36:35.0186808Z Metadata: read
+Node module tests	Set up job	2026-10-26T16:36:35.0187407Z ##[endgroup]
+Node module tests	Set up job	2026-10-26T16:36:35.0189805Z Secret source: Actions
+Node module tests	Set up job	2026-10-26T16:36:35.0190757Z Cache mode: write
+Node module tests	Set up job	2026-10-26T16:36:35.0191736Z Prepare workflow directory
+Node module tests	Set up job	2026-10-26T16:36:35.0542750Z Prepare all required actions
+Node module tests	Set up job	2026-10-26T16:36:35.0589570Z Getting action download info
+Node module tests	Set up job	2026-10-26T16:36:35.4258567Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+Node module tests	Set up job	2026-10-26T16:36:35.5988275Z Download action repository 'actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38' (SHA:249970729cb0ef3589644e2896645e5dc5ba9c38)
+Node module tests	Set up job	2026-10-26T16:36:35.8437093Z Complete job name: Node module tests
+Node module tests	Check out reviewed source	﻿2026-10-26T16:36:35.9277943Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9279015Z with:
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9279460Z   persist-credentials: false
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9280019Z   repository: Emadfar007/kitcrew-team-project
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9284303Z   token: ***
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9284737Z   ssh-strict: true
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9285171Z   ssh-user: git
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9285586Z   clean: true
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9286025Z   sparse-checkout-cone-mode: true
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9286545Z   fetch-depth: 1
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9286969Z   fetch-tags: false
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9287407Z   show-progress: true
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9287849Z   lfs: false
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9288263Z   submodules: false
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9288705Z   set-safe-directory: true
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9289197Z   allow-unsafe-pr-checkout: false
+Node module tests	Check out reviewed source	2026-10-26T16:36:35.9289964Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1897854Z Syncing repository: Emadfar007/kitcrew-team-project
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1899733Z ##[group]Getting Git version info
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1900655Z Working directory is '/home/runner/work/kitcrew-team-project/kitcrew-team-project'
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1901797Z [command]/usr/bin/git version
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1902311Z git version 2.55.0
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1904503Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1910428Z Temporarily overriding HOME='/home/runner/work/_temp/b33ae16e-da89-4ee2-9924-adcbb872775f' before making global git config changes
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1911800Z Adding repository directory to the temporary git global config as a safe directory
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1913062Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kitcrew-team-project/kitcrew-team-project
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1919239Z Deleting the contents of '/home/runner/work/kitcrew-team-project/kitcrew-team-project'
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1921461Z ##[group]Determining repository object format
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1923053Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1924633Z ##[group]Initializing the repository
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1926388Z [command]/usr/bin/git init /home/runner/work/kitcrew-team-project/kitcrew-team-project
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1928226Z hint: Using 'master' as the name for the initial branch. This default branch name
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1929858Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1930862Z hint: to use in all of your new repositories, which will suppress this warning,
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1931616Z hint: call:
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1932005Z hint:
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1932513Z hint: 	git config --global init.defaultBranch <name>
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1933127Z hint:
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1934194Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1935844Z hint: 'development'. The just-created branch can be renamed via this command:
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1937271Z hint:
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1938010Z hint: 	git branch -m <name>
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1938836Z hint:
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1939931Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1941956Z Initialized empty Git repository in /home/runner/work/kitcrew-team-project/kitcrew-team-project/.git/
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1945395Z [command]/usr/bin/git remote add origin https://github.com/Emadfar007/kitcrew-team-project
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1949332Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1950116Z ##[group]Disabling automatic garbage collection
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1950781Z [command]/usr/bin/git config --local gc.auto 0
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1952143Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1952870Z ##[group]Setting up auth
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1953379Z Removing SSH command configuration
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1955396Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.1959109Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2174728Z Removing HTTP extra header
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2176403Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2206915Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2464899Z Removing includeIf entries pointing to credentials config files
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2466692Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2496404Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2751675Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2795984Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/kitcrew-team-project/kitcrew-team-project/.git.path /home/runner/work/_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2835407Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/kitcrew-team-project/kitcrew-team-project/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.2879491Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.3042487Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.3047479Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.3048682Z ##[group]Fetching the repository
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.3050165Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +0d80c08e2439e265962aaeedecfd3fa6f34eb965:refs/remotes/origin/main
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8875833Z From https://github.com/Emadfar007/kitcrew-team-project
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8878056Z  * [new ref]         0d80c08e2439e265962aaeedecfd3fa6f34eb965 -> origin/main
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8882597Z [command]/usr/bin/git branch --list --remote origin/main
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8885288Z   origin/main
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8890811Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8892096Z 0d80c08e2439e265962aaeedecfd3fa6f34eb965
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8895096Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8896649Z ##[group]Determining the checkout info
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8898585Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8899634Z [command]/usr/bin/git sparse-checkout disable
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8902534Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8921259Z ##[group]Checking out the ref
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.8926895Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9006870Z Switched to a new branch 'main'
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9020823Z branch 'main' set up to track 'origin/main'.
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9027261Z ##[endgroup]
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9069836Z [command]/usr/bin/git log -1 --format=%H
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9102228Z 0d80c08e2439e265962aaeedecfd3fa6f34eb965
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9126155Z ##[group]Removing auth
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9129196Z Removing SSH command configuration
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9130647Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9158337Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9404657Z Removing HTTP extra header
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9408894Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9448466Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9696098Z Removing includeIf entries pointing to credentials config files
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9698345Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9732394Z includeif.gitdir:/home/runner/work/kitcrew-team-project/kitcrew-team-project/.git.path
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9743205Z includeif.gitdir:/home/runner/work/kitcrew-team-project/kitcrew-team-project/.git/worktrees/*.path
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9745623Z includeif.gitdir:/github/workspace/.git.path
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9747410Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9760916Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/kitcrew-team-project/kitcrew-team-project/.git.path
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9784702Z /home/runner/work/_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9792204Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/kitcrew-team-project/kitcrew-team-project/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-9e8ff17b\-3b55\-4cea\-ae08\-c51889664e0d\.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9833028Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/kitcrew-team-project/kitcrew-team-project/.git/worktrees/*.path
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9868454Z /home/runner/work/_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9879694Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/kitcrew-team-project/kitcrew-team-project/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-9e8ff17b\-3b55\-4cea\-ae08\-c51889664e0d\.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9935338Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9971703Z /github/runner_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:36.9979625Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-9e8ff17b\-3b55\-4cea\-ae08\-c51889664e0d\.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:37.0024960Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+Node module tests	Check out reviewed source	2026-10-26T16:36:37.0051535Z /github/runner_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:37.0064604Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-9e8ff17b\-3b55\-4cea\-ae08\-c51889664e0d\.config
+Node module tests	Check out reviewed source	2026-10-26T16:36:37.0105486Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Node module tests	Check out reviewed source	2026-10-26T16:36:37.0344957Z Removing credentials config '/home/runner/work/_temp/git-credentials-9e8ff17b-3b55-4cea-ae08-c51889664e0d.config'
+Node module tests	Check out reviewed source	2026-10-26T16:36:37.0353207Z ##[endgroup]
+Node module tests	Select Node.js 24	﻿2026-10-26T16:36:37.0649908Z ##[group]Run actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.0650783Z with:
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.0651234Z   node-version: 24
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.0651719Z   check-latest: false
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.0656252Z   token: ***
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.0656760Z   package-manager-cache: true
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.0657346Z ##[endgroup]
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.2124789Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.2130335Z ##[group]Environment details
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.8248383Z node: v24.21.0
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.8360220Z npm: 11.19.0
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.8373176Z yarn: 1.22.22
+Node module tests	Select Node.js 24	2026-10-26T16:36:37.8375811Z ##[endgroup]
+Node module tests	Run the available module suites	﻿2026-10-26T16:36:37.8515769Z ##[group]Run node --test --test-reporter=spec
+Node module tests	Run the available module suites	2026-10-26T16:36:37.8517388Z ^[[36;1mnode --test --test-reporter=spec^[[0m
+Node module tests	Run the available module suites	2026-10-26T16:36:37.8819737Z shell: /usr/bin/bash -e {0}
+Node module tests	Run the available module suites	2026-10-26T16:36:37.8820963Z ##[endgroup]
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0055500Z ✔ catalog contains six unique, immutable equipment items (1.076769ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0070000Z ✔ catalog search is trimmed and case insensitive (3.319392ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0074352Z ✔ description-only search survives the shared policy merge (0.342636ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0078345Z ✔ category and search constraints apply together (0.244254ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0082661Z ✔ all and empty filters return separate full result arrays (0.21547ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0087903Z ✔ search with no matches returns an empty array (0.23706ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0091599Z ✔ search rejects nontext filter values (0.422324ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0095834Z ✔ catalog validation rejects duplicate IDs before searching (0.174814ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0656075Z ✔ summary conserves stock and groups category utilization (2.03112ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0669944Z ✔ overdue metrics exclude returned loans and the exact due boundary (0.478488ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0679745Z ✔ empty inventory summary has zero utilization without NaN (0.216482ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.0690459Z ✔ malformed, duplicate and overbooked saved state is rejected (0.622115ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1255023Z ✔ returned units become available for another checkout (5.09663ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1266885Z ✔ search, checkout, reporting and return preserve both merged policy requirements (0.826895ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1916481Z ✔ new loan trims team details and calculates due date exactly (5.110046ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1925921Z ✔ merged loan limits permit three units for fourteen days (0.197957ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1956184Z ✔ loan rejects unavailable quantities without changing history (1.135478ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1966486Z ✔ quantity validation rejects fractions, zero, excessive and nonnumeric values (0.481684ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1971347Z ✔ duration validation rejects out of bounds and nonnumeric values (0.366921ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1976095Z ✔ loan requires known equipment and meaningful team details (0.333869ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1987809Z ✔ date injection accepts Date objects and rejects invalid dates (0.237521ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1997342Z ✔ return creates a new history without mutating the original loan (0.370418ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.1999884Z ✔ duplicate return and unknown loans produce clear errors (0.48446ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2002344Z ✔ return cannot precede the borrowing time (0.409941ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2458894Z ✔ catalog validation rejects duplicate equipment identities (1.108407ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2494075Z ✔ time validation rejects invalid dates and preserves the supplied instant (0.426271ms)
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2564560Z ℹ tests 26
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2566881Z ℹ suites 0
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2568937Z ℹ pass 26
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2570764Z ℹ fail 0
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2572607Z ℹ cancelled 0
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2578144Z ℹ skipped 0
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2580309Z ℹ todo 0
+Node module tests	Run the available module suites	2026-10-26T16:36:38.2582562Z ℹ duration_ms 328.196352
+Node module tests	Post Select Node.js 24	﻿2026-10-26T16:36:38.2852046Z Post job cleanup.
+Node module tests	Post Check out reviewed source	﻿2026-10-26T16:36:38.4645756Z Post job cleanup.
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6148681Z [command]/usr/bin/git version
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6156060Z git version 2.55.0
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6426082Z Temporarily overriding HOME='/home/runner/work/_temp/53faffae-e336-4e17-9cf1-b75a87c0ac67' before making global git config changes
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6431239Z Adding repository directory to the temporary git global config as a safe directory
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6436849Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/kitcrew-team-project/kitcrew-team-project
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6448194Z Removing SSH command configuration
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6451787Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6677891Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6752546Z Removing HTTP extra header
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6756145Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.6771495Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.7257205Z Removing includeIf entries pointing to credentials config files
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.7260790Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Node module tests	Post Check out reviewed source	2026-10-26T16:36:38.7299635Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Node module tests	Complete job	﻿2026-10-26T16:36:38.7635236Z Cleaning up orphan processes

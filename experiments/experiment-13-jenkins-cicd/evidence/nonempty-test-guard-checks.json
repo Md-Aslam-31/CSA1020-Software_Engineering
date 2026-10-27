@@ -1,0 +1,20 @@
+{
+  "guard_checks": [
+    {
+      "case": "empty suite rejected",
+      "verified": true
+    },
+    {
+      "case": "skipped-only suite rejected",
+      "verified": true
+    },
+    {
+      "case": "failed case rejected",
+      "verified": true
+    },
+    {
+      "case": "passing case accepted",
+      "verified": true
+    }
+  ]
+}

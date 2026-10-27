@@ -1,0 +1,55 @@
+Name:                   parcelpilot-api
+Namespace:              parcelpilot-lab
+CreationTimestamp:      Mon, 26 Oct 2026 18:35:28 +0530
+Labels:                 app.kubernetes.io/name=parcelpilot-api
+                        app.kubernetes.io/part-of=parcelpilot
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app.kubernetes.io/name=parcelpilot-api
+Replicas:               2 desired | 2 updated | 2 total | 2 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  0 max unavailable, 1 max surge
+Pod Template:
+  Labels:  app.kubernetes.io/name=parcelpilot-api
+           app.kubernetes.io/part-of=parcelpilot
+  Containers:
+   api:
+    Image:      coastrider7/csa1020-exp12-parcelpilot-api:1.0.0@sha256:b8446abac9502577a9cb146729ce8df7c90866a1b3fd3cdccde7d80b48126a81
+    Port:       8000/TCP (http)
+    Host Port:  0/TCP (http)
+    Limits:
+      cpu:     250m
+      memory:  128Mi
+    Requests:
+      cpu:      50m
+      memory:   64Mi
+    Liveness:   http-get http://:http/healthz delay=0s timeout=2s period=10s #success=1 #failure=3
+    Readiness:  http-get http://:http/readyz delay=0s timeout=2s period=3s #success=1 #failure=3
+    Startup:    http-get http://:http/healthz delay=0s timeout=1s period=2s #success=1 #failure=30
+    Environment Variables from:
+      parcelpilot-config  ConfigMap  Optional: false
+    Environment:
+      POD_NAME:        (v1:metadata.name)
+      POD_NAMESPACE:   (v1:metadata.namespace)
+    Mounts:
+      /tmp from temporary-files (rw)
+  Volumes:
+   temporary-files:
+    Type:          EmptyDir (a temporary directory that shares a pod's lifetime)
+    Medium:        
+    SizeLimit:     16Mi
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Progressing    True    NewReplicaSetAvailable
+  Available      True    MinimumReplicasAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   parcelpilot-api-bf75dbcb (2/2 replicas created)
+Events:
+  Type    Reason             Age    From                   Message
+  ----    ------             ----   ----                   -------
+  Normal  ScalingReplicaSet  2m42s  deployment-controller  Scaled up replica set parcelpilot-api-bf75dbcb from 0 to 2
+  Normal  ScalingReplicaSet  83s    deployment-controller  Scaled up replica set parcelpilot-api-bf75dbcb from 2 to 3
+  Normal  ScalingReplicaSet  69s    deployment-controller  Scaled down replica set parcelpilot-api-bf75dbcb from 3 to 2

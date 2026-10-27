@@ -1,0 +1,2 @@
+{"data":{"quote_id":"PP-4E18344790","origin":"Chennai","destination":"Bengaluru","distance_km":350,"weight_kg":2.5,"service":"express","service_name":"Express","currency":"INR","breakdown":{"base":85.0,"distance":630.0,"weight":45.0},"total":760.0,"estimated_hours":13.4,"note":"Illustrative lab rates and timings. This is not a booking or a carrier quote."},"meta":{"request_id":"1b4325b7b530417292ceff457d33f86b","served_by":"parcelpilot-api-bf75dbcb-cf76t","namespace":"parcelpilot-lab","mode":"kubernetes","version":"1.0.0"}}
+

@@ -1,0 +1,294 @@
+{
+  "capturedAt": "2026-10-26T16:39:47.224Z",
+  "repository": {
+    "name": "Emadfar007/kitcrew-team-project",
+    "url": "https://github.com/Emadfar007/kitcrew-team-project",
+    "private": true,
+    "owner": "Emadfar007",
+    "defaultBranch": "main"
+  },
+  "modules": [
+    {
+      "number": 4,
+      "title": "Catalog: searchable shared equipment and discovery policy",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/4",
+      "headBranch": "feature/catalog",
+      "headSha": "1b7f367f13ecdc10df88db327f7a6b767c79e5b4",
+      "mergeCommit": "1b71bd9138e2d40661490abb2f6d02f2e91ebe94",
+      "merged": true,
+      "mergedAt": "2026-10-26T16:31:15Z",
+      "reviews": [
+        {
+          "id": 5655467506,
+          "author": "Emadfar007",
+          "state": "COMMENTED",
+          "commitId": "077156cf9fe1bcdbdab89e78ee3d3096ae974f68",
+          "submittedAt": "2026-10-26T16:30:24Z",
+          "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/4#pullrequestreview-5655467506",
+          "body": "Single-account review exercise recorded by Emadfar007 after inspecting this commit's actual diff. The Catalog implementation is sound and the current suite passes. Before merging, add an explicit shared-policy regression as described inline so the later Loans policy merge cannot silently remove description search. Existing category/search coverage already exercises description matching indirectly; this request strengthens the policy contract rather than claiming a runtime defect. No independent human approval is claimed."
+        },
+        {
+          "id": 5655477637,
+          "author": "Emadfar007",
+          "state": "COMMENTED",
+          "commitId": "1b7f367f13ecdc10df88db327f7a6b767c79e5b4",
+          "submittedAt": "2026-10-26T16:31:08Z",
+          "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/4#pullrequestreview-5655477637",
+          "body": ""
+        },
+        {
+          "id": 5655478473,
+          "author": "Emadfar007",
+          "state": "COMMENTED",
+          "commitId": "1b7f367f13ecdc10df88db327f7a6b767c79e5b4",
+          "submittedAt": "2026-10-26T16:31:11Z",
+          "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/4#pullrequestreview-5655478473",
+          "body": "Re-reviewed the follow-up diff: the explicit shared-policy regression is present, the requested quick-release result is asserted, and all ten available tests pass locally and in hosted run #4. Feedback is addressed and the review thread is resolved. Ready for the repository owner to merge under this lab's documented convention. This COMMENT records a single-account review; it is not an independent approval."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Loans: stock-safe checkout, returns and team borrowing limits",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/5",
+      "headBranch": "feature/loans",
+      "headSha": "c9619a423d6af2ff44f6248eb730afb6dfc2ce6a",
+      "mergeCommit": "4300dae9d5c4acf558a7d8d96dcaa82eebef68ba",
+      "merged": true,
+      "mergedAt": "2026-10-26T16:34:05Z",
+      "reviews": [
+        {
+          "id": 5655521182,
+          "author": "Emadfar007",
+          "state": "COMMENTED",
+          "commitId": "c9619a423d6af2ff44f6248eb730afb6dfc2ce6a",
+          "submittedAt": "2026-10-26T16:34:03Z",
+          "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/5#pullrequestreview-5655521182",
+          "body": "Single-account review recorded by Emadfar007 after reviewing the resolved commit. Checked whole-number limits, active-stock availability, due-date calculation and immutable returns. The manual policy resolution retains three-unit/fourteen-day borrowing and Catalog description search; its real merge commit has both branch parents. All twenty available checks pass locally and in [hosted run 6](https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40360271368). No blocking issue found. This COMMENT does not represent an independent person's approval."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Insights: integrate the equipment workspace and usage reporting",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/6",
+      "headBranch": "feature/insights",
+      "headSha": "53e1da6973e64aed1ce4fcb0dd0e6c47a26e80db",
+      "mergeCommit": "0d80c08e2439e265962aaeedecfd3fa6f34eb965",
+      "merged": true,
+      "mergedAt": "2026-10-26T16:36:28Z",
+      "reviews": [
+        {
+          "id": 5655539579,
+          "author": "Emadfar007",
+          "state": "COMMENTED",
+          "commitId": "53e1da6973e64aed1ce4fcb0dd0e6c47a26e80db",
+          "submittedAt": "2026-10-26T16:35:03Z",
+          "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/6#pullrequestreview-5655539579",
+          "body": "Single-account review recorded by Emadfar007. Checked stock conservation, category totals, empty inventory and overdue boundaries. Returned loans release stock and do not count as overdue; the exact due instant remains on time. The UI uses textContent for user-entered names, validates through the shared modules, and preserves/reset/exports only its own browser data. All 26 local module/integration checks and 17 real browser checks pass. No blocking issue found; merge after the hosted check passes. This COMMENT does not represent an independent person's approval."
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "id": 40360742707,
+      "run": 9,
+      "event": "push",
+      "headSha": "0d80c08e2439e265962aaeedecfd3fa6f34eb965",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40360742707",
+      "createdAt": "2026-10-26T16:36:30Z",
+      "updatedAt": "2026-10-26T16:36:42Z"
+    },
+    {
+      "id": 40360455504,
+      "run": 8,
+      "event": "pull_request",
+      "headSha": "53e1da6973e64aed1ce4fcb0dd0e6c47a26e80db",
+      "branch": "feature/insights",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40360455504",
+      "createdAt": "2026-10-26T16:34:43Z",
+      "updatedAt": "2026-10-26T16:34:54Z"
+    },
+    {
+      "id": 40360363017,
+      "run": 7,
+      "event": "push",
+      "headSha": "4300dae9d5c4acf558a7d8d96dcaa82eebef68ba",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40360363017",
+      "createdAt": "2026-10-26T16:34:08Z",
+      "updatedAt": "2026-10-26T16:34:24Z"
+    },
+    {
+      "id": 40360271368,
+      "run": 6,
+      "event": "pull_request",
+      "headSha": "c9619a423d6af2ff44f6248eb730afb6dfc2ce6a",
+      "branch": "feature/loans",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40360271368",
+      "createdAt": "2026-10-26T16:33:32Z",
+      "updatedAt": "2026-10-26T16:33:44Z"
+    },
+    {
+      "id": 40359920283,
+      "run": 5,
+      "event": "push",
+      "headSha": "1b71bd9138e2d40661490abb2f6d02f2e91ebe94",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40359920283",
+      "createdAt": "2026-10-26T16:31:18Z",
+      "updatedAt": "2026-10-26T16:31:26Z"
+    },
+    {
+      "id": 40359805412,
+      "run": 4,
+      "event": "pull_request",
+      "headSha": "1b7f367f13ecdc10df88db327f7a6b767c79e5b4",
+      "branch": "feature/catalog",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40359805412",
+      "createdAt": "2026-10-26T16:30:35Z",
+      "updatedAt": "2026-10-26T16:30:45Z"
+    },
+    {
+      "id": 40359494136,
+      "run": 3,
+      "event": "pull_request",
+      "headSha": "2fcd09afdaf250fd495fe12c9317083f3c432f01",
+      "branch": "feature/loans",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40359494136",
+      "createdAt": "2026-10-26T16:28:39Z",
+      "updatedAt": "2026-10-26T16:28:49Z"
+    },
+    {
+      "id": 40359486824,
+      "run": 2,
+      "event": "pull_request",
+      "headSha": "077156cf9fe1bcdbdab89e78ee3d3096ae974f68",
+      "branch": "feature/catalog",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40359486824",
+      "createdAt": "2026-10-26T16:28:37Z",
+      "updatedAt": "2026-10-26T16:28:48Z"
+    },
+    {
+      "id": 40359191349,
+      "run": 1,
+      "event": "push",
+      "headSha": "a0798c67bb45602680f4b2128e8052e87f893157",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/actions/runs/40359191349",
+      "createdAt": "2026-10-26T16:26:47Z",
+      "updatedAt": "2026-10-26T16:26:57Z"
+    }
+  ],
+  "issues": [
+    {
+      "number": 3,
+      "title": "Insights — integrated team workspace and usage summaries",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/issues/3",
+      "state": "closed",
+      "assignees": [
+        "Emadfar007"
+      ],
+      "labels": [
+        "module:insights"
+      ],
+      "milestone": 1,
+      "body": "Role: Integration and reporting maintainer (demonstrated by Emadfar007).\n\nImplement stock utilization, active and overdue loans, category summaries, and the integrated local KitCrew interface. Support browser persistence, reset and JSON export.\n\nAcceptance:\n- [x] Catalog, checkout and return work together through the browser.\n- [x] Summary counts reflect active loans and update after returns.\n- [x] Draft data survives reload; reset and export work.\n- [x] Full tests and code review pass before merging.\n\nBranch: feature/insights.\n\nCompleted and verified through [module pull request #6](https://github.com/Emadfar007/kitcrew-team-project/pull/6). The module check and documented review passed before merge.",
+      "closedAt": "2026-10-26T16:36:29Z"
+    },
+    {
+      "number": 2,
+      "title": "Loans — validated checkout, return and policy integration",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/issues/2",
+      "state": "closed",
+      "assignees": [
+        "Emadfar007"
+      ],
+      "labels": [
+        "module:loans"
+      ],
+      "milestone": 1,
+      "body": "Role: Loan workflow maintainer (demonstrated by Emadfar007).\n\nImplement equipment checkout and returns with bounded quantities, stock checks and due dates. The final policy permits up to three units for one to fourteen days. Merge updated main into the module branch and manually resolve the shared policy conflict while preserving catalog description search.\n\nAcceptance:\n- [x] Invalid requests and overbooking are rejected.\n- [x] Returned equipment becomes available again.\n- [x] Conflict markers and unmerged index evidence are captured before resolution.\n- [x] Resolution preserves both module requirements and passes regression checks.\n\nBranch: feature/loans.\n\nCompleted and verified through [module pull request #5](https://github.com/Emadfar007/kitcrew-team-project/pull/5). The module check and documented review passed before merge.",
+      "closedAt": "2026-10-26T16:34:07Z"
+    },
+    {
+      "number": 1,
+      "title": "Catalog — searchable equipment discovery",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/issues/1",
+      "state": "closed",
+      "assignees": [
+        "Emadfar007"
+      ],
+      "labels": [
+        "module:catalog"
+      ],
+      "milestone": 1,
+      "body": "Role: Catalog maintainer (demonstrated by Emadfar007).\n\nBuild six equipment records and case-insensitive name/category/description search. Support category filtering without mutating the source data. Add the shared description-search policy.\n\nAcceptance:\n- [x] Search and category filters return the correct equipment.\n- [x] Description-only and whitespace/case queries have regression coverage.\n- [x] PR review feedback is addressed in a follow-up commit.\n- [x] Module tests and hosted checks pass.\n\nBranch: feature/catalog.\n\nCompleted and verified through [module pull request #4](https://github.com/Emadfar007/kitcrew-team-project/pull/4). The module check and documented review passed before merge.",
+      "closedAt": "2026-10-26T16:31:16Z"
+    }
+  ],
+  "branches": [
+    {
+      "name": "feature/catalog",
+      "sha": "1b7f367f13ecdc10df88db327f7a6b767c79e5b4",
+      "protected": false
+    },
+    {
+      "name": "feature/insights",
+      "sha": "53e1da6973e64aed1ce4fcb0dd0e6c47a26e80db",
+      "protected": false
+    },
+    {
+      "name": "feature/loans",
+      "sha": "c9619a423d6af2ff44f6248eb730afb6dfc2ce6a",
+      "protected": false
+    },
+    {
+      "name": "main",
+      "sha": "0d80c08e2439e265962aaeedecfd3fa6f34eb965",
+      "protected": false
+    }
+  ],
+  "catalogReviewComments": [
+    {
+      "id": 4379780146,
+      "replyTo": null,
+      "body": "Please add a dedicated description-only policy regression: assert POLICY.searchDescription === true, search for `quick-release` without a category filter, and expect exactly `['field-tripod']`. The existing combined `interviews`/`audio` case exercises description matching indirectly, but this explicit case makes the shared policy requirement visible during conflict resolution and uses the currently unused POLICY import.",
+      "path": "app/tests/catalog.test.mjs",
+      "originalCommitId": "077156cf9fe1bcdbdab89e78ee3d3096ae974f68",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/4#discussion_r4379780146",
+      "createdAt": "2026-10-26T16:30:24Z",
+      "author": "Emadfar007"
+    },
+    {
+      "id": 4379787695,
+      "replyTo": 4379780146,
+      "body": "Addressed in 1b7f367f13ecdc10df88db327f7a6b767c79e5b4. The new regression explicitly asserts description search remains enabled and that `quick-release` returns only field-tripod. Ten local checks and hosted run #4 pass. This response is part of the disclosed single-account review exercise.",
+      "path": "app/tests/catalog.test.mjs",
+      "originalCommitId": "077156cf9fe1bcdbdab89e78ee3d3096ae974f68",
+      "url": "https://github.com/Emadfar007/kitcrew-team-project/pull/4#discussion_r4379787695",
+      "createdAt": "2026-10-26T16:31:08Z",
+      "author": "Emadfar007"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "application": "ReleaseHarbor",
+  "exportedAt": "2026-10-26T13:55:54.980Z",
+  "note": "Educational planning data. This does not approve or deploy a release.",
+  "plan": {
+    "releaseName": "Harbor autumn release",
+    "version": "1.0.0",
+    "owner": "Release team",
+    "releaseDate": "2026-10-29",
+    "checks": {
+      "tests": false,
+      "codeReview": true,
+      "build": true,
+      "dependencies": true,
+      "secrets": true,
+      "access": true,
+      "backup": false,
+      "monitoring": true,
+      "rollback": true,
+      "runbook": false,
+      "notes": true,
+      "support": false
+    }
+  },
+  "assessment": {
+    "releaseName": "Harbor autumn release",
+    "version": "1.0.0",
+    "owner": "Release team",
+    "releaseDate": "2026-10-29",
+    "score": 67,
+    "status": "Hold for blockers",
+    "completed": 8,
+    "total": 12,
+    "blockers": [
+      {
+        "id": "tests",
+        "label": "Automated tests pass",
+        "category": "engineering"
+      }
+    ],
+    "categories": [
+      {
+        "id": "engineering",
+        "label": "Engineering",
+        "completed": 2,
+        "total": 3,
+        "score": 67
+      },
+      {
+        "id": "security",
+        "label": "Security",
+        "completed": 3,
+        "total": 3,
+        "score": 100
+      },
+      {
+        "id": "operations",
+        "label": "Operations",
+        "completed": 2,
+        "total": 4,
+        "score": 50
+      },
+      {
+        "id": "customer",
+        "label": "Customer",
+        "completed": 1,
+        "total": 2,
+        "score": 50
+      }
+    ],
+    "timeline": [
+      {
+        "phase": "prepare",
+        "date": "2026-10-27",
+        "title": "Prepare the handover",
+        "description": "Review outstanding checks, release notes and recovery instructions."
+      },
+      {
+        "phase": "rehearse",
+        "date": "2026-10-28",
+        "title": "Rehearse the release",
+        "description": "Run the pipeline in a test environment and verify the health checks."
+      },
+      {
+        "phase": "release",
+        "date": "2026-10-29",
+        "title": "Planned release window",
+        "description": "Use your approved deployment process; this planning tool does not deploy software."
+      },
+      {
+        "phase": "observe",
+        "date": "2026-10-30",
+        "title": "Observe and learn",
+        "description": "Review metrics, support feedback and the release outcome."
+      }
+    ],
+    "recommendation": "Resolve 1 critical check before rehearsing the release."
+  },
+  "assessmentStatus": "Matches the current plan",
+  "assessedAt": "2026-10-26T13:48:36.123Z",
+  "runningApplication": {
+    "application": "ReleaseHarbor",
+    "version": "1.0.0",
+    "gitSha": "development",
+    "buildNumber": "local",
+    "mode": "local"
+  }
+}

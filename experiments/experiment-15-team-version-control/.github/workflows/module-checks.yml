@@ -1,0 +1,31 @@
+name: KitCrew module checks
+on:
+  pull_request:
+    branches: [main]
+    paths: ['app/**', '.github/workflows/module-checks.yml']
+  push:
+    branches: [main]
+    paths: ['app/**', '.github/workflows/module-checks.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: kitcrew-checks-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  module-tests:
+    name: Node module tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out reviewed source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Select Node.js 24
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: '24'
+      - name: Run the available module suites
+        working-directory: app
+        run: node --test --test-reporter=spec

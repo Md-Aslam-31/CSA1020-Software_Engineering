@@ -1,0 +1,53 @@
+{
+  "recordedAtUtc": "2026-10-26T11:48:09.676Z",
+  "server": "Nginx 1.30.6 in Docker container orbital-fieldnotes-exp11",
+  "url": "http://127.0.0.1:8087/",
+  "checks": [
+    {
+      "check": "Docker-served page title and hero render",
+      "passed": true
+    },
+    {
+      "check": "Hero link reaches fieldnotes",
+      "passed": true
+    },
+    {
+      "check": "Three fieldnotes expand independently, including keyboard Enter",
+      "passed": true
+    },
+    {
+      "check": "Observing link reaches checklist",
+      "passed": true
+    },
+    {
+      "check": "Four checklist controls work with mouse and keyboard",
+      "passed": true
+    },
+    {
+      "check": "Reset clears all checklist items",
+      "passed": true
+    },
+    {
+      "check": "Philosophy navigation reaches about section",
+      "passed": true
+    },
+    {
+      "check": "Return link reaches main content",
+      "passed": true
+    },
+    {
+      "check": "Phone layout at 390px has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "check": "Phone fieldnote opens without layout overflow",
+      "passed": true
+    },
+    {
+      "check": "Home link returns to page top",
+      "passed": true
+    }
+  ],
+  "consoleWarnings": 0,
+  "consoleErrors": 0
+}

@@ -1,0 +1,15 @@
+{
+  "data": {
+    "application": "ReleaseHarbor",
+    "version": "1.0.0",
+    "gitSha": "0c8f84e67242e95ff92a933f1631f8fc0639cb7c",
+    "buildNumber": "4",
+    "mode": "cloud"
+  },
+  "meta": {
+    "version": "1.0.0",
+    "gitSha": "0c8f84e67242e95ff92a933f1631f8fc0639cb7c",
+    "buildNumber": "4",
+    "mode": "cloud"
+  }
+}

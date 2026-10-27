@@ -1,0 +1,25 @@
+{
+  "cloud": "Render",
+  "url": "https://releaseharbor-exp13.onrender.com",
+  "deployId": "dep-dbflt8qjnfac73cs2evg",
+  "acceptedHttpStatus": 200,
+  "image": "coastrider7/csa1020-exp13-releaseharbor@sha256:e8d0ca8279fcc546c168ea414d93a6278777c8ce980f8bbd289001ef840c1766",
+  "sourceSha": "0772e7b013680b7ec975f5a6fb155a36eaae49d5",
+  "buildNumber": "7",
+  "verifiedVersion": {
+    "data": {
+      "application": "ReleaseHarbor",
+      "version": "1.0.0",
+      "gitSha": "0772e7b013680b7ec975f5a6fb155a36eaae49d5",
+      "buildNumber": "7",
+      "mode": "cloud"
+    },
+    "meta": {
+      "version": "1.0.0",
+      "gitSha": "0772e7b013680b7ec975f5a6fb155a36eaae49d5",
+      "buildNumber": "7",
+      "mode": "cloud"
+    }
+  },
+  "healthHttpStatus": 200
+}

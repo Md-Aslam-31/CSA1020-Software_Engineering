@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+export const POLICY = Object.freeze({ maxLoanDays: 14, maxUnitsPerLoan: 3 });
+=======
+export const POLICY = Object.freeze({ maxLoanDays: 7, maxUnitsPerLoan: 1, searchDescription: true });
+>>>>>>> origin/main

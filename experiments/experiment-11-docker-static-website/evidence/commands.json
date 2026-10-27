@@ -1,0 +1,109 @@
+[
+  {
+    "recordedAtUtc": "2026-10-26T11:45:50.4741515Z",
+    "command": "docker",
+    "arguments": [
+      "--version"
+    ],
+    "exitCode": 0,
+    "evidence": "docker-version.txt"
+  },
+  {
+    "recordedAtUtc": "2026-10-26T11:45:50.7138722Z",
+    "command": "docker",
+    "arguments": [
+      "info",
+      "--format",
+      "Server={{.ServerVersion}} OS={{.OSType}} Architecture={{.Architecture}}"
+    ],
+    "exitCode": 0,
+    "evidence": "docker-server.txt"
+  },
+  {
+    "recordedAtUtc": "2026-10-26T11:45:52.6886899Z",
+    "command": "docker",
+    "arguments": [
+      "build",
+      "--pull",
+      "--progress=plain",
+      "--tag",
+      "orbital-fieldnotes:1.0",
+      "."
+    ],
+    "exitCode": 0,
+    "evidence": "build-log.txt"
+  },
+  {
+    "recordedAtUtc": "2026-10-26T11:46:08.6115382Z",
+    "command": "docker",
+    "arguments": [
+      "run",
+      "--detach",
+      "--name",
+      "orbital-fieldnotes-exp11",
+      "--publish",
+      "127.0.0.1:8087:80",
+      "orbital-fieldnotes:1.0"
+    ],
+    "exitCode": 0,
+    "evidence": "run-log.txt"
+  },
+  {
+    "recordedAtUtc": "2026-10-26T11:46:10.7413328Z",
+    "command": "docker",
+    "arguments": [
+      "exec",
+      "orbital-fieldnotes-exp11",
+      "nginx",
+      "-t"
+    ],
+    "exitCode": 0,
+    "evidence": "nginx-config-test.txt"
+  },
+  {
+    "recordedAtUtc": "2026-10-26T11:46:16.0682673Z",
+    "command": "docker",
+    "arguments": [
+      "ps",
+      "--filter",
+      "name=orbital-fieldnotes-exp11",
+      "--format",
+      "table {{.Names}}\\t{{.Image}}\\t{{.Status}}\\t{{.Ports}}"
+    ],
+    "exitCode": 0,
+    "evidence": "container-status.txt"
+  },
+  {
+    "recordedAtUtc": "2026-10-26T11:46:16.3579036Z",
+    "command": "docker",
+    "arguments": [
+      "image",
+      "inspect",
+      "orbital-fieldnotes:1.0"
+    ],
+    "exitCode": 0,
+    "evidence": "image-inspect.json"
+  },
+  {
+    "recordedAtUtc": "2026-10-26T11:46:16.6865594Z",
+    "command": "docker",
+    "arguments": [
+      "inspect",
+      "orbital-fieldnotes-exp11"
+    ],
+    "exitCode": 0,
+    "evidence": "container-inspect.json"
+  },
+  {
+    "recordedAtUtc": "2026-10-26T11:46:17.4470321Z",
+    "command": "docker",
+    "arguments": [
+      "logs",
+      "--tail",
+      "40",
+      "orbital-fieldnotes-exp11"
+    ],
+    "exitCode": 0,
+    "evidence": "nginx-logs.txt"
+  }
+]

@@ -1,0 +1,117 @@
+{
+  "application": "KitCrew",
+  "schemaVersion": 1,
+  "exportedAt": "2026-10-26T16:32:10.137Z",
+  "note": "Local equipment-sharing demo. These records are not real reservations.",
+  "inventory": [
+    {
+      "id": "pocket-camera",
+      "name": "Pocket cinema camera",
+      "category": "Camera",
+      "total": 3,
+      "description": "Capture sharp 4K stories with a compact camera, lens and battery kit.",
+      "color": "#c7dcff",
+      "icon": "camera"
+    },
+    {
+      "id": "wireless-mic",
+      "name": "Wireless microphone set",
+      "category": "Audio",
+      "total": 4,
+      "description": "Two clip-on transmitters and one receiver for clear interviews.",
+      "color": "#ffe1bf",
+      "icon": "mic"
+    },
+    {
+      "id": "led-panel",
+      "name": "Portable LED panel",
+      "category": "Lighting",
+      "total": 4,
+      "description": "Adjustable soft light with a battery and diffuser for small sets.",
+      "color": "#fff0a6",
+      "icon": "light"
+    },
+    {
+      "id": "field-tripod",
+      "name": "Field tripod",
+      "category": "Accessories",
+      "total": 5,
+      "description": "A stable, lightweight support with an adjustable quick-release head.",
+      "color": "#d3eee0",
+      "icon": "tripod"
+    },
+    {
+      "id": "audio-recorder",
+      "name": "Handheld audio recorder",
+      "category": "Audio",
+      "total": 2,
+      "description": "Record portable stereo sound, field notes and podcast conversations.",
+      "color": "#e2d9ff",
+      "icon": "recorder"
+    },
+    {
+      "id": "backdrop-kit",
+      "name": "Backdrop stand kit",
+      "category": "Lighting",
+      "total": 2,
+      "description": "A folding background support for portraits and studio interviews.",
+      "color": "#ffd8da",
+      "icon": "backdrop"
+    }
+  ],
+  "loans": [
+    {
+      "id": "loan-e12f66de-19db-4f9d-9c4b-f2f8ef82737a",
+      "itemId": "pocket-camera",
+      "quantity": 3,
+      "days": 14,
+      "team": "Design Studio",
+      "borrower": "Demo Creator",
+      "borrowedAt": "2026-10-26T16:30:16.575Z",
+      "dueAt": "2026-11-09T16:30:16.575Z",
+      "status": "returned",
+      "returnedAt": "2026-10-26T16:31:33.052Z"
+    },
+    {
+      "id": "loan-b0d3f37a-6b02-4643-81be-f9e266d703ae",
+      "itemId": "audio-recorder",
+      "quantity": 2,
+      "days": 3,
+      "team": "Podcast Crew",
+      "borrower": "Demo Sound Lead",
+      "borrowedAt": "2026-10-26T16:31:03.695Z",
+      "dueAt": "2026-10-29T16:31:03.695Z",
+      "status": "active"
+    }
+  ],
+  "summary": {
+    "totalUnits": 20,
+    "activeLoans": 1,
+    "borrowedUnits": 2,
+    "availableUnits": 18,
+    "utilizationPercent": 10,
+    "overdueLoans": 0,
+    "byCategory": [
+      {
+        "category": "Camera",
+        "total": 3,
+        "borrowed": 0
+      },
+      {
+        "category": "Audio",
+        "total": 6,
+        "borrowed": 2
+      },
+      {
+        "category": "Lighting",
+        "total": 6,
+        "borrowed": 0
+      },
+      {
+        "category": "Accessories",
+        "total": 5,
+        "borrowed": 0
+      }
+    ]
+  }
+}

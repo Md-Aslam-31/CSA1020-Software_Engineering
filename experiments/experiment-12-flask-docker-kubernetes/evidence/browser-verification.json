@@ -1,0 +1,45 @@
+{
+  "url": "http://127.0.0.1:30088/",
+  "checks": [
+    {
+      "action": "Default Express estimate",
+      "observed": "HTTP 201, INR 760, Kubernetes pod identity"
+    },
+    {
+      "action": "Compare all three",
+      "observed": "HTTP 200; Economy 490, Express 760, Priority 1042.5"
+    },
+    {
+      "action": "Custom Salem to Trichy, 140 km, 1 kg, Priority",
+      "observed": "HTTP 201, INR 501"
+    },
+    {
+      "action": "Economy choice",
+      "observed": "HTTP 201, INR 490"
+    },
+    {
+      "action": "Example reset",
+      "observed": "Chennai, Bengaluru, 350 km, 2.5 kg, Express restored"
+    },
+    {
+      "action": "API explorer custom POST",
+      "observed": "HTTP 201, Madurai to Coimbatore Priority INR 719 on standalone Docker"
+    },
+    {
+      "action": "Negative distance",
+      "observed": "HTTP 400 BAD_REQUEST with field-specific error"
+    },
+    {
+      "action": "Malformed editor JSON",
+      "observed": "Client displays JSON correction message"
+    },
+    {
+      "action": "Copy JSON",
+      "observed": "Clipboard content contained BAD_REQUEST after copying response"
+    },
+    {
+      "action": "Refresh runtime",
+      "observed": "Kubernetes mode, parcelpilot-lab namespace and actual pod name"
+    }
+  ]
+}
