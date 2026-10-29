@@ -1,0 +1,1172 @@
+{
+  "checked_at": "2026-10-27T13:58:19.509499+00:00",
+  "base_url": "http://127.0.0.1:8096",
+  "passed": 37,
+  "total": 37,
+  "checks": [
+    {
+      "name": "Browser application served",
+      "method": "GET",
+      "path": "/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.328,
+      "response": "response omitted for size"
+    },
+    {
+      "name": "Liveness",
+      "method": "GET",
+      "path": "/healthz",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.031,
+      "response": {
+        "app": "Morrow Task Studio",
+        "status": "healthy",
+        "version": "1.0.0"
+      }
+    },
+    {
+      "name": "SQLite readiness",
+      "method": "GET",
+      "path": "/readyz",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.031,
+      "response": {
+        "status": "ready",
+        "storage": "sqlite"
+      }
+    },
+    {
+      "name": "Initial statistics coherent",
+      "method": "GET",
+      "path": "/api/stats",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "completion": 17,
+        "doing": 2,
+        "done": 1,
+        "overdue": 1,
+        "todo": 3,
+        "total": 6
+      }
+    },
+    {
+      "name": "Create custom overdue task",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 201,
+      "actual_status": 201,
+      "passed": true,
+      "seconds": 0.031,
+      "response": {
+        "task": {
+          "category": "HTTP Verification",
+          "created_at": "2026-10-27T13:58:18.969074+00:00",
+          "due_date": "2026-10-26",
+          "id": 7,
+          "notes": "A note with <script>literal text</script> and user's choice.",
+          "overdue": true,
+          "priority": "high",
+          "status": "todo",
+          "title": "HTTP verification eea74dfe13",
+          "updated_at": "2026-10-27T13:58:18.969074+00:00"
+        }
+      }
+    },
+    {
+      "name": "Search in task notes",
+      "method": "GET",
+      "path": "/api/tasks?search=literal%20text",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "tasks": [
+          {
+            "category": "HTTP Verification",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": "2026-10-26",
+            "id": 7,
+            "notes": "A note with <script>literal text</script> and user's choice.",
+            "overdue": true,
+            "priority": "high",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13",
+            "updated_at": "2026-10-27T13:58:18.969074+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Filter status priority and category",
+      "method": "GET",
+      "path": "/api/tasks?status=todo&priority=high&category=HTTP%20Verification",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "tasks": [
+          {
+            "category": "HTTP Verification",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": "2026-10-26",
+            "id": 7,
+            "notes": "A note with <script>literal text</script> and user's choice.",
+            "overdue": true,
+            "priority": "high",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13",
+            "updated_at": "2026-10-27T13:58:18.969074+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Overdue filter",
+      "method": "GET",
+      "path": "/api/tasks?status=overdue",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "tasks": [
+          {
+            "category": "HTTP Verification",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": "2026-10-26",
+            "id": 7,
+            "notes": "A note with <script>literal text</script> and user's choice.",
+            "overdue": true,
+            "priority": "high",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13",
+            "updated_at": "2026-10-27T13:58:18.969074+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241738+00:00",
+            "due_date": "2026-10-26",
+            "id": 4,
+            "notes": "Turn the useful ideas into small, actionable next steps.",
+            "overdue": true,
+            "priority": "medium",
+            "status": "todo",
+            "title": "Review last week\u2019s notes",
+            "updated_at": "2026-10-27T13:57:54.241738+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Transition task to doing",
+      "method": "PATCH",
+      "path": "/api/tasks/7",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.015,
+      "response": {
+        "task": {
+          "category": "HTTP Verification",
+          "created_at": "2026-10-27T13:58:18.969074+00:00",
+          "due_date": "2026-10-26",
+          "id": 7,
+          "notes": "A note with <script>literal text</script> and user's choice.",
+          "overdue": true,
+          "priority": "high",
+          "status": "doing",
+          "title": "HTTP verification eea74dfe13",
+          "updated_at": "2026-10-27T13:58:19.024665+00:00"
+        }
+      }
+    },
+    {
+      "name": "Transition task to done",
+      "method": "PATCH",
+      "path": "/api/tasks/7",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.031,
+      "response": {
+        "task": {
+          "category": "HTTP Verification",
+          "created_at": "2026-10-27T13:58:18.969074+00:00",
+          "due_date": "2026-10-26",
+          "id": 7,
+          "notes": "A note with <script>literal text</script> and user's choice.",
+          "overdue": false,
+          "priority": "high",
+          "status": "done",
+          "title": "HTTP verification eea74dfe13",
+          "updated_at": "2026-10-27T13:58:19.060625+00:00"
+        }
+      }
+    },
+    {
+      "name": "Transition task to todo",
+      "method": "PATCH",
+      "path": "/api/tasks/7",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.032,
+      "response": {
+        "task": {
+          "category": "HTTP Verification",
+          "created_at": "2026-10-27T13:58:18.969074+00:00",
+          "due_date": "2026-10-26",
+          "id": 7,
+          "notes": "A note with <script>literal text</script> and user's choice.",
+          "overdue": true,
+          "priority": "high",
+          "status": "todo",
+          "title": "HTTP verification eea74dfe13",
+          "updated_at": "2026-10-27T13:58:19.091414+00:00"
+        }
+      }
+    },
+    {
+      "name": "Edit title notes priority deadline category",
+      "method": "PATCH",
+      "path": "/api/tasks/7",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.015,
+      "response": {
+        "task": {
+          "category": "Custom category",
+          "created_at": "2026-10-27T13:58:18.969074+00:00",
+          "due_date": "2026-11-01",
+          "id": 7,
+          "notes": "Updated notes",
+          "overdue": false,
+          "priority": "low",
+          "status": "todo",
+          "title": "HTTP verification eea74dfe13 edited",
+          "updated_at": "2026-10-27T13:58:19.107077+00:00"
+        }
+      }
+    },
+    {
+      "name": "Clear optional due date",
+      "method": "PATCH",
+      "path": "/api/tasks/7",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.032,
+      "response": {
+        "task": {
+          "category": "Custom category",
+          "created_at": "2026-10-27T13:58:18.969074+00:00",
+          "due_date": null,
+          "id": 7,
+          "notes": "Updated notes",
+          "overdue": false,
+          "priority": "low",
+          "status": "todo",
+          "title": "HTTP verification eea74dfe13 edited",
+          "updated_at": "2026-10-27T13:58:19.139883+00:00"
+        }
+      }
+    },
+    {
+      "name": "Supported sort newest",
+      "method": "GET",
+      "path": "/api/tasks?sort=newest",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.015,
+      "response": {
+        "tasks": [
+          {
+            "category": "Custom category",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": null,
+            "id": 7,
+            "notes": "Updated notes",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13 edited",
+            "updated_at": "2026-10-27T13:58:19.139883+00:00"
+          },
+          {
+            "category": "Project",
+            "created_at": "2026-10-27T13:57:54.241937+00:00",
+            "due_date": "2026-10-26",
+            "id": 6,
+            "notes": "Build the Flask image and verify persistent task storage.",
+            "overdue": false,
+            "priority": "high",
+            "status": "done",
+            "title": "Set up the Docker workspace",
+            "updated_at": "2026-10-27T13:57:54.241937+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241866+00:00",
+            "due_date": null,
+            "id": 5,
+            "notes": "Water, a short walk and ten minutes to plan the day.",
+            "overdue": false,
+            "priority": "medium",
+            "status": "doing",
+            "title": "Build a quieter morning routine",
+            "updated_at": "2026-10-27T13:57:54.241866+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241738+00:00",
+            "due_date": "2026-10-26",
+            "id": 4,
+            "notes": "Turn the useful ideas into small, actionable next steps.",
+            "overdue": true,
+            "priority": "medium",
+            "status": "todo",
+            "title": "Review last week\u2019s notes",
+            "updated_at": "2026-10-27T13:57:54.241738+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241635+00:00",
+            "due_date": "2026-10-30",
+            "id": 3,
+            "notes": "An hour outside, a favourite playlist and no notifications.",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "Take a screen free evening",
+            "updated_at": "2026-10-27T13:57:54.241635+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241559+00:00",
+            "due_date": "2026-10-28",
+            "id": 2,
+            "notes": "Add screenshots, rehearse the demo and check every link.",
+            "overdue": false,
+            "priority": "high",
+            "status": "doing",
+            "title": "Polish the project presentation",
+            "updated_at": "2026-10-27T13:57:54.241559+00:00"
+          },
+          {
+            "category": "Planning",
+            "created_at": "2026-10-27T13:57:54.240902+00:00",
+            "due_date": "2026-10-27",
+            "id": 1,
+            "notes": "Choose three outcomes that would make this week feel meaningful.",
+            "overdue": false,
+            "priority": "high",
+            "status": "todo",
+            "title": "Map the next chapter",
+            "updated_at": "2026-10-27T13:57:54.240902+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Supported sort oldest",
+      "method": "GET",
+      "path": "/api/tasks?sort=oldest",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "tasks": [
+          {
+            "category": "Planning",
+            "created_at": "2026-10-27T13:57:54.240902+00:00",
+            "due_date": "2026-10-27",
+            "id": 1,
+            "notes": "Choose three outcomes that would make this week feel meaningful.",
+            "overdue": false,
+            "priority": "high",
+            "status": "todo",
+            "title": "Map the next chapter",
+            "updated_at": "2026-10-27T13:57:54.240902+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241559+00:00",
+            "due_date": "2026-10-28",
+            "id": 2,
+            "notes": "Add screenshots, rehearse the demo and check every link.",
+            "overdue": false,
+            "priority": "high",
+            "status": "doing",
+            "title": "Polish the project presentation",
+            "updated_at": "2026-10-27T13:57:54.241559+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241635+00:00",
+            "due_date": "2026-10-30",
+            "id": 3,
+            "notes": "An hour outside, a favourite playlist and no notifications.",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "Take a screen free evening",
+            "updated_at": "2026-10-27T13:57:54.241635+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241738+00:00",
+            "due_date": "2026-10-26",
+            "id": 4,
+            "notes": "Turn the useful ideas into small, actionable next steps.",
+            "overdue": true,
+            "priority": "medium",
+            "status": "todo",
+            "title": "Review last week\u2019s notes",
+            "updated_at": "2026-10-27T13:57:54.241738+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241866+00:00",
+            "due_date": null,
+            "id": 5,
+            "notes": "Water, a short walk and ten minutes to plan the day.",
+            "overdue": false,
+            "priority": "medium",
+            "status": "doing",
+            "title": "Build a quieter morning routine",
+            "updated_at": "2026-10-27T13:57:54.241866+00:00"
+          },
+          {
+            "category": "Project",
+            "created_at": "2026-10-27T13:57:54.241937+00:00",
+            "due_date": "2026-10-26",
+            "id": 6,
+            "notes": "Build the Flask image and verify persistent task storage.",
+            "overdue": false,
+            "priority": "high",
+            "status": "done",
+            "title": "Set up the Docker workspace",
+            "updated_at": "2026-10-27T13:57:54.241937+00:00"
+          },
+          {
+            "category": "Custom category",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": null,
+            "id": 7,
+            "notes": "Updated notes",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13 edited",
+            "updated_at": "2026-10-27T13:58:19.139883+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Supported sort due",
+      "method": "GET",
+      "path": "/api/tasks?sort=due",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "tasks": [
+          {
+            "category": "Project",
+            "created_at": "2026-10-27T13:57:54.241937+00:00",
+            "due_date": "2026-10-26",
+            "id": 6,
+            "notes": "Build the Flask image and verify persistent task storage.",
+            "overdue": false,
+            "priority": "high",
+            "status": "done",
+            "title": "Set up the Docker workspace",
+            "updated_at": "2026-10-27T13:57:54.241937+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241738+00:00",
+            "due_date": "2026-10-26",
+            "id": 4,
+            "notes": "Turn the useful ideas into small, actionable next steps.",
+            "overdue": true,
+            "priority": "medium",
+            "status": "todo",
+            "title": "Review last week\u2019s notes",
+            "updated_at": "2026-10-27T13:57:54.241738+00:00"
+          },
+          {
+            "category": "Planning",
+            "created_at": "2026-10-27T13:57:54.240902+00:00",
+            "due_date": "2026-10-27",
+            "id": 1,
+            "notes": "Choose three outcomes that would make this week feel meaningful.",
+            "overdue": false,
+            "priority": "high",
+            "status": "todo",
+            "title": "Map the next chapter",
+            "updated_at": "2026-10-27T13:57:54.240902+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241559+00:00",
+            "due_date": "2026-10-28",
+            "id": 2,
+            "notes": "Add screenshots, rehearse the demo and check every link.",
+            "overdue": false,
+            "priority": "high",
+            "status": "doing",
+            "title": "Polish the project presentation",
+            "updated_at": "2026-10-27T13:57:54.241559+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241635+00:00",
+            "due_date": "2026-10-30",
+            "id": 3,
+            "notes": "An hour outside, a favourite playlist and no notifications.",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "Take a screen free evening",
+            "updated_at": "2026-10-27T13:57:54.241635+00:00"
+          },
+          {
+            "category": "Custom category",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": null,
+            "id": 7,
+            "notes": "Updated notes",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13 edited",
+            "updated_at": "2026-10-27T13:58:19.139883+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241866+00:00",
+            "due_date": null,
+            "id": 5,
+            "notes": "Water, a short walk and ten minutes to plan the day.",
+            "overdue": false,
+            "priority": "medium",
+            "status": "doing",
+            "title": "Build a quieter morning routine",
+            "updated_at": "2026-10-27T13:57:54.241866+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Supported sort priority",
+      "method": "GET",
+      "path": "/api/tasks?sort=priority",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "tasks": [
+          {
+            "category": "Project",
+            "created_at": "2026-10-27T13:57:54.241937+00:00",
+            "due_date": "2026-10-26",
+            "id": 6,
+            "notes": "Build the Flask image and verify persistent task storage.",
+            "overdue": false,
+            "priority": "high",
+            "status": "done",
+            "title": "Set up the Docker workspace",
+            "updated_at": "2026-10-27T13:57:54.241937+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241559+00:00",
+            "due_date": "2026-10-28",
+            "id": 2,
+            "notes": "Add screenshots, rehearse the demo and check every link.",
+            "overdue": false,
+            "priority": "high",
+            "status": "doing",
+            "title": "Polish the project presentation",
+            "updated_at": "2026-10-27T13:57:54.241559+00:00"
+          },
+          {
+            "category": "Planning",
+            "created_at": "2026-10-27T13:57:54.240902+00:00",
+            "due_date": "2026-10-27",
+            "id": 1,
+            "notes": "Choose three outcomes that would make this week feel meaningful.",
+            "overdue": false,
+            "priority": "high",
+            "status": "todo",
+            "title": "Map the next chapter",
+            "updated_at": "2026-10-27T13:57:54.240902+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241866+00:00",
+            "due_date": null,
+            "id": 5,
+            "notes": "Water, a short walk and ten minutes to plan the day.",
+            "overdue": false,
+            "priority": "medium",
+            "status": "doing",
+            "title": "Build a quieter morning routine",
+            "updated_at": "2026-10-27T13:57:54.241866+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241738+00:00",
+            "due_date": "2026-10-26",
+            "id": 4,
+            "notes": "Turn the useful ideas into small, actionable next steps.",
+            "overdue": true,
+            "priority": "medium",
+            "status": "todo",
+            "title": "Review last week\u2019s notes",
+            "updated_at": "2026-10-27T13:57:54.241738+00:00"
+          },
+          {
+            "category": "Custom category",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": null,
+            "id": 7,
+            "notes": "Updated notes",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13 edited",
+            "updated_at": "2026-10-27T13:58:19.139883+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241635+00:00",
+            "due_date": "2026-10-30",
+            "id": 3,
+            "notes": "An hour outside, a favourite playlist and no notifications.",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "Take a screen free evening",
+            "updated_at": "2026-10-27T13:57:54.241635+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Supported sort title",
+      "method": "GET",
+      "path": "/api/tasks?sort=title",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.015,
+      "response": {
+        "tasks": [
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241866+00:00",
+            "due_date": null,
+            "id": 5,
+            "notes": "Water, a short walk and ten minutes to plan the day.",
+            "overdue": false,
+            "priority": "medium",
+            "status": "doing",
+            "title": "Build a quieter morning routine",
+            "updated_at": "2026-10-27T13:57:54.241866+00:00"
+          },
+          {
+            "category": "Custom category",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": null,
+            "id": 7,
+            "notes": "Updated notes",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13 edited",
+            "updated_at": "2026-10-27T13:58:19.139883+00:00"
+          },
+          {
+            "category": "Planning",
+            "created_at": "2026-10-27T13:57:54.240902+00:00",
+            "due_date": "2026-10-27",
+            "id": 1,
+            "notes": "Choose three outcomes that would make this week feel meaningful.",
+            "overdue": false,
+            "priority": "high",
+            "status": "todo",
+            "title": "Map the next chapter",
+            "updated_at": "2026-10-27T13:57:54.240902+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241559+00:00",
+            "due_date": "2026-10-28",
+            "id": 2,
+            "notes": "Add screenshots, rehearse the demo and check every link.",
+            "overdue": false,
+            "priority": "high",
+            "status": "doing",
+            "title": "Polish the project presentation",
+            "updated_at": "2026-10-27T13:57:54.241559+00:00"
+          },
+          {
+            "category": "Study",
+            "created_at": "2026-10-27T13:57:54.241738+00:00",
+            "due_date": "2026-10-26",
+            "id": 4,
+            "notes": "Turn the useful ideas into small, actionable next steps.",
+            "overdue": true,
+            "priority": "medium",
+            "status": "todo",
+            "title": "Review last week\u2019s notes",
+            "updated_at": "2026-10-27T13:57:54.241738+00:00"
+          },
+          {
+            "category": "Project",
+            "created_at": "2026-10-27T13:57:54.241937+00:00",
+            "due_date": "2026-10-26",
+            "id": 6,
+            "notes": "Build the Flask image and verify persistent task storage.",
+            "overdue": false,
+            "priority": "high",
+            "status": "done",
+            "title": "Set up the Docker workspace",
+            "updated_at": "2026-10-27T13:57:54.241937+00:00"
+          },
+          {
+            "category": "Personal",
+            "created_at": "2026-10-27T13:57:54.241635+00:00",
+            "due_date": "2026-10-30",
+            "id": 3,
+            "notes": "An hour outside, a favourite playlist and no notifications.",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "Take a screen free evening",
+            "updated_at": "2026-10-27T13:57:54.241635+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Reject blank title",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.032,
+      "response": {
+        "error": "Title must contain 1 to 160 characters."
+      }
+    },
+    {
+      "name": "Reject unknown field",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.015,
+      "response": {
+        "error": "Unknown task fields: password"
+      }
+    },
+    {
+      "name": "Reject invalid priority",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "error": "Priority must be low, medium or high."
+      }
+    },
+    {
+      "name": "Reject array priority",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "error": "Priority must be low, medium or high."
+      }
+    },
+    {
+      "name": "Reject object status",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "error": "Status must be todo, doing or done."
+      }
+    },
+    {
+      "name": "Reject invalid date",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.015,
+      "response": {
+        "error": "Due date must use YYYY-MM-DD."
+      }
+    },
+    {
+      "name": "Reject empty update",
+      "method": "PATCH",
+      "path": "/api/tasks/7",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "error": "Provide at least one field to update."
+      }
+    },
+    {
+      "name": "Reject invalid sort",
+      "method": "GET",
+      "path": "/api/tasks?sort=DROP",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "error": "Sort must be newest, oldest, due, priority or title."
+      }
+    },
+    {
+      "name": "Reject malformed JSON",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.031,
+      "response": {
+        "error": "The browser (or proxy) sent a request that this server could not understand."
+      }
+    },
+    {
+      "name": "Reject non JSON media type",
+      "method": "POST",
+      "path": "/api/tasks",
+      "expected_status": 415,
+      "actual_status": 415,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "error": "Did not attempt to load JSON data because the request Content-Type was not 'application/json'."
+      }
+    },
+    {
+      "name": "Portable JSON export",
+      "method": "GET",
+      "path": "/api/export",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "app": "Morrow Task Studio",
+        "exported_at": "2026-10-27T13:58:19.336150+00:00",
+        "tasks": [
+          {
+            "category": "Planning",
+            "due_date": "2026-10-27",
+            "notes": "Choose three outcomes that would make this week feel meaningful.",
+            "priority": "high",
+            "status": "todo",
+            "title": "Map the next chapter"
+          },
+          {
+            "category": "Study",
+            "due_date": "2026-10-28",
+            "notes": "Add screenshots, rehearse the demo and check every link.",
+            "priority": "high",
+            "status": "doing",
+            "title": "Polish the project presentation"
+          },
+          {
+            "category": "Personal",
+            "due_date": "2026-10-30",
+            "notes": "An hour outside, a favourite playlist and no notifications.",
+            "priority": "low",
+            "status": "todo",
+            "title": "Take a screen free evening"
+          },
+          {
+            "category": "Study",
+            "due_date": "2026-10-26",
+            "notes": "Turn the useful ideas into small, actionable next steps.",
+            "priority": "medium",
+            "status": "todo",
+            "title": "Review last week\u2019s notes"
+          },
+          {
+            "category": "Personal",
+            "due_date": null,
+            "notes": "Water, a short walk and ten minutes to plan the day.",
+            "priority": "medium",
+            "status": "doing",
+            "title": "Build a quieter morning routine"
+          },
+          {
+            "category": "Project",
+            "due_date": "2026-10-26",
+            "notes": "Build the Flask image and verify persistent task storage.",
+            "priority": "high",
+            "status": "done",
+            "title": "Set up the Docker workspace"
+          },
+          {
+            "category": "Custom category",
+            "due_date": null,
+            "notes": "Updated notes",
+            "priority": "low",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13 edited"
+          }
+        ],
+        "version": 1
+      }
+    },
+    {
+      "name": "Fixture count before rejected import",
+      "method": "GET",
+      "path": "/api/tasks?search=HTTP%20verification%20eea74dfe13",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "tasks": [
+          {
+            "category": "Custom category",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": null,
+            "id": 7,
+            "notes": "Updated notes",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13 edited",
+            "updated_at": "2026-10-27T13:58:19.139883+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Reject import atomically",
+      "method": "POST",
+      "path": "/api/import",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "error": "Title must contain 1 to 160 characters."
+      }
+    },
+    {
+      "name": "Rejected import changed no fixture records",
+      "method": "GET",
+      "path": "/api/tasks?search=HTTP%20verification%20eea74dfe13",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.015,
+      "response": {
+        "tasks": [
+          {
+            "category": "Custom category",
+            "created_at": "2026-10-27T13:58:18.969074+00:00",
+            "due_date": null,
+            "id": 7,
+            "notes": "Updated notes",
+            "overdue": false,
+            "priority": "low",
+            "status": "todo",
+            "title": "HTTP verification eea74dfe13 edited",
+            "updated_at": "2026-10-27T13:58:19.139883+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Import custom task",
+      "method": "POST",
+      "path": "/api/import",
+      "expected_status": 201,
+      "actual_status": 201,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "imported": 1
+      }
+    },
+    {
+      "name": "Activity includes edits and import",
+      "method": "GET",
+      "path": "/api/activity",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "events": [
+          {
+            "action": "imported",
+            "created_at": "2026-10-27T13:58:19.362141+00:00",
+            "id": 13,
+            "title": "HTTP verification eea74dfe13 imported"
+          },
+          {
+            "action": "updated",
+            "created_at": "2026-10-27T13:58:19.140102+00:00",
+            "id": 12,
+            "title": "HTTP verification eea74dfe13 edited"
+          },
+          {
+            "action": "updated",
+            "created_at": "2026-10-27T13:58:19.107259+00:00",
+            "id": 11,
+            "title": "HTTP verification eea74dfe13 edited"
+          },
+          {
+            "action": "updated",
+            "created_at": "2026-10-27T13:58:19.091492+00:00",
+            "id": 10,
+            "title": "HTTP verification eea74dfe13"
+          },
+          {
+            "action": "completed",
+            "created_at": "2026-10-27T13:58:19.060850+00:00",
+            "id": 9,
+            "title": "HTTP verification eea74dfe13"
+          },
+          {
+            "action": "updated",
+            "created_at": "2026-10-27T13:58:19.024940+00:00",
+            "id": 8,
+            "title": "HTTP verification eea74dfe13"
+          },
+          {
+            "action": "created",
+            "created_at": "2026-10-27T13:58:18.970306+00:00",
+            "id": 7,
+            "title": "HTTP verification eea74dfe13"
+          },
+          {
+            "action": "sample added",
+            "created_at": "2026-10-27T13:57:54.241952+00:00",
+            "id": 6,
+            "title": "Set up the Docker workspace"
+          },
+          {
+            "action": "sample added",
+            "created_at": "2026-10-27T13:57:54.241909+00:00",
+            "id": 5,
+            "title": "Build a quieter morning routine"
+          },
+          {
+            "action": "sample added",
+            "created_at": "2026-10-27T13:57:54.241777+00:00",
+            "id": 4,
+            "title": "Review last week\u2019s notes"
+          },
+          {
+            "action": "sample added",
+            "created_at": "2026-10-27T13:57:54.241652+00:00",
+            "id": 3,
+            "title": "Take a screen free evening"
+          },
+          {
+            "action": "sample added",
+            "created_at": "2026-10-27T13:57:54.241602+00:00",
+            "id": 2,
+            "title": "Polish the project presentation"
+          },
+          {
+            "action": "sample added",
+            "created_at": "2026-10-27T13:57:54.240987+00:00",
+            "id": 1,
+            "title": "Map the next chapter"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Reset requires explicit confirmation",
+      "method": "POST",
+      "path": "/api/demo/reset",
+      "expected_status": 400,
+      "actual_status": 400,
+      "passed": true,
+      "seconds": 0.0,
+      "response": {
+        "error": "Send confirm=true to replace all tasks with six demo tasks."
+      }
+    },
+    {
+      "name": "Delete task",
+      "method": "DELETE",
+      "path": "/api/tasks/7",
+      "expected_status": 200,
+      "actual_status": 200,
+      "passed": true,
+      "seconds": 0.015,
+      "response": {
+        "deleted": true,
+        "id": 7
+      }
+    },
+    {
+      "name": "Deleted task cannot be edited",
+      "method": "PATCH",
+      "path": "/api/tasks/7",
+      "expected_status": 404,
+      "actual_status": 404,
+      "passed": true,
+      "seconds": 0.016,
+      "response": {
+        "error": "This task was not found."
+      }
+    }
+  ],
+  "cleanup": [
+    {
+      "id": 8,
+      "status": 200
+    }
+  ]
+}

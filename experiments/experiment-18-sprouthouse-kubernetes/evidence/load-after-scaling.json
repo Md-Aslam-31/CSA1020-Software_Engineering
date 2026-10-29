@@ -1,0 +1,18 @@
+{
+  "measuredAt": "2026-10-28T14:43:31.541802+00:00",
+  "totalRequests": 120,
+  "workers": 8,
+  "http200Responses": 120,
+  "distinctFrontendPods": 3,
+  "frontendPodHits": {
+    "frontend-545554bd95-6vn5s": 49,
+    "frontend-545554bd95-ghpth": 29,
+    "frontend-545554bd95-swxgt": 42
+  },
+  "elapsedSeconds": 0.248,
+  "meanMilliseconds": 15.988,
+  "p95Milliseconds": 144.059,
+  "expectedFrontendPods": 3,
+  "passed": true,
+  "scope": "A bounded demonstration of service load balancing; not a production capacity benchmark."
+}

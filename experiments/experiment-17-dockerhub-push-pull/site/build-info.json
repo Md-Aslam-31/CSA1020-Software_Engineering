@@ -1,0 +1,8 @@
+{
+  "application": "Meridian Atlas",
+  "experiment": 17,
+  "version": "1.0.0",
+  "type": "static-html-css-javascript",
+  "content": "Six illustrative self-guided city walks",
+  "externalAssetDependencies": false
+}

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sprouthouse-exp18
+  labels:
+    app.kubernetes.io/part-of: sprouthouse
+    experiment: "18"

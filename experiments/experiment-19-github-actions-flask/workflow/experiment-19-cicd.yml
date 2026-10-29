@@ -1,0 +1,196 @@
+name: Packlight Flask CI/CD
+run-name: Packlight · ${{ github.event_name }} · ${{ github.ref_name }}
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'experiments/experiment-19-github-actions-flask/app.py'
+      - 'experiments/experiment-19-github-actions-flask/templates/**'
+      - 'experiments/experiment-19-github-actions-flask/static/**'
+      - 'experiments/experiment-19-github-actions-flask/tests/**'
+      - 'experiments/experiment-19-github-actions-flask/ci/**'
+      - 'experiments/experiment-19-github-actions-flask/requirements.txt'
+      - 'experiments/experiment-19-github-actions-flask/Dockerfile'
+      - 'experiments/experiment-19-github-actions-flask/.dockerignore'
+      - '.github/workflows/experiment-19-cicd.yml'
+      - 'browser-lab/ci/request_deployment.py'
+      - 'browser-lab/ci/test_request_deployment.py'
+      - 'browser-lab/ci/deployment-public.pem'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'experiments/experiment-19-github-actions-flask/app.py'
+      - 'experiments/experiment-19-github-actions-flask/templates/**'
+      - 'experiments/experiment-19-github-actions-flask/static/**'
+      - 'experiments/experiment-19-github-actions-flask/tests/**'
+      - 'experiments/experiment-19-github-actions-flask/ci/**'
+      - 'experiments/experiment-19-github-actions-flask/requirements.txt'
+      - 'experiments/experiment-19-github-actions-flask/Dockerfile'
+      - 'experiments/experiment-19-github-actions-flask/.dockerignore'
+      - '.github/workflows/experiment-19-cicd.yml'
+      - 'browser-lab/ci/request_deployment.py'
+      - 'browser-lab/ci/test_request_deployment.py'
+      - 'browser-lab/ci/deployment-public.pem'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: packlight-exp19-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  IMAGE_REPOSITORY: coastrider7/csa1020-exp19-packlight
+  RELEASE_IMAGE: coastrider7/csa1020-exp19-packlight:run-${{ github.run_number }}-attempt-${{ github.run_attempt }}-${{ github.sha }}
+  SOURCE_SHA: ${{ github.sha }}
+  BUILD_NUMBER: ${{ github.run_number }}.${{ github.run_attempt }}
+  DOCKER_BUILD_RECORD_UPLOAD: 'false'
+
+jobs:
+  delivery:
+    name: Test and publish Packlight
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      digest: ${{ steps.publish.outputs.digest }}
+    defaults:
+      run:
+        shell: bash
+        working-directory: experiments/experiment-19-github-actions-flask
+    steps:
+      - name: Check out the source commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check deployment request protocol
+        run: python3 -B -m unittest discover -s "$GITHUB_WORKSPACE/browser-lab/ci" -p test_request_deployment.py -v
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069 # v4.4.1
+
+      - name: Build the Flask test image
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: experiments/experiment-19-github-actions-flask
+          target: test
+          load: true
+          tags: packlight-tests:ci
+          provenance: false
+          cache-from: type=gha,scope=packlight-exp19
+          cache-to: type=gha,scope=packlight-exp19,mode=max
+
+      - name: Run application tests inside Docker
+        run: |
+          mkdir -p reports
+          docker run --rm --network none --read-only --tmpfs /tmp:rw,noexec,nosuid,size=16m \
+            --cap-drop ALL --security-opt no-new-privileges=true --memory 256m \
+            packlight-tests:ci python -c '
+          import unittest
+          suite = unittest.defaultTestLoader.discover("tests")
+          if suite.countTestCases() == 0:
+              raise SystemExit("No application tests discovered")
+          result = unittest.TextTestRunner(verbosity=2).run(suite)
+          if not result.wasSuccessful() or result.testsRun == len(result.skipped):
+              raise SystemExit(1)
+          ' 2>&1 | tee reports/unit-tests.txt
+
+      - name: Build the versioned runtime image
+        uses: docker/build-push-action@c3c9e263c25d99ce0380d002d59b67737d91b0dc # v7.4.0
+        with:
+          context: experiments/experiment-19-github-actions-flask
+          target: runtime
+          load: true
+          tags: ${{ env.RELEASE_IMAGE }}
+          build-args: |
+            GIT_SHA=${{ github.sha }}
+            BUILD_NUMBER=${{ github.run_number }}.${{ github.run_attempt }}
+          labels: |
+            org.opencontainers.image.title=Packlight
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.source=https://github.com/Emadfar007/CSA1020---Software-Engineering
+          provenance: false
+          cache-from: type=gha,scope=packlight-exp19
+          cache-to: type=gha,scope=packlight-exp19,mode=max
+
+      - name: Verify the exact runtime container over HTTP
+        run: python3 ci/smoke.py
+
+      - name: Authenticate to Docker Hub on trusted main
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: docker/login-action@81c6f93d4bc991e510b342a00b419b3bb4efc5c6 # v4.7.0
+        with:
+          username: ${{ secrets.EXP14_DOCKERHUB_USERNAME }}
+          password: ${{ secrets.EXP14_DOCKERHUB_TOKEN }}
+
+      - name: Push the tested image and record its digest
+        id: publish
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        run: |
+          docker push "$RELEASE_IMAGE"
+          docker image inspect "$RELEASE_IMAGE" --format '{{json .RepoDigests}}' > reports/image-digests.json
+          printf '%s\n' "$RELEASE_IMAGE" > reports/published-image.txt
+          image="$(docker image inspect "$RELEASE_IMAGE" --format '{{index .RepoDigests 0}}')"
+          printf 'digest=%s\n' "${image##*@}" >> "$GITHUB_OUTPUT"
+
+      - name: Write pipeline summary
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          {
+            printf '## Packlight CI/CD\n\n'
+            printf -- '- Result: **%s**\n' "$JOB_STATUS"
+            printf -- '- Commit: `%s`\n' "$SOURCE_SHA"
+            printf -- '- Build: `%s`\n' "$BUILD_NUMBER"
+            if [[ -f reports/published-image.txt ]]; then
+              printf -- '- Docker Hub: `%s`\n' "$(cat reports/published-image.txt)"
+            fi
+            printf '\nThe separate browser deployment job waits for the running Codespaces lab to verify the published image. Pull requests validate only.\n'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Retain testing and deployment results
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: packlight-results-${{ github.run_number }}-${{ github.run_attempt }}
+          path: experiments/experiment-19-github-actions-flask/reports/
+          if-no-files-found: warn
+          retention-days: 7
+
+  browser-deploy:
+    name: Deploy Packlight to the private browser lab
+    needs: delivery
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+      deployments: write
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+      TESTED_IMAGE: coastrider7/csa1020-exp19-packlight@${{ needs.delivery.outputs.digest }}
+      BROWSER_APP_URL: https://miserable-cobweb-4j9pjv79r7w7fjrqw-8099.app.github.dev/
+    steps:
+      - name: Check out deployment protocol
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Request the tested image and wait for verified deployment
+        run: |
+          python3 browser-lab/ci/request_deployment.py \
+            --experiment 19 --image "$TESTED_IMAGE" --sha "$SOURCE_SHA" \
+            --run-id "$GITHUB_RUN_ID" --build "$BUILD_NUMBER" --url "$BROWSER_APP_URL" \
+            --output browser-deployment/receipt.json
+
+      - name: Preserve browser deployment receipt
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: packlight-browser-deployment-${{ github.run_number }}-${{ github.run_attempt }}
+          path: browser-deployment/receipt.json
+          if-no-files-found: warn
+          retention-days: 7

@@ -1,0 +1,145 @@
+{
+  "capturedAt": "2026-10-27T14:20:54.837775+00:00",
+  "demonstration": "User-approved isolated Docker engine simulating a second machine on the same laptop",
+  "hostA": {
+    "id": "97dd0351-eb84-4a7e-9779-10f050151b48",
+    "name": "docker-desktop",
+    "version": "29.9.2",
+    "images": 6,
+    "root": "/var/lib/docker"
+  },
+  "hostB": {
+    "id": "6ad82891-9bde-43d2-97bb-895e9871e8d4",
+    "name": "meridian-receiver-b",
+    "version": "29.9.2",
+    "images": 0,
+    "root": "/var/lib/docker"
+  },
+  "receiverInitiallyEmpty": true,
+  "receiverImage": "docker@sha256:9e79b879b177fbd72c34376a3dd3d91747da5db49e1f560f76aea59561471977",
+  "hostSocketMounted": false,
+  "tcpDockerApiPublished": false,
+  "commands": [
+    {
+      "command": [
+        "docker",
+        "ps",
+        "-a",
+        "--format",
+        "{{.Names}}"
+      ],
+      "exitCode": 0,
+      "seconds": 0.52,
+      "stdout": "morrow-tasks-exp16\nparcelpilot-api-exp12\nreleaseharbor-exp13-jenkins-1\nreleaseharbor-exp13-docker-1\nparcelpilot-api-exp12-before-reliability-20261027\nparcelpilot-lab-control-plane\norbital-fieldnotes-exp11\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "ls",
+        "--format",
+        "{{.Name}}"
+      ],
+      "exitCode": 0,
+      "seconds": 0.23,
+      "stdout": "591eb502fe235cbf78d42e6fc52ddd55964f2ffac1e9cb9aa299205e56d8806c\nmorrow-exp16-data\nreleaseharbor-exp13_docker-certificates\nreleaseharbor-exp13_docker-data\nreleaseharbor-exp13_jenkins-home\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "volume",
+        "create",
+        "meridian-exp17-receiver-data"
+      ],
+      "exitCode": 0,
+      "seconds": 0.23,
+      "stdout": "meridian-exp17-receiver-data\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "run",
+        "-d",
+        "--name",
+        "meridian-receiver-exp17-b",
+        "--hostname",
+        "meridian-receiver-b",
+        "--privileged",
+        "--restart",
+        "unless-stopped",
+        "--memory",
+        "384m",
+        "--cpus",
+        "1",
+        "-e",
+        "DOCKER_TLS_CERTDIR=",
+        "-p",
+        "127.0.0.1:8098:8080",
+        "--mount",
+        "type=volume,source=meridian-exp17-receiver-data,target=/var/lib/docker",
+        "--health-cmd",
+        "docker info >/dev/null 2>&1",
+        "--health-interval",
+        "30s",
+        "--health-timeout",
+        "15s",
+        "--health-start-period",
+        "30s",
+        "docker@sha256:9e79b879b177fbd72c34376a3dd3d91747da5db49e1f560f76aea59561471977",
+        "dockerd",
+        "--host=unix:///var/run/docker.sock",
+        "--storage-driver=overlay2"
+      ],
+      "exitCode": 0,
+      "seconds": 1.69,
+      "stdout": "93d988f7935f2f58db0f257cdd2e0faa8b846de6ea8b25165fc2e1a7d1ad8cfd\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "info",
+        "--format",
+        "{\"id\":\"{{.ID}}\",\"name\":\"{{.Name}}\",\"version\":\"{{.ServerVersion}}\",\"images\":{{.Images}},\"root\":\"{{.DockerRootDir}}\"}"
+      ],
+      "exitCode": 0,
+      "seconds": 1.28,
+      "stdout": "{\"id\":\"97dd0351-eb84-4a7e-9779-10f050151b48\",\"name\":\"docker-desktop\",\"version\":\"29.9.2\",\"images\":6,\"root\":\"/var/lib/docker\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "meridian-receiver-exp17-b",
+        "docker",
+        "info",
+        "--format",
+        "{\"id\":\"{{.ID}}\",\"name\":\"{{.Name}}\",\"version\":\"{{.ServerVersion}}\",\"images\":{{.Images}},\"root\":\"{{.DockerRootDir}}\"}"
+      ],
+      "exitCode": 0,
+      "seconds": 0.52,
+      "stdout": "{\"id\":\"6ad82891-9bde-43d2-97bb-895e9871e8d4\",\"name\":\"meridian-receiver-b\",\"version\":\"29.9.2\",\"images\":0,\"root\":\"/var/lib/docker\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "docker",
+        "exec",
+        "meridian-receiver-exp17-b",
+        "docker",
+        "image",
+        "ls",
+        "--format",
+        "{{json .}}"
+      ],
+      "exitCode": 0,
+      "seconds": 0.38,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

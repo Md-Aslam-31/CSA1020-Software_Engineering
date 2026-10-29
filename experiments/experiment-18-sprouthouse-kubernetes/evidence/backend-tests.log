@@ -1,0 +1,30 @@
+test_cancel_race_restores_stock_exactly_once (test_app.PostgreSQLTransactionTests.test_cancel_race_restores_stock_exactly_once) ... ok
+test_collection_keeps_stock_deducted_and_terminal (test_app.PostgreSQLTransactionTests.test_collection_keeps_stock_deducted_and_terminal) ... ok
+test_concurrent_idempotency_key_debits_stock_once (test_app.PostgreSQLTransactionTests.test_concurrent_idempotency_key_debits_stock_once) ... ok
+test_parallel_initialization_is_safe_and_does_not_reseed (test_app.PostgreSQLTransactionTests.test_parallel_initialization_is_safe_and_does_not_reseed) ... ok
+test_parallel_reservations_never_oversell (test_app.PostgreSQLTransactionTests.test_parallel_reservations_never_oversell) ... ok
+test_readiness_and_runtime_query_real_postgresql (test_app.PostgreSQLTransactionTests.test_readiness_and_runtime_query_real_postgresql) ... ok
+test_restock_accounts_for_reserved_capacity (test_app.PostgreSQLTransactionTests.test_restock_accounts_for_reserved_capacity) ... ok
+test_same_key_with_changed_payload_is_rejected (test_app.PostgreSQLTransactionTests.test_same_key_with_changed_payload_is_rejected) ... ok
+test_blank_name_and_control_characters (test_app.ValidationTests.test_blank_name_and_control_characters) ... ok
+test_catalog_enums_and_colour_validation (test_app.ValidationTests.test_catalog_enums_and_colour_validation) ... ok
+test_catalog_numeric_boundaries_and_boolean_rejection (test_app.ValidationTests.test_catalog_numeric_boundaries_and_boolean_rejection) ... ok
+test_health_does_not_require_database (test_app.ValidationTests.test_health_does_not_require_database) ... ok
+test_invalid_idempotency_key_is_rejected (test_app.ValidationTests.test_invalid_idempotency_key_is_rejected) ... ok
+test_invalid_search_and_category (test_app.ValidationTests.test_invalid_search_and_category) ... ok
+test_json_object_is_required (test_app.ValidationTests.test_json_object_is_required) ... ok
+test_only_supported_terminal_statuses_are_accepted (test_app.ValidationTests.test_only_supported_terminal_statuses_are_accepted) ... ok
+test_oversized_body_is_rejected (test_app.ValidationTests.test_oversized_body_is_rejected) ... ok
+test_readiness_requires_database_and_hides_connection_details (test_app.ValidationTests.test_readiness_requires_database_and_hides_connection_details) ... [2026-10-28 14:06:40,151] ERROR in app: Database request failed (OperationalError)
+ok
+test_request_identity_is_generated_and_safe (test_app.ValidationTests.test_request_identity_is_generated_and_safe) ... ok
+test_reservation_fields_are_checked_before_database (test_app.ValidationTests.test_reservation_fields_are_checked_before_database) ... ok
+test_restock_quantity_and_note_boundaries (test_app.ValidationTests.test_restock_quantity_and_note_boundaries) ... ok
+test_routes_return_json_404_and_405 (test_app.ValidationTests.test_routes_return_json_404_and_405) ... ok
+test_unknown_fields_do_not_reach_database (test_app.ValidationTests.test_unknown_fields_do_not_reach_database) ... ok
+test_wrong_content_type_and_malformed_json (test_app.ValidationTests.test_wrong_content_type_and_malformed_json) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 1.790s
+
+OK

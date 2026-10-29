@@ -1,0 +1,19 @@
+name: meridian-atlas-exp17
+services:
+  website:
+    image: coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+    build: .
+    container_name: meridian-atlas-exp17-a
+    ports:
+      - "127.0.0.1:8097:8080"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    mem_limit: 64m
+    cpus: 0.5
+    stop_grace_period: 15s

@@ -1,0 +1,11 @@
+instance/
+__pycache__/
+*.pyc
+.git/
+.venv/
+screenshots/
+evidence/
+*.zip
+*.log
+README.md
+SHA256SUMS.txt

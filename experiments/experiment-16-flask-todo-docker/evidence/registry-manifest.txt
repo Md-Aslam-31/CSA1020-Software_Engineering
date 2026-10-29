@@ -1,0 +1,15 @@
+Name:      docker.io/coastrider7/csa1020-exp16-morrow:1.0.0
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:8ea76f00fc6add13f0e283da863a5d9d8187d4afd97653787bee2d8975090671
+           
+Manifests: 
+  Name:        docker.io/coastrider7/csa1020-exp16-morrow:1.0.0@sha256:e3ab4003e9330caa4d97603d0bc24bf8bff33a7ba6acffbbf3e354317430aebd
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/amd64
+               
+  Name:        docker.io/coastrider7/csa1020-exp16-morrow:1.0.0@sha256:8b2a02fb252a28b06e4057cc4142dd8d04f9924725e1e9c7e2116dc2973d2527
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:e3ab4003e9330caa4d97603d0bc24bf8bff33a7ba6acffbbf3e354317430aebd
+    vnd.docker.reference.type:   attestation-manifest

@@ -1,0 +1,14 @@
+.git
+.github
+__pycache__
+*.pyc
+.venv
+.env*
+README.md
+screenshots
+evidence
+reports
+ci
+workflow
+*.zip
+SHA256SUMS.txt

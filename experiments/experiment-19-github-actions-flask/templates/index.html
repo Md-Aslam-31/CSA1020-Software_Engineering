@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A little planning. A lighter journey. Create a practical packing list for your next trip.">
+  <title>Packlight — A little less, a little further.</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a href="/" class="brand" aria-label="Packlight home"><span class="brand-mark" aria-hidden="true">↗</span>packlight<span class="brand-dot">.</span></a>
+    <span class="header-note">LESS BAGGAGE. MORE POSSIBILITY.</span>
+    <span class="release">Flask · v{{ version }}</span>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">YOUR NEXT LITTLE GETAWAY</p>
+        <h1>A little less.<br>A little <em>further.</em></h1>
+        <p class="hero-copy">Good trips start with the essentials. Tell us where your days are taking you, and make a little room for the unexpected.</p>
+      </div>
+      <div class="travel-art" aria-hidden="true">
+        <div class="sun"></div><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="luggage"><div class="handle"></div><div class="luggage-stripe"></div><span>PL</span><div class="wheel one"></div><div class="wheel two"></div></div>
+        <div class="ticket"><span>THE NEXT GOOD PLACE</span><strong>Let's go ↗</strong><div class="ticket-lines"></div></div>
+        <span class="art-caption">TAKE WHAT MATTERS.</span>
+      </div>
+    </section>
+    <div class="workspace">
+      <section class="trip-panel" aria-labelledby="trip-title">
+        <div class="section-heading"><span class="step">01</span><div><p class="eyebrow">A FEW SMALL DETAILS</p><h2 id="trip-title">Make it your trip.</h2></div></div>
+        <form id="trip-form">
+          <div class="form-pair">
+            <div><label for="days">Days away</label><input id="days" name="days" type="number" min="1" max="30" value="4" required><small>1–30 days</small></div>
+            <div><label for="travelers">Travelers</label><input id="travelers" name="travelers" type="number" min="1" max="8" value="2" required><small>1–8 people</small></div>
+          </div>
+          <label for="climate">What's the weather saying?</label>
+          <select id="climate" name="climate"><option value="warm">Warm & sunny</option><option value="cool">A little chilly</option><option value="rainy">A chance of rain</option></select>
+          <label for="activity">Where will you wander?</label>
+          <select id="activity" name="activity"><option value="city">City streets</option><option value="trail">Out on the trail</option><option value="beach">By the sea</option></select>
+          <label class="check-label" for="laundry"><input id="laundry" name="laundry" type="checkbox"><span>I'll have somewhere to do laundry.<small>Rewear a four-day rotation and pack fewer clothes.</small></span></label>
+          <button type="submit" id="plan-button">Find my essentials <span aria-hidden="true">↗</span></button>
+          <p id="form-error" class="error" role="alert" hidden></p>
+        </form>
+        <p class="panel-note">A simple starting point. Adjust for your own comfort, accessibility needs and travel plans.</p>
+      </section>
+      <section class="results-panel" aria-labelledby="results-title" aria-live="polite" aria-busy="false" id="results-panel">
+        <div class="section-heading"><span class="step">02</span><div><p class="eyebrow">ROOM FOR THE GOOD THINGS</p><h2 id="results-title">Your lighter beginning.</h2></div></div>
+        <div id="empty-state" class="empty-state"><span class="empty-icon" aria-hidden="true">✳</span><h3>Every journey starts somewhere.</h3><p>Your essentials will appear here, thoughtfully grouped and ready to pack.</p><span class="empty-pill">A place for everything. Space for more.</span></div>
+        <div id="packing-result" hidden><div class="result-summary"><p id="trip-summary"></p><div><strong id="total-items">0</strong><span>items to make room for</span></div></div><div id="categories" class="categories"></div><p class="list-note">Quantities cover the whole group. The trail first aid kit is shared.</p></div>
+      </section>
+    </div>
+  </main>
+  <footer class="wrap"><span>A LITTLE PLANNING. A LIGHTER JOURNEY.</span><span>Packlight · Experiment 19</span></footer>
+</body>
+</html>

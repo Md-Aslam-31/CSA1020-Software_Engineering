@@ -1,0 +1,208 @@
+{
+  "started_at": "2026-10-28T14:06:40.794737+00:00",
+  "base": "http://127.0.0.1:8180",
+  "checks": [
+    {
+      "name": "Catalog is served by the deployed API",
+      "passed": true
+    },
+    {
+      "name": "Three seed categories are available",
+      "passed": true
+    },
+    {
+      "name": "Search matches a real seed variety",
+      "passed": true
+    },
+    {
+      "name": "Category filter returns only herbs",
+      "passed": true
+    },
+    {
+      "name": "An unmatched search returns an empty result",
+      "passed": true
+    },
+    {
+      "name": "Overview reports actual catalogue counts",
+      "passed": true
+    },
+    {
+      "name": "Runtime confirms PostgreSQL and live pod identity",
+      "passed": true,
+      "detail": {
+        "backend_pod": "backend-dc486dfdd-nm65f",
+        "namespace": "sprouthouse-exp18",
+        "database_version": "16.15"
+      }
+    },
+    {
+      "name": "Runtime database table count agrees with catalog",
+      "passed": true
+    },
+    {
+      "name": "A custom seed variety can be created",
+      "passed": true
+    },
+    {
+      "name": "New variety has its own database identity",
+      "passed": true
+    },
+    {
+      "name": "Restock updates persisted available stock",
+      "passed": true
+    },
+    {
+      "name": "Invalid restock quantities are rejected",
+      "passed": true
+    },
+    {
+      "name": "Rejected restock leaves stock unchanged",
+      "passed": true
+    },
+    {
+      "name": "Invalid custom-seed input returns useful validation",
+      "passed": true
+    },
+    {
+      "name": "Boolean quantities cannot bypass number validation",
+      "passed": true
+    },
+    {
+      "name": "Invalid email input is rejected",
+      "passed": true
+    },
+    {
+      "name": "A missing seed returns JSON 404",
+      "passed": true
+    },
+    {
+      "name": "A missing reservation returns JSON 404",
+      "passed": true
+    },
+    {
+      "name": "Malformed JSON is rejected without a server error",
+      "passed": true
+    },
+    {
+      "name": "Non-JSON mutation requests are rejected",
+      "passed": true
+    },
+    {
+      "name": "Reservation creation deducts stock",
+      "passed": true
+    },
+    {
+      "name": "Eight concurrent requests cannot oversell two packets",
+      "passed": true,
+      "detail": {
+        "requests": 8,
+        "successful_reservations": 2,
+        "stock_conflicts": 6
+      }
+    },
+    {
+      "name": "Concurrent stock reaches zero and never becomes negative",
+      "passed": true
+    },
+    {
+      "name": "Out-of-stock requests return HTTP 409",
+      "passed": true
+    },
+    {
+      "name": "A reserved packet can be collected",
+      "passed": true
+    },
+    {
+      "name": "Repeating collection is safe and does not restore stock",
+      "passed": true
+    },
+    {
+      "name": "Collected reservations cannot be cancelled afterward",
+      "passed": true
+    },
+    {
+      "name": "Cancellation returns its packet to stock",
+      "passed": true
+    },
+    {
+      "name": "Concurrent cancellation is idempotent",
+      "passed": true
+    },
+    {
+      "name": "Concurrent cancellation restores three packets exactly once",
+      "passed": true
+    },
+    {
+      "name": "Concurrent duplicate requests create one reservation",
+      "passed": true,
+      "detail": {
+        "requests": 6,
+        "created": 1,
+        "replayed": 5
+      }
+    },
+    {
+      "name": "Duplicate requests debit two packets only once",
+      "passed": true
+    },
+    {
+      "name": "Replay responses carry an idempotency marker",
+      "passed": true
+    },
+    {
+      "name": "Reusing a key with different content is rejected",
+      "passed": true
+    },
+    {
+      "name": "Rejected key reuse changes no stock",
+      "passed": true
+    },
+    {
+      "name": "Reservation history preserves the four real workflow records",
+      "passed": true
+    },
+    {
+      "name": "The real activity log records every workflow action",
+      "passed": true
+    },
+    {
+      "name": "Overview includes the new variety and final stock",
+      "passed": true
+    },
+    {
+      "name": "Overview counts the retained active reservation and collection",
+      "passed": true
+    },
+    {
+      "name": "All original seed stocks remain unchanged",
+      "passed": true
+    },
+    {
+      "name": "Requests were served by both backend replicas",
+      "passed": true,
+      "detail": {
+        "backend_pods": [
+          "backend-dc486dfdd-nm65f",
+          "backend-dc486dfdd-p6p5z"
+        ]
+      }
+    }
+  ],
+  "backend_pods_observed": [
+    "backend-dc486dfdd-nm65f",
+    "backend-dc486dfdd-p6p5z"
+  ],
+  "fixture_policy": "One new Windowbox Basil variety and its reservation audit trail are retained. Existing seed varieties are never changed.",
+  "passed": 41,
+  "total": 41,
+  "success": true,
+  "fixture_seed_id": 29,
+  "fixture_reservation_codes": [
+    "SH-00020",
+    "SH-00019",
+    "SH-00018",
+    "SH-00017"
+  ],
+  "active_fixture_reservation_id": 20,
+  "finished_at": "2026-10-28T14:06:42.930229+00:00"
+}

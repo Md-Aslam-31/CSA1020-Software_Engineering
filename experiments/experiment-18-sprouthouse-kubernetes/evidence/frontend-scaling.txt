@@ -1,0 +1,10 @@
+deployment.apps/frontend scaled
+Waiting for deployment "frontend" rollout to finish: 1 of 3 updated replicas are available...
+Waiting for deployment "frontend" rollout to finish: 2 of 3 updated replicas are available...
+deployment "frontend" successfully rolled out
+NAME       READY   UP-TO-DATE   AVAILABLE   AGE
+frontend   3/3     3            3           45m
+NAME                        READY   STATUS    RESTARTS   AGE    IP            NODE                              NOMINATED NODE   READINESS GATES
+frontend-545554bd95-6vn5s   1/1     Running   0          3s     10.244.0.31   sprouthouse-exp18-control-plane   <none>           <none>
+frontend-545554bd95-ghpth   1/1     Running   0          108s   10.244.0.30   sprouthouse-exp18-control-plane   <none>           <none>
+frontend-545554bd95-swxgt   1/1     Running   0          3s     10.244.0.32   sprouthouse-exp18-control-plane   <none>           <none>

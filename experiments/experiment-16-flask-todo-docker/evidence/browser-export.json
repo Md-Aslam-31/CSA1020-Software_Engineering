@@ -1,0 +1,63 @@
+{
+  "app": "Morrow Task Studio",
+  "exported_at": "2026-10-27T14:01:04.110805+00:00",
+  "tasks": [
+    {
+      "category": "Planning",
+      "due_date": "2026-10-27",
+      "notes": "Choose three outcomes that would make this week feel meaningful.",
+      "priority": "high",
+      "status": "todo",
+      "title": "Map the next chapter"
+    },
+    {
+      "category": "Study",
+      "due_date": "2026-10-28",
+      "notes": "Add screenshots, rehearse the demo and check every link.",
+      "priority": "high",
+      "status": "doing",
+      "title": "Polish the project presentation"
+    },
+    {
+      "category": "Personal",
+      "due_date": "2026-10-30",
+      "notes": "An hour outside, a favourite playlist and no notifications.",
+      "priority": "low",
+      "status": "todo",
+      "title": "Take a screen free evening"
+    },
+    {
+      "category": "Study",
+      "due_date": "2026-10-26",
+      "notes": "Turn the useful ideas into small, actionable next steps.",
+      "priority": "medium",
+      "status": "todo",
+      "title": "Review last week’s notes"
+    },
+    {
+      "category": "Personal",
+      "due_date": null,
+      "notes": "Water, a short walk and ten minutes to plan the day.",
+      "priority": "medium",
+      "status": "doing",
+      "title": "Build a quieter morning routine"
+    },
+    {
+      "category": "Project",
+      "due_date": "2026-10-26",
+      "notes": "Build the Flask image and verify persistent task storage.",
+      "priority": "high",
+      "status": "done",
+      "title": "Set up the Docker workspace"
+    },
+    {
+      "category": "My experiment",
+      "due_date": "2026-10-30",
+      "notes": "The container is tested. Capture the screenshots and publish the same image to Docker Hub.",
+      "priority": "high",
+      "status": "done",
+      "title": "Prepare the Docker demonstration"
+    }
+  ],
+  "version": 1
+}

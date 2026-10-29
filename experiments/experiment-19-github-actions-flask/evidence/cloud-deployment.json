@@ -1,0 +1,43 @@
+{
+  "platform": "Render",
+  "service_id": "srv-dbh12oec6qcc73cqjt50",
+  "deploy_id": "dep-dbh142qfngtc73be0bng",
+  "accepted_http_status": 200,
+  "image": "coastrider7/csa1020-exp19-packlight@sha256:c1e3e15a0f50371c964e875fb1524e15a578dd4ce9a3eb352360bd88a6cbaf67",
+  "source_sha": "dd4d44cdf641f6c3883a5df0dc8f60526ab40d84",
+  "build_number": "2.1",
+  "github_run_id": "40714300739",
+  "application_url": "https://packlight-exp19.onrender.com",
+  "verification": {
+    "application_url": "https://packlight-exp19.onrender.com",
+    "version": {
+      "application": "Packlight",
+      "build_number": "2.1",
+      "git_sha": "dd4d44cdf641f6c3883a5df0dc8f60526ab40d84",
+      "version": "1.0.0"
+    },
+    "health_http_status": 200,
+    "packing_http_status": 200,
+    "invalid_input_http_status": 400,
+    "example_trip": {
+      "days": 4,
+      "travelers": 2,
+      "climate": "rainy",
+      "activity": "trail",
+      "laundry": false
+    },
+    "example_total_items": 47,
+    "expected_item_quantities_verified": {
+      "Tops": 8,
+      "Underwear": 10,
+      "Socks": 8,
+      "Bottoms": 4,
+      "Rain jacket": 2,
+      "Waterproof bag": 2,
+      "Trail shoes": 2,
+      "Headlamp": 2,
+      "First aid kit": 1
+    },
+    "passed": true
+  }
+}

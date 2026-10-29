@@ -1,0 +1,19 @@
+{
+  "capturedAt": "2026-10-28T14:37:05.954269+00:00",
+  "serverDryRunPassed": true,
+  "actualClusterContext": "kind-sprouthouse-exp18",
+  "namespace": "sprouthouse-exp18",
+  "runningPods": 5,
+  "allPodsReady": true,
+  "frontendReadyReplicasBeforeScaling": 1,
+  "headlamp": {
+    "name": "headlamp-545c9b5cfc-ztqrp",
+    "uid": "38ade2fb-43d5-437c-905b-da22b227cb29",
+    "ageSeconds": 1078,
+    "containerRestarts": 0,
+    "phase": "Running",
+    "diskUsage": "33020\t/tmp\n32996\t/runtime-frontend\nFilesystem                Size      Used Available Use% Mounted on\n/dev/loop4               31.3G      9.9G     19.9G  33% /runtime-frontend"
+  },
+  "clusterMutationPerformed": false,
+  "onlySourceFilesCopied": true
+}

@@ -1,0 +1,268 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 653B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#2 ...
+
+#3 [auth] library/nginx:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#2 DONE 1.2s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 2B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 74.44kB done
+#5 DONE 0.0s
+
+#6 [1/3] FROM docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#6 resolve docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951 0.0s done
+#6 CACHED
+
+#7 [2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#7 DONE 0.1s
+
+#8 [3/3] COPY index.html styles.css app.js /usr/share/nginx/html/
+#8 DONE 0.1s
+
+#9 exporting to image
+#9 exporting layers 0.1s done
+#9 exporting manifest sha256:40199b1e008ce01f446c1b879002748d6eaeff5ee6ea4b70beb0f97a22cf1b44
+#9 exporting manifest sha256:40199b1e008ce01f446c1b879002748d6eaeff5ee6ea4b70beb0f97a22cf1b44 0.0s done
+#9 exporting config sha256:1765b717fdf9dca75a38495c341f5bcab3dfa65582a28dfff64fd1dfe3e11a98 0.0s done
+#9 exporting attestation manifest sha256:cd0f36b2d09d20b297946f8c8fc3116d4845e208e562be873f89e1b302f2091f 0.0s done
+#9 exporting manifest list sha256:a6e97f51f0f4f874872ff85c14ffc9b804333663ec930a8828ee3c7427002a8f 0.0s done
+#9 naming to docker.io/library/sprouthouse-frontend:1.0.0 done
+#9 unpacking to docker.io/library/sprouthouse-frontend:1.0.0 0.0s done
+#9 DONE 0.3s
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 754B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12-slim-bookworm
+#2 DONE 1.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 83B done
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 22.00kB done
+#5 DONE 0.0s
+
+#6 [1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+#6 resolve docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337 0.0s done
+#6 DONE 0.1s
+
+#6 [1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+#6 sha256:560ad164c1fd1ea529655e9f0a0eebc06ba4ad9de73701013445883f16041990 0B / 250B 0.2s
+#6 sha256:560ad164c1fd1ea529655e9f0a0eebc06ba4ad9de73701013445883f16041990 250B / 250B 0.2s done
+#6 sha256:5b676d7ddb724969a481e77bf8fa799dd439efe94776431a478e7e4bb55a3e59 0B / 13.68MB 0.3s
+#6 sha256:a4516a4e263798f91046a65329f83ee86d1bd6aba295a387dcf47c290bd695ba 0B / 3.34MB 0.2s
+#6 sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc 0B / 28.25MB 0.2s
+#6 sha256:5b676d7ddb724969a481e77bf8fa799dd439efe94776431a478e7e4bb55a3e59 7.34MB / 13.68MB 0.5s
+#6 sha256:5b676d7ddb724969a481e77bf8fa799dd439efe94776431a478e7e4bb55a3e59 13.68MB / 13.68MB 0.6s
+#6 sha256:a4516a4e263798f91046a65329f83ee86d1bd6aba295a387dcf47c290bd695ba 3.15MB / 3.34MB 0.6s
+#6 sha256:5b676d7ddb724969a481e77bf8fa799dd439efe94776431a478e7e4bb55a3e59 13.68MB / 13.68MB 0.8s done
+#6 sha256:a4516a4e263798f91046a65329f83ee86d1bd6aba295a387dcf47c290bd695ba 3.34MB / 3.34MB 0.8s done
+#6 sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc 28.25MB / 28.25MB 0.9s
+#6 sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc 28.25MB / 28.25MB 1.3s done
+#6 extracting sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc
+#6 extracting sha256:3c5439d0ae62993af4cc4e21b8c777297e81bc40e200d4633c85a3e0f977a3bc 1.0s done
+#6 DONE 2.5s
+
+#6 [1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+#6 extracting sha256:a4516a4e263798f91046a65329f83ee86d1bd6aba295a387dcf47c290bd695ba
+#6 extracting sha256:a4516a4e263798f91046a65329f83ee86d1bd6aba295a387dcf47c290bd695ba 0.2s done
+#6 DONE 2.7s
+
+#6 [1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+#6 extracting sha256:5b676d7ddb724969a481e77bf8fa799dd439efe94776431a478e7e4bb55a3e59
+#6 extracting sha256:5b676d7ddb724969a481e77bf8fa799dd439efe94776431a478e7e4bb55a3e59 0.6s done
+#6 DONE 3.2s
+
+#6 [1/5] FROM docker.io/library/python:3.12-slim-bookworm@sha256:e697c81897302a4c4333bade000d98038fbb21eb064f8ee1fd42d02ebcd9d337
+#6 extracting sha256:560ad164c1fd1ea529655e9f0a0eebc06ba4ad9de73701013445883f16041990 0.0s done
+#6 DONE 3.3s
+
+#7 [2/5] WORKDIR /app
+#7 DONE 2.8s
+
+#8 [3/5] COPY requirements.txt .
+#8 DONE 0.1s
+
+#9 [4/5] RUN pip install --no-cache-dir -r requirements.txt     && groupadd --gid 10001 app     && useradd --uid 10001 --gid app --no-create-home --shell /usr/sbin/nologin app
+#9 1.696 Collecting Flask==3.1.3 (from -r requirements.txt (line 1))
+#9 1.821   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+#9 1.867 Collecting psycopg==3.3.6 (from psycopg[binary]==3.3.6->-r requirements.txt (line 2))
+#9 1.893   Downloading psycopg-3.3.6-py3-none-any.whl.metadata (4.4 kB)
+#9 1.943 Collecting gunicorn==26.2.0 (from -r requirements.txt (line 3))
+#9 1.969   Downloading gunicorn-26.2.0-py3-none-any.whl.metadata (5.5 kB)
+#9 2.004 Collecting blinker>=1.9.0 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 2.030   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#9 2.071 Collecting click>=8.1.3 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 2.096   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#9 2.128 Collecting itsdangerous>=2.2.0 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 2.154   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+#9 2.191 Collecting jinja2>=3.1.2 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 2.217   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#9 2.334 Collecting markupsafe>=2.1.1 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 2.360   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#9 2.401 Collecting werkzeug>=3.1.0 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 2.427   Downloading werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+#9 2.465 Collecting typing-extensions>=4.6 (from psycopg==3.3.6->psycopg[binary]==3.3.6->-r requirements.txt (line 2))
+#9 2.491   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+#9 2.696 Collecting psycopg-binary==3.3.6 (from psycopg[binary]==3.3.6->-r requirements.txt (line 2))
+#9 2.721   Downloading psycopg_binary-3.3.6-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.7 kB)
+#9 2.755 Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+#9 2.816 Downloading psycopg-3.3.6-py3-none-any.whl (215 kB)
+#9 2.868 Downloading gunicorn-26.2.0-py3-none-any.whl (228 kB)
+#9 2.899 Downloading psycopg_binary-3.3.6-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.2 MB)
+#9 2.979    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 68.8 MB/s eta 0:00:00
+#9 3.005 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 3.030 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#9 3.057 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 3.082 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 3.108 Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#9 3.134 Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#9 3.160 Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+#9 3.194 Installing collected packages: typing-extensions, psycopg-binary, markupsafe, itsdangerous, gunicorn, click, blinker, werkzeug, psycopg, jinja2, Flask
+#9 4.050 Successfully installed Flask-3.1.3 blinker-1.9.0 click-8.5.0 gunicorn-26.2.0 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.4 psycopg-3.3.6 psycopg-binary-3.3.6 typing-extensions-4.16.0 werkzeug-3.1.9
+#9 4.050 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 4.259 
+#9 4.259 [notice] A new release of pip is available: 25.0.1 -> 26.2.2
+#9 4.259 [notice] To update, run: pip install --upgrade pip
+#9 DONE 5.2s
+
+#10 [5/5] COPY --chown=10001:10001 app.py .
+#10 DONE 0.1s
+
+#11 exporting to image
+#11 exporting layers
+#11 exporting layers 1.3s done
+#11 exporting manifest sha256:3dd4bfe1526c4809e63d7ab4449d641d4690dddf8ae63bb6cb4ceac44bcee263 0.0s done
+#11 exporting config sha256:bfa38ab3396308ec3a17ffa069e4a38f182cb2a203129bfbae140a7b72f20c52 0.0s done
+#11 exporting attestation manifest sha256:6d22612cc77fb99dfb1b6f64071f52d2308f6c48d76a4a19582c719733bf5f9f 0.0s done
+#11 exporting manifest list sha256:4cb1baeecbec31c549c16977a3598c4d8d7e499e8212b27b5fe448a752159d29 0.0s done
+#11 naming to docker.io/library/sprouthouse-backend:1.0.0 done
+#11 unpacking to docker.io/library/sprouthouse-backend:1.0.0
+#11 unpacking to docker.io/library/sprouthouse-backend:1.0.0 2.2s done
+#11 DONE 3.5s
+Creating cluster "sprouthouse-exp18" ...
+ • Ensuring node image (kindest/node:v1.36.4) 🖼️  ...
+ ✓ Ensuring node image (kindest/node:v1.36.4) 🖼️
+ • Preparing nodes 📦   ...
+ ✓ Preparing nodes 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Waiting ≤ 3m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 3m0s for control-plane = Ready ⏳
+ • Ready after 17s 💚
+Set kubectl context to "kind-sprouthouse-exp18"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-sprouthouse-exp18
+
+Have a nice day! 👋
+Set kubectl context to "kind-sprouthouse-exp18"
+Image: "sprouthouse-frontend:1.0.0" with ID "sha256:a6e97f51f0f4f874872ff85c14ffc9b804333663ec930a8828ee3c7427002a8f" not yet present on node "sprouthouse-exp18-control-plane", loading...
+Image: "sprouthouse-backend:1.0.0" with ID "sha256:4cb1baeecbec31c549c16977a3598c4d8d7e499e8212b27b5fe448a752159d29" not yet present on node "sprouthouse-exp18-control-plane", loading...
+namespace/sprouthouse-exp18 created
+secret/sprouthouse-db-auth created
+configmap/sprouthouse-config created
+service/postgres created
+service/postgres-headless created
+statefulset.apps/postgres created
+service/backend created
+deployment.apps/backend created
+service/frontend created
+deployment.apps/frontend created
+serviceaccount/sprouthouse-dashboard created
+role.rbac.authorization.k8s.io/sprouthouse-dashboard-view created
+rolebinding.rbac.authorization.k8s.io/sprouthouse-dashboard-view created
+clusterrole.rbac.authorization.k8s.io/sprouthouse-dashboard-metadata created
+clusterrolebinding.rbac.authorization.k8s.io/sprouthouse-dashboard-metadata created
+configmap/sprouthouse-dashboard-config created
+service/headlamp created
+deployment.apps/headlamp created
+Waiting for 1 pods to be ready...
+partitioned roll out complete: 1 new pods have been updated...
+Waiting for deployment "backend" rollout to finish: 0 of 2 updated replicas are available...
+Waiting for deployment "backend" rollout to finish: 1 of 2 updated replicas are available...
+deployment "backend" successfully rolled out
+deployment "frontend" successfully rolled out
+Waiting for deployment "headlamp" rollout to finish: 0 of 1 updated replicas are available...
+Waiting for deployment spec update to be observed...
+Waiting for deployment spec update to be observed...
+Waiting for deployment "headlamp" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "headlamp" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "headlamp" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "headlamp" rollout to finish: 1 old replicas are pending termination...
+deployment "headlamp" successfully rolled out
+
+SproutHouse is ready. Database data remains on its retained PVC.
+Application: https://miserable-cobweb-4j9pjv79r7w7fjrqw-8180.app.github.dev/
+Dashboard:   https://miserable-cobweb-4j9pjv79r7w7fjrqw-8181.app.github.dev/
+Dashboard context: SproutHouse-Lab; namespace: sprouthouse-exp18. Both forwarded ports must stay Private.
+NAME                              STATUS   ROLES           AGE     VERSION
+sprouthouse-exp18-control-plane   Ready    control-plane   5m30s   v1.36.4
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                                                                                                          SELECTOR
+deployment.apps/backend    2/2     2            2           4m42s   backend      sprouthouse-backend:1.0.0                                                                                       app=sprouthouse,tier=backend
+deployment.apps/frontend   1/1     1            1           4m42s   frontend     sprouthouse-frontend:1.0.0                                                                                      app=sprouthouse,tier=frontend
+deployment.apps/headlamp   1/1     1            1           4m41s   headlamp     ghcr.io/headlamp-k8s/headlamp:v0.46.0@sha256:8a0ef97527544baa2b35825940ddf4db6e2d09c30cd5aa31fd269ff604cc8b75   app=sprouthouse,tier=dashboard
+
+NAME                        READY   AGE     CONTAINERS   IMAGES
+statefulset.apps/postgres   1/1     4m42s   postgres     postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+
+NAME                            READY   STATUS    RESTARTS   AGE     IP            NODE                              NOMINATED NODE   READINESS GATES
+pod/backend-dc486dfdd-nm65f     1/1     Running   0          4m42s   10.244.0.5    sprouthouse-exp18-control-plane   <none>           <none>
+pod/backend-dc486dfdd-p6p5z     1/1     Running   0          4m42s   10.244.0.6    sprouthouse-exp18-control-plane   <none>           <none>
+pod/frontend-748fd5fd69-pftl8   1/1     Running   0          4m42s   10.244.0.7    sprouthouse-exp18-control-plane   <none>           <none>
+pod/headlamp-6858dd5dd6-pmb8n   1/1     Running   0          13s     10.244.0.11   sprouthouse-exp18-control-plane   <none>           <none>
+pod/postgres-0                  1/1     Running   0          4m42s   10.244.0.10   sprouthouse-exp18-control-plane   <none>           <none>
+
+NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE     SELECTOR
+service/backend             ClusterIP   10.96.149.66    <none>        8000/TCP         4m42s   app=sprouthouse,tier=backend
+service/frontend            NodePort    10.96.237.125   <none>        8080:30180/TCP   4m42s   app=sprouthouse,tier=frontend
+service/headlamp            NodePort    10.96.200.110   <none>        4466:30181/TCP   4m41s   app=sprouthouse,tier=dashboard
+service/postgres            ClusterIP   10.96.161.192   <none>        5432/TCP         4m42s   app=sprouthouse,tier=database
+service/postgres-headless   ClusterIP   None            <none>        5432/TCP         4m42s   app=sprouthouse,tier=database
+
+NAME                                    STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE     VOLUMEMODE
+persistentvolumeclaim/data-postgres-0   Bound    pvc-f675036a-9cbb-4293-9265-f6db5f1eb0bf   512Mi      RWO            standard       <unset>                 4m43s   Filesystem
+
+Recent project events:
+84s         Normal    Pulled                  pod/headlamp-59dfcb5ddf-8x4kq           Container image "ghcr.io/headlamp-k8s/headlamp:v0.46.0" already present on machine and can be accessed by the pod
+84s         Normal    Created                 pod/headlamp-59dfcb5ddf-8x4kq           Container created
+14s         Normal    Scheduled               pod/headlamp-6858dd5dd6-pmb8n           Successfully assigned sprouthouse-exp18/headlamp-6858dd5dd6-pmb8n to sprouthouse-exp18-control-plane
+14s         Normal    SuccessfulCreate        replicaset/headlamp-6858dd5dd6          Created pod: headlamp-6858dd5dd6-pmb8n
+14s         Normal    ScalingReplicaSet       deployment/headlamp                     Scaled up replica set headlamp-6858dd5dd6 from 0 to 1
+13s         Normal    Pulled                  pod/headlamp-6858dd5dd6-pmb8n           Container image "ghcr.io/headlamp-k8s/headlamp:v0.46.0@sha256:8a0ef97527544baa2b35825940ddf4db6e2d09c30cd5aa31fd269ff604cc8b75" already present on machine and can be accessed by the pod
+13s         Normal    Created                 pod/headlamp-6858dd5dd6-pmb8n           Container created
+13s         Normal    Started                 pod/headlamp-6858dd5dd6-pmb8n           Container started
+11s         Normal    Started                 pod/headlamp-6858dd5dd6-pmb8n           Container started
+11s         Normal    Created                 pod/headlamp-6858dd5dd6-pmb8n           Container created
+11s         Normal    Pulled                  pod/headlamp-6858dd5dd6-pmb8n           Container image "ghcr.io/headlamp-k8s/headlamp:v0.46.0@sha256:8a0ef97527544baa2b35825940ddf4db6e2d09c30cd5aa31fd269ff604cc8b75" already present on machine and can be accessed by the pod
+10s         Warning   BackOff                 pod/headlamp-59dfcb5ddf-8x4kq           Back-off restarting failed container headlamp in pod headlamp-59dfcb5ddf-8x4kq_sprouthouse-exp18(5b128483-4b0c-4716-95d7-302329394d52)
+9s          Normal    SuccessfulDelete        replicaset/headlamp-59dfcb5ddf          Deleted pod: headlamp-59dfcb5ddf-8x4kq
+9s          Normal    ScalingReplicaSet       deployment/headlamp                     Scaled down replica set headlamp-59dfcb5ddf from 1 to 0

@@ -1,0 +1,49 @@
+1.0.0: Pulling from coastrider7/csa1020-exp17-meridian-atlas
+7b229517ed22: Pulling fs layer
+9f0afb44f10e: Pulling fs layer
+f19a2d3b6951: Pulling fs layer
+885725a63a7c: Pulling fs layer
+e125989d16f0: Pulling fs layer
+885725a63a7c: Waiting
+81b64ae234ef: Pulling fs layer
+bb658a254196: Pulling fs layer
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+5b8cb54cfa40: Pulling fs layer
+a548cd898e94: Pulling fs layer
+bb658a254196: Waiting
+5b8cb54cfa40: Waiting
+89ce78cac139: Pulling fs layer
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+f19a2d3b6951: Verifying Checksum
+f19a2d3b6951: Download complete
+7b229517ed22: Verifying Checksum
+7b229517ed22: Download complete
+9f0afb44f10e: Verifying Checksum
+9f0afb44f10e: Download complete
+885725a63a7c: Verifying Checksum
+885725a63a7c: Download complete
+e125989d16f0: Verifying Checksum
+e125989d16f0: Download complete
+81b64ae234ef: Verifying Checksum
+81b64ae234ef: Download complete
+bb658a254196: Verifying Checksum
+bb658a254196: Download complete
+a548cd898e94: Download complete
+89ce78cac139: Download complete
+7b229517ed22: Pull complete
+5b8cb54cfa40: Verifying Checksum
+5b8cb54cfa40: Download complete
+9f0afb44f10e: Pull complete
+f19a2d3b6951: Pull complete
+885725a63a7c: Pull complete
+e125989d16f0: Pull complete
+81b64ae234ef: Pull complete
+bb658a254196: Pull complete
+5b8cb54cfa40: Pull complete
+a548cd898e94: Pull complete
+89ce78cac139: Pull complete
+Digest: sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab
+Status: Downloaded newer image for coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0

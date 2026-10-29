@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-27T13:57:54.886418+00:00",
+  "container": {
+    "id": "8e90699cd8c11db5a5a8d1fd74ea281723ae2ca3fd2eedb08020e05beeca6667",
+    "imageId": "sha256:8ea76f00fc6add13f0e283da863a5d9d8187d4afd97653787bee2d8975090671",
+    "state": {
+      "Status": "running",
+      "Running": true,
+      "Paused": false,
+      "Restarting": false,
+      "OOMKilled": false,
+      "Dead": false,
+      "Pid": 68764,
+      "ExitCode": 0,
+      "Error": "",
+      "StartedAt": "2026-10-27T13:57:52.101213411Z",
+      "FinishedAt": "0001-01-01T00:00:00Z",
+      "Health": {
+        "Status": "starting",
+        "FailingStreak": 0,
+        "Log": []
+      }
+    },
+    "user": "10001:10001",
+    "restartPolicy": {
+      "Name": "unless-stopped",
+      "MaximumRetryCount": 0
+    },
+    "readOnly": true,
+    "ports": {
+      "8000/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "8096"
+        }
+      ]
+    },
+    "mounts": [
+      {
+        "type": "volume",
+        "name": "morrow-exp16-data",
+        "destination": "/data"
+      }
+    ],
+    "capDrop": [
+      "ALL"
+    ],
+    "securityOpt": [
+      "no-new-privileges:true"
+    ]
+  }
+}

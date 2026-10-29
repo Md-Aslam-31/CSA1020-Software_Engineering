@@ -1,0 +1,25 @@
+test_content_type_and_malformed_json (test_app.PackingTests.test_content_type_and_malformed_json) ... ok
+test_cool_beach_variation (test_app.PackingTests.test_cool_beach_variation) ... ok
+test_default_trip_and_exact_quantities (test_app.PackingTests.test_default_trip_and_exact_quantities) ... ok
+test_health_endpoint (test_app.PackingTests.test_health_endpoint) ... ok
+test_home_and_assets_are_served (test_app.PackingTests.test_home_and_assets_are_served) ... ok
+test_invalid_enumerations_rejected (test_app.PackingTests.test_invalid_enumerations_rejected) ... ok
+test_invalid_numeric_ranges_rejected (test_app.PackingTests.test_invalid_numeric_ranges_rejected) ... ok
+test_json_is_not_cached_and_no_debug_headers (test_app.PackingTests.test_json_is_not_cached_and_no_debug_headers) ... ok
+test_json_nonobjects_rejected (test_app.PackingTests.test_json_nonobjects_rejected) ... ok
+test_laundry_caps_clothes_at_four_day_rotation (test_app.PackingTests.test_laundry_caps_clothes_at_four_day_rotation) ... ok
+test_laundry_requires_json_boolean (test_app.PackingTests.test_laundry_requires_json_boolean) ... ok
+test_metadata_reports_runtime_build (test_app.PackingTests.test_metadata_reports_runtime_build) ... ok
+test_minimum_and_maximum_groups_are_bounded (test_app.PackingTests.test_minimum_and_maximum_groups_are_bounded) ... ok
+test_missing_field_rejected_with_field_details (test_app.PackingTests.test_missing_field_rejected_with_field_details) ... ok
+test_numeric_booleans_strings_and_floats_rejected (test_app.PackingTests.test_numeric_booleans_strings_and_floats_rejected) ... ok
+test_oversized_request_rejected (test_app.PackingTests.test_oversized_request_rejected) ... ok
+test_rainy_trail_kit_has_shared_first_aid (test_app.PackingTests.test_rainy_trail_kit_has_shared_first_aid) ... ok
+test_short_laundry_trip_does_not_inflate_clothes (test_app.PackingTests.test_short_laundry_trip_does_not_inflate_clothes) ... ok
+test_stateless_deterministic_results (test_app.PackingTests.test_stateless_deterministic_results) ... ok
+test_unknown_field_rejected (test_app.PackingTests.test_unknown_field_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.062s
+
+OK

@@ -1,0 +1,276 @@
+{
+  "captured_at": "2026-10-28T14:44:16.509140+00:00",
+  "audit_read_only": true,
+  "canonical_repository": {
+    "head": "9415ecd8593dd0ac7de8e65b8c17830c2509f7e9",
+    "changed_tracked_files": [
+      ".devcontainer/devcontainer.json",
+      "README.md",
+      "browser-lab/README.md",
+      "browser-lab/bin/lab"
+    ],
+    "status_lines": [
+      "M .devcontainer/devcontainer.json",
+      " M README.md",
+      " M browser-lab/README.md",
+      " M browser-lab/bin/lab"
+    ],
+    "allowed_shared_lab_files": [
+      ".devcontainer/devcontainer.json",
+      "README.md",
+      "browser-lab/README.md",
+      "browser-lab/bin/lab"
+    ],
+    "unexpected_changes": [],
+    "prior_experiment_tracked_file_count": 530,
+    "prior_experiments_differ_from_HEAD": [],
+    "prior_files_match_pre_migration_byte_hashes": true,
+    "prior_experiment_byte_hash_check_count": 530,
+    "new_experiment_source_present_in_outputs": true,
+    "new_experiment_present_in_canonical_clone": false
+  },
+  "local_docker_desktop": {
+    "application_present": false,
+    "local_data_disk_present": false,
+    "local_docker_commands_run": false
+  },
+  "local_private_backups": {
+    "directory_present": true,
+    "files_checked": 4,
+    "all_present": true,
+    "all_hashes_match": true,
+    "secret_contents_printed": false
+  },
+  "codespace": {
+    "name": "miserable-cobweb-4j9pjv79r7w7fjrqw",
+    "state_before_read_only_ssh": "Available",
+    "machine_cores": 2
+  },
+  "cloud": {
+    "captured_at": "2026-10-28T14:44:19.752734+00:00",
+    "prior_experiment_containers": [
+      {
+        "name": "orbital-fieldnotes-exp11",
+        "present": true,
+        "status": "exited",
+        "stopped": true,
+        "mounts": []
+      },
+      {
+        "name": "parcelpilot-api-exp12",
+        "present": true,
+        "status": "exited",
+        "stopped": true,
+        "mounts": []
+      },
+      {
+        "name": "parcelpilot-lab-control-plane",
+        "present": true,
+        "status": "exited",
+        "stopped": true,
+        "mounts": [
+          {
+            "type": "volume",
+            "destination": "/var",
+            "source_present": true,
+            "source_kind": "directory",
+            "docker_volume_name": "75f02d1702771814a3d6c52968b96b6f97d7cbb713b08057d5e9b3966fcc6bac"
+          },
+          {
+            "type": "bind",
+            "destination": "/lib/modules",
+            "source_present": true,
+            "source_kind": "directory",
+            "docker_volume_name": null
+          }
+        ]
+      },
+      {
+        "name": "releaseharbor-exp13-jenkins-1",
+        "present": true,
+        "status": "exited",
+        "stopped": true,
+        "mounts": [
+          {
+            "type": "bind",
+            "destination": "/certs/client",
+            "source_present": true,
+            "source_kind": "directory",
+            "docker_volume_name": null
+          },
+          {
+            "type": "bind",
+            "destination": "/var/jenkins_home",
+            "source_present": true,
+            "source_kind": "directory",
+            "docker_volume_name": null
+          },
+          {
+            "type": "bind",
+            "destination": "/run/secrets/jenkins_admin_password",
+            "source_present": true,
+            "source_kind": "file",
+            "docker_volume_name": null
+          },
+          {
+            "type": "bind",
+            "destination": "/run/secrets/seed_credentials",
+            "source_present": true,
+            "source_kind": "file",
+            "docker_volume_name": null
+          }
+        ]
+      },
+      {
+        "name": "releaseharbor-exp13-docker-1",
+        "present": true,
+        "status": "exited",
+        "stopped": true,
+        "mounts": [
+          {
+            "type": "bind",
+            "destination": "/certs/client",
+            "source_present": true,
+            "source_kind": "directory",
+            "docker_volume_name": null
+          },
+          {
+            "type": "bind",
+            "destination": "/var/lib/docker",
+            "source_present": true,
+            "source_kind": "directory",
+            "docker_volume_name": null
+          }
+        ]
+      },
+      {
+        "name": "morrow-tasks-exp16",
+        "present": true,
+        "status": "exited",
+        "stopped": true,
+        "mounts": [
+          {
+            "type": "bind",
+            "destination": "/data",
+            "source_present": true,
+            "source_kind": "directory",
+            "docker_volume_name": null
+          }
+        ]
+      },
+      {
+        "name": "meridian-atlas-exp17-a",
+        "present": true,
+        "status": "exited",
+        "stopped": true,
+        "mounts": []
+      },
+      {
+        "name": "meridian-receiver-exp17-b",
+        "present": true,
+        "status": "exited",
+        "stopped": true,
+        "mounts": [
+          {
+            "type": "bind",
+            "destination": "/var/lib/docker",
+            "source_present": true,
+            "source_kind": "directory",
+            "docker_volume_name": null
+          }
+        ]
+      }
+    ],
+    "all_prior_containers_present_and_stopped": true,
+    "all_prior_mount_sources_present": true,
+    "cloud_disk": {
+      "total_GiB": 31.326,
+      "used_GiB": 9.859,
+      "available_GiB": 19.851,
+      "usage_percent": 31.5
+    },
+    "host_memory": {
+      "MemTotal_KiB": 8132888,
+      "MemAvailable_KiB": 5140660,
+      "SwapTotal_KiB": 0,
+      "SwapFree_KiB": 0
+    },
+    "devcontainer_cgroup": {
+      "memory.max": "max",
+      "memory.current": "3267194880",
+      "memory.events": "low 0\nhigh 0\nmax 434\noom 0\noom_kill 0\noom_group_kill 0",
+      "cpu.max": "max 100000"
+    },
+    "running_docker_resource_samples": [
+      {
+        "Name": "sprouthouse-exp18-control-plane",
+        "CPUPerc": "13.66%",
+        "MemUsage": "1.194GiB / 7.756GiB",
+        "MemPerc": "15.39%",
+        "PIDs": "328"
+      }
+    ],
+    "experiment18_pod_status": [
+      {
+        "name": "backend-dc486dfdd-nm65f",
+        "phase": "Running",
+        "ready_containers": 1,
+        "total_containers": 1,
+        "restarts": 0
+      },
+      {
+        "name": "backend-dc486dfdd-p6p5z",
+        "phase": "Running",
+        "ready_containers": 1,
+        "total_containers": 1,
+        "restarts": 0
+      },
+      {
+        "name": "frontend-545554bd95-6vn5s",
+        "phase": "Running",
+        "ready_containers": 1,
+        "total_containers": 1,
+        "restarts": 0
+      },
+      {
+        "name": "frontend-545554bd95-ghpth",
+        "phase": "Running",
+        "ready_containers": 1,
+        "total_containers": 1,
+        "restarts": 0
+      },
+      {
+        "name": "frontend-545554bd95-swxgt",
+        "phase": "Running",
+        "ready_containers": 1,
+        "total_containers": 1,
+        "restarts": 0
+      },
+      {
+        "name": "headlamp-545c9b5cfc-ztqrp",
+        "phase": "Running",
+        "ready_containers": 1,
+        "total_containers": 1,
+        "restarts": 0
+      },
+      {
+        "name": "postgres-0",
+        "phase": "Running",
+        "ready_containers": 1,
+        "total_containers": 1,
+        "restarts": 0
+      }
+    ],
+    "private_backup_directory_present": true,
+    "source_data_contents_read": false,
+    "containers_or_clusters_started_stopped_deleted": false
+  },
+  "limits": [
+    "This is a point-in-time preservation and resource sample; memory/CPU/disk usage can change.",
+    "Filesystem usage is not GitHub billing usage and does not establish remaining free monthly quota.",
+    "Mounted data presence does not replace application-level restore/integrity testing.",
+    "The namespace may be changing while the root agent scales frontend and captures screenshots; pod status is a sample.",
+    "No Docker Desktop was installed or started, no prior data were deleted, and no Git commits/pushes were made."
+  ],
+  "preservation_checks_passed": true
+}

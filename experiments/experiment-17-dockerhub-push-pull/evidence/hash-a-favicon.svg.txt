@@ -1,0 +1,1 @@
+402518ea1387af93c0d055460d43774facad29baf9c5981e0786054cab1c4700  /usr/share/nginx/html/favicon.svg

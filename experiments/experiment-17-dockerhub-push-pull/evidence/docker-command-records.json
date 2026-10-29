@@ -1,0 +1,366 @@
+[
+  {
+    "step": "01-build",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "build",
+      "--progress=plain",
+      "-t",
+      "meridian-atlas:1.0.0",
+      "."
+    ],
+    "exitCode": 0,
+    "seconds": 8.34,
+    "stdout": "",
+    "stderr": "#0 building with \"desktop-linux\" instance using docker driver\n\n#1 [internal] load build definition from Dockerfile\n#1 transferring dockerfile:\n#1 transferring dockerfile: 822B 0.1s done\n#1 DONE 0.2s\n\n#2 [internal] load metadata for docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951\n#2 ...\n\n#3 [auth] library/nginx:pull token for registry-1.docker.io\n#3 DONE 0.0s\n\n#2 [internal] load metadata for docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951\n#2 DONE 2.8s\n\n#4 [internal] load .dockerignore\n#4 transferring context: 137B 0.0s done\n#4 DONE 0.1s\n\n#5 [1/3] FROM docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951\n#5 resolve docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951 0.1s done\n#5 CACHED\n\n#6 [internal] load build context\n#6 transferring context: 45.90kB 0.0s done\n#6 DONE 0.1s\n\n#7 [2/3] COPY nginx.conf /etc/nginx/nginx.conf\n#7 DONE 0.1s\n\n#8 [3/3] COPY site/ /usr/share/nginx/html/\n#8 DONE 0.1s\n\n#9 exporting to image\n#9 exporting layers\n#9 exporting layers 0.2s done\n#9 exporting manifest sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b 0.0s done\n#9 exporting config sha256:883d58d5b40a504cf09620ff0727babf1487188f36959a0639c3395a68fcea1a 0.0s done\n#9 exporting attestation manifest sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7\n#9 exporting attestation manifest sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7 0.0s done\n#9 exporting manifest list sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab 0.0s done\n#9 naming to docker.io/library/meridian-atlas:1.0.0 done\n#9 unpacking to docker.io/library/meridian-atlas:1.0.0 0.1s done\n#9 DONE 0.6s\n\nView build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/b0hvoxzq2a7l0di4djzsozcbe\n"
+  },
+  {
+    "step": "02-tag-version",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "tag",
+      "meridian-atlas:1.0.0",
+      "coastrider7/csa1020-exp17-meridian-atlas:1.0.0"
+    ],
+    "exitCode": 0,
+    "seconds": 0.36,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "step": "03-tag-latest",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "tag",
+      "meridian-atlas:1.0.0",
+      "coastrider7/csa1020-exp17-meridian-atlas:latest"
+    ],
+    "exitCode": 0,
+    "seconds": 0.39,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "step": "04-tag-list",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "image",
+      "ls",
+      "coastrider7/csa1020-exp17-meridian-atlas",
+      "--format",
+      "{{.Repository}}:{{.Tag}} {{.ID}} {{.Size}}"
+    ],
+    "exitCode": 0,
+    "seconds": 0.42,
+    "stdout": "coastrider7/csa1020-exp17-meridian-atlas:1.0.0 b594c04908b6 92.8MB\ncoastrider7/csa1020-exp17-meridian-atlas:latest b594c04908b6 92.8MB\n",
+    "stderr": ""
+  },
+  {
+    "step": "05-run-builder",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "compose",
+      "up",
+      "-d",
+      "--no-build"
+    ],
+    "exitCode": 0,
+    "seconds": 2.45,
+    "stdout": "",
+    "stderr": " Network meridian-atlas-exp17_default Creating \n Network meridian-atlas-exp17_default Creating \n Network meridian-atlas-exp17_default Created \n Network meridian-atlas-exp17_default Created \n Container meridian-atlas-exp17-a Creating \n Container meridian-atlas-exp17-a Created \n Container meridian-atlas-exp17-a Starting \n Container meridian-atlas-exp17-a Started \n"
+  },
+  {
+    "step": "06-push-version",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "push",
+      "coastrider7/csa1020-exp17-meridian-atlas:1.0.0"
+    ],
+    "exitCode": 0,
+    "seconds": 25.84,
+    "stdout": "The push refers to repository [docker.io/coastrider7/csa1020-exp17-meridian-atlas]\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n9f0afb44f10e: Waiting\n44136fa355b3: Waiting\n7b229517ed22: Mounted from library/docker\nf19a2d3b6951: Waiting\n44136fa355b3: Waiting\nf19a2d3b6951: Waiting\n44136fa355b3: Waiting\nf19a2d3b6951: Waiting\n44136fa355b3: Mounted from coastrider7/csa1020-exp16-morrow\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\ne125989d16f0: Waiting\n885725a63a7c: Waiting\ne125989d16f0: Waiting\n885725a63a7c: Waiting\n5414761ff56a: Pushed\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\n81b64ae234ef: Waiting\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\n81b64ae234ef: Waiting\nbb658a254196: Waiting\nf19a2d3b6951: Pushed\n81b64ae234ef: Waiting\nbb658a254196: Waiting\n5b8cb54cfa40: Waiting\nbb658a254196: Waiting\n885725a63a7c: Pushed\nbb658a254196: Waiting\n5b8cb54cfa40: Waiting\n5b8cb54cfa40: Waiting\nbb658a254196: Waiting\nbb658a254196: Waiting\ne125989d16f0: Pushed\na548cd898e94: Waiting\n5b8cb54cfa40: Waiting\nbb658a254196: Waiting\na548cd898e94: Waiting\n5b8cb54cfa40: Waiting\na548cd898e94: Waiting\n5b8cb54cfa40: Waiting\na548cd898e94: Waiting\n81b64ae234ef: Pushed\n89ce78cac139: Waiting\na548cd898e94: Waiting\n89ce78cac139: Waiting\na548cd898e94: Waiting\n89ce78cac139: Waiting\na548cd898e94: Waiting\n89ce78cac139: Waiting\n89ce78cac139: Waiting\nbb658a254196: Pushed\n89ce78cac139: Waiting\n9f0afb44f10e: Pushed\na548cd898e94: Pushed\n89ce78cac139: Pushed\n5b8cb54cfa40: Pushed\n1.0.0: digest: sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab size: 856\n",
+    "stderr": ""
+  },
+  {
+    "step": "07-push-latest",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "push",
+      "coastrider7/csa1020-exp17-meridian-atlas:latest"
+    ],
+    "exitCode": 0,
+    "seconds": 5.5,
+    "stdout": "The push refers to repository [docker.io/coastrider7/csa1020-exp17-meridian-atlas]\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n9f0afb44f10e: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\nf19a2d3b6951: Waiting\nf19a2d3b6951: Layer already exists\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\n9f0afb44f10e: Layer already exists\n7b229517ed22: Waiting\n885725a63a7c: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\n81b64ae234ef: Waiting\n7b229517ed22: Waiting\n885725a63a7c: Waiting\ne125989d16f0: Waiting\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\nbb658a254196: Waiting\n7b229517ed22: Layer already exists\n885725a63a7c: Layer already exists\n5b8cb54cfa40: Waiting\nbb658a254196: Waiting\n5b8cb54cfa40: Waiting\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\nbb658a254196: Waiting\na548cd898e94: Waiting\n89ce78cac139: Waiting\n5b8cb54cfa40: Waiting\ne125989d16f0: Layer already exists\n81b64ae234ef: Layer already exists\n44136fa355b3: Waiting\n44136fa355b3: Waiting\nbb658a254196: Layer already exists\na548cd898e94: Waiting\n89ce78cac139: Waiting\n5b8cb54cfa40: Layer already exists\n5414761ff56a: Waiting\n89ce78cac139: Waiting\n5414761ff56a: Waiting\n44136fa355b3: Waiting\na548cd898e94: Waiting\na548cd898e94: Layer already exists\n89ce78cac139: Layer already exists\n5414761ff56a: Already exists\n44136fa355b3: Already exists\nlatest: digest: sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab size: 856\n",
+    "stderr": ""
+  },
+  {
+    "step": "08-registry-manifest",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "buildx",
+      "imagetools",
+      "inspect",
+      "coastrider7/csa1020-exp17-meridian-atlas:1.0.0"
+    ],
+    "exitCode": 0,
+    "seconds": 2.61,
+    "stdout": "Name:      docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0\nMediaType: application/vnd.oci.image.index.v1+json\nDigest:    sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab\n           \nManifests: \n  Name:        docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0@sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b\n  MediaType:   application/vnd.oci.image.manifest.v1+json\n  Platform:    linux/amd64\n               \n  Name:        docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0@sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7\n  MediaType:   application/vnd.oci.image.manifest.v1+json\n  Platform:    unknown/unknown\n  Annotations: \n    vnd.docker.reference.digest: sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b\n    vnd.docker.reference.type:   attestation-manifest\n",
+    "stderr": ""
+  },
+  {
+    "step": "09-receiver-empty",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "images",
+      "-q"
+    ],
+    "exitCode": 0,
+    "seconds": 0.83,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "step": "10-pull-receiver",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "pull",
+      "coastrider7/csa1020-exp17-meridian-atlas:1.0.0"
+    ],
+    "exitCode": 0,
+    "seconds": 17.78,
+    "stdout": "1.0.0: Pulling from coastrider7/csa1020-exp17-meridian-atlas\n7b229517ed22: Pulling fs layer\n9f0afb44f10e: Pulling fs layer\nf19a2d3b6951: Pulling fs layer\n885725a63a7c: Pulling fs layer\ne125989d16f0: Pulling fs layer\n885725a63a7c: Waiting\n81b64ae234ef: Pulling fs layer\nbb658a254196: Pulling fs layer\ne125989d16f0: Waiting\n81b64ae234ef: Waiting\n5b8cb54cfa40: Pulling fs layer\na548cd898e94: Pulling fs layer\nbb658a254196: Waiting\n5b8cb54cfa40: Waiting\n89ce78cac139: Pulling fs layer\na548cd898e94: Waiting\n89ce78cac139: Waiting\nf19a2d3b6951: Verifying Checksum\nf19a2d3b6951: Download complete\n7b229517ed22: Verifying Checksum\n7b229517ed22: Download complete\n9f0afb44f10e: Verifying Checksum\n9f0afb44f10e: Download complete\n885725a63a7c: Verifying Checksum\n885725a63a7c: Download complete\ne125989d16f0: Verifying Checksum\ne125989d16f0: Download complete\n81b64ae234ef: Verifying Checksum\n81b64ae234ef: Download complete\nbb658a254196: Verifying Checksum\nbb658a254196: Download complete\na548cd898e94: Download complete\n89ce78cac139: Download complete\n7b229517ed22: Pull complete\n5b8cb54cfa40: Verifying Checksum\n5b8cb54cfa40: Download complete\n9f0afb44f10e: Pull complete\nf19a2d3b6951: Pull complete\n885725a63a7c: Pull complete\ne125989d16f0: Pull complete\n81b64ae234ef: Pull complete\nbb658a254196: Pull complete\n5b8cb54cfa40: Pull complete\na548cd898e94: Pull complete\n89ce78cac139: Pull complete\nDigest: sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab\nStatus: Downloaded newer image for coastrider7/csa1020-exp17-meridian-atlas:1.0.0\ndocker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0\n",
+    "stderr": ""
+  },
+  {
+    "step": "11-receiver-image",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "image",
+      "inspect",
+      "coastrider7/csa1020-exp17-meridian-atlas:1.0.0"
+    ],
+    "exitCode": 0,
+    "seconds": 0.67,
+    "stdout": "[\n    {\n        \"Id\": \"sha256:883d58d5b40a504cf09620ff0727babf1487188f36959a0639c3395a68fcea1a\",\n        \"RepoTags\": [\n            \"coastrider7/csa1020-exp17-meridian-atlas:1.0.0\"\n        ],\n        \"RepoDigests\": [\n            \"coastrider7/csa1020-exp17-meridian-atlas@sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab\"\n        ],\n        \"Comment\": \"buildkit.dockerfile.v0\",\n        \"Created\": \"2026-10-27T14:24:32.076544208Z\",\n        \"Config\": {\n            \"User\": \"101:101\",\n            \"ExposedPorts\": {\n                \"80/tcp\": {},\n                \"8080/tcp\": {}\n            },\n            \"Env\": [\n                \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                \"NGINX_VERSION=1.30.6\",\n                \"PKG_RELEASE=1\",\n                \"DYNPKG_RELEASE=1\",\n                \"NJS_VERSION=1.0.2\",\n                \"NJS_RELEASE=1\",\n                \"ACME_VERSION=0.4.1\"\n            ],\n            \"Entrypoint\": [\n                \"nginx\"\n            ],\n            \"Cmd\": [\n                \"-g\",\n                \"daemon off;\"\n            ],\n            \"WorkingDir\": \"/\",\n            \"Labels\": {\n                \"maintainer\": \"NGINX Docker Maintainers <docker-maint@nginx.com>\",\n                \"org.opencontainers.image.description\": \"CSA1020 Experiment 17 static city field guide for a verified Docker Hub push and pull workflow\",\n                \"org.opencontainers.image.title\": \"Meridian Atlas\",\n                \"org.opencontainers.image.version\": \"1.0.0\"\n            },\n            \"StopSignal\": \"SIGQUIT\",\n            \"ArgsEscaped\": true,\n            \"Healthcheck\": {\n                \"Test\": [\n                    \"CMD-SHELL\",\n                    \"wget -q -O /dev/null http://127.0.0.1:8080/healthz || exit 1\"\n                ],\n                \"Interval\": 30000000000,\n                \"Timeout\": 15000000000,\n                \"StartPeriod\": 20000000000,\n                \"Retries\": 3\n            }\n        },\n        \"Architecture\": \"amd64\",\n        \"Os\": \"linux\",\n        \"Size\": 62379008,\n        \"GraphDriver\": {\n            \"Data\": {\n                \"LowerDir\": \"/var/lib/docker/overlay2/56ed453b79f64b21d2d8d1fdf0f5a903a814e0a71fbd4dca2f22332d455a1187/diff:/var/lib/docker/overlay2/b6bd94f6356a5de003de7c61d61bd61376e1b06206711ebc7842c761bb001a3e/diff:/var/lib/docker/overlay2/e3d0c8541c861d429ce10cfa6ac874df3ccfe506decc542d2da4cf90f59b2f86/diff:/var/lib/docker/overlay2/df6a2a104199d269814f901f5a14e9c31e80f3d21ced9fbf6cc24ec5f0f371f6/diff:/var/lib/docker/overlay2/896c18f1683d1dcc9c11f82b27b6d725ba0720efcb89e08e1867b520027dc335/diff:/var/lib/docker/overlay2/73805d0f8003dc0eae6976af1f93f0d5e2c4623eb8a797a2263337a1c3e7f204/diff:/var/lib/docker/overlay2/b62dfb775ce88528e0a4a739892b1f7444dbd91aca64f6a0584ad6646b88b9c0/diff:/var/lib/docker/overlay2/851ce4f601be27f1211f47390cee4d288f4ec913e21e06941df5f31cdb9cb06a/diff:/var/lib/docker/overlay2/06c4731b1f3c1600a9e2e32de5cc559bd24e8b40165fb1c48b228182d7c37af7/diff\",\n                \"MergedDir\": \"/var/lib/docker/overlay2/09a692a1b7c9a45c74456bd591dee6dd7723db7be4207215af85a19917d86259/merged\",\n                \"UpperDir\": \"/var/lib/docker/overlay2/09a692a1b7c9a45c74456bd591dee6dd7723db7be4207215af85a19917d86259/diff\",\n                \"WorkDir\": \"/var/lib/docker/overlay2/09a692a1b7c9a45c74456bd591dee6dd7723db7be4207215af85a19917d86259/work\"\n            },\n            \"Name\": \"overlay2\"\n        },\n        \"RootFS\": {\n            \"Type\": \"layers\",\n            \"Layers\": [\n                \"sha256:75c137aedfb2760f88629236cb7b797630aed0c3d91d626d1d1bb694878fc2ba\",\n                \"sha256:5b91dba2fc11b3e6dab4d25e913db11e6e701065af717028e060dfb5ab8532e4\",\n                \"sha256:a8a09d37d441c540c613402fa23c75308b04f4801e80f6d193316949f3df4b42\",\n                \"sha256:d87f6628aa86314e48021285bd5dce15a2cf5166c1c80246d2e03dbb674abaf2\",\n                \"sha256:313dac429378b98567656151706777045067624f9a6678873dd6fdc7ecf35545\",\n                \"sha256:2ba21653acee34632d9eab26da39a5ff0cac12021817e6a5e9efac9507628575\",\n                \"sha256:3212502c73d1691bd2b186efdda493ca750fc99795b6b0b85741af01b4e79aa4\",\n                \"sha256:8ff2a17964b4a163c6ba0fa456ebd70ed12823a74324ba3b6f49d87bc25c1456\",\n                \"sha256:9ffdfac1053746ca4f9c8f70b79b4d2b4267e990fa5c20df54c8802f82421719\",\n                \"sha256:86b89a4647f678bef14f5e61e6885483d7d592816c1a023f659320e9048e0774\"\n            ]\n        },\n        \"Metadata\": {\n            \"LastTagTime\": \"0001-01-01T00:00:00Z\"\n        }\n    }\n]\n",
+    "stderr": ""
+  },
+  {
+    "step": "12-run-receiver",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "run",
+      "-d",
+      "--name",
+      "meridian-atlas-exp17-b",
+      "--restart",
+      "unless-stopped",
+      "--read-only",
+      "--tmpfs",
+      "/tmp:rw,noexec,nosuid,size=16m",
+      "--cap-drop",
+      "ALL",
+      "--security-opt",
+      "no-new-privileges:true",
+      "--memory",
+      "64m",
+      "--cpus",
+      "0.5",
+      "-p",
+      "8080:8080",
+      "coastrider7/csa1020-exp17-meridian-atlas@sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab"
+    ],
+    "exitCode": 0,
+    "seconds": 2.33,
+    "stdout": "1e75e5b621371de768537a5c2a49870631dfa1ba0d019dff081adcece635ef67\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-a-app.js",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-a",
+      "sha256sum",
+      "/usr/share/nginx/html/app.js"
+    ],
+    "exitCode": 0,
+    "seconds": 0.72,
+    "stdout": "83e0af8dc64940f0f165b56a73cbdf9b01b74703c4c9f50528df82788a9897a7  /usr/share/nginx/html/app.js\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-b-app.js",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-b",
+      "sha256sum",
+      "/usr/share/nginx/html/app.js"
+    ],
+    "exitCode": 0,
+    "seconds": 0.72,
+    "stdout": "83e0af8dc64940f0f165b56a73cbdf9b01b74703c4c9f50528df82788a9897a7  /usr/share/nginx/html/app.js\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-a-build-info.json",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-a",
+      "sha256sum",
+      "/usr/share/nginx/html/build-info.json"
+    ],
+    "exitCode": 0,
+    "seconds": 0.41,
+    "stdout": "0f53abcbe7116b281b8422fafd3d35796919286262c373089cf235c6afdea77f  /usr/share/nginx/html/build-info.json\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-b-build-info.json",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-b",
+      "sha256sum",
+      "/usr/share/nginx/html/build-info.json"
+    ],
+    "exitCode": 0,
+    "seconds": 0.53,
+    "stdout": "0f53abcbe7116b281b8422fafd3d35796919286262c373089cf235c6afdea77f  /usr/share/nginx/html/build-info.json\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-a-favicon.svg",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-a",
+      "sha256sum",
+      "/usr/share/nginx/html/favicon.svg"
+    ],
+    "exitCode": 0,
+    "seconds": 0.42,
+    "stdout": "402518ea1387af93c0d055460d43774facad29baf9c5981e0786054cab1c4700  /usr/share/nginx/html/favicon.svg\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-b-favicon.svg",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-b",
+      "sha256sum",
+      "/usr/share/nginx/html/favicon.svg"
+    ],
+    "exitCode": 0,
+    "seconds": 0.66,
+    "stdout": "402518ea1387af93c0d055460d43774facad29baf9c5981e0786054cab1c4700  /usr/share/nginx/html/favicon.svg\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-a-index.html",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-a",
+      "sha256sum",
+      "/usr/share/nginx/html/index.html"
+    ],
+    "exitCode": 0,
+    "seconds": 0.42,
+    "stdout": "a0a036ffdd5dbdd6edcdac2fd6e4e0e733d73b88806c89d49dd8e9ac738f8d28  /usr/share/nginx/html/index.html\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-b-index.html",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-b",
+      "sha256sum",
+      "/usr/share/nginx/html/index.html"
+    ],
+    "exitCode": 0,
+    "seconds": 0.55,
+    "stdout": "a0a036ffdd5dbdd6edcdac2fd6e4e0e733d73b88806c89d49dd8e9ac738f8d28  /usr/share/nginx/html/index.html\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-a-styles.css",
+    "host": "Builder A",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-a",
+      "sha256sum",
+      "/usr/share/nginx/html/styles.css"
+    ],
+    "exitCode": 0,
+    "seconds": 0.34,
+    "stdout": "41a3bcdffec1f6be20ad488f0353d13c641f0c6823697ef9d17b46b5f68ecadd  /usr/share/nginx/html/styles.css\n",
+    "stderr": ""
+  },
+  {
+    "step": "hash-b-styles.css",
+    "host": "Receiver B",
+    "command": [
+      "docker",
+      "exec",
+      "meridian-receiver-exp17-b",
+      "docker",
+      "exec",
+      "meridian-atlas-exp17-b",
+      "sha256sum",
+      "/usr/share/nginx/html/styles.css"
+    ],
+    "exitCode": 0,
+    "seconds": 0.5,
+    "stdout": "41a3bcdffec1f6be20ad488f0353d13c641f0c6823697ef9d17b46b5f68ecadd  /usr/share/nginx/html/styles.css\n",
+    "stderr": ""
+  }
+]

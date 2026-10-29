@@ -1,0 +1,29 @@
+{
+  "completedAt": "2026-10-28T14:41:47.087211+00:00",
+  "frontendSourceSha256": {
+    "app.js": "966809e2dabc2c8ec9837bd7466d778d971d306fe651a8b0449804b1f8334bc2",
+    "Dockerfile": "9cfd25daf35bac096cd5a715abbe571818bf7dffac4a6924fb01e776cd3a16c5",
+    "index.html": "bfe587c518183f2f2bef8b8b9daf48f45884fe1d01fba6a757331ee63d30cf62",
+    "nginx.conf": "082d0b8b55420abe2dbb8ab9dd8a01466f9b7d444dcff143dac992e49fcb3c7b",
+    "styles.css": "5eba60277b094da04b9aadd593cd4fafb132d1239b3387464e289d8cd4ce358e"
+  },
+  "dockerImageId": "sha256:f6366d8e6ef5cfb43aa489364128aac9e4105e35cefd7caec8d50e4f348f773d",
+  "dockerImageCreated": "2026-10-28T14:41:39.978720792Z",
+  "oldFrontendPod": "frontend-748fd5fd69-pftl8",
+  "oldFrontendPodUid": "4a58ef63-70d7-4ef9-aac0-c7583d44242b",
+  "newFrontendPod": "frontend-545554bd95-ghpth",
+  "newFrontendPodUid": "798c30c6-2837-4191-bcfc-270a2e80dac8",
+  "kubernetesImageId": "docker.io/library/import-2026-10-28@sha256:01ed479de352e480b26701be108c2f2db6dd8a0211f2eb6165f1469c649b7e67",
+  "frontendReadyReplicas": 1,
+  "servedAppJsMatchesFinalSource": true,
+  "backendAndDatabasePodIdentitiesAndRestartsUnchanged": true,
+  "temporary8080PortForwardsStopped": [
+    {
+      "pid": 40727,
+      "command": "/workspaces/.lab-data/tools/kubectl -n sprouthouse-exp18 port-forward --address=127.0.0.1 service/frontend 8080:8080"
+    }
+  ],
+  "ports8180And8181Untouched": true,
+  "scalingPerformed": false,
+  "passed": true
+}

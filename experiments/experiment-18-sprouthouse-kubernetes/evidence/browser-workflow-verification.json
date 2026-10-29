@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-28",
+  "method": "Actual Chrome UI interactions and accessibility observations through the private Codespaces app port",
+  "sample_data_only": true,
+  "checks": [
+    {"action": "Search catalog for basil", "observed": "Genovese Basil and Windowbox Basil displayed"},
+    {"action": "Reserve two Genovese Basil packets for sample grower Maya Patel", "observed": "Reservation SH-00021 saved and stock changed from 40 to 38"},
+    {"action": "Confirm pickup through Mark collected", "observed": "SH-00021 became Collected; collected packet count increased to 3"},
+    {"action": "Restock Genovese Basil by five with a donation note", "observed": "Available stock changed from 38 to 43; activity recorded the note"},
+    {"action": "Add Balcony Spinach, Urban emerald, Vegetables, partial shade, 40 days, 15 packets", "observed": "Catalog increased from 13 to 14 varieties; new stock and activity persisted"},
+    {"action": "Clear search, select Vegetables, sort by Quickest to harvest", "observed": "Seven vegetable varieties displayed, beginning with 25-day Breakfast Radish then 40-day Balcony Spinach"},
+    {"action": "Open growing guide and return to workspace", "observed": "Four-step guide and sample-workspace explanation displayed; Ready to grow closed the dialog"},
+    {"action": "Open cancellation for SH-00020 then choose Keep it as it is", "observed": "Confirmation described stock return; reservation remained Ready to collect"},
+    {"action": "Open Community activity", "observed": "New variety, restock, reservation and collection history displayed from the database"},
+    {"action": "Reload after frontend rollout and database restart, then open System overview", "observed": "Actual frontend and backend pod names, PostgreSQL connected, 14 catalog rows, 5 reservations and 14 activities displayed"},
+    {"action": "Inspect final dashboard link", "observed": "Points to Headlamp Deployments filtered to sprouthouse-exp18"},
+    {"action": "Inspect Chrome warning/error logs", "observed": "No entries returned"},
+    {"action": "Open actual Headlamp Deployments, Pods, Services and PVC pages", "observed": "Before/after replicas, seven final Ready/Running pods, real ports and Bound PVC verified and photographed"}
+  ],
+  "cancellation_api_proof": "live-api-tests.json separately verifies actual cancellation, stock restoration and concurrent repeated cancellation",
+  "screenshots": "Twelve actual, unedited browser screenshots are stored in ../screenshots; their counts reflect the point in the workflow when captured",
+  "email_or_payment_sent": false,
+  "database_mutations_after_persistence_snapshot": false
+}

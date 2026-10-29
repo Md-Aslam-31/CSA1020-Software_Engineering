@@ -1,0 +1,542 @@
+Builder A — 01-build
+docker build --progress=plain -t meridian-atlas:1.0.0 .
+Exit code: 0
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 822B 0.1s done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#2 ...
+
+#3 [auth] library/nginx:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#2 DONE 2.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 137B 0.0s done
+#4 DONE 0.1s
+
+#5 [1/3] FROM docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#5 resolve docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951 0.1s done
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 45.90kB 0.0s done
+#6 DONE 0.1s
+
+#7 [2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#7 DONE 0.1s
+
+#8 [3/3] COPY site/ /usr/share/nginx/html/
+#8 DONE 0.1s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 0.2s done
+#9 exporting manifest sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b 0.0s done
+#9 exporting config sha256:883d58d5b40a504cf09620ff0727babf1487188f36959a0639c3395a68fcea1a 0.0s done
+#9 exporting attestation manifest sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7
+#9 exporting attestation manifest sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7 0.0s done
+#9 exporting manifest list sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab 0.0s done
+#9 naming to docker.io/library/meridian-atlas:1.0.0 done
+#9 unpacking to docker.io/library/meridian-atlas:1.0.0 0.1s done
+#9 DONE 0.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/b0hvoxzq2a7l0di4djzsozcbe
+
+
+Builder A — 02-tag-version
+docker tag meridian-atlas:1.0.0 coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+Exit code: 0
+
+
+Builder A — 03-tag-latest
+docker tag meridian-atlas:1.0.0 coastrider7/csa1020-exp17-meridian-atlas:latest
+Exit code: 0
+
+
+Builder A — 04-tag-list
+docker image ls coastrider7/csa1020-exp17-meridian-atlas --format {{.Repository}}:{{.Tag}} {{.ID}} {{.Size}}
+Exit code: 0
+coastrider7/csa1020-exp17-meridian-atlas:1.0.0 b594c04908b6 92.8MB
+coastrider7/csa1020-exp17-meridian-atlas:latest b594c04908b6 92.8MB
+
+
+Builder A — 05-run-builder
+docker compose up -d --no-build
+Exit code: 0
+ Network meridian-atlas-exp17_default Creating 
+ Network meridian-atlas-exp17_default Creating 
+ Network meridian-atlas-exp17_default Created 
+ Network meridian-atlas-exp17_default Created 
+ Container meridian-atlas-exp17-a Creating 
+ Container meridian-atlas-exp17-a Created 
+ Container meridian-atlas-exp17-a Starting 
+ Container meridian-atlas-exp17-a Started 
+
+
+Builder A — 06-push-version
+docker push coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+Exit code: 0
+The push refers to repository [docker.io/coastrider7/csa1020-exp17-meridian-atlas]
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+44136fa355b3: Waiting
+7b229517ed22: Mounted from library/docker
+f19a2d3b6951: Waiting
+44136fa355b3: Waiting
+f19a2d3b6951: Waiting
+44136fa355b3: Waiting
+f19a2d3b6951: Waiting
+44136fa355b3: Mounted from coastrider7/csa1020-exp16-morrow
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+e125989d16f0: Waiting
+885725a63a7c: Waiting
+e125989d16f0: Waiting
+885725a63a7c: Waiting
+5414761ff56a: Pushed
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+81b64ae234ef: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+81b64ae234ef: Waiting
+bb658a254196: Waiting
+f19a2d3b6951: Pushed
+81b64ae234ef: Waiting
+bb658a254196: Waiting
+5b8cb54cfa40: Waiting
+bb658a254196: Waiting
+885725a63a7c: Pushed
+bb658a254196: Waiting
+5b8cb54cfa40: Waiting
+5b8cb54cfa40: Waiting
+bb658a254196: Waiting
+bb658a254196: Waiting
+e125989d16f0: Pushed
+a548cd898e94: Waiting
+5b8cb54cfa40: Waiting
+bb658a254196: Waiting
+a548cd898e94: Waiting
+5b8cb54cfa40: Waiting
+a548cd898e94: Waiting
+5b8cb54cfa40: Waiting
+a548cd898e94: Waiting
+81b64ae234ef: Pushed
+89ce78cac139: Waiting
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+89ce78cac139: Waiting
+bb658a254196: Pushed
+89ce78cac139: Waiting
+9f0afb44f10e: Pushed
+a548cd898e94: Pushed
+89ce78cac139: Pushed
+5b8cb54cfa40: Pushed
+1.0.0: digest: sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab size: 856
+
+
+Builder A — 07-push-latest
+docker push coastrider7/csa1020-exp17-meridian-atlas:latest
+Exit code: 0
+The push refers to repository [docker.io/coastrider7/csa1020-exp17-meridian-atlas]
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+f19a2d3b6951: Layer already exists
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+9f0afb44f10e: Layer already exists
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+81b64ae234ef: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+e125989d16f0: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+bb658a254196: Waiting
+7b229517ed22: Layer already exists
+885725a63a7c: Layer already exists
+5b8cb54cfa40: Waiting
+bb658a254196: Waiting
+5b8cb54cfa40: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+bb658a254196: Waiting
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+5b8cb54cfa40: Waiting
+e125989d16f0: Layer already exists
+81b64ae234ef: Layer already exists
+44136fa355b3: Waiting
+44136fa355b3: Waiting
+bb658a254196: Layer already exists
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+5b8cb54cfa40: Layer already exists
+5414761ff56a: Waiting
+89ce78cac139: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+a548cd898e94: Waiting
+a548cd898e94: Layer already exists
+89ce78cac139: Layer already exists
+5414761ff56a: Already exists
+44136fa355b3: Already exists
+latest: digest: sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab size: 856
+
+
+Builder A — 08-registry-manifest
+docker buildx imagetools inspect coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+Exit code: 0
+Name:      docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab
+           
+Manifests: 
+  Name:        docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0@sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/amd64
+               
+  Name:        docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0@sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b
+    vnd.docker.reference.type:   attestation-manifest
+
+
+Receiver B — 09-receiver-empty
+docker exec meridian-receiver-exp17-b docker images -q
+Exit code: 0
+
+
+Receiver B — 10-pull-receiver
+docker exec meridian-receiver-exp17-b docker pull coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+Exit code: 0
+1.0.0: Pulling from coastrider7/csa1020-exp17-meridian-atlas
+7b229517ed22: Pulling fs layer
+9f0afb44f10e: Pulling fs layer
+f19a2d3b6951: Pulling fs layer
+885725a63a7c: Pulling fs layer
+e125989d16f0: Pulling fs layer
+885725a63a7c: Waiting
+81b64ae234ef: Pulling fs layer
+bb658a254196: Pulling fs layer
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+5b8cb54cfa40: Pulling fs layer
+a548cd898e94: Pulling fs layer
+bb658a254196: Waiting
+5b8cb54cfa40: Waiting
+89ce78cac139: Pulling fs layer
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+f19a2d3b6951: Verifying Checksum
+f19a2d3b6951: Download complete
+7b229517ed22: Verifying Checksum
+7b229517ed22: Download complete
+9f0afb44f10e: Verifying Checksum
+9f0afb44f10e: Download complete
+885725a63a7c: Verifying Checksum
+885725a63a7c: Download complete
+e125989d16f0: Verifying Checksum
+e125989d16f0: Download complete
+81b64ae234ef: Verifying Checksum
+81b64ae234ef: Download complete
+bb658a254196: Verifying Checksum
+bb658a254196: Download complete
+a548cd898e94: Download complete
+89ce78cac139: Download complete
+7b229517ed22: Pull complete
+5b8cb54cfa40: Verifying Checksum
+5b8cb54cfa40: Download complete
+9f0afb44f10e: Pull complete
+f19a2d3b6951: Pull complete
+885725a63a7c: Pull complete
+e125989d16f0: Pull complete
+81b64ae234ef: Pull complete
+bb658a254196: Pull complete
+5b8cb54cfa40: Pull complete
+a548cd898e94: Pull complete
+89ce78cac139: Pull complete
+Digest: sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab
+Status: Downloaded newer image for coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+
+
+Receiver B — 11-receiver-image
+docker exec meridian-receiver-exp17-b docker image inspect coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+Exit code: 0
+[
+    {
+        "Id": "sha256:883d58d5b40a504cf09620ff0727babf1487188f36959a0639c3395a68fcea1a",
+        "RepoTags": [
+            "coastrider7/csa1020-exp17-meridian-atlas:1.0.0"
+        ],
+        "RepoDigests": [
+            "coastrider7/csa1020-exp17-meridian-atlas@sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab"
+        ],
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2026-10-27T14:24:32.076544208Z",
+        "Config": {
+            "User": "101:101",
+            "ExposedPorts": {
+                "80/tcp": {},
+                "8080/tcp": {}
+            },
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.30.6",
+                "PKG_RELEASE=1",
+                "DYNPKG_RELEASE=1",
+                "NJS_VERSION=1.0.2",
+                "NJS_RELEASE=1",
+                "ACME_VERSION=0.4.1"
+            ],
+            "Entrypoint": [
+                "nginx"
+            ],
+            "Cmd": [
+                "-g",
+                "daemon off;"
+            ],
+            "WorkingDir": "/",
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                "org.opencontainers.image.description": "CSA1020 Experiment 17 static city field guide for a verified Docker Hub push and pull workflow",
+                "org.opencontainers.image.title": "Meridian Atlas",
+                "org.opencontainers.image.version": "1.0.0"
+            },
+            "StopSignal": "SIGQUIT",
+            "ArgsEscaped": true,
+            "Healthcheck": {
+                "Test": [
+                    "CMD-SHELL",
+                    "wget -q -O /dev/null http://127.0.0.1:8080/healthz || exit 1"
+                ],
+                "Interval": 30000000000,
+                "Timeout": 15000000000,
+                "StartPeriod": 20000000000,
+                "Retries": 3
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 62379008,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/56ed453b79f64b21d2d8d1fdf0f5a903a814e0a71fbd4dca2f22332d455a1187/diff:/var/lib/docker/overlay2/b6bd94f6356a5de003de7c61d61bd61376e1b06206711ebc7842c761bb001a3e/diff:/var/lib/docker/overlay2/e3d0c8541c861d429ce10cfa6ac874df3ccfe506decc542d2da4cf90f59b2f86/diff:/var/lib/docker/overlay2/df6a2a104199d269814f901f5a14e9c31e80f3d21ced9fbf6cc24ec5f0f371f6/diff:/var/lib/docker/overlay2/896c18f1683d1dcc9c11f82b27b6d725ba0720efcb89e08e1867b520027dc335/diff:/var/lib/docker/overlay2/73805d0f8003dc0eae6976af1f93f0d5e2c4623eb8a797a2263337a1c3e7f204/diff:/var/lib/docker/overlay2/b62dfb775ce88528e0a4a739892b1f7444dbd91aca64f6a0584ad6646b88b9c0/diff:/var/lib/docker/overlay2/851ce4f601be27f1211f47390cee4d288f4ec913e21e06941df5f31cdb9cb06a/diff:/var/lib/docker/overlay2/06c4731b1f3c1600a9e2e32de5cc559bd24e8b40165fb1c48b228182d7c37af7/diff",
+                "MergedDir": "/var/lib/docker/overlay2/09a692a1b7c9a45c74456bd591dee6dd7723db7be4207215af85a19917d86259/merged",
+                "UpperDir": "/var/lib/docker/overlay2/09a692a1b7c9a45c74456bd591dee6dd7723db7be4207215af85a19917d86259/diff",
+                "WorkDir": "/var/lib/docker/overlay2/09a692a1b7c9a45c74456bd591dee6dd7723db7be4207215af85a19917d86259/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:75c137aedfb2760f88629236cb7b797630aed0c3d91d626d1d1bb694878fc2ba",
+                "sha256:5b91dba2fc11b3e6dab4d25e913db11e6e701065af717028e060dfb5ab8532e4",
+                "sha256:a8a09d37d441c540c613402fa23c75308b04f4801e80f6d193316949f3df4b42",
+                "sha256:d87f6628aa86314e48021285bd5dce15a2cf5166c1c80246d2e03dbb674abaf2",
+                "sha256:313dac429378b98567656151706777045067624f9a6678873dd6fdc7ecf35545",
+                "sha256:2ba21653acee34632d9eab26da39a5ff0cac12021817e6a5e9efac9507628575",
+                "sha256:3212502c73d1691bd2b186efdda493ca750fc99795b6b0b85741af01b4e79aa4",
+                "sha256:8ff2a17964b4a163c6ba0fa456ebd70ed12823a74324ba3b6f49d87bc25c1456",
+                "sha256:9ffdfac1053746ca4f9c8f70b79b4d2b4267e990fa5c20df54c8802f82421719",
+                "sha256:86b89a4647f678bef14f5e61e6885483d7d592816c1a023f659320e9048e0774"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
+
+
+Receiver B — 12-run-receiver
+docker exec meridian-receiver-exp17-b docker run -d --name meridian-atlas-exp17-b --restart unless-stopped --read-only --tmpfs /tmp:rw,noexec,nosuid,size=16m --cap-drop ALL --security-opt no-new-privileges:true --memory 64m --cpus 0.5 -p 8080:8080 coastrider7/csa1020-exp17-meridian-atlas@sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab
+Exit code: 0
+1e75e5b621371de768537a5c2a49870631dfa1ba0d019dff081adcece635ef67
+

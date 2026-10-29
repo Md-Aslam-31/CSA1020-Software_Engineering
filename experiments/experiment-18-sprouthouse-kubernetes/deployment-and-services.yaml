@@ -1,0 +1,618 @@
+# SproutHouse Experiment 18: deployment, services, storage and dashboard.
+# Database credentials are generated privately by scripts/lab.sh; no real Secret is embedded.
+# Source: k8s/00-namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: sprouthouse-exp18
+  labels:
+    app.kubernetes.io/part-of: sprouthouse
+    experiment: "18"
+---
+# Source: k8s/01-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sprouthouse-config
+  namespace: sprouthouse-exp18
+data:
+  PGHOST: postgres
+  PGPORT: "5432"
+  PGDATABASE: sprouthouse
+  PGUSER: sprouthouse
+  APP_VERSION: "1.0.0"
+---
+# Source: k8s/02-database.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres
+  namespace: sprouthouse-exp18
+  labels:
+    app: sprouthouse
+    tier: database
+spec:
+  type: ClusterIP
+  selector:
+    app: sprouthouse
+    tier: database
+  ports:
+    - name: postgres
+      port: 5432
+      targetPort: postgres
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgres-headless
+  namespace: sprouthouse-exp18
+spec:
+  clusterIP: None
+  selector:
+    app: sprouthouse
+    tier: database
+  ports:
+    - name: postgres
+      port: 5432
+      targetPort: postgres
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres
+  namespace: sprouthouse-exp18
+  labels:
+    app: sprouthouse
+    tier: database
+spec:
+  serviceName: postgres-headless
+  replicas: 1
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  selector:
+    matchLabels:
+      app: sprouthouse
+      tier: database
+  template:
+    metadata:
+      labels:
+        app: sprouthouse
+        tier: database
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 45
+      securityContext:
+        runAsUser: 70
+        runAsGroup: 70
+        runAsNonRoot: true
+        fsGroup: 70
+        fsGroupChangePolicy: OnRootMismatch
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: postgres
+          image: postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+          imagePullPolicy: IfNotPresent
+          args: ["-c", "shared_buffers=64MB", "-c", "max_connections=50"]
+          ports:
+            - name: postgres
+              containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              valueFrom:
+                configMapKeyRef:
+                  name: sprouthouse-config
+                  key: PGDATABASE
+            - name: POSTGRES_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: sprouthouse-config
+                  key: PGUSER
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sprouthouse-db-auth
+                  key: password
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          startupProbe:
+            exec:
+              command: ["sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\""]
+            periodSeconds: 3
+            timeoutSeconds: 3
+            failureThreshold: 40
+          readinessProbe:
+            exec:
+              command: ["sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\""]
+            periodSeconds: 5
+            timeoutSeconds: 3
+          livenessProbe:
+            exec:
+              command: ["sh", "-c", "pg_isready -U \"$POSTGRES_USER\" -d \"$POSTGRES_DB\""]
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 5
+          resources:
+            requests: {cpu: "100m", memory: "128Mi"}
+            limits: {cpu: "750m", memory: "384Mi"}
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+      volumes: []
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+        labels:
+          app: sprouthouse
+          tier: database
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: standard
+        resources:
+          requests:
+            storage: 512Mi
+---
+# Source: k8s/03-backend.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: sprouthouse-exp18
+  labels:
+    app: sprouthouse
+    tier: backend
+spec:
+  type: ClusterIP
+  selector:
+    app: sprouthouse
+    tier: backend
+  ports:
+    - name: http
+      port: 8000
+      targetPort: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: sprouthouse-exp18
+  labels:
+    app: sprouthouse
+    tier: backend
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: {maxUnavailable: 1, maxSurge: 1}
+  selector:
+    matchLabels:
+      app: sprouthouse
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: sprouthouse
+        tier: backend
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 30
+      securityContext:
+        runAsUser: 10001
+        runAsGroup: 10001
+        runAsNonRoot: true
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: backend
+          image: sprouthouse-backend:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: sprouthouse-config
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: sprouthouse-db-auth
+                  key: password
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 5
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet: {path: /readyz, port: http}
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 3
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 4
+          resources:
+            requests: {cpu: "100m", memory: "64Mi"}
+            limits: {cpu: "500m", memory: "256Mi"}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: tmp
+          emptyDir: {sizeLimit: 32Mi}
+---
+# Source: k8s/04-frontend.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  namespace: sprouthouse-exp18
+  labels:
+    app: sprouthouse
+    tier: frontend
+spec:
+  type: NodePort
+  selector:
+    app: sprouthouse
+    tier: frontend
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+      nodePort: 30180
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: sprouthouse-exp18
+  labels:
+    app: sprouthouse
+    tier: frontend
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: {maxUnavailable: 0, maxSurge: 1}
+  selector:
+    matchLabels:
+      app: sprouthouse
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: sprouthouse
+        tier: frontend
+    spec:
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 15
+      securityContext:
+        runAsUser: 101
+        runAsGroup: 101
+        runAsNonRoot: true
+        fsGroup: 101
+        seccompProfile:
+          type: RuntimeDefault
+      containers:
+        - name: frontend
+          image: sprouthouse-frontend:1.0.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          startupProbe:
+            httpGet: {path: /healthz, port: http}
+            failureThreshold: 30
+            periodSeconds: 2
+          readinessProbe:
+            httpGet: {path: /healthz, port: http}
+            periodSeconds: 5
+            timeoutSeconds: 2
+          livenessProbe:
+            httpGet: {path: /healthz, port: http}
+            periodSeconds: 10
+            timeoutSeconds: 2
+            failureThreshold: 3
+          resources:
+            requests: {cpu: "25m", memory: "32Mi"}
+            limits: {cpu: "200m", memory: "96Mi"}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+            - name: cache
+              mountPath: /var/cache/nginx
+            - name: run
+              mountPath: /var/run
+      volumes:
+        - name: tmp
+          emptyDir: {sizeLimit: 16Mi}
+        - name: cache
+          emptyDir: {sizeLimit: 16Mi}
+        - name: run
+          emptyDir: {sizeLimit: 1Mi}
+---
+# Source: k8s/05-dashboard-rbac.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sprouthouse-dashboard
+  namespace: sprouthouse-exp18
+automountServiceAccountToken: false
+---
+# The web UI can inspect this project, but cannot edit workloads or read Secrets.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: sprouthouse-dashboard-view
+  namespace: sprouthouse-exp18
+rules:
+  - apiGroups: [""]
+    resources: ["pods", "pods/log", "services", "endpoints", "events", "persistentvolumeclaims", "configmaps", "serviceaccounts"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["apps"]
+    resources: ["deployments", "replicasets", "statefulsets", "daemonsets", "controllerrevisions"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["batch"]
+    resources: ["jobs", "cronjobs"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["networking.k8s.io"]
+    resources: ["ingresses", "networkpolicies"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["discovery.k8s.io"]
+    resources: ["endpointslices"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["events.k8s.io"]
+    resources: ["events"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["autoscaling"]
+    resources: ["horizontalpodautoscalers"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["policy"]
+    resources: ["poddisruptionbudgets"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: sprouthouse-dashboard-view
+  namespace: sprouthouse-exp18
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: sprouthouse-dashboard-view
+subjects:
+  - kind: ServiceAccount
+    name: sprouthouse-dashboard
+    namespace: sprouthouse-exp18
+---
+# Navigation metadata only. No cluster-wide workload or Secret access.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: sprouthouse-dashboard-metadata
+rules:
+  - apiGroups: [""]
+    resources: ["namespaces", "nodes", "persistentvolumes"]
+    verbs: ["get", "list", "watch"]
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses", "csidrivers", "csinodes"]
+    verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: sprouthouse-dashboard-metadata
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: sprouthouse-dashboard-metadata
+subjects:
+  - kind: ServiceAccount
+    name: sprouthouse-dashboard
+    namespace: sprouthouse-exp18
+---
+# Source: k8s/06-dashboard.yaml
+# This kubeconfig contains file references, not a bearer token. The projected
+# namespace-scoped service-account token is refreshed by Kubernetes server-side.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sprouthouse-dashboard-config
+  namespace: sprouthouse-exp18
+data:
+  kubeconfig: |
+    apiVersion: v1
+    kind: Config
+    clusters:
+      - name: sprouthouse-exp18
+        cluster:
+          server: https://kubernetes.default.svc
+          certificate-authority: /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+    users:
+      - name: sprouthouse-dashboard
+        user:
+          tokenFile: /var/run/secrets/kubernetes.io/serviceaccount/token
+    contexts:
+      - name: SproutHouse-Lab
+        context:
+          cluster: sprouthouse-exp18
+          namespace: sprouthouse-exp18
+          user: sprouthouse-dashboard
+    current-context: SproutHouse-Lab
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: headlamp
+  namespace: sprouthouse-exp18
+  labels:
+    app: sprouthouse
+    tier: dashboard
+spec:
+  type: NodePort
+  selector:
+    app: sprouthouse
+    tier: dashboard
+  ports:
+    - name: http
+      port: 4466
+      targetPort: http
+      nodePort: 30181
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: headlamp
+  namespace: sprouthouse-exp18
+  labels:
+    app: sprouthouse
+    tier: dashboard
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: sprouthouse
+      tier: dashboard
+  template:
+    metadata:
+      labels:
+        app: sprouthouse
+        tier: dashboard
+    spec:
+      serviceAccountName: sprouthouse-dashboard
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 15
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
+      initContainers:
+        - name: prepare-dashboard-assets
+          image: ghcr.io/headlamp-k8s/headlamp:v0.46.0@sha256:8a0ef97527544baa2b35825940ddf4db6e2d09c30cd5aa31fd269ff604cc8b75
+          imagePullPolicy: IfNotPresent
+          command: ["/bin/sh", "-c"]
+          args: ["cp -R /headlamp/frontend/. /runtime-frontend/"]
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          resources:
+            requests: {cpu: "25m", memory: "32Mi"}
+            limits: {cpu: "200m", memory: "128Mi"}
+          volumeMounts:
+            - name: dashboard-frontend
+              mountPath: /runtime-frontend
+      containers:
+        - name: headlamp
+          image: ghcr.io/headlamp-k8s/headlamp:v0.46.0@sha256:8a0ef97527544baa2b35825940ddf4db6e2d09c30cd5aa31fd269ff604cc8b75
+          imagePullPolicy: IfNotPresent
+          command: ["/headlamp/headlamp-server"]
+          args:
+            - "-kubeconfig=/etc/headlamp/kubeconfig"
+            - "-html-static-dir=/runtime-frontend"
+            - "-plugins-dir=/headlamp/plugins"
+            - "-enable-helm=false"
+            - "-enable-dynamic-clusters=false"
+            - "-allow-kubeconfig-changes=false"
+            - "-cache-enabled=false"
+          env:
+            - name: HOME
+              value: /tmp
+            - name: XDG_CONFIG_HOME
+              value: /tmp/.config
+          ports:
+            - name: http
+              containerPort: 4466
+          startupProbe:
+            httpGet: {path: /, port: http}
+            failureThreshold: 60
+            periodSeconds: 2
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet: {path: /, port: http}
+            periodSeconds: 5
+            timeoutSeconds: 3
+          livenessProbe:
+            httpGet: {path: /, port: http}
+            periodSeconds: 15
+            timeoutSeconds: 3
+            failureThreshold: 4
+          resources:
+            requests: {cpu: "100m", memory: "96Mi", ephemeral-storage: "100Mi"}
+            limits: {cpu: "500m", memory: "256Mi", ephemeral-storage: "768Mi"}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities:
+              drop: ["ALL"]
+          volumeMounts:
+            - name: dashboard-config
+              mountPath: /etc/headlamp
+              readOnly: true
+            - name: dashboard-auth
+              mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+              readOnly: true
+            - name: dashboard-frontend
+              mountPath: /runtime-frontend
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        - name: dashboard-config
+          configMap:
+            name: sprouthouse-dashboard-config
+        - name: dashboard-auth
+          projected:
+            defaultMode: 420
+            sources:
+              - serviceAccountToken:
+                  path: token
+                  expirationSeconds: 3600
+              - configMap:
+                  name: kube-root-ca.crt
+                  items:
+                    - key: ca.crt
+                      path: ca.crt
+              - downwardAPI:
+                  items:
+                    - path: namespace
+                      fieldRef:
+                        fieldPath: metadata.namespace
+        - name: dashboard-frontend
+          emptyDir: {sizeLimit: 256Mi}
+        - name: tmp
+          # Headlamp stages plugin/configuration files under HOME=/tmp. Leave
+          # room for that real runtime usage in addition to the frontend volume.
+          emptyDir: {sizeLimit: 256Mi}

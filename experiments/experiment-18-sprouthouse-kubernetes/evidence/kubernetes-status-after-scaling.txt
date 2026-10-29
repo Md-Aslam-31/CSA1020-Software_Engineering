@@ -1,0 +1,44 @@
+NAME                              STATUS   ROLES           AGE   VERSION
+sprouthouse-exp18-control-plane   Ready    control-plane   46m   v1.36.4
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES                                                                                                          SELECTOR
+deployment.apps/backend    2/2     2            2           45m   backend      sprouthouse-backend:1.0.0                                                                                       app=sprouthouse,tier=backend
+deployment.apps/frontend   3/3     3            3           45m   frontend     sprouthouse-frontend:1.0.0                                                                                      app=sprouthouse,tier=frontend
+deployment.apps/headlamp   1/1     1            1           45m   headlamp     ghcr.io/headlamp-k8s/headlamp:v0.46.0@sha256:8a0ef97527544baa2b35825940ddf4db6e2d09c30cd5aa31fd269ff604cc8b75   app=sprouthouse,tier=dashboard
+
+NAME                        READY   AGE   CONTAINERS   IMAGES
+statefulset.apps/postgres   1/1     45m   postgres     postgres:16-alpine@sha256:0cefaabd882e42bcb2a2f3dc56d3ce4770560ba62fd7f197f1a2e008fd5731ab
+
+NAME                            READY   STATUS    RESTARTS   AGE     IP            NODE                              NOMINATED NODE   READINESS GATES
+pod/backend-dc486dfdd-nm65f     1/1     Running   0          45m     10.244.0.5    sprouthouse-exp18-control-plane   <none>           <none>
+pod/backend-dc486dfdd-p6p5z     1/1     Running   0          45m     10.244.0.6    sprouthouse-exp18-control-plane   <none>           <none>
+pod/frontend-545554bd95-6vn5s   1/1     Running   0          40s     10.244.0.31   sprouthouse-exp18-control-plane   <none>           <none>
+pod/frontend-545554bd95-ghpth   1/1     Running   0          2m25s   10.244.0.30   sprouthouse-exp18-control-plane   <none>           <none>
+pod/frontend-545554bd95-swxgt   1/1     Running   0          40s     10.244.0.32   sprouthouse-exp18-control-plane   <none>           <none>
+pod/headlamp-545c9b5cfc-ztqrp   1/1     Running   0          25m     10.244.0.28   sprouthouse-exp18-control-plane   <none>           <none>
+pod/postgres-0                  1/1     Running   0          3m54s   10.244.0.29   sprouthouse-exp18-control-plane   <none>           <none>
+
+NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)          AGE   SELECTOR
+service/backend             ClusterIP   10.96.149.66    <none>        8000/TCP         45m   app=sprouthouse,tier=backend
+service/frontend            NodePort    10.96.237.125   <none>        8080:30180/TCP   45m   app=sprouthouse,tier=frontend
+service/headlamp            NodePort    10.96.200.110   <none>        4466:30181/TCP   45m   app=sprouthouse,tier=dashboard
+service/postgres            ClusterIP   10.96.161.192   <none>        5432/TCP         45m   app=sprouthouse,tier=database
+service/postgres-headless   ClusterIP   None            <none>        5432/TCP         45m   app=sprouthouse,tier=database
+
+NAME                                    STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE   VOLUMEMODE
+persistentvolumeclaim/data-postgres-0   Bound    pvc-f675036a-9cbb-4293-9265-f6db5f1eb0bf   512Mi      RWO            standard       <unset>                 45m   Filesystem
+
+Recent project events:
+2m23s       Normal    Killing                 pod/frontend-748fd5fd69-pftl8           Stopping container frontend
+2m23s       Normal    SuccessfulDelete        replicaset/frontend-748fd5fd69          Deleted pod: frontend-748fd5fd69-pftl8
+2m23s       Normal    ScalingReplicaSet       deployment/frontend                     Scaled down replica set frontend-748fd5fd69 from 1 to 0
+40s         Normal    SuccessfulCreate        replicaset/frontend-545554bd95          Created pod: frontend-545554bd95-swxgt
+40s         Normal    Scheduled               pod/frontend-545554bd95-6vn5s           Successfully assigned sprouthouse-exp18/frontend-545554bd95-6vn5s to sprouthouse-exp18-control-plane
+40s         Normal    Pulled                  pod/frontend-545554bd95-6vn5s           Container image "sprouthouse-frontend:1.0.0" already present on machine and can be accessed by the pod
+40s         Normal    Created                 pod/frontend-545554bd95-6vn5s           Container created
+40s         Normal    Scheduled               pod/frontend-545554bd95-swxgt           Successfully assigned sprouthouse-exp18/frontend-545554bd95-swxgt to sprouthouse-exp18-control-plane
+40s         Normal    Pulled                  pod/frontend-545554bd95-swxgt           Container image "sprouthouse-frontend:1.0.0" already present on machine and can be accessed by the pod
+40s         Normal    Created                 pod/frontend-545554bd95-swxgt           Container created
+40s         Normal    SuccessfulCreate        replicaset/frontend-545554bd95          Created pod: frontend-545554bd95-6vn5s
+40s         Normal    ScalingReplicaSet       deployment/frontend                     Scaled up replica set frontend-545554bd95 from 1 to 3
+39s         Normal    Started                 pod/frontend-545554bd95-6vn5s           Container started
+39s         Normal    Started                 pod/frontend-545554bd95-swxgt           Container started

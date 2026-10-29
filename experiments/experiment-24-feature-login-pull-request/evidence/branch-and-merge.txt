@@ -1,0 +1,79 @@
+Experiment 24 - branch and pull-request merge evidence
+Source repository: https://github.com/Emadfar007/learnloop-collaboration-demo
+Base main commit: 8d9569910648791e4a0531233889c0ab402e1217
+Feature commit: 5982b6da3e5631b19c52bcb6a6f7aeb88fa7571e
+Merged main commit: 641d853e3bf6a9ade5978157c982717319b11243
+Pull request: https://github.com/Emadfar007/learnloop-collaboration-demo/pull/3
+
+Completed workflow: created feature-login, added login.py, committed and pushed it, opened PR #3 into main, merged the PR, then synchronized the local main branch.
+The following output is from read-only history verification of the completed workflow.
+
+$ git log --graph --oneline --all --max-count=7
+*   641d853 Merge pull request #3 from Emadfar007/feature-login
+|\  
+| * 5982b6d Add simple login function
+|/  
+* 8d95699 Document pulling updates before the next contribution
+* e711339 Updated README
+*   676e3d8 Merge pull request #2: working LearnLoop workspace views
+|\  
+| * 0677064 Make LearnLoop workspace navigation functional
+|/  
+*   1ab5010 Merge pull request #1: LearnLoop course progress dashboard
+|\  
+
+$ git show --no-patch --format=Commit: %H%nSubject: %s%nParents: %P 641d853e3bf6a9ade5978157c982717319b11243
+Commit: 641d853e3bf6a9ade5978157c982717319b11243
+Subject: Merge pull request #3 from Emadfar007/feature-login
+Parents: 8d9569910648791e4a0531233889c0ab402e1217 5982b6da3e5631b19c52bcb6a6f7aeb88fa7571e
+
+$ git diff --stat 8d9569910648791e4a0531233889c0ab402e1217 5982b6da3e5631b19c52bcb6a6f7aeb88fa7571e
+ login.py | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+
+$ git diff 8d9569910648791e4a0531233889c0ab402e1217 5982b6da3e5631b19c52bcb6a6f7aeb88fa7571e -- login.py
+diff --git a/login.py b/login.py
+new file mode 100644
+index 0000000..929e9cf
+--- /dev/null
++++ b/login.py
+@@ -0,0 +1,30 @@
++"""A small login function using caller-supplied, salted password hashes."""
++
++from collections.abc import Mapping
++from hashlib import pbkdf2_hmac
++from hmac import compare_digest
++
++
++def login(username: str, password: str, users: Mapping) -> bool:
++    """Return whether credentials match a stored user record.
++
++    Each record is ``(salt_bytes, password_hash_bytes)``. Create its hash with
++    ``pbkdf2_hmac("sha256", password.encode("utf-8"), salt, 600_000)`` and a
++    unique random salt of at least 16 bytes. No real credentials are included.
++    """
++    if not isinstance(username, str) or not isinstance(password, str):
++        return False
++    if not username or not password or not isinstance(users, Mapping):
++        return False
++
++    record = users.get(username)
++    if not isinstance(record, tuple) or len(record) != 2:
++        return False
++    salt, expected_hash = record
++    if not isinstance(salt, bytes) or len(salt) < 16:
++        return False
++    if not isinstance(expected_hash, bytes) or len(expected_hash) != 32:
++        return False
++
++    candidate = pbkdf2_hmac("sha256", password.encode("utf-8"), salt, 600_000)
++    return compare_digest(candidate, expected_hash)
+
+$ git rev-parse HEAD
+641d853e3bf6a9ade5978157c982717319b11243
+
+$ git status --porcelain
+(no output)
+
+Result: login.py on merged main matches the feature-branch file exactly.
+Local main matches the recorded merge commit; its working tree is clean.

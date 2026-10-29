@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+.env.*
+!.env.example
+.lab-data/
+private/
+*.kubeconfig
+database-password
+dashboard-token
+

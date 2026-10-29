@@ -1,0 +1,13 @@
+diff --git a/README.md b/README.md
+index c1ffcfc..77bf47a 100644
+--- a/README.md
++++ b/README.md
+@@ -59,6 +59,8 @@ Completion is **lesson-count based**, rounded to the nearest whole percentage. D
+ 
+ ## Collaboration
+ 
++Before starting your next contribution, switch to `main` and run `git pull origin main` to synchronize your local copy.
++
+ The exercise uses `feature/course-progress-dashboard` in this public fork and a pull request into **this fork's `main` branch**. Review comments, follow-up commits, and the merge provide a visible contribution history. See [CONTRIBUTING.md](CONTRIBUTING.md) for the repeatable workflow.
+ 
+ Only **Emadfar007** is used for this exercise. Review feedback is explicitly a self-review informed by independent assistant code inspection. GitHub does not permit authors to approve their own pull request, so this exercise does not claim an independent human approval.

@@ -1,0 +1,12 @@
+diff --git a/README.md b/README.md
+index bd1396e..c1ffcfc 100644
+--- a/README.md
++++ b/README.md
+@@ -1,6 +1,6 @@
+ # LearnLoop · Course Progress Lab
+ 
+-A small JavaScript project for practicing the complete Git/GitHub contribution workflow. Track six sample lessons, see completion and remaining study time, and retain your progress in the current browser.
++A small JavaScript project for practicing the complete Git/GitHub contribution workflow. Track six sample lessons, see completed lessons and remaining study time, and keep your progress saved in the same browser.
+ 
+ ![LearnLoop checks](https://github.com/Emadfar007/learnloop-collaboration-demo/actions/workflows/tests.yml/badge.svg)
+ 

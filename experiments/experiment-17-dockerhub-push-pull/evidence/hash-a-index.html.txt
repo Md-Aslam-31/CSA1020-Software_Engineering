@@ -1,0 +1,1 @@
+a0a036ffdd5dbdd6edcdac2fd6e4e0e733d73b88806c89d49dd8e9ac738f8d28  /usr/share/nginx/html/index.html

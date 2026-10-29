@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build the static website image</title><style>*{box-sizing:border-box}body{margin:0;background:#f4f1e7;color:#143f3b;font:15px system-ui,sans-serif}main{max-width:1400px;padding:42px;margin:auto}.bar{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #cbd2c3;padding-bottom:20px}.brand{font-size:23px;font-weight:750;letter-spacing:1px}.badge{padding:8px 15px;border:1px solid #a9c1a4;border-radius:30px;background:#dce7d4;font-size:13px;font-weight:650}.eyebrow{font-size:12px;letter-spacing:2px;color:#6d8070;margin-top:30px}h1{font:42px Georgia,serif;margin:12px 0}p{color:#5b7165;line-height:1.6}.meta{background:#e5e9da;border-left:4px solid #849f74;padding:14px 19px;margin:20px 0;line-height:1.6;font-size:13px}.record{margin:20px 0;background:white;border:1px solid #d8ddce;border-radius:10px;overflow:hidden}.record-head{display:flex;justify-content:space-between;padding:14px 20px;background:#e8ecdf;font-size:13px}.command{background:#183f3b;color:#f1eddb;font:13px ui-monospace,monospace;padding:20px;white-space:pre-wrap;word-break:break-word;margin:0}.output{font:12px ui-monospace,monospace;white-space:pre-wrap;word-break:break-word;padding:20px;margin:0;line-height:1.5;color:#324e43;max-height:660px;overflow:auto}.muted{font-size:12px;color:#6c7f71}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0}.metric{background:white;border:1px solid #d8ddce;padding:23px;border-radius:9px}.metric strong{display:block;font-size:30px;margin-bottom:5px}.metric span{font-size:13px;color:#708070}table{border-collapse:collapse;width:100%;background:white;font-size:13px;margin-top:18px}th,td{text-align:left;padding:11px 15px;border:1px solid #d9dfd2}th{background:#dce5d3}td.code{font:11px ui-monospace,monospace;word-break:break-all}.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}.checks{background:white;padding:20px;border:1px solid #d8ddce;border-radius:10px}.checks h2{font-size:18px;margin:0 0 12px}ul{list-style:none;padding:0;margin:0;columns:2}li{font-size:12px;line-height:1.6;break-inside:avoid;padding:5px 0}li b{color:#56834f;margin-right:5px}.footer{font-size:12px;margin-top:24px}</style></head><body><main><div class="bar"><span class="brand">✳ MERIDIAN ATLAS</span><span class="badge">Verified command evidence</span></div><p class="eyebrow">EXPERIMENT 17 · DOCKER HUB PUSH AND PULL</p><h1>Build the static website image</h1><p>Nginx packages the original HTML, CSS, JavaScript and illustrations. The image was built on Builder A.</p><section class="record"><div class="record-head"><strong>Builder A · 01-build</strong><span>Exit 0 · 8.34 seconds</span></div><pre class="command">docker build --progress=plain -t meridian-atlas:1.0.0 .</pre><pre class="output">
+#3 [auth] library/nginx:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#2 DONE 2.8s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 137B 0.0s done
+#4 DONE 0.1s
+
+#5 [1/3] FROM docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951
+#5 resolve docker.io/library/nginx:1.30.6-alpine@sha256:47928bf67eb62a1863cb08d9ecb52d3e704304ba614eaee17884204677702951 0.1s done
+#5 CACHED
+
+#6 [internal] load build context
+#6 transferring context: 45.90kB 0.0s done
+#6 DONE 0.1s
+
+#7 [2/3] COPY nginx.conf /etc/nginx/nginx.conf
+#7 DONE 0.1s
+
+#8 [3/3] COPY site/ /usr/share/nginx/html/
+#8 DONE 0.1s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 0.2s done
+#9 exporting manifest sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b 0.0s done
+#9 exporting config sha256:883d58d5b40a504cf09620ff0727babf1487188f36959a0639c3395a68fcea1a 0.0s done
+#9 exporting attestation manifest sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7
+#9 exporting attestation manifest sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7 0.0s done
+#9 exporting manifest list sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab 0.0s done
+#9 naming to docker.io/library/meridian-atlas:1.0.0 done
+#9 unpacking to docker.io/library/meridian-atlas:1.0.0 0.1s done
+#9 DONE 0.6s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/b0hvoxzq2a7l0di4djzsozcbe</pre></section><p class="muted">Last 38 of 47 output lines shown.</p><p class="footer">Recorded Docker CLI output and verification data from 27 October 2026. These pages display completed actions; they do not execute commands. Full text logs are included in the evidence folder.</p></main></body></html>

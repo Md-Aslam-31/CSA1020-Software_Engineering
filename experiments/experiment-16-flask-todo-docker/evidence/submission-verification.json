@@ -1,0 +1,28 @@
+{
+  "verifiedAt": "2026-10-27T14:11:55.121721+00:00",
+  "image": "coastrider7/csa1020-exp16-morrow:1.0.0",
+  "registryDigest": "sha256:8ea76f00fc6add13f0e283da863a5d9d8187d4afd97653787bee2d8975090671",
+  "runtimeSourceMatchesImage": true,
+  "runtimeSourceSha256": {
+    "app.py": "f681e2bbe0dd316ecdea711391f2332a5a48eb5a3677cb40219cbb5c0a883744",
+    "static/app.js": "9e859a3a55adfc23a09b622b01adf6683eb7a043da2d0eecb87d57a823904a3d",
+    "static/styles.css": "7c01f081e2d6f0829acafb9db2d6a7c35ee884855c71b57fdef102d80cc15564",
+    "templates/index.html": "aedaf030eb0a68d62a037a67ab46cda74b47100fd5eee09b97a83a3a2eed17b0",
+    "requirements.txt": "205707497bebb6509004727bd682dedbece08ba990af3ca59243f5422e9a2607"
+  },
+  "containerHealthy": true,
+  "screenshots": 10,
+  "unitTestsPassed": 21,
+  "liveApiChecksPassed": 37,
+  "browserChecksPassed": 18,
+  "persistencePassed": true,
+  "reportSections": [
+    "Aim",
+    "Tools Required",
+    "Algorithm",
+    "Output Screenshots",
+    "Result"
+  ],
+  "websiteCloudPublished": false,
+  "githubPushed": false
+}

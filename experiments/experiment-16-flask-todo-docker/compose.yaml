@@ -1,0 +1,28 @@
+name: morrow-exp16
+services:
+  app:
+    image: coastrider7/csa1020-exp16-morrow:1.0.0
+    build: .
+    container_name: morrow-tasks-exp16
+    ports:
+      - "127.0.0.1:8096:8000"
+    environment:
+      DATA_DIR: /data
+      APP_VERSION: "1.0.0"
+      TZ: Asia/Kolkata
+    volumes:
+      - tasks:/data
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
+    mem_limit: 256m
+    cpus: 1.0
+    stop_grace_period: 20s
+volumes:
+  tasks:
+    name: morrow-exp16-data

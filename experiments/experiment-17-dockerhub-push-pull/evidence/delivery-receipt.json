@@ -1,0 +1,197 @@
+{
+  "verifiedAt": "2026-10-27T14:25:39.482099+00:00",
+  "repository": "coastrider7/csa1020-exp17-meridian-atlas",
+  "tags": [
+    "1.0.0",
+    "latest"
+  ],
+  "publishedIndexDigest": "sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab",
+  "dockerHubMatches": true,
+  "demonstration": "User-approved isolated Docker engine simulating a second machine on the same laptop",
+  "distinctEngineIds": true,
+  "hostA": {
+    "id": "97dd0351-eb84-4a7e-9779-10f050151b48",
+    "name": "docker-desktop",
+    "version": "29.9.2",
+    "images": 6,
+    "root": "/var/lib/docker"
+  },
+  "hostB": {
+    "id": "6ad82891-9bde-43d2-97bb-895e9871e8d4",
+    "name": "meridian-receiver-b",
+    "version": "29.9.2",
+    "images": 0,
+    "root": "/var/lib/docker"
+  },
+  "receiverImagesBeforePull": 0,
+  "receiverRepoDigests": [
+    "coastrider7/csa1020-exp17-meridian-atlas@sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab"
+  ],
+  "builder": {
+    "id": "35c939901e864e70516d5515ef563c1a2ac6774a459e6a1972c37f55d0c6cc86",
+    "image": "sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab",
+    "status": "running",
+    "health": {
+      "Status": "healthy",
+      "FailingStreak": 0,
+      "Log": [
+        {
+          "Start": "2026-10-27T14:24:41.477546303Z",
+          "End": "2026-10-27T14:24:41.768464268Z",
+          "ExitCode": 0,
+          "Output": ""
+        },
+        {
+          "Start": "2026-10-27T14:25:11.766820108Z",
+          "End": "2026-10-27T14:25:12.155073685Z",
+          "ExitCode": 0,
+          "Output": ""
+        }
+      ]
+    },
+    "user": "101:101",
+    "readOnly": true,
+    "restart": "unless-stopped"
+  },
+  "receiver": {
+    "id": "1e75e5b621371de768537a5c2a49870631dfa1ba0d019dff081adcece635ef67",
+    "image": "sha256:883d58d5b40a504cf09620ff0727babf1487188f36959a0639c3395a68fcea1a",
+    "status": "running",
+    "health": {
+      "Status": "healthy",
+      "FailingStreak": 0,
+      "Log": [
+        {
+          "Start": "2026-10-27T14:25:37.38788261Z",
+          "End": "2026-10-27T14:25:37.514622094Z",
+          "ExitCode": 0,
+          "Output": ""
+        }
+      ]
+    },
+    "user": "101:101",
+    "readOnly": true,
+    "restart": "unless-stopped"
+  },
+  "assetHashes": {
+    "app.js": "83e0af8dc64940f0f165b56a73cbdf9b01b74703c4c9f50528df82788a9897a7",
+    "build-info.json": "0f53abcbe7116b281b8422fafd3d35796919286262c373089cf235c6afdea77f",
+    "favicon.svg": "402518ea1387af93c0d055460d43774facad29baf9c5981e0786054cab1c4700",
+    "index.html": "a0a036ffdd5dbdd6edcdac2fd6e4e0e733d73b88806c89d49dd8e9ac738f8d28",
+    "styles.css": "41a3bcdffec1f6be20ad488f0353d13c641f0c6823697ef9d17b46b5f68ecadd"
+  },
+  "sourceAndBothContainersMatch": true,
+  "httpChecks": [
+    {
+      "host": "A",
+      "path": "/",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 11414,
+      "sha256": "a0a036ffdd5dbdd6edcdac2fd6e4e0e733d73b88806c89d49dd8e9ac738f8d28"
+    },
+    {
+      "host": "A",
+      "path": "/styles.css",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 19043,
+      "sha256": "41a3bcdffec1f6be20ad488f0353d13c641f0c6823697ef9d17b46b5f68ecadd"
+    },
+    {
+      "host": "A",
+      "path": "/app.js",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 13397,
+      "sha256": "83e0af8dc64940f0f165b56a73cbdf9b01b74703c4c9f50528df82788a9897a7"
+    },
+    {
+      "host": "A",
+      "path": "/build-info.json",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 214,
+      "sha256": "0f53abcbe7116b281b8422fafd3d35796919286262c373089cf235c6afdea77f"
+    },
+    {
+      "host": "A",
+      "path": "/healthz",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 8,
+      "sha256": "63745aef95742025c6d7a1b4fc0e7107e6f3c3eb2e0cb290f33c46f176e6740d"
+    },
+    {
+      "host": "A",
+      "path": "/missing-page-for-validation",
+      "status": 404,
+      "expected": 404,
+      "passed": true,
+      "bytes": 146,
+      "sha256": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0"
+    },
+    {
+      "host": "B",
+      "path": "/",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 11414,
+      "sha256": "a0a036ffdd5dbdd6edcdac2fd6e4e0e733d73b88806c89d49dd8e9ac738f8d28"
+    },
+    {
+      "host": "B",
+      "path": "/styles.css",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 19043,
+      "sha256": "41a3bcdffec1f6be20ad488f0353d13c641f0c6823697ef9d17b46b5f68ecadd"
+    },
+    {
+      "host": "B",
+      "path": "/app.js",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 13397,
+      "sha256": "83e0af8dc64940f0f165b56a73cbdf9b01b74703c4c9f50528df82788a9897a7"
+    },
+    {
+      "host": "B",
+      "path": "/build-info.json",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 214,
+      "sha256": "0f53abcbe7116b281b8422fafd3d35796919286262c373089cf235c6afdea77f"
+    },
+    {
+      "host": "B",
+      "path": "/healthz",
+      "status": 200,
+      "expected": 200,
+      "passed": true,
+      "bytes": 8,
+      "sha256": "63745aef95742025c6d7a1b4fc0e7107e6f3c3eb2e0cb290f33c46f176e6740d"
+    },
+    {
+      "host": "B",
+      "path": "/missing-page-for-validation",
+      "status": 404,
+      "expected": 404,
+      "passed": true,
+      "bytes": 146,
+      "sha256": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0"
+    }
+  ],
+  "builderUrl": "http://127.0.0.1:8097/",
+  "receiverUrl": "http://127.0.0.1:8098/",
+  "physicalSecondComputerUsed": false
+}

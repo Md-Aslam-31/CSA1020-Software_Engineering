@@ -1,0 +1,54 @@
+{
+  "verifiedAt": "2026-10-27T14:01:57.640790+00:00",
+  "image": "coastrider7/csa1020-exp16-morrow:1.0.0",
+  "digest": "sha256:8ea76f00fc6add13f0e283da863a5d9d8187d4afd97653787bee2d8975090671",
+  "hubDigestMatches": true,
+  "imageId": "sha256:8ea76f00fc6add13f0e283da863a5d9d8187d4afd97653787bee2d8975090671",
+  "containerHealth": {
+    "Status": "healthy",
+    "FailingStreak": 0,
+    "Log": [
+      {
+        "Start": "2026-10-27T14:00:01.521398525Z",
+        "End": "2026-10-27T14:00:04.543211615Z",
+        "ExitCode": 0,
+        "Output": ""
+      },
+      {
+        "Start": "2026-10-27T14:00:34.573743337Z",
+        "End": "2026-10-27T14:00:35.248034883Z",
+        "ExitCode": 0,
+        "Output": ""
+      },
+      {
+        "Start": "2026-10-27T14:01:05.245954529Z",
+        "End": "2026-10-27T14:01:07.715232032Z",
+        "ExitCode": 0,
+        "Output": ""
+      },
+      {
+        "Start": "2026-10-27T14:01:37.728004611Z",
+        "End": "2026-10-27T14:01:38.675792808Z",
+        "ExitCode": 0,
+        "Output": ""
+      },
+      {
+        "Start": "2026-10-27T14:01:46.256430403Z",
+        "End": "2026-10-27T14:01:46.990074023Z",
+        "ExitCode": 0,
+        "Output": ""
+      }
+    ]
+  },
+  "user": "10001:10001",
+  "readOnly": true,
+  "restartPolicy": "unless-stopped",
+  "mounts": [
+    {
+      "name": "morrow-exp16-data",
+      "destination": "/data"
+    }
+  ],
+  "persistenceVerified": true,
+  "localApp": "http://127.0.0.1:8096/"
+}

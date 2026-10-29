@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#184b37">
+  <meta name="description" content="SproutHouse community seed library. Find a seed, reserve a packet, and grow something good together.">
+  <title>SproutHouse · Community Seed Library</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23184b37'/%3E%3Cpath d='M32 49V28M32 35C14 35 12 20 15 15c16-1 22 8 17 20Zm0-7C31 14 41 9 52 11c1 12-7 20-20 17Z' fill='none' stroke='%23d8edaa' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#workspace">Skip to workspace</a>
+  <aside class="sidebar" aria-label="Main navigation">
+    <a href="#catalog" class="brand" aria-label="SproutHouse home"><span class="brand-mark" data-icon="sprout"></span><span>sprout<span class="brand-light">house</span><span class="brand-dot">.</span><small>GOOD THINGS GROW HERE</small></span></a>
+    <p class="nav-label">YOUR GROWING SPACE</p>
+    <nav class="navigation">
+      <a href="#catalog" data-view="catalog" class="nav-link active" aria-current="page"><span data-icon="grid"></span>Seed catalog<span class="nav-count" id="catalog-count">—</span></a>
+      <a href="#reservations" data-view="reservations" class="nav-link"><span data-icon="basket"></span>Reservations<span class="nav-count" id="reservation-count">—</span></a>
+      <a href="#activity" data-view="activity" class="nav-link"><span data-icon="activity"></span>Community activity</a>
+      <a href="#system" data-view="system" class="nav-link"><span data-icon="layers"></span>System overview</a>
+    </nav>
+    <div class="sidebar-note"><span class="tiny-stars">✳</span><h3>Small seeds.<br>Big beginnings.</h3><p>One shared packet can grow a whole lot of possibility.</p><div class="note-flower" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><b></b></div></div>
+    <button type="button" class="sidebar-help" data-action="help"><span data-icon="help"></span> A little growing guidance <span>↗</span></button>
+    <div class="workspace-owner"><span class="owner-avatar">SH</span><span><strong>Community workspace</strong><small>A shared place to grow</small></span><span class="owner-dot" aria-hidden="true"></span></div>
+  </aside>
+  <main class="main" id="workspace" tabindex="-1">
+    <header class="topbar"><div class="breadcrumbs">Your workspace <span>/</span> <strong id="breadcrumb">Seed catalog</strong></div><div class="top-actions"><span class="season-label"><span data-icon="sun"></span> A good day to grow</span><button type="button" class="icon-button" data-action="refresh" aria-label="Refresh workspace" title="Refresh workspace"><span data-icon="refresh"></span></button><button type="button" class="icon-button" data-action="help" aria-label="Open growing guide" title="Growing guide"><span data-icon="help"></span></button></div></header>
+    <div id="connection-banner" class="connection-banner" role="status" hidden></div>
+    <section id="view-content" class="view-content" aria-label="Workspace content"><div class="initial-loader"><span class="loading-sprout" data-icon="sprout"></span><h1>Making room for something good.</h1><p>Connecting your seed library…</p></div></section>
+    <footer class="workspace-footer"><span><i aria-hidden="true"></i> Built to grow together</span><span>SPROUTHOUSE <span class="footer-divider">/</span> EXPERIMENT 18</span></footer>
+  </main>
+  <dialog id="workspace-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+coastrider7/csa1020-exp17-meridian-atlas:1.0.0 b594c04908b6 92.8MB
+coastrider7/csa1020-exp17-meridian-atlas:latest b594c04908b6 92.8MB

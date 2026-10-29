@@ -1,0 +1,123 @@
+The push refers to repository [docker.io/coastrider7/csa1020-exp17-meridian-atlas]
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+9f0afb44f10e: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+f19a2d3b6951: Waiting
+f19a2d3b6951: Layer already exists
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+9f0afb44f10e: Layer already exists
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+81b64ae234ef: Waiting
+7b229517ed22: Waiting
+885725a63a7c: Waiting
+e125989d16f0: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+bb658a254196: Waiting
+7b229517ed22: Layer already exists
+885725a63a7c: Layer already exists
+5b8cb54cfa40: Waiting
+bb658a254196: Waiting
+5b8cb54cfa40: Waiting
+e125989d16f0: Waiting
+81b64ae234ef: Waiting
+bb658a254196: Waiting
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+5b8cb54cfa40: Waiting
+e125989d16f0: Layer already exists
+81b64ae234ef: Layer already exists
+44136fa355b3: Waiting
+44136fa355b3: Waiting
+bb658a254196: Layer already exists
+a548cd898e94: Waiting
+89ce78cac139: Waiting
+5b8cb54cfa40: Layer already exists
+5414761ff56a: Waiting
+89ce78cac139: Waiting
+5414761ff56a: Waiting
+44136fa355b3: Waiting
+a548cd898e94: Waiting
+a548cd898e94: Layer already exists
+89ce78cac139: Layer already exists
+5414761ff56a: Already exists
+44136fa355b3: Already exists
+latest: digest: sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab size: 856

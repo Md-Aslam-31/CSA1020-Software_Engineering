@@ -1,0 +1,85 @@
+{
+  "started_at": "2026-10-28T14:40:12.524516+00:00",
+  "context": "kind-sprouthouse-exp18",
+  "namespace": "sprouthouse-exp18",
+  "success": true,
+  "user_records_deleted": false,
+  "pvc_deleted": false,
+  "credentials_printed": false,
+  "before": {
+    "captured_at": "2026-10-28T14:40:13.016785+00:00",
+    "database": "sprouthouse",
+    "database_started_at": "2026-10-28T13:58:55.863827+00:00",
+    "pod_uid": "12dc331d-38ea-4aab-a33b-1233ca91a6f6",
+    "pvc_name": "data-postgres-0",
+    "pvc_uid": "f675036a-9cbb-4293-9265-f6db5f1eb0bf",
+    "pvc_phase": "Bound",
+    "tables": {
+      "catalog": {
+        "row_count": 14,
+        "sha256": "51d4848374a5959a83f7d8447f519e8e935ff0609878ea82ab499d362fe58d50"
+      },
+      "reservations": {
+        "row_count": 5,
+        "sha256": "98494db23d29f506d069e95ff4e844d0b10c23272c34f7ae5eb230743aec7054"
+      },
+      "activity": {
+        "row_count": 14,
+        "sha256": "72e84f5c47ccd20ab9aa42afba86d3bdb299f514d2059f3a8c335f33040f8558"
+      },
+      "request_keys": {
+        "row_count": 5,
+        "sha256": "a219a91bea9f2741938891e8689c85c290f696fe9f1834b4d3b6389f9e1d997f"
+      }
+    }
+  },
+  "restart_output": "statefulset.apps/postgres restarted",
+  "rollout_output": "Waiting for partitioned roll out to finish: 0 out of 1 new pods have been updated...\nWaiting for 1 pods to be ready...\nWaiting for 1 pods to be ready...\nWaiting for 1 pods to be ready...\npartitioned roll out complete: 1 new pods have been updated...",
+  "after": {
+    "captured_at": "2026-10-28T14:40:25.704942+00:00",
+    "database": "sprouthouse",
+    "database_started_at": "2026-10-28T14:40:15.207036+00:00",
+    "pod_uid": "0674e4dc-979e-4016-a94b-a7940328394c",
+    "pvc_name": "data-postgres-0",
+    "pvc_uid": "f675036a-9cbb-4293-9265-f6db5f1eb0bf",
+    "pvc_phase": "Bound",
+    "tables": {
+      "catalog": {
+        "row_count": 14,
+        "sha256": "51d4848374a5959a83f7d8447f519e8e935ff0609878ea82ab499d362fe58d50"
+      },
+      "reservations": {
+        "row_count": 5,
+        "sha256": "98494db23d29f506d069e95ff4e844d0b10c23272c34f7ae5eb230743aec7054"
+      },
+      "activity": {
+        "row_count": 14,
+        "sha256": "72e84f5c47ccd20ab9aa42afba86d3bdb299f514d2059f3a8c335f33040f8558"
+      },
+      "request_keys": {
+        "row_count": 5,
+        "sha256": "a219a91bea9f2741938891e8689c85c290f696fe9f1834b4d3b6389f9e1d997f"
+      }
+    }
+  },
+  "same_pvc_uid": true,
+  "pod_recreated": true,
+  "postgres_process_restarted": true,
+  "all_table_hashes_and_counts_identical": true,
+  "frontend_api_postgresql_ready": true,
+  "runtime_after": {
+    "application": "SproutHouse",
+    "version": "1.0.0",
+    "backend_pod": "backend-dc486dfdd-p6p5z",
+    "namespace": "sprouthouse-exp18",
+    "database": "PostgreSQL",
+    "database_status": "connected",
+    "database_version": "16.15",
+    "counts": {
+      "catalog": 14,
+      "reservations": 5,
+      "activity": 14
+    }
+  },
+  "finished_at": "2026-10-28T14:40:25.705064+00:00"
+}

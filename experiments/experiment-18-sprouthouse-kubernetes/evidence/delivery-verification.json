@@ -1,0 +1,28 @@
+{
+  "packagedAt": "2026-10-28T14:47:27.201919+00:00",
+  "mainReportSections": [
+    "Aim",
+    "Tools Required",
+    "Algorithm",
+    "Output Screenshots",
+    "Result"
+  ],
+  "actualBrowserScreenshots": 12,
+  "relativeReportLinksVerified": 49,
+  "manifestFiles": 7,
+  "combinedManifestIncluded": true,
+  "secretValuesIncluded": false,
+  "copyDestination": "experiments/experiment-18-sprouthouse-kubernetes",
+  "publicationPerformed": false,
+  "earlierExperimentsModified": false,
+  "runtime": "Existing private GitHub Codespaces lab; no local Docker Desktop required",
+  "checks": {
+    "backendTests": 24,
+    "liveAPIChecks": 41,
+    "beforeScalingHTTP200": 120,
+    "afterScalingHTTP200": 120,
+    "readyFrontendReplicas": 3,
+    "readyRunningPods": 7,
+    "databasePersistence": true
+  }
+}

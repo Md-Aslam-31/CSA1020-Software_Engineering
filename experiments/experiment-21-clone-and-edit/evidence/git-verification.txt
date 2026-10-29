@@ -1,0 +1,34 @@
+Experiment 21 - saved local edit verification
+Captured at 2026-10-28T16:34:28.308928+00:00
+Public source: https://github.com/Emadfar007/learnloop-collaboration-demo
+Local clone: C:\Users\fimra\Documents\Codex\2026-10-01\create-a-kanban-board-to-visualize\work\experiment-21-learnloop-local-edit
+
+Completed clone command:
+git clone https://github.com/Emadfar007/learnloop-collaboration-demo.git experiment-21-learnloop-local-edit
+
+The following read-only checks were executed for this submission.
+
+$ git remote -v
+origin	https://github.com/Emadfar007/learnloop-collaboration-demo.git (fetch)
+origin	https://github.com/Emadfar007/learnloop-collaboration-demo.git (push)
+
+$ git rev-parse HEAD
+676e3d888b73d529d49d6ee7ffa3b21952e8c0dc
+
+$ git status --porcelain
+ M README.md
+
+$ git diff --numstat
+1	1	README.md
+
+$ git diff --cached --name-only
+(no output)
+
+$ git diff --check
+(no output)
+
+$ git ls-remote origin refs/heads/main
+676e3d888b73d529d49d6ee7ffa3b21952e8c0dc	refs/heads/main
+
+The source edit remains saved, unstaged and uncommitted.
+The report and edited snapshot are published separately in the CSA1020 experiment repository.

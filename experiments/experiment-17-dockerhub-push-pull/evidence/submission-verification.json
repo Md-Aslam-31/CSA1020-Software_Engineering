@@ -1,0 +1,28 @@
+{
+  "verifiedAt": "2026-10-27T14:34:02.455914+00:00",
+  "image": "coastrider7/csa1020-exp17-meridian-atlas",
+  "tags": [
+    "1.0.0",
+    "latest"
+  ],
+  "digest": "sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab",
+  "websiteContainers": {
+    "builder": {
+      "healthy": true,
+      "user": "101:101",
+      "readOnly": true
+    },
+    "receiver": {
+      "healthy": true,
+      "user": "101:101",
+      "readOnly": true
+    }
+  },
+  "sourceFilesMatch": 5,
+  "httpChecksPassed": 12,
+  "browserChecksPassed": 22,
+  "screenshots": 12,
+  "secondMachineSimulationApproved": true,
+  "physicalSecondComputerUsed": false,
+  "noWebsiteCloudDeployment": true
+}

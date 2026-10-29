@@ -1,0 +1,111 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile:
+#1 transferring dockerfile: 1.17kB 0.0s done
+#1 DONE 0.3s
+
+#2 [internal] load metadata for docker.io/library/python:3.13-slim
+#2 ...
+
+#3 [auth] library/python:pull token for registry-1.docker.io
+#3 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.13-slim
+#2 DONE 3.9s
+
+#4 [internal] load .dockerignore
+#4 transferring context: 142B 0.0s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 60.56kB 0.1s done
+#5 DONE 0.1s
+
+#6 [1/7] FROM docker.io/library/python:3.13-slim@sha256:b3575dcf816cdacc5292df77a6e3e59b8941631078373a045efa2ac1e9c5c3b2
+#6 resolve docker.io/library/python:3.13-slim@sha256:b3575dcf816cdacc5292df77a6e3e59b8941631078373a045efa2ac1e9c5c3b2 0.1s done
+#6 sha256:4cb8c7b2363cacfe64f7829192562aee372ad095c06a4b23871dc4fcbd1a0bff 0B / 249B 0.2s
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 0B / 11.92MB 0.2s
+#6 sha256:f1b5e1e734d9c13d4e9eb522d289b18ddec8cdf07201ded76476ebc0237ed40d 0B / 1.55MB 0.2s
+#6 sha256:4cb8c7b2363cacfe64f7829192562aee372ad095c06a4b23871dc4fcbd1a0bff 249B / 249B 0.3s done
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 1.05MB / 11.92MB 0.8s
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 2.10MB / 11.92MB 1.1s
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 3.15MB / 11.92MB 1.5s
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 4.72MB / 11.92MB 1.7s
+#6 sha256:f1b5e1e734d9c13d4e9eb522d289b18ddec8cdf07201ded76476ebc0237ed40d 1.55MB / 1.55MB 1.5s done
+#6 extracting sha256:f1b5e1e734d9c13d4e9eb522d289b18ddec8cdf07201ded76476ebc0237ed40d
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 7.34MB / 11.92MB 2.0s
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 8.39MB / 11.92MB 2.1s
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 9.44MB / 11.92MB 2.3s
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 11.53MB / 11.92MB 2.4s
+#6 sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 11.92MB / 11.92MB 2.5s done
+#6 extracting sha256:f1b5e1e734d9c13d4e9eb522d289b18ddec8cdf07201ded76476ebc0237ed40d 1.5s done
+#6 DONE 3.3s
+
+#6 [1/7] FROM docker.io/library/python:3.13-slim@sha256:b3575dcf816cdacc5292df77a6e3e59b8941631078373a045efa2ac1e9c5c3b2
+#6 extracting sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3
+#6 extracting sha256:b5350256d151171076fcfc38c3caa35e53889099002e4ee9659a25ad1ef20ec3 2.7s done
+#6 extracting sha256:4cb8c7b2363cacfe64f7829192562aee372ad095c06a4b23871dc4fcbd1a0bff
+#6 extracting sha256:4cb8c7b2363cacfe64f7829192562aee372ad095c06a4b23871dc4fcbd1a0bff 0.2s done
+#6 DONE 6.2s
+
+#7 [2/7] WORKDIR /app
+#7 DONE 0.3s
+
+#8 [3/7] COPY requirements.txt ./
+#8 DONE 0.1s
+
+#9 [4/7] RUN pip install --no-cache-dir -r requirements.txt     && groupadd --gid 10001 morrow     && useradd --uid 10001 --gid morrow --no-create-home morrow     && mkdir -p /data     && chown morrow:morrow /data
+#9 7.231 Collecting Flask==3.1.3 (from -r requirements.txt (line 1))
+#9 7.514   Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+#9 7.559 Collecting gunicorn==26.2.0 (from -r requirements.txt (line 2))
+#9 7.570   Downloading gunicorn-26.2.0-py3-none-any.whl.metadata (5.5 kB)
+#9 7.598 Collecting blinker>=1.9.0 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 7.613   Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+#9 7.641 Collecting click>=8.1.3 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 7.653   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+#9 7.676 Collecting itsdangerous>=2.2.0 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 7.688   Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+#9 7.714 Collecting jinja2>=3.1.2 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 7.734   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+#9 7.861 Collecting markupsafe>=2.1.1 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 7.888   Downloading markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+#9 7.925 Collecting werkzeug>=3.1.0 (from Flask==3.1.3->-r requirements.txt (line 1))
+#9 7.938   Downloading werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+#9 7.961 Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+#9 7.998 Downloading gunicorn-26.2.0-py3-none-any.whl (228 kB)
+#9 8.037 Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#9 8.053 Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#9 8.079 Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#9 8.092 Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#9 8.117 Downloading markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (23 kB)
+#9 8.131 Downloading werkzeug-3.1.9-py3-none-any.whl (228 kB)
+#9 8.467 Installing collected packages: markupsafe, itsdangerous, gunicorn, click, blinker, werkzeug, jinja2, Flask
+#9 10.51 
+#9 10.51 Successfully installed Flask-3.1.3 blinker-1.9.0 click-8.5.0 gunicorn-26.2.0 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.4 werkzeug-3.1.9
+#9 10.51 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#9 DONE 10.9s
+
+#10 [5/7] COPY --chown=morrow:morrow app.py ./
+#10 DONE 0.1s
+
+#11 [6/7] COPY --chown=morrow:morrow templates ./templates
+#11 DONE 0.1s
+
+#12 [7/7] COPY --chown=morrow:morrow static ./static
+#12 DONE 0.1s
+
+#13 exporting to image
+#13 exporting layers
+#13 exporting layers 0.9s done
+#13 exporting manifest sha256:e3ab4003e9330caa4d97603d0bc24bf8bff33a7ba6acffbbf3e354317430aebd 0.0s done
+#13 exporting config sha256:8c926bdd47fa80bb90974f7254c479e344a3f34cfe562b39cbf4a54f120e1305 0.0s done
+#13 exporting attestation manifest sha256:8b2a02fb252a28b06e4057cc4142dd8d04f9924725e1e9c7e2116dc2973d2527 0.0s done
+#13 exporting manifest list sha256:8ea76f00fc6add13f0e283da863a5d9d8187d4afd97653787bee2d8975090671
+#13 exporting manifest list sha256:8ea76f00fc6add13f0e283da863a5d9d8187d4afd97653787bee2d8975090671 0.0s done
+#13 naming to docker.io/coastrider7/csa1020-exp16-morrow:1.0.0 0.0s done
+#13 unpacking to docker.io/coastrider7/csa1020-exp16-morrow:1.0.0
+#13 unpacking to docker.io/coastrider7/csa1020-exp16-morrow:1.0.0 3.0s done
+#13 DONE 4.2s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/t6e5lduz0isck1oh4x329kplw

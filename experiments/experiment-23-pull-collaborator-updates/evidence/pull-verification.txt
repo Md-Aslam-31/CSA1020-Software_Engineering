@@ -1,0 +1,40 @@
+Experiment 23 — Historical pull verification
+
+Source: https://github.com/Emadfar007/learnloop-collaboration-demo
+Reader clone: work/experiment-21-learnloop-local-edit
+Simulated collaborator clone: work/experiment-23-collaborator-clone
+Both workspaces used the same Emadfar007 account, as approved by the user.
+
+Completed experiment state:
+Before reader HEAD: e711339b1c18a6258cbf7de1973ab0e9bbe23217
+Published and pulled HEAD: 8d9569910648791e4a0531233889c0ab402e1217
+The guidance paragraph was absent before the pull and present afterward.
+Local reader HEAD matched remote main; git status --porcelain returned no output.
+
+Recorded output from the original completed pull:
+$ git pull origin main
+Updating e711339..8d95699
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Historical commit evidence read from Git when preparing this submission:
+commit 8d9569910648791e4a0531233889c0ab402e1217
+Author:     Emadfar007 <230123189+Emadfar007@users.noreply.github.com>
+AuthorDate: Wed Oct 28 22:10:10 2026 +0530
+Commit:     Emadfar007 <230123189+Emadfar007@users.noreply.github.com>
+CommitDate: Wed Oct 28 22:10:10 2026 +0530
+
+    Document pulling updates before the next contribution
+
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+
+Snapshot verification performed while preparing this submission:
+- The expected paragraph is absent in README.md at e711339.
+- The expected paragraph appears exactly once in README.md at 8d95699.
+- The historical diff contains only README.md, with two additions and no deletions.
+- project/README.md matches the README Git blob at 8d95699 byte-for-byte.
+
+This is a record of the completed pull experiment. Later login work advanced the
+reader clone beyond 8d95699; this file does not describe its current HEAD.

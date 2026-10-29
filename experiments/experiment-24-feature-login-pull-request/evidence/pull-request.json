@@ -1,0 +1,26 @@
+{
+  "repository": "Emadfar007/learnloop-collaboration-demo",
+  "url": "https://github.com/Emadfar007/learnloop-collaboration-demo/pull/3",
+  "number": 3,
+  "title": "Add simple Python login function",
+  "state": "closed",
+  "merged": true,
+  "base_branch": "main",
+  "feature_branch": "feature-login",
+  "feature_commit": "5982b6da3e5631b19c52bcb6a6f7aeb88fa7571e",
+  "merge_commit": "641d853e3bf6a9ade5978157c982717319b11243",
+  "created_by": "Emadfar007",
+  "merged_by": "Emadfar007",
+  "created_at": "2026-10-28T16:43:59Z",
+  "merged_at": "2026-10-28T16:44:44Z",
+  "changed_files": 1,
+  "checks": [
+    {
+      "name": "Course progress tests",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/learnloop-collaboration-demo/actions/runs/40728861662/job/122959388237"
+    }
+  ],
+  "validation_note": "The 11 Python login checks were run locally. The existing Course progress tests workflow checks JavaScript; it does not run the Python login checks."
+}

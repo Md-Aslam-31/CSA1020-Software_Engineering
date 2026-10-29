@@ -1,0 +1,70 @@
+{
+  "experiment": 19,
+  "receipt": {
+    "protocol": 1,
+    "experiment": 19,
+    "image": "coastrider7/csa1020-exp19-packlight@sha256:9eefe33b69a7e835472f5c275defd85e9b4a91b776049ccfcc8fd1e22cec65e8",
+    "sourceSha": "deb12224b0d0c2a7f8142899bb8aa0e805d18238",
+    "runId": 40740904579,
+    "buildNumber": "5.1",
+    "deploymentId": 7393329891,
+    "application": "Packlight",
+    "container": "packlight-app-exp19",
+    "port": 8099,
+    "previousImage": "coastrider7/csa1020-exp19-packlight@sha256:c1e3e15a0f50371c964e875fb1524e15a578dd4ce9a3eb352360bd88a6cbaf67",
+    "checks": {
+      "version": {
+        "application": "Packlight",
+        "build_number": "5.1",
+        "git_sha": "deb12224b0d0c2a7f8142899bb8aa0e805d18238",
+        "version": "1.0.0"
+      },
+      "packingItems": 47,
+      "invalidInputHttpStatus": 400
+    },
+    "passed": true,
+    "deployedAt": "2026-10-28T18:01:10.092763+00:00"
+  },
+  "liveVersion": {
+    "application": "Packlight",
+    "build_number": "5.1",
+    "git_sha": "deb12224b0d0c2a7f8142899bb8aa0e805d18238",
+    "version": "1.0.0"
+  },
+  "verifiedAt": "2026-10-28T18:02:33.670799+00:00",
+  "workflow": {
+    "id": 40740904579,
+    "html_url": "https://github.com/Emadfar007/CSA1020---Software-Engineering/actions/runs/40740904579",
+    "event": "push",
+    "head_sha": "deb12224b0d0c2a7f8142899bb8aa0e805d18238",
+    "run_number": 5,
+    "run_attempt": 1,
+    "conclusion": "success",
+    "created_at": "2026-10-28T17:59:33Z",
+    "updated_at": "2026-10-28T18:01:19Z"
+  },
+  "jobs": [
+    {
+      "id": 123001916550,
+      "name": "Test and publish Packlight",
+      "conclusion": "success",
+      "html_url": "https://github.com/Emadfar007/CSA1020---Software-Engineering/actions/runs/40740904579/job/123001916550"
+    },
+    {
+      "id": 123002362739,
+      "name": "Deploy Packlight to the private browser lab",
+      "conclusion": "success",
+      "html_url": "https://github.com/Emadfar007/CSA1020---Software-Engineering/actions/runs/40740904579/job/123002362739"
+    }
+  ],
+  "deploymentStatus": {
+    "id": 20843798552,
+    "state": "success",
+    "environment_url": "https://miserable-cobweb-4j9pjv79r7w7fjrqw-8099.app.github.dev/",
+    "log_url": "https://github.com/Emadfar007/CSA1020---Software-Engineering/actions/runs/40740904579",
+    "created_at": "2026-10-28T18:01:10Z"
+  },
+  "passed": true,
+  "stopAndResumePreservedLatestDeployment": true,
+  "privateBrowserGatewayBuildIdentityVerified": true
+}

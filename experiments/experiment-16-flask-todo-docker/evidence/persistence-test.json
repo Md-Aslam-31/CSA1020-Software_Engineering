@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-27T14:01:43.077606+00:00",
+  "passed": true,
+  "taskId": 15,
+  "before": {
+    "category": "Runtime verification",
+    "created_at": "2026-10-27T14:01:38.348125+00:00",
+    "due_date": "2026-10-31",
+    "id": 15,
+    "notes": "Exact fields must survive a real container restart.",
+    "overdue": false,
+    "priority": "high",
+    "status": "doing",
+    "title": "Docker persistence checkpoint",
+    "updated_at": "2026-10-27T14:01:38.348125+00:00"
+  },
+  "after": {
+    "category": "Runtime verification",
+    "created_at": "2026-10-27T14:01:38.348125+00:00",
+    "due_date": "2026-10-31",
+    "id": 15,
+    "notes": "Exact fields must survive a real container restart.",
+    "overdue": false,
+    "priority": "high",
+    "status": "doing",
+    "title": "Docker persistence checkpoint",
+    "updated_at": "2026-10-27T14:01:38.348125+00:00"
+  },
+  "allFieldsUnchanged": true,
+  "fixtureDeletedAfterVerification": true,
+  "namedVolume": "morrow-exp16-data"
+}

@@ -1,0 +1,15 @@
+Name:      docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0
+MediaType: application/vnd.oci.image.index.v1+json
+Digest:    sha256:b594c04908b603a2ffecc602434826d5b1797a3ae7614ca652fc9f9c710c44ab
+           
+Manifests: 
+  Name:        docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0@sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    linux/amd64
+               
+  Name:        docker.io/coastrider7/csa1020-exp17-meridian-atlas:1.0.0@sha256:612642c05a210a9265659717b0425ae364c36035a97efd5541a031770329dbe7
+  MediaType:   application/vnd.oci.image.manifest.v1+json
+  Platform:    unknown/unknown
+  Annotations: 
+    vnd.docker.reference.digest: sha256:20d927d1668d629e79ed7c8582a4175b6d4e1e17bb001256785ca08b32bde71b
+    vnd.docker.reference.type:   attestation-manifest

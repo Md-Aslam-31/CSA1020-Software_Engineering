@@ -1,0 +1,166 @@
+{
+  "id": 40714300739,
+  "run_number": 2,
+  "head_sha": "dd4d44cdf641f6c3883a5df0dc8f60526ab40d84",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/Emadfar007/CSA1020---Software-Engineering/actions/runs/40714300739",
+  "event": "push",
+  "created_at": "2026-10-28T15:16:39Z",
+  "updated_at": "2026-10-28T15:18:07Z",
+  "jobs": [
+    {
+      "id": 122907656704,
+      "name": "Test \u2192 build \u2192 Docker Hub \u2192 deploy",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/Emadfar007/CSA1020---Software-Engineering/actions/runs/40714300739/job/122907656704",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-28T15:16:43Z",
+          "completed_at": "2026-10-28T15:16:45Z"
+        },
+        {
+          "name": "Check out the source commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-28T15:16:45Z",
+          "completed_at": "2026-10-28T15:16:50Z"
+        },
+        {
+          "name": "Set up Docker Buildx",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-28T15:16:50Z",
+          "completed_at": "2026-10-28T15:16:58Z"
+        },
+        {
+          "name": "Build the Flask test image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-28T15:16:58Z",
+          "completed_at": "2026-10-28T15:17:08Z"
+        },
+        {
+          "name": "Run application tests inside Docker",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-28T15:17:08Z",
+          "completed_at": "2026-10-28T15:17:09Z"
+        },
+        {
+          "name": "Build the versioned runtime image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-28T15:17:09Z",
+          "completed_at": "2026-10-28T15:17:13Z"
+        },
+        {
+          "name": "Verify the exact runtime container over HTTP",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-28T15:17:13Z",
+          "completed_at": "2026-10-28T15:17:18Z"
+        },
+        {
+          "name": "Authenticate to Docker Hub on trusted main",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-28T15:17:18Z",
+          "completed_at": "2026-10-28T15:17:19Z"
+        },
+        {
+          "name": "Push the tested image and record its digest",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-28T15:17:19Z",
+          "completed_at": "2026-10-28T15:17:29Z"
+        },
+        {
+          "name": "Deploy the immutable image and verify the cloud application",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-28T15:17:29Z",
+          "completed_at": "2026-10-28T15:18:00Z"
+        },
+        {
+          "name": "Write pipeline summary",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-28T15:18:00Z",
+          "completed_at": "2026-10-28T15:18:00Z"
+        },
+        {
+          "name": "Retain testing and deployment results",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-28T15:18:00Z",
+          "completed_at": "2026-10-28T15:18:01Z"
+        },
+        {
+          "name": "Post Authenticate to Docker Hub on trusted main",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-28T15:18:01Z",
+          "completed_at": "2026-10-28T15:18:01Z"
+        },
+        {
+          "name": "Post Build the versioned runtime image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-28T15:18:01Z",
+          "completed_at": "2026-10-28T15:18:02Z"
+        },
+        {
+          "name": "Post Build the Flask test image",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 22,
+          "started_at": "2026-10-28T15:18:02Z",
+          "completed_at": "2026-10-28T15:18:03Z"
+        },
+        {
+          "name": "Post Set up Docker Buildx",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 23,
+          "started_at": "2026-10-28T15:18:03Z",
+          "completed_at": "2026-10-28T15:18:04Z"
+        },
+        {
+          "name": "Post Check out the source commit",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-10-28T15:18:04Z",
+          "completed_at": "2026-10-28T15:18:04Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-10-28T15:18:04Z",
+          "completed_at": "2026-10-28T15:18:04Z"
+        }
+      ]
+    }
+  ]
+}

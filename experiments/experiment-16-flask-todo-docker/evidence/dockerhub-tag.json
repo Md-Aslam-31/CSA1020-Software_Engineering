@@ -1,0 +1,32 @@
+{
+  "creator": 43154483,
+  "id": 1369043335,
+  "images": [
+    {
+      "architecture": "amd64",
+      "features": "",
+      "variant": null,
+      "digest": "sha256:e3ab4003e9330caa4d97603d0bc24bf8bff33a7ba6acffbbf3e354317430aebd",
+      "os": "linux",
+      "os_features": "",
+      "os_version": null,
+      "size": 45555649,
+      "status": "active",
+      "last_pulled": "2026-10-27T14:01:53.86308675Z",
+      "last_pushed": "2026-10-27T14:01:53.272070176Z"
+    }
+  ],
+  "last_updated": "2026-10-27T14:01:54.370765Z",
+  "last_updater": 43154483,
+  "last_updater_username": "coastrider7",
+  "name": "1.0.0",
+  "repository": 33071669,
+  "full_size": 45555649,
+  "v2": true,
+  "tag_status": "active",
+  "tag_last_pulled": "2026-10-27T14:01:53.86308675Z",
+  "tag_last_pushed": "2026-10-27T14:01:54.370765Z",
+  "media_type": "application/vnd.oci.image.index.v1+json",
+  "content_type": "image",
+  "digest": "sha256:8ea76f00fc6add13f0e283da863a5d9d8187d4afd97653787bee2d8975090671"
+}

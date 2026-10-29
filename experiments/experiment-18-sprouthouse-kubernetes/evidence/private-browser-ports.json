@@ -1,0 +1,19 @@
+{
+  "registeredAt": "2026-10-28T14:09:46.930142+00:00",
+  "ports": [
+    {
+      "browseUrl": "https://miserable-cobweb-4j9pjv79r7w7fjrqw-8180.app.github.dev",
+      "sourcePort": 8180,
+      "visibility": "private"
+    },
+    {
+      "browseUrl": "https://miserable-cobweb-4j9pjv79r7w7fjrqw-8181.app.github.dev",
+      "sourcePort": 8181,
+      "visibility": "private"
+    }
+  ],
+  "defaultLocalBind": "127.0.0.1",
+  "temporaryLocalBootstrapProcessStopped": true,
+  "persistentBrowserPortRegistrationVerified": true,
+  "laptopTunnelRequiredAtRuntime": false
+}

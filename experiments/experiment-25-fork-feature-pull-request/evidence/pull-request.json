@@ -1,0 +1,40 @@
+{
+  "capturedAt": "2026-10-28T17:07:58.271048+00:00",
+  "repository": "Emadfar007/learnloop-collaboration-demo",
+  "forkParent": "octocat/Spoon-Knife",
+  "forkWasReused": true,
+  "number": 4,
+  "state": "open",
+  "merged": false,
+  "url": "https://github.com/Emadfar007/learnloop-collaboration-demo/pull/4",
+  "title": "Add JSON course-progress export helper",
+  "baseRepository": "Emadfar007/learnloop-collaboration-demo",
+  "baseRef": "main",
+  "headRepository": "Emadfar007/learnloop-collaboration-demo",
+  "headRef": "feature/progress-export",
+  "headSha": "55bebd55ff7e05c062bab229da60997f796e9e40",
+  "files": [
+    {
+      "filename": "src/export-progress.js",
+      "status": "added"
+    },
+    {
+      "filename": "test/export-progress.test.js",
+      "status": "added"
+    }
+  ],
+  "checks": [
+    {
+      "id": 40732125678,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/learnloop-collaboration-demo/actions/runs/40732125678"
+    },
+    {
+      "id": 40732093256,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Emadfar007/learnloop-collaboration-demo/actions/runs/40732093256"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+test_activity_tracks_changes (test_app.MorrowTests.test_activity_tracks_changes) ... ok
+test_complete_and_reopen (test_app.MorrowTests.test_complete_and_reopen) ... ok
+test_create_defaults_and_trim (test_app.MorrowTests.test_create_defaults_and_trim) ... ok
+test_delete (test_app.MorrowTests.test_delete) ... ok
+test_deleting_all_does_not_reseed (test_app.MorrowTests.test_deleting_all_does_not_reseed) ... ok
+test_demo_reset_requires_explicit_confirmation (test_app.MorrowTests.test_demo_reset_requires_explicit_confirmation) ... ok
+test_edit_every_field (test_app.MorrowTests.test_edit_every_field) ... ok
+test_empty_statistics (test_app.MorrowTests.test_empty_statistics) ... ok
+test_export_import_round_trip (test_app.MorrowTests.test_export_import_round_trip) ... ok
+test_filter_search_and_sort (test_app.MorrowTests.test_filter_search_and_sort) ... ok
+test_health_and_readiness (test_app.MorrowTests.test_health_and_readiness) ... ok
+test_import_validates_all_before_writing (test_app.MorrowTests.test_import_validates_all_before_writing) ... ok
+test_invalid_priority_status_and_dates (test_app.MorrowTests.test_invalid_priority_status_and_dates) ... ok
+test_invalid_title (test_app.MorrowTests.test_invalid_title) ... ok
+test_not_found (test_app.MorrowTests.test_not_found) ... ok
+test_overdue_and_completion_stats (test_app.MorrowTests.test_overdue_and_completion_stats) ... ok
+test_persistence_across_application_recreation (test_app.MorrowTests.test_persistence_across_application_recreation) ... ok
+test_security_headers_and_json_errors (test_app.MorrowTests.test_security_headers_and_json_errors) ... ok
+test_seed_once_and_six_samples (test_app.MorrowTests.test_seed_once_and_six_samples) ... ok
+test_sql_injection_is_only_text (test_app.MorrowTests.test_sql_injection_is_only_text) ... ok
+test_unknown_fields_and_empty_patch (test_app.MorrowTests.test_unknown_fields_and_empty_patch) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.764s
+
+OK

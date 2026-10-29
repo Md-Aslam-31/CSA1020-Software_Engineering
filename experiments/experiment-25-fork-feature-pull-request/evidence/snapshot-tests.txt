@@ -1,0 +1,27 @@
+✔ exports readable JSON with fractional durations and ordered lessons (8.0911ms)
+✔ exports an empty course as a zero summary and empty lesson list (0.5842ms)
+✔ retains completed status and zero-duration lesson values (0.6627ms)
+✔ accepts frozen input without changing the course or its lessons (1.4066ms)
+✔ exports only supported lesson fields and omits unrelated metadata (0.6718ms)
+✔ rejects invalid courses through the shared progress validation (1.199ms)
+✔ an empty course has no completed lessons or remaining duration (6.0859ms)
+✔ a new course reports the full duration remaining (0.4636ms)
+✔ partial progress counts completed lessons and only unfinished minutes (0.306ms)
+✔ finishing the last lesson reaches 100 percent and zero remaining minutes (0.4061ms)
+✔ calculating progress does not modify the course or its lessons (0.788ms)
+✔ rejects a non-array course (1.2518ms)
+✔ rejects duplicate IDs and missing records (0.9624ms)
+✔ rejects negative durations and non-boolean completion (0.6671ms)
+✔ zero-duration lessons still count toward completion (0.6396ms)
+✔ fractional minutes stay precise and do not weight lesson completion (0.6854ms)
+✔ rejects non-finite durations and numeric strings (0.6591ms)
+✔ rejects total duration overflow even when each duration is finite (0.377ms)
+✔ rejects blank identifiers and sparse course arrays (0.5618ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 403.022

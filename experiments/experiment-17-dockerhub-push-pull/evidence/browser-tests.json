@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-27T14:26:10.594Z",
+  "browser": "156.0.8078.48",
+  "checks": [
+    {
+      "name": "Builder serves six city guides",
+      "passed": true
+    },
+    {
+      "name": "Mood filter changes visible guides",
+      "passed": true
+    },
+    {
+      "name": "Search combines with mood filters",
+      "passed": true
+    },
+    {
+      "name": "Empty search state can be reset",
+      "passed": true
+    },
+    {
+      "name": "Sort guides alphabetically",
+      "passed": true
+    },
+    {
+      "name": "Sort by shortest walk",
+      "passed": true
+    },
+    {
+      "name": "Sort by sample budget",
+      "passed": true
+    },
+    {
+      "name": "Open a guide and read its itinerary",
+      "passed": true
+    },
+    {
+      "name": "Save a guide through the detail dialog",
+      "passed": true
+    },
+    {
+      "name": "Save a second guide through its heart",
+      "passed": true
+    },
+    {
+      "name": "Collection shows only saved guides",
+      "passed": true
+    },
+    {
+      "name": "Download contains the selected itineraries",
+      "passed": true
+    },
+    {
+      "name": "Saved collection persists across reload",
+      "passed": true
+    },
+    {
+      "name": "Cancel clearing preserves the collection",
+      "passed": true
+    },
+    {
+      "name": "Remove one selected saved guide",
+      "passed": true
+    },
+    {
+      "name": "Confirm clear removes the collection",
+      "passed": true
+    },
+    {
+      "name": "Help navigation opens and closes",
+      "passed": true
+    },
+    {
+      "name": "Mobile viewport has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Receiver serves the same six-guide website",
+      "passed": true
+    },
+    {
+      "name": "Receiver browser starts with a separate collection",
+      "passed": true
+    },
+    {
+      "name": "Receiver guide details work",
+      "passed": true
+    },
+    {
+      "name": "No browser JavaScript errors",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

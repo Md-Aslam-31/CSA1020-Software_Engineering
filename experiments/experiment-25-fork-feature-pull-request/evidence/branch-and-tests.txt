@@ -1,0 +1,24 @@
+LearnLoop fork feature workflow verification
+
+branch:
+feature/progress-export
+
+commit:
+55bebd55ff7e05c062bab229da60997f796e9e40
+
+status:
+
+
+remotes:
+origin	https://github.com/Emadfar007/learnloop-collaboration-demo.git (fetch)
+origin	https://github.com/Emadfar007/learnloop-collaboration-demo.git (push)
+upstream	https://github.com/octocat/Spoon-Knife.git (fetch)
+upstream	https://github.com/octocat/Spoon-Knife.git (push)
+
+changes:
+A	src/export-progress.js
+A	test/export-progress.test.js
+
+Full source repository test result recorded during implementation: 19 passed, 0 failed.
+Archived helper snapshot verified during packaging: all 19 Node tests passed, 0 failed (see snapshot-tests.txt). npm start is outside this helper-only snapshot.
+PR #4 remains open for review and is not merged. Both refs are in Emadfar007/learnloop-collaboration-demo.

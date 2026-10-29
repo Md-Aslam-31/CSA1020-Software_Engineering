@@ -1,0 +1,62 @@
+Experiment 20 - verified Git workflow
+Captured at 2026-10-28T15:56:07.451989+00:00
+Original repository: https://github.com/Emadfar007/little-milestones-journal
+Original visibility: private
+Local clone: C:\Users\fimra\Documents\Codex\2026-10-01\create-a-kanban-board-to-visualize\work\little-milestones-journal
+
+The report records the completed create/clone/edit/stage/commit/push sequence.
+The following read-only verification commands were executed when preparing this submission.
+
+$ git remote -v
+origin	https://github.com/Emadfar007/little-milestones-journal.git (fetch)
+origin	https://github.com/Emadfar007/little-milestones-journal.git (push)
+
+$ git log --oneline
+5bf1ff6 Add project description and milestone journal template
+e4a96e3 Initial commit
+
+$ git rev-list --count HEAD
+2
+
+$ git rev-parse HEAD
+5bf1ff63dd3eddf4baaf37cc31711796affa62be
+
+$ git ls-remote origin refs/heads/main
+5bf1ff63dd3eddf4baaf37cc31711796affa62be	refs/heads/main
+
+$ git status --porcelain
+(no output: clean working tree)
+
+$ git ls-files
+README.md
+
+$ git diff e4a96e3197cb260cac2d2633afd6723044a1bd46 5bf1ff63dd3eddf4baaf37cc31711796affa62be -- README.md
+diff --git a/README.md b/README.md
+index dcf98c3..44a9f87 100644
+--- a/README.md
++++ b/README.md
+@@ -1,2 +1,22 @@
+-# little-milestones-journal
+-A personal Markdown journal for small learning milestones.
++# Little Milestones Journal
++
++A personal Markdown journal for noticing small wins while learning and building.
++
++## Project description
++
++Record concise milestones, what you learned, and the next step. Entries live in
++this README so the journal stays simple and every change is tracked with Git.
++
++## Entry template
++
++- Date:
++- Milestone:
++- What I learned:
++- Next step:
++
++## Example entry
++
++- Date: 2026-10-28
++- Milestone: Initialized this personal project on GitHub.
++- What I learned: How to clone, edit, stage, commit, and push README changes.
++- Next step: Add the next learning milestone.

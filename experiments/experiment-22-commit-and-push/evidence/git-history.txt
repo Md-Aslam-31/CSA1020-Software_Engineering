@@ -1,0 +1,27 @@
+Experiment 22 - historical commit evidence
+
+Repository: https://github.com/Emadfar007/learnloop-collaboration-demo
+Commit: e711339b1c18a6258cbf7de1973ab0e9bbe23217
+Parent: 676e3d888b73d529d49d6ee7ffa3b21952e8c0dc
+
+The original stage, commit and push were completed during Experiment 22.
+This evidence was extracted later using read-only Git commands; the commit
+and push have not been replayed. Later experiments advanced the source main.
+
+$ git show --format=fuller --stat e711339b1c18a6258cbf7de1973ab0e9bbe23217
+commit e711339b1c18a6258cbf7de1973ab0e9bbe23217
+Author:     Emadfar007 <230123189+Emadfar007@users.noreply.github.com>
+AuthorDate: Wed Oct 28 22:06:18 2026 +0530
+Commit:     Emadfar007 <230123189+Emadfar007@users.noreply.github.com>
+CommitDate: Wed Oct 28 22:06:18 2026 +0530
+
+    Updated README
+
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+$ git diff --name-only 676e3d888b73d529d49d6ee7ffa3b21952e8c0dc e711339b1c18a6258cbf7de1973ab0e9bbe23217
+README.md
+
+$ git diff --numstat 676e3d888b73d529d49d6ee7ffa3b21952e8c0dc e711339b1c18a6258cbf7de1973ab0e9bbe23217 -- README.md
+1	1	README.md
